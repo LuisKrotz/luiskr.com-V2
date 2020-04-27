@@ -1,0 +1,162 @@
+@media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+    color: $color-black;
+    background-color: $color-white;
+
+    &.black {
+        color: $color-white;
+        background-color: $color-black;
+    }
+}
+
+button {
+    @extend %RESETBTN;
+}
+
+video, image, iframe, figure, picture,
+p, a, hr, h1, h2, h3, h4, h5, h6, ul, ol, blockquote  {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+video,
+iframe,
+img {
+    background: rgba(0, 0, 0, 0);
+}
+
+
+.desk-only {
+    display: none;
+
+    @include layout-1024() {
+        display: initial;
+    }
+}
+
+.mobile-only {
+    @include layout-1024() {
+        display: none;
+    }
+}
+
+.lz {
+    transition: background-color  $speed / 2 ease-in-out;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    &-desk {
+        display: none;
+
+        @include layout-1280() {
+            display: block;
+        }
+    }
+
+    &-mobile {
+        @include layout-1280() {
+            display: none;
+        }
+    }
+
+    .black & {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.lz-img {
+    visibility: hidden;
+    transition: visibility .5s linear, opacity .5s ease-in;
+}
+
+.lz-img[lazy=loaded] {
+    visibility: visible;
+}
+
+.reverse {
+    @extend %reverse;
+}
+
+.rel {
+    position: relative;
+}
+
+// Max Area
+#app {
+    max-width: 2560px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+
+    padding: 0 to-em(($un-320 - $grid-max-area-320) / 2);
+
+    @include layout-320() {
+        padding: 0 to-em(($un-320 - $grid-max-area-320) / 2);
+    }
+
+    @include layout-375() {
+        padding: 0 to-em(($un-375 - $grid-max-area-375) / 2);
+    }
+
+    @include layout-414() {
+        padding: 0 to-em(($un-414 - $grid-max-area-414) / 2);
+    }
+
+    @include layout-640() {
+        padding: 0 to-em(($un-640 - $grid-max-area-640) / 2);
+    }
+
+    @include layout-768() {
+        padding: 0 to-em(($un-768 - $grid-max-area-768) / 2);
+    }
+
+    @include layout-960() {
+        padding: 0 to-em(($un-960 - $grid-max-area-960) / 2);
+    }
+
+    @include layout-1024() {
+        padding: 0 to-em(($un-1024 - $grid-max-area-1024) / 2);
+    }
+
+    @include layout-1280() {
+        padding: 0 to-em(($un-1280 - $grid-max-area-1280) / 2);
+    }
+
+    @include layout-1440() {
+        padding: 0 to-em(($un-1440 - $grid-max-area-1440) / 2);
+    }
+
+    @include layout-1680() {
+        padding: 0 to-em(($un-1680 - $grid-max-area-1680) / 2);
+    }
+
+    @include layout-1920() {
+        padding: 0 to-em(($un-1920 - $grid-max-area-1920) / 2);
+    }
+
+    @include layout-2560() {
+        padding: 0 to-em(($un-2560 - $grid-max-area-2560) / 2);
+    }
+}

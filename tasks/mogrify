@@ -1,0 +1,4 @@
+for i in *.jpg ; do mogrify -quality "80%" "$i"; done
+
+
+for i in *.jpg ; do mogrify -monochrome "$i"; done

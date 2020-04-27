@@ -1,0 +1,17 @@
+
+{
+    "id": "29",
+    "path": "/projects/mor-where-to-find",
+    "project": "Mor | Where to Find",
+    "link": "https://mor.com.br/onde-encontrar",
+    "video": {
+        "width": "853",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Mor | Where to Find",
+        "img": "/vids/poster/mor.com.br-onde-encontrar-31-03-19_1.jpg",
+        "src": "/vids/mor.com.br-onde-encontrar-31-03-19_1"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "role": "Frontend Developer"
+}

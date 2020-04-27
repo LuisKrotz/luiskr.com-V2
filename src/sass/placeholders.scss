@@ -1,0 +1,28 @@
+// Reset buttons
+%RESETBTN {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+// Ellipsis
+%ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+%cntr {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

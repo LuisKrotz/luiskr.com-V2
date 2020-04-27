@@ -1,0 +1,22 @@
+#!/bin/bash
+ffmpeg -i melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-dance-machine-31-03-19-manutencao_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-dance-machine-31-03-19-manutencao_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-eat-my-melissa-31-03-19-manutencao_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-eat-my-melissa-31-03-19-manutencao_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-nation-31-01-19-maintenence_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-nation-31-01-19-maintenence_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-starwalker-31-03-19-manutencao_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-starwalker-31-03-19-manutencao_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-wanna-be-carioca-31-03-19-manutencao_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-wanna-be-carioca-31-03-19-manutencao_1.m3u8
+ffmpeg -i melissa.com.br-colecoes-we-are-flowers-31-03-19-manutencao_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-colecoes-we-are-flowers-31-03-19-manutencao_1.m3u8
+ffmpeg -i melissa.com.br-collabs-campana-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-campana-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-gaetano-pesce-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-gaetano-pesce-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-gareth-pugh_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-gareth-pugh_1.m3u8
+ffmpeg -i melissa.com.br-collabs-j-maskrey-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-j-maskrey-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-jason-wu-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-jason-wu-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-jeremy-scott-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-jeremy-scott-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-karl-lagerfeld-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-karl-lagerfeld-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-sebastian-errazuriz-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-sebastian-errazuriz-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-vitorino-campos-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-vitorino-campos-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-vivienne-westwood-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-vivienne-westwood-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-collabs-zaha-hadid-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-collabs-zaha-hadid-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-onde-encontrar-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-onde-encontrar-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-specials-roller-joy-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-specials-roller-joy-31-03-19_1.m3u8
+ffmpeg -i melissa.com.br-specials-tropico-surreal-31-03-19_1.mp4 -profile:v baseline -level 3.0  -start_number 0 -hls_time 10 -hls_list_size 0 -f hls melissa.com.br-specials-tropico-surreal-31-03-19_1.m3u8

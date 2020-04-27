@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon/favicon-16x16.png">
+    <link rel="manifest" href="<%= BASE_URL %>favicon/site.webmanifest">
+    <link rel="mask-icon" href="<%= BASE_URL %>favicon/safari-pinned-tab.svg" color="#000000">
+    <meta name="apple-mobile-web-app-title" content="luiskr.com">
+    <meta name="application-name" content="luiskr.com">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+    <title>Template | ERROR 401</title>
+    <link rel="stylesheet" href="<%= BASE_URL %>css/general.css" media="screen">
+
+    <style>
+      body {
+        background: rgba(0, 0, 0, 1);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      a, p, h1, h2, h3, h4, h5, h6, code, pre, hr, ul, ol, span, header, footer, aside, button {
+      font-family: 'Work Sans', sans-serif;
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: visibility .5s ease-in 0s, opacity .5s ease-in 0s;
+      opacity: 0;
+      visibility: hidden;
+      font-weight: 300;
+    }
+
+    .no-js a,
+    .no-js p,
+    .no-js h1,
+    .no-js h2,
+    .no-js h3,
+    .no-js h4,
+    .no-js h5,
+    .no-js h6,
+    .no-js code,
+    .no-js pre,
+    .no-js hr,
+    .no-js ul,
+    .no-js ol,
+    .no-js body,
+    .no-js span,
+    .no-js body,
+    .no-js header,
+    .no-js footer,
+    .no-js aside,
+    .no-js button,
+    .wf-gtamerica-n4-active a,
+    .wf-gtamerica-n4-active p,
+    .wf-gtamerica-n4-active h1,
+    .wf-gtamerica-n4-active h2,
+    .wf-gtamerica-n4-active h3,
+    .wf-gtamerica-n4-active h4,
+    .wf-gtamerica-n4-active h5,
+    .wf-gtamerica-n4-active h6,
+    .wf-gtamerica-n4-active code,
+    .wf-gtamerica-n4-active pre,
+    .wf-gtamerica-n4-active hr,
+    .wf-gtamerica-n4-active ul,
+    .wf-gtamerica-n4-active ol,
+    .wf-gtamerica-n4-active body,
+    .wf-gtamerica-n4-active span,
+    .wf-gtamerica-n4-active header,
+    .wf-gtamerica-n4-active footer,
+    .wf-gtamerica-n4-active aside,
+    .wf-gtamerica-n4-active button {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .no-js body,
+    .wf-gtamerica-n4-active body {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  
+    .no-js body.black,
+    .wf-gtamerica-n4-active body.black {
+      background-color: rgba(0, 0, 0, 1);
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="hdn">
+        Template
+    </h1>
+    <div id="app">
+       <!-- built files will be auto injected -->
+    </div>
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace("no-js","js");
+
+      var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+      var isFirefox = typeof InstallTrigger !== 'undefined';
+      var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+      var isIE = /*@cc_on!@*/false || !!document.documentMode;
+      var isEdge = !isIE && !!window.StyleMedia;
+      var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime) || /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      var isBlink = (isChrome || isOpera) && !!window.CSS;
+      var browser = isChrome ? 'chrome' : isSafari ? 'safari' : isFirefox ? 'firefox' : isEdge ? 'edge' : isOpera ? 'opera' : isIE ? 'ie': isBlink ? 'blink' : 'unknown'
+      if (isIE || isEdge) alert('Incompatible browser detected. Your browser don\'t use modern web standards. Update your browser to enjoy our content.')
+      document.documentElement.className += ' is_' + browser;
+    </script>
+  </body>
+</html>

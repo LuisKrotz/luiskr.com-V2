@@ -1,0 +1,17 @@
+
+{
+    "id": "24",
+    "path": "/projects/melissa-cine-melissa",
+    "project": "Melissa | Cine Melissa - Improvements",
+    "link": "https://www.melissa.com.br/us/collections/cine-melissa",
+    "video": {
+        "width": "853",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Melissa | Cine Melissa - Improvements",
+        "img": "/vids/poster/melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence_1.jpg",
+        "src": "/vids/melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence_1"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "role": "Frontend Developer"
+}
