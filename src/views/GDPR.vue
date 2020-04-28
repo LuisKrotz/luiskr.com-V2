@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article class="main" v-lazy-container="{ selector: 'img' }">
+        <article class="main">
             <h2 class="about-title">GDPR</h2>
         </article>
     </main>

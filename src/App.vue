@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <header id="nav" class="nav">
-      <router-link class="nav-logo" to="/">
-        <h1>luiskr.com</h1>
-      </router-link>
-
-      <div class="nav-right">
-        <router-link class="nav-link" to="/about">About</router-link>
-
-        <a class="nav-link" href="" target="_blank">Say Hello</a>
-      </div>
-    </header>
+    <h1 class="hdn">luiskr.com</h1>
     <router-view/>
   </div>
 </template>
@@ -18,15 +8,14 @@
 <script>
 import Vue from 'vue'
 import WebFontLoader from 'webfontloader' //https://github.com/typekit/webfontloader
-import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  attempt: 3,
-  observer: 'IntersectionObserver' in window ? true : false,
-  listenEvents: [ 'scroll', 'resize', 'animationend']
-});
 export default {
+  data() {
+    return {
+      storage: 'https://storage.googleapis.com/luiskr.com/media',
+      origin: window.location.origin
+    }
+  },
   created() {
     WebFontLoader.load({
       google: {

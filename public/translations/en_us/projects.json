@@ -2,5 +2,8 @@
     "project":  "Project",
     "at":       "Developed at:",
     "role":     "Role",
+    "checkit":  "Visit this project",
+    "next":     "next: ",
+    "previous": "previous: ",
     "total":    66
 }

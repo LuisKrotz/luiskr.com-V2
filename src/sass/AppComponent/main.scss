@@ -1,1 +1,99 @@
 // TODO
+
+// Max Area
+.max-area {
+    max-width: 2560px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+
+    padding: 0 to-em(($un-320 - $grid-max-area-320) / 2);
+
+    @include layout-375() {
+        padding: 0 to-em(($un-375 - $grid-max-area-375) / 2);
+    }
+
+    @include layout-414() {
+        padding: 0 to-em(($un-414 - $grid-max-area-414) / 2);
+    }
+
+    @include layout-640() {
+        padding: 0 to-em(($un-640 - $grid-max-area-640) / 2);
+    }
+
+    @include layout-768() {
+        padding: 0 to-em(($un-768 - $grid-max-area-768) / 2);
+    }
+
+    @include layout-960() {
+        padding: 0 to-em(($un-960 - $grid-max-area-960) / 2);
+    }
+
+    @include layout-1024() {
+        padding: 0 to-em(($un-1024 - $grid-max-area-1024) / 2);
+    }
+
+    @include layout-1280() {
+        padding: 0 to-em(($un-1280 - $grid-max-area-1280) / 2);
+    }
+
+    @include layout-1440() {
+        padding: 0 to-em(($un-1440 - $grid-max-area-1440) / 2);
+    }
+
+    @include layout-1680() {
+        padding: 0 to-em(($un-1680 - $grid-max-area-1680) / 2);
+    }
+
+    @include layout-1920() {
+        padding: 0 to-em(($un-1920 - $grid-max-area-1920) / 2);
+    }
+
+    @include layout-2560() {
+        padding: 0 to-em(($un-2560 - $grid-max-area-2560) / 2);
+    }
+}
+
+.main {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+
+.footer,
+.header {
+    box-shadow: -3px -3px 3px 0 rgba(255,255,255, .15), 3px 3px 5px 0 rgba(0,0,0, .5);
+    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    background-color: $color-white;
+    position: fixed;
+    width: 100vw;
+    height: 48px;
+
+    .black & {
+        background-color: $color-black;
+    }
+  
+    &-link {
+        border-radius: 5px;
+        display: inline-block;
+        text-align: center;
+        margin: 8px;
+        padding: 8px;
+        //box-shadow: -3px -3px 3px 0 rgba(255,255,255, .15), 3px 3px 5px 0 rgba(255,255,255, .05);
+    }
+}
+
+.header {
+    top: 0;
+}
+
+.footer {
+    bottom: 0;
+
+    &.absolute {
+        position: absolute;
+    }
+}

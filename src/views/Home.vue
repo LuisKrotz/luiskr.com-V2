@@ -1,43 +1,61 @@
 <template>
-  <main>
-    <article class="main" v-lazy-container="{ selector: 'img' }">
-      <h2 class="hdn" v-html="translations.home.title"></h2>
+  <div>
+    <header class="header max-area">
+      <router-link class="header-link" to="/about">About</router-link>
+      <button class="header-link" to="/">luiskr.com</button>
+      <router-link class="header-link" to="/awards">Awards</router-link>
+    </header>
+    <main class="max-area">
+      <article class="main">
+        <h2 class="hdn" v-html="translations.home.title"></h2>
 
-      <!-- Projects -->
-      <router-link class="home-project" :to="post.path + '?id=' + post.id" v-for="post in posts" :key="post.id">
-        <img v-if="post.video === undefined" :width="post.img.width" :height="post.img.height" :data-src="storage + post.img.src" :alt="post.img.alt">
-        <video v-else :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt">
-          <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
-          <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
-          <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
-        </video>
+        <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id">
+          <picture v-if="post.video === undefined">
+            <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+            <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
+            <img class="home-media" :src="storage + post.img.src + '.jpg'" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+          </picture>
+          <video v-else class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt" loading="lazy">
+            <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'">
+            <source type="video/mp4" :src="storage + post.video.src + '.mp4'">
+            <source type="video/webm" :src="storage + post.video.src + '.webm'">
+          </video>
 
-        <h3 class="home-project-title">{{ post.project }}</h3>
-        <h4 class="home-project-at"><a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a></h4>
-        <h5 class="home-project-role">{{ post.role }}</h5>
+          <h3 class="home-project-title">{{ post.project }}</h3>
+          <h4 class="home-project-at"><a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a></h4>
+          <h5 class="home-project-role">{{ post.role }}</h5>
+        </router-link>
+        <router-view/>
+      </article>
+    </main>
+    <footer class="footer absolute max-area">
+      <h4 class="hdn">Some Legal stuff</h4>
+      <router-link class="footer-link" to="/privacy-policy">
+        <svg width="18" height="18" style="fill:black">
+          <use xlink:href="#svg-user-shield"/>
+        </svg>
+        <p>Privacy Policy</p>
       </router-link>
-
-
-      <router-view/>
-    </article>
-
-
-      <footer class="footer">
-          <router-link to="/about">About</router-link>
-          <router-link to="/awards">Awards</router-link>
-
-          <button>Footer</button>
-
-          <nav>
-            <h4>Some Legal stuff</h4>
-            <router-link to="/privacy-policy">Privacy Policy</router-link>
-            <router-link to="/terms-of-use">Terms of Use</router-link>
-            <router-link to="/GDPR">GDPR</router-link>
-          </nav>
-      </footer>
-
-    <ScrollTopComponent />
-  </main>
+      <router-link class="footer-link" to="/terms-of-use">
+        <svg width="18" height="18" style="fill:black">
+          <use xlink:href="#svg-scroll"/>
+        </svg>
+        <p>Terms of Use</p>
+      </router-link>
+      <router-link class="footer-link" to="/GDPR">
+        <svg width="18" height="18" style="fill:black">
+          <use xlink:href="#svg-sun"/>
+        </svg>
+        <p>GDPR</p>
+      </router-link>
+      <router-link class="footer-link" to="/privacy-policy">
+        <svg width="18" height="18" style="fill:black">
+          <use xlink:href="#svg-hand-spock"/>
+        </svg>
+        <p>Credits</p>
+      </router-link>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -47,8 +65,9 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-      storage: 'https://storage.googleapis.com/luiskr.com/media',
-      origin: window.location.origin,
+      storage: this.$parent.storage,
+      origin: this.$parent.origin,
+      total: Number,
       translations: {
         home: Object,
         projects: Object

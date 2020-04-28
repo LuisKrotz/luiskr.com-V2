@@ -1,19 +1,67 @@
 <template>
     <main>
-        <article class="main" v-lazy-container="{ selector: 'img' }">
+        <article class="main">
             <h2 class="about-title">About Me</h2>
+
+            <nav>
+              <a class="footer-link" href="https://www.linkedin.com/in/luis-kr%C3%B6tz">
+                <svg width="36" height="36" style="fill:white">
+                  <use xlink:href="#svg-linkedin"/>
+                </svg>
+                <p>Linkedin</p>
+              </a>
+              <a class="footer-link" href="https://www.instagram.com/j_luiskrotz">
+                <svg width="36" height="36" style="fill:white">
+                  <use xlink:href="#svg-instagram"/>
+                </svg>
+                <p>Instagram</p>
+              </a>
+              <a class="footer-link" href="https://medium.com/@luis.krotz">
+                <svg width="36" height="36" style="fill:white">
+                  <use xlink:href="#svg-medium"/>
+                </svg>
+                <p>Medium</p>
+              </a>
+              <a class="footer-link" href="https://www.twitch.tv/luiskrotz">
+                <svg width="36" height="36" style="fill:white">
+                  <use xlink:href="#svg-twitch"/>
+                </svg>
+                <p>Twitch</p>
+              </a>
+              <a class="footer-link" href="https://www.youtube.com/channel/UCtjY-xreMd_JF7ovY-paRAw?view_as=subscriber">
+                <svg width="36" height="36" style="fill:white">
+                  <use xlink:href="#svg-youtube"/>
+                </svg>
+                <p>Youtube</p>
+              </a>
+            </nav>
         </article>
 
         <footer class="footer">
-            <a href="mailto:luis.krotz@gmail.com">Mail</a>
-            <a href="https://api.whatsapp.com/send?phone=+5551982274782">Whatsapp</a>
-            <a href="sms://+14035550185">iMessage</a>
-            <a href="https://github.com/LuisKrotz">Github</a>
-            <a href="https://www.linkedin.com/in/luis-kr%C3%B6tz/">Linkedin</a>
-            <a href="https://www.instagram.com/j_luiskrotz/">Instagram</a>
-            <a href="https://medium.com/@luis.krotz">Medium</a>
-            <a href="https://www.twitch.tv/luiskrotz">Twitch</a>
-            <a href="https://www.youtube.com/channel/UCtjY-xreMd_JF7ovY-paRAw?view_as=subscriber">Youtube</a>
+            <a class="footer-link" href="mailto:luis.krotz@gmail.com">
+              <svg width="36" height="36" style="fill:white">
+                <use xlink:href="#svg-envelope"/>
+              </svg>
+              <p>Mail</p>
+            </a>
+            <a class="footer-link" href="https://api.whatsapp.com/send?phone=+5551982274782">
+              <svg width="36" height="36" style="fill:white">
+                <use xlink:href="#svg-whatsapp"/>
+              </svg>
+              <p>Whatsapp</p>
+            </a>
+            <a class="footer-link" href="sms://+14035550185">
+              <svg width="36" height="36" style="fill:white">
+                <use xlink:href="#svg-mobile"/>
+              </svg>
+              <p>iMessage</p>
+            </a>
+            <a class="footer-link" href="https://github.com/LuisKrotz">
+              <svg width="36" height="36" style="fill:white">
+                <use xlink:href="#svg-github"/>
+              </svg>
+              <p>Github</p>
+            </a>
         </footer>
     </main>
 </template>
@@ -21,6 +69,12 @@
 <script>
 export default {
   name: 'About',
+  data() {
+    return {
+      storage: this.$parent.storage,
+      origin: this.$parent.origin
+    }
+  },
   created() {
     document.body.classList.add("black");
   }

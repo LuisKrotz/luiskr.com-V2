@@ -1,7 +1,8 @@
 <template>
     <main>
-        <article class="main" v-lazy-container="{ selector: 'img' }">
+        <article class="main">
             <h2 class="about-title">Credits</h2>
+            <p><a href="https://giphy.com/gifs/animation-juggling-handrawn-U4XvsG5EDgAOd1ecDQ">via GIPHY</a></p>
         </article>
     </main>
 </template>

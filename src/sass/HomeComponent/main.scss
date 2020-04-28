@@ -1,3 +1,8 @@
 .home {
-// TODO
+    &-media {
+        object-fit: cover;
+        object-position: center center;
+        max-width: 100%;
+        height: auto;
+    }
 }

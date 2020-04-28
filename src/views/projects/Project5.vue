@@ -1,6 +1,6 @@
 <template>
   <main class="project-internal">
-    <RenderProject id="5" />
+    <RenderProject data_id="5"/>
   </main>
 </template>
 
@@ -9,6 +9,12 @@ import RenderProject from '@/components/ProjectComponent.vue'
 
 export default {
     name: 'Project5',
+    data() {
+      return {
+        storage: this.$parent.storage,
+        origin: this.$parent.origin
+      }
+    },
     components: {
       RenderProject
     }
