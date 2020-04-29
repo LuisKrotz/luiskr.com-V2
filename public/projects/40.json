@@ -3,6 +3,8 @@
     "id": "40",
     "path": "/projects/minimelissa-website",
     "project": "Minimelissa | Website",
+    "description": "The official website of Mini Melissa. Discover shoes in the children's version. Find the nearest Clube Melissa and buy online. Meet the fun universe Mini Melissa.",
+    "part": "Leading of the front end development team.",
     "link": "https://www.minimelissa.com.br",
     "video": {
         "width": "853",
@@ -13,6 +15,6 @@
     },
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
-    "role": "Frontend Developer"
+    "role": "Leading Frontend Developer"
 }
 

@@ -3,7 +3,9 @@
     "id": "47",
     "path": "/projects/melissa-melissa+rider",
     "project": "Melissa | Melissa + Rider",
-    "link": "https://www.melissa.com.br/us/collabs/rider",
+    "description": "The official page of collab Melissa / Rider. A collab coming in.",
+    "part": "Front end developer. Development of the entire landing page front end.",
+    "link": "https://www.melissa.com.br/collabs/rider",
     "video": {
         "width": "853",
         "height": "480",

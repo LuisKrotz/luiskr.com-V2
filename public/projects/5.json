@@ -2,12 +2,14 @@
 {
     "id": "5",
     "path": "/projects/melissa-roller-joy",
-    "project": "Melissa | Roller Joy - Improvements",
+    "project": "Melissa | Roller Joy / Improvements",
+    "description": "Exclusive. Urban. Cool. Roller Joy is a skate rind that bears Melissa's signature.",
+    "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/specials/roller-joy",
     "video": {
         "width": "853",
         "height": "480",
-        "alt": "Video thumbnail of the project: Melissa | Roller Joy - Improvements",
+        "alt": "Video thumbnail of the project: Melissa | Roller Joy / Improvements",
         "img": "/vids/poster/melissa.com.br-specials-roller-joy-31-03-19_1.jpg",
         "src": "/vids/melissa.com.br-specials-roller-joy-31-03-19_1"
     },

@@ -3,6 +3,8 @@
     "id": "59",
     "path": "/projects/cicb-sustainability-forum-2016",
     "project": "CICB Sustainability Forum | 2016",
+    "description": "CSCB Sustainability Forum, Circular Economy. August 11, 2016. Feevale University Act Hall.",
+    "part": "Member of the front end development team of the Landing Page.",
     "link": "http://forum.transainc.com",
     "video": {
         "width": "768",
@@ -13,5 +15,5 @@
     },
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
-    "role": "Frontend Developer"
+    "role": "Jr. Frontend Developer"
 }

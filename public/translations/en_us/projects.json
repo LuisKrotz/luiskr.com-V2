@@ -1,9 +1,12 @@
 {
-    "project":  "Project",
-    "at":       "Developed at:",
-    "role":     "Role",
-    "checkit":  "Visit this project",
-    "next":     "next: ",
-    "previous": "previous: ",
-    "total":    66
+    "project":          "Project",
+    "at":               "Developed at:",
+    "role":             "Role:",
+    "checkit":          "Visit this project",
+    "next":             "next: ",
+    "prev":             "previous: ",
+    "home":             "go home",
+    "contribuition":    "My Contribuition:",
+    "description":      "Description:",
+    "total":            66
 }

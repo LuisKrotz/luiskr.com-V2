@@ -3,6 +3,8 @@
     "id": "45",
     "path": "/projects/melissa-bike",
     "project": "Melissa | Bike",
+    "description": "Special Webpage of Melissa's Bike.",
+    "part": "Front end developer. Development of the entire landing page front end.",
     "link": "https://www.melissa.com.br/specials/bike",
     "video": {
         "width": "853",

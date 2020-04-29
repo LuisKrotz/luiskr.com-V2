@@ -3,6 +3,8 @@
     "id": "29",
     "path": "/projects/mor-where-to-find",
     "project": "Mor | Where to Find",
+    "description": "Mor official store locator.",
+    "part": "Development of the front end of the store locator with the use of Google Maps API.",
     "link": "https://mor.com.br/onde-encontrar",
     "video": {
         "width": "853",

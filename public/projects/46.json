@@ -3,7 +3,9 @@
     "id": "46",
     "path": "/projects/melissa-galleries-sp-nyc-lon",
     "project": "Melissa | Galleries SP/NYC/LON",
-    "link": "https://www.melissa.com.br/uk/gallery/nyc",
+    "description": "Melissa's London, New York and São Paulo official Webpages.",
+    "part": "Leading developer. Development of the front end of London, São Paulo and  New York Pages, consultant on the maps section to the development team on the maps API.",
+    "link": "https://www.melissa.com.br/uk/galerias/ny",
     "video": {
         "width": "853",
         "height": "480",

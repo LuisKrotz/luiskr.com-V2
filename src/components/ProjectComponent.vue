@@ -28,14 +28,24 @@
           <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
           <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
         </video>
-
+  
         <div class="project-info-content">
           <div class="project-info-description">
-            <h4>{{ translations.at }}</h4>
-            <a :href="post.at_link">{{ post.at_place }}</a>
+            <a class="project-info-link" :href="post.at_link">
+              <h4 class="project-info-link-title">{{ translations.at }}</h4>
+              {{ post.at_place }}
+              </a>
 
-            <h4>{{ translations.role }}</h4>
-            <p>{{ post.role }}</p>
+            <h5 class="project-info-role">
+              <span class="project-info-role-title">{{ translations.role }}</span> <span>{{ post.role }}</span>
+            </h5>
+
+            <div class="project-info-more">
+              <h6 class="first">{{ translations.description}}</h6>
+              <p v-html="post.description"></p>
+              <h6>{{ translations.contribuition}}</h6>
+              <p v-html="post.part"></p>
+            </div>
           </div>
 
           <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
@@ -44,14 +54,13 @@
               <source type="video/mp4" :src="origin + '/assets/animations/animation-juggling-handrawn.mp4'"/>
               <source type="video/webm" :src="origin + '/assets/animations/animation-juggling-handrawn.webm'"/>
             </video>
-            <p class="project-info-check-blend">
-              <span class="project-info-check-txt">
-              {{ translations.checkit }}
-              </span>
-            </p>
+            <span class="project-info-check-txt">
+            {{ translations.checkit }}
+            </span>
           </a>
         </div>
       </div>
+      <iframe class="project-iframe"  frameborder="0" v-if="post.link !== undefined" :src="post.link" />
 
     </article>
     <footer class="footer max-area">
@@ -59,19 +68,19 @@
         <svg width="24" height="24" style="fill:white">
           <use xlink:href="#svg-arrow-left"/>
         </svg>
-        <p class="hdn">previous</p>
+        <p class="hdn">{{ translations.prev }}</p>
       </router-link>
       <router-link class="footer-link" to="/">
         <svg width="18" height="18" style="fill:white">
           <use xlink:href="#svg-home"/>
         </svg>
-        <p class="hdn">home</p>
+        <p class="hdn">{{ translations.home }}</p>
       </router-link>
       <router-link class="footer-link" :to="next.path">
         <svg width="24" height="24" style="fill:white">
           <use xlink:href="#svg-arrow-right"/>
         </svg>
-        <p class="hdn">next</p>
+        <p class="hdn">{{ translations.next }}</p>
       </router-link>
     </footer>
     <router-view/>
@@ -141,6 +150,14 @@ export default {
           return response.json();
         }).then((data) => {
           self.post = data;
+
+          // fetch(`${self.post.link}`)
+          // .then((response) => {
+          //   return response.json();
+          // }).then((data) => {
+          //   console.log(data)
+          // });
+
         });
       }
     }

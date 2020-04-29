@@ -2,12 +2,14 @@
 {
     "id": "14",
     "path": "/projects/melissa-j-maskrey",
-    "project": "Melissa | J Maskrey- Improvements",
+    "project": "Melissa | J Maskrey/ Improvements",
+    "description": "With Melissa, J. Maskrey conceives pieces that transport us to a magical world.",
+    "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/us/collabs/j-maskrey",
     "video": {
         "width": "853",
         "height": "480",
-        "alt": "Video thumbnail of the project: Melissa | J Maskrey- Improvements",
+        "alt": "Video thumbnail of the project: Melissa | J Maskrey/ Improvements",
         "img": "/vids/poster/melissa.com.br-collabs-j-maskrey-31-03-19_1.jpg",
         "src": "/vids/melissa.com.br-collabs-j-maskrey-31-03-19_1"
     },

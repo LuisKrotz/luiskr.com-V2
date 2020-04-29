@@ -2,12 +2,14 @@
 {
     "id": "22",
     "path": "/projects/melissa-eat-my-melissa",
-    "project": "Melissa | Eat My Melissa - Improvements",
+    "project": "Melissa | Eat My Melissa / Improvements",
+    "description": "Let whoever has never thought of biting a Melissa cast the first stone.",
+    "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/us/collections/eat-my-melissa",
     "video": {
         "width": "853",
         "height": "480",
-        "alt": "Video thumbnail of the project: Melissa | Eat My Melissa - Improvements",
+        "alt": "Video thumbnail of the project: Melissa | Eat My Melissa / Improvements",
         "img": "/vids/poster/melissa.com.br-colecoes-eat-my-melissa-31-03-19-manutencao_1.jpg",
         "src": "/vids/melissa.com.br-colecoes-eat-my-melissa-31-03-19-manutencao_1"
     },

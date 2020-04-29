@@ -1,10 +1,5 @@
 <template>
   <div>
-    <header class="header max-area">
-      <router-link class="header-link" to="/about">About</router-link>
-      <button class="header-link" to="/">luiskr.com</button>
-      <router-link class="header-link" to="/awards">Awards</router-link>
-    </header>
     <main class="max-area">
       <article class="main">
         <h2 class="hdn" v-html="translations.home.title"></h2>
@@ -28,33 +23,76 @@
         <router-view/>
       </article>
     </main>
-    <footer class="footer absolute max-area">
-      <h4 class="hdn">Some Legal stuff</h4>
-      <router-link class="footer-link" to="/privacy-policy">
-        <svg width="18" height="18" style="fill:black">
+
+    <footer class="footer max-area">
+        <h3 class="hdn">Footer</h3>
+        <button class="footer-link footer-more">
+          <svg width="18" height="18" style="fill:black">
+            <use xlink:href="#svg-caret-up"/>
+          </svg>
+          <p class="footer-link-title">More</p>
+        </button>
+
+        <!-- <button class="footer-link">
+          <svg width="18" height="18" style="fill:black">
+            <use xlink:href="#svg-arrow-up"/>
+          </svg>
+          <p class="footer-link-title">Go Up</p>
+        </button> -->
+
+        <router-link class="footer-link" to="/about">
+          <svg width="18" height="18" style="fill:black">
+            <use xlink:href="#svg-portrait"/>
+          </svg>
+          <p class="footer-link-title">About</p>
+        </router-link>
+
+        <router-link class="footer-link" to="/awards">
+          <svg width="18" height="18" style="fill:black">
+            <use xlink:href="#svg-trophy"/>
+          </svg>
+          <p class="footer-link-title">Awards</p>
+        </router-link>
+    </footer>
+
+    <div class="footer-modal footer max-area">
+      <h4 class="hdn">More stuff</h4>
+
+      <router-link class="footer-modal-link" to="/privacy-policy">
+        <svg class="footer-modal-link-svg">
           <use xlink:href="#svg-user-shield"/>
         </svg>
-        <p>Privacy Policy</p>
+        <p class="footer-modal-link-title">Privacy Policy</p>
       </router-link>
-      <router-link class="footer-link" to="/terms-of-use">
-        <svg width="18" height="18" style="fill:black">
+
+      <router-link class="footer-modal-link" to="/terms-of-use">
+        <svg class="footer-modal-link-svg">
           <use xlink:href="#svg-scroll"/>
         </svg>
-        <p>Terms of Use</p>
+        <p class="footer-modal-link-title">Terms of Use</p>
       </router-link>
-      <router-link class="footer-link" to="/GDPR">
-        <svg width="18" height="18" style="fill:black">
+
+      <router-link class="footer-modal-link center" to="/GDPR">
+        <svg class="footer-modal-link-svg">
           <use xlink:href="#svg-sun"/>
         </svg>
-        <p>GDPR</p>
+        <p class="footer-modal-link-title">GDPR</p>
       </router-link>
-      <router-link class="footer-link" to="/privacy-policy">
-        <svg width="18" height="18" style="fill:black">
+
+      <router-link class="footer-modal-link center" to="/credits">
+        <svg class="footer-modal-link-svg">
           <use xlink:href="#svg-hand-spock"/>
         </svg>
-        <p>Credits</p>
+        <p class="footer-modal-link-title">Credits</p>
       </router-link>
-    </footer>
+
+      <router-link class="footer-modal-link right" to="/">
+        <svg class="footer-modal-link-svg">
+          <use xlink:href="#svg-sitemap"/>
+        </svg>
+        <p class="footer-modal-link-title">Sitemap</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
