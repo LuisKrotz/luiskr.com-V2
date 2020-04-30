@@ -5,7 +5,20 @@
     "checkit":          "Visit this project",
     "next":             "next: ",
     "prev":             "previous: ",
-    "home":             "go home",
+    "home":             "home",
+    "animation_title":  "Animation by Giphy.com, credits on luiskr.com/credits",
+    "animation_alt": [
+        "GIPHY.com animation of ",
+        "representing the mouse cursor, more info at: luiskr.com/credits"
+    ],
+    "animation":[
+        "handrawn man juggling an arrow ",
+        "handrawn man juggling an arrow ",
+        "handrawn man juggling an arrow ",
+        "handrawn man juggling an arrow ",
+        "handrawn man juggling an arrow ",
+        "handrawn man juggling an arrow "
+    ],
     "contribuition":    "My Contribuition:",
     "description":      "Description:",
     "total":            66

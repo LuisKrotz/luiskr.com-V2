@@ -1,14 +1,24 @@
 <template>
+  <div>
+    <HeaderComponent current="info" />
     <main>
         <article class="main">
-            <h2 class="about-title">PrivacyPolicy</h2>
+            <h2 class="about-title">Privacy Policy</h2>
         </article>
     </main>
+    <FooterComponent absolute="true" current="privacy-policy"/>
+  </div>
 </template>
-
 <script>
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
 export default {
   name: 'PrivacyPolicy',
+  components: {
+    HeaderComponent,
+    FooterComponent
+  },
   created() {
     document.body.classList.add("black");
   }

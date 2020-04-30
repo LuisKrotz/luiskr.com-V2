@@ -49,10 +49,11 @@
           </div>
 
           <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
-            <video class="project-info-check-it" width="480" height="480" :poster="origin + '/assets/animations/animation-juggling-handrawn.jpg'" title="Animation by Giphy.com, credits on luiskr.com/credits" alt="GIPHY.com animation of handrawn man juggling an arrow representing the mouse cursor, more info at: luiskr.com/credits" loading="lazy" playsinline autoplay muted loop>
-              <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/animations/animation-juggling-handrawn.m3u8'"/>
-              <source type="video/mp4" :src="origin + '/assets/animations/animation-juggling-handrawn.mp4'"/>
-              <source type="video/webm" :src="origin + '/assets/animations/animation-juggling-handrawn.webm'"/>
+            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <video v-else class="project-info-check-it" width="480" height="480" :poster="origin + '/assets/animations/'+ random +'.jpg'" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
+              <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/animations/' + random + '.m3u8'"/>
+              <source type="video/mp4" :src="origin + '/assets/animations/' + random + '.mp4'"/>
+              <source type="video/webm" :src="origin + '/assets/animations/' + random + '.webm'"/>
             </video>
             <span class="project-info-check-txt">
             {{ translations.checkit }}
@@ -60,26 +61,66 @@
           </a>
         </div>
       </div>
-      <iframe class="project-iframe"  frameborder="0" v-if="post.link !== undefined" :src="post.link" />
+      <div class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''">
+        <button class="project-iframe-toggle" @click="toggleiframe()">
+          <span class="project-iframe-mark" :style="itoggle ? 'transform: translateX(100%);': ''"></span>
+          <span class="project-iframe-slide">
+            <svg class="left" width="13" height="13" style="fill:white">
+              <use xlink:href="#svg-desktop"/>
+            </svg>
+
+            <svg class="right" width="14" height="14" style="fill:white">
+              <use xlink:href="#svg-mobile"/>
+            </svg>
+          </span>
+        </button>
+        <iframe class="project-iframe" frameborder="0" :src="ilink"/>
+      </div>
 
     </article>
-    <footer class="footer max-area">
-      <router-link class="footer-link" :to="prev.path">
-        <svg width="24" height="24" style="fill:white">
-          <use xlink:href="#svg-arrow-left"/>
-        </svg>
+    <footer class="footer max-area has-media">
+      <router-link class="footer-link left" :to="prev.path">
+        <span>
+          <img v-if="prev.img === undefined && prev.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+          <picture v-else-if="prev.video === undefined">
+            <source type="image/jpeg" :srcset="storage + prev.img.src + '.jpg'">
+            <source type="image/webp" :srcset="storage + prev.img.src + '.webp'">
+            <img :src="storage + prev.img.src + '.jpg'" class="footer-link-video" :width="prev.img.width" :height="prev.img.height" :alt="prev.img.alt" loading="lazy">
+          </picture>
+          <video v-else :width="prev.video.width" class="footer-link-video" :height="prev.video.height" :poster="storage + prev.video.img" :alt="prev.video.alt" loading="lazy" playsinline autoplay muted loop>
+            <source type="application/vnd.apple.mpegurl" :src="storage + prev.video.src + '.m3u8'"/>
+            <source type="video/mp4" :src="storage + prev.video.src + '.mp4'"/>
+            <source type="video/webm" :src="storage + prev.video.src + '.webm'"/>
+          </video>
+          <svg width="24" height="24" style="fill:white">
+            <use xlink:href="#svg-arrow-left"/>
+          </svg>
+        </span>
         <p class="hdn">{{ translations.prev }}</p>
       </router-link>
       <router-link class="footer-link" to="/">
         <svg width="18" height="18" style="fill:white">
           <use xlink:href="#svg-home"/>
         </svg>
-        <p class="hdn">{{ translations.home }}</p>
+        <p class="footer-link-title">{{ translations.home }}</p>
       </router-link>
-      <router-link class="footer-link" :to="next.path">
-        <svg width="24" height="24" style="fill:white">
-          <use xlink:href="#svg-arrow-right"/>
-        </svg>
+      <router-link class="footer-link right" :to="next.path">
+        <span>
+          <img v-if="next.img === undefined && next.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+          <picture v-else-if="next.video === undefined">
+            <source type="image/jpeg" :srcset="storage + next.img.src + '.jpg'">
+            <source type="image/webp" :srcset="storage + next.img.src + '.webp'">
+            <img :src="storage + next.img.src + '.jpg'" class="footer-link-video" :width="next.img.width" :height="next.img.height" :alt="next.img.alt" loading="lazy">
+          </picture>
+          <video v-else :width="next.video.width" class="footer-link-video" :height="next.video.height" :poster="storage + next.video.img" :alt="next.video.alt" loading="lazy" playsinline autoplay muted loop>
+            <source type="application/vnd.apple.mpegurl" :src="storage + next.video.src + '.m3u8'"/>
+            <source type="video/mp4" :src="storage + next.video.src + '.mp4'"/>
+            <source type="video/webm" :src="storage + next.video.src + '.webm'"/>
+          </video>
+          <svg width="24" height="24" style="fill:white">
+            <use xlink:href="#svg-arrow-right"/>
+          </svg>
+        </span>
         <p class="hdn">{{ translations.next }}</p>
       </router-link>
     </footer>
@@ -92,10 +133,13 @@ export default {
     name: 'ProjectComponent',
     data() {
       return {
+        ilink: '',
+        itoggle: false,
         storage: '',
         origin: this.$parent.origin,
         translations: Object,
         post: Object,
+        random: Math.round(Math.random() * 5) + 1,
         next: {
           path: "/"
         },
@@ -124,6 +168,14 @@ export default {
       getPost() {
         let self = this;
 
+          fetch(`${self.origin}/projects/${self.data_id}.json`)
+          .then((response) => {
+            return response.json();
+          }).then((data) => {
+            self.post = data;
+            self.ilink = self.post.link;
+          });
+
           fetch(`${self.origin}/translations/en_us/projects.json`)
           .then((response) => {
             return response.json();
@@ -144,21 +196,16 @@ export default {
               self.prev = data;
             });
         });
-
-        fetch(`${self.origin}/projects/${self.data_id}.json`)
-        .then((response) => {
-          return response.json();
-        }).then((data) => {
-          self.post = data;
-
-          // fetch(`${self.post.link}`)
-          // .then((response) => {
-          //   return response.json();
-          // }).then((data) => {
-          //   console.log(data)
-          // });
-
-        });
+      },
+      toggleiframe() {
+        this.ilink = '';
+        if (this.itoggle) {
+          this.itoggle = false;
+          window.setTimeout(() => this.ilink = this.post.link, 500);
+        } else {
+          this.itoggle = true;
+          window.setTimeout(() => this.ilink = this.post.link, 500);
+        }
       }
     }
 }

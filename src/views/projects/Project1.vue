@@ -1,4 +1,4 @@
-<template>
+  <template>
   <main class="project-internal">
     <RenderProject data_id="1"/>
   </main>

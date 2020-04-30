@@ -27,6 +27,12 @@ export default {
   methods: {
     setFontLoaded() {
       this.$emit('font-loaded');
+    },
+    footerOpen() {
+      if(this.footeropen) {
+        this.openclass = 'footer-open';
+      }
+      
     }
   },
 };

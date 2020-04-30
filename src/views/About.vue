@@ -1,4 +1,6 @@
 <template>
+  <div>
+    <HeaderComponent current="about" />
     <main>
         <article class="main">
             <h2 class="about-title">About Me</h2>
@@ -37,7 +39,7 @@
             </nav>
         </article>
 
-        <footer class="footer">
+        <aside class="footer">
             <a class="footer-link" href="mailto:luis.krotz@gmail.com">
               <svg width="36" height="36" style="fill:white">
                 <use xlink:href="#svg-envelope"/>
@@ -62,13 +64,22 @@
               </svg>
               <p>Github</p>
             </a>
-        </footer>
+        </aside>
     </main>
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
 export default {
   name: 'About',
+  components: {
+    HeaderComponent,
+    FooterComponent
+  },
   data() {
     return {
       storage: this.$parent.storage,
