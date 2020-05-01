@@ -55,8 +55,122 @@
 }
 
 .main {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: to-em(40);
+    padding-bottom: to-em(40);
+
+    &-title {
+        text-align: center;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        font-size: to-em(104);
+    }
+
+    &-subtitle {
+        text-align: center;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        font-size: to-em(40);
+        padding: to-em(40) 0 0;
+
+        &+.main-text {
+            padding: to-em(40) 0 0;
+        }
+
+        @include layout-960() {
+            text-transform: uppercase;
+            font-weight: 200;
+        }
+    }
+
+    &-text {
+        &:first-of-type {
+            padding-top: to-em(72);
+        }
+
+        padding: to-em(4) 0;
+        font-size: to-em(16);
+        line-height: to-em(20);
+        text-align: justify;
+        position: relative;
+
+        @include layout-960() {
+            padding: to-em(8) 0;
+            font-size: to-em(24);
+            line-height: to-em(32);
+        }
+
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        ul, ol {
+            list-style-type: square;
+            margin-top: to-em(16);
+            margin-left: to-em(16);
+
+            @include layout-960() {
+                margin-top: to-em(24);
+                margin-left: to-em(24);
+            }
+
+            @include layout-1440() {
+                margin-top: to-em(64);
+                margin-left: to-em(64);
+            }
+
+            @include layout-1920() {
+                margin-top: to-em(40);
+                margin-left: to-em(40);
+            }
+
+            @include layout-2560() {
+                margin-top: to-em(64);
+                margin-left: to-em(64);
+            }
+        }
+    }
+
+    &-map {
+        border-radius: to-em(16);
+        overflow: hidden;
+        box-shadow: -2px -3px 7px 0 rgba(255, 255, 255, .3), 3px 3px 7px 0 rgba(255, 255, 255, .2);
+        transition: opacity .5s ease-in;
+        opacity: 0;
+        position: relative;
+        width:100%;
+        height: to-em(568);
+        margin: to-em(40) auto 0;
+        max-width: #{$grid-max-area-1920}px;
+        max-height: calc(100vh - #{to-em(144)});
+
+        @include layout-768() {
+            border-radius: to-em(24);
+        }
+
+        @include layout-960() {
+            height: to-em(500);
+            border-radius: to-em(280);
+            max-height: calc(100vh - #{to-em(280)});
+        }
+
+        @include layout-1440() {
+            max-height: calc(100vh - #{to-em(480)});
+            margin: 0 auto;
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+
+        .wf-active & {
+            opacity: 1;
+        }
+    }
 }
 
 
@@ -67,8 +181,23 @@
     background-color: $color-white;
     position: fixed;
     width: 100vw;
-    height: 48px;
+    height: to-em(48);
     bottom: 0;
+
+    .max-area {
+        @include layout-1440() {
+            grid-gap: to-em(64);
+        }
+
+        @include layout-1920() {
+            grid-gap: to-em(40);
+        }
+
+        @include layout-2560() {
+            grid-row-gap: to-em(40);
+            grid-column-gap: to-em(64);
+        }
+    }
 
     .black & {
         box-shadow: none;
@@ -82,7 +211,7 @@
             text-decoration: underline;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 11px;
+            font-size: to-em(11);
             letter-spacing: -0.04rem;
 
             .footer-link:hover &,
@@ -97,13 +226,16 @@
 
 
 .footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     z-index: $z-footer;
 
+    .max-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     &-more {
-        width: 48px;
-        margin-left: -10px;
+        width: to-em(48);
+        margin-left: to-em(-10);
         display: block;
 
         @mixin layout-960 () {
@@ -112,7 +244,7 @@
 
         .footer-open & {
             svg {
-                background-color: chartreuse;
+                transform: scaleY(-1);
             }
         }
 
@@ -128,9 +260,9 @@
 
     &-link {
         box-sizing: border-box;
-        min-width: 48px;
+        min-width: to-em(48);
         min-height: 100%;
-        padding: 4px 0;
+        padding: to-em(4) 0;
 
         text-align: center;
 
@@ -153,7 +285,7 @@
             display: inline-block;
             fill: $color-white;
             border-radius: 100%;
-            padding: 4px;
+            padding: to-em(4);
             background: $color-black;
             box-shadow: -1px -1px 4px 0px rgba(0,0,0,.05), 1px 1px 3px 0px rgba(0,0,0,.1);
 
@@ -179,36 +311,43 @@
             object-position: center center;
             object-fit: cover;
             position: absolute;
-            width: 32px;
-            height: 32px;
+            width: to-em(32);
+            height: to-em(32);
         }
     }
 
     &-modal {
+        z-index: 2;
+        box-shadow: -1px -1px 10px -5px rgba(0, 0, 0, .1);
         transition: transform ease-out .5s;
         transform: translateY(150%);
         background: $color-black;
-        color: rgba(255, 255, 255, .8);
-        display: grid;
-        height: 144px;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        padding-bottom: 48px;
-        bottom: 24px;
+        height: to-em(144);
+        bottom: to-em(24);
 
-        @include layout-1024() {
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: 1fr;
-        }
+        .max-area {
+            color: rgba(255, 255, 255, .8);
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding-top: to-em(8);
+            padding-bottom: to-em(40);
+            height: 100%;
 
-        .absolute & {
-            position: absolute;
+            @include layout-1024() {
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 1fr;
+            }
         }
 
         .footer-open &,
         .absolute & {
             transform: translateY(0);
+        }
+
+        .black & {
+            box-shadow: -1px -1px 10px -5px rgba(255, 255, 255, .1);
         }
 
         &-link {
@@ -226,7 +365,7 @@
             &-title {
                 display: inline-block;
                 font-weight: 600;
-                font-size: 12px;
+                font-size: to-em(12);
                 letter-spacing: -.03rem;
                 text-transform: uppercase;
                 font-style: italic;
@@ -236,14 +375,14 @@
                 }
 
                 @include layout-640() {
-                    font-size: 16px;
+                    font-size: to-em(16);
                     font-weight: 300;
                     letter-spacing: 0;
                 }
 
                 @include layout-1024() {
                     font-style: normal;
-                    letter-spacing: 1px;
+                    letter-spacing: to-em(1);
                 }
             }
 

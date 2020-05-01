@@ -6,6 +6,7 @@
     "next":             "next: ",
     "prev":             "previous: ",
     "home":             "home",
+    "home_link":         "home",
     "animation_title":  "Animation by Giphy.com, credits on luiskr.com/credits",
     "animation_alt": [
         "GIPHY.com animation of ",

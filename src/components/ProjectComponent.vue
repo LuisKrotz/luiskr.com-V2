@@ -13,8 +13,8 @@
         <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
       </video>
 
-      <h2 class="project-title">{{ translations.project }}</h2>
-      <h3 class="project-subtitle">{{ post.project }}</h3>
+      <h2 class="main-title">{{ translations.project }}</h2>
+      <h3 class="main-subtitle">{{ post.project }}</h3>
 
       <div class="project-info">
         <img v-if="post.img === undefined && post.video === undefined" class="project-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
@@ -78,53 +78,54 @@
       </div>
 
     </article>
-    <footer class="footer max-area has-media">
-      <router-link class="footer-link left" :to="prev.path">
-        <span>
-          <img v-if="prev.img === undefined && prev.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-          <picture v-else-if="prev.video === undefined">
-            <source type="image/jpeg" :srcset="storage + prev.img.src + '.jpg'">
-            <source type="image/webp" :srcset="storage + prev.img.src + '.webp'">
-            <img :src="storage + prev.img.src + '.jpg'" class="footer-link-video" :width="prev.img.width" :height="prev.img.height" :alt="prev.img.alt" loading="lazy">
-          </picture>
-          <video v-else :width="prev.video.width" class="footer-link-video" :height="prev.video.height" :poster="storage + prev.video.img" :alt="prev.video.alt" loading="lazy" playsinline autoplay muted loop>
-            <source type="application/vnd.apple.mpegurl" :src="storage + prev.video.src + '.m3u8'"/>
-            <source type="video/mp4" :src="storage + prev.video.src + '.mp4'"/>
-            <source type="video/webm" :src="storage + prev.video.src + '.webm'"/>
-          </video>
-          <svg width="24" height="24" style="fill:white">
-            <use xlink:href="#svg-arrow-left"/>
+    <footer class="footer has-media">
+      <div class="max-area">
+        <router-link class="footer-link left" :to="prev.path">
+          <span>
+            <img v-if="prev.img === undefined && prev.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <picture v-else-if="prev.video === undefined">
+              <source type="image/jpeg" :srcset="storage + prev.img.src + '.jpg'">
+              <source type="image/webp" :srcset="storage + prev.img.src + '.webp'">
+              <img :src="storage + prev.img.src + '.jpg'" class="footer-link-video" :width="prev.img.width" :height="prev.img.height" :alt="prev.img.alt" loading="lazy">
+            </picture>
+            <video v-else :width="prev.video.width" class="footer-link-video" :height="prev.video.height" :poster="storage + prev.video.img" :alt="prev.video.alt" loading="lazy" playsinline autoplay muted loop>
+              <source type="application/vnd.apple.mpegurl" :src="storage + prev.video.src + '.m3u8'"/>
+              <source type="video/mp4" :src="storage + prev.video.src + '.mp4'"/>
+              <source type="video/webm" :src="storage + prev.video.src + '.webm'"/>
+            </video>
+            <svg width="24" height="24" style="fill:white">
+              <use xlink:href="#svg-arrow-left"/>
+            </svg>
+          </span>
+          <p class="hdn">{{ translations.prev }}</p>
+        </router-link>
+        <router-link class="footer-link" :to="translations.home_link">
+          <svg width="18" height="18" style="fill:white">
+            <use xlink:href="#svg-home"/>
           </svg>
-        </span>
-        <p class="hdn">{{ translations.prev }}</p>
-      </router-link>
-      <router-link class="footer-link" to="/">
-        <svg width="18" height="18" style="fill:white">
-          <use xlink:href="#svg-home"/>
-        </svg>
-        <p class="footer-link-title">{{ translations.home }}</p>
-      </router-link>
-      <router-link class="footer-link right" :to="next.path">
-        <span>
-          <img v-if="next.img === undefined && next.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-          <picture v-else-if="next.video === undefined">
-            <source type="image/jpeg" :srcset="storage + next.img.src + '.jpg'">
-            <source type="image/webp" :srcset="storage + next.img.src + '.webp'">
-            <img :src="storage + next.img.src + '.jpg'" class="footer-link-video" :width="next.img.width" :height="next.img.height" :alt="next.img.alt" loading="lazy">
-          </picture>
-          <video v-else :width="next.video.width" class="footer-link-video" :height="next.video.height" :poster="storage + next.video.img" :alt="next.video.alt" loading="lazy" playsinline autoplay muted loop>
-            <source type="application/vnd.apple.mpegurl" :src="storage + next.video.src + '.m3u8'"/>
-            <source type="video/mp4" :src="storage + next.video.src + '.mp4'"/>
-            <source type="video/webm" :src="storage + next.video.src + '.webm'"/>
-          </video>
-          <svg width="24" height="24" style="fill:white">
-            <use xlink:href="#svg-arrow-right"/>
-          </svg>
-        </span>
-        <p class="hdn">{{ translations.next }}</p>
-      </router-link>
+          <p class="footer-link-title">{{ translations.home }}</p>
+        </router-link>
+        <router-link class="footer-link right" :to="next.path">
+          <span>
+            <img v-if="next.img === undefined && next.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <picture v-else-if="next.video === undefined">
+              <source type="image/jpeg" :srcset="storage + next.img.src + '.jpg'">
+              <source type="image/webp" :srcset="storage + next.img.src + '.webp'">
+              <img :src="storage + next.img.src + '.jpg'" class="footer-link-video" :width="next.img.width" :height="next.img.height" :alt="next.img.alt" loading="lazy">
+            </picture>
+            <video v-else :width="next.video.width" class="footer-link-video" :height="next.video.height" :poster="storage + next.video.img" :alt="next.video.alt" loading="lazy" playsinline autoplay muted loop>
+              <source type="application/vnd.apple.mpegurl" :src="storage + next.video.src + '.m3u8'"/>
+              <source type="video/mp4" :src="storage + next.video.src + '.mp4'"/>
+              <source type="video/webm" :src="storage + next.video.src + '.webm'"/>
+            </video>
+            <svg width="24" height="24" style="fill:white">
+              <use xlink:href="#svg-arrow-right"/>
+            </svg>
+          </span>
+          <p class="hdn">{{ translations.next }}</p>
+        </router-link>
+      </div>
     </footer>
-    <router-view/>
   </div>
 </template>
 

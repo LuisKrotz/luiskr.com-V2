@@ -37,12 +37,17 @@ const routes = [
   {
     path: '/privacy-policy',
     name: 'Privacy Policy',
-    component: () => import(/* webpackChunkName: "PrivacyPolicy" */ '../views/GDPR')
+    component: () => import(/* webpackChunkName: "PrivacyPolicy" */ '../views/PrivacyPolicy')
   },
   {
     path: '/terms-of-use',
     name: 'Terms of Use',
     component: () => import(/* webpackChunkName: "TermsOfUse" */ '../views/TermsOfUse')
+  },
+  {
+    path: '/sitemap',
+    name: 'Sitemap',
+    component: () => import(/* webpackChunkName: "Sitemap" */ '../views/Sitemap')
   },
   {
     path: '/projects/metcha-website',

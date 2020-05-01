@@ -1,0 +1,23 @@
+{
+    "title": "More stuff",
+    "privacy_policy": [
+        "/privacy-policy",
+        "Privacy Policy"
+    ],
+    "terms_of_use": [
+        "/terms-of-use",
+        "Terms of Use"
+    ],
+    "GDPR": [
+        "/GDPR",
+        "GDPR"
+    ],
+    "credits": [
+        "/credits",
+        "Credits"
+    ],
+    "sitemap": [
+        "/sitemap",
+        "Sitemap"
+    ]
+}

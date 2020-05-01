@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <HeaderComponent current="awards" />
+  <div class="footer-open">
+    <HeaderComponent current="info" />
     <main>
         <article class="main">
-            <h2 class="main-title">Awards</h2>
+            <h2 class="about-title">Sitemap</h2>
         </article>
     </main>
-    <FooterComponent />
+    <FooterComponent current="sitemap"/>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
-  name: 'Awards',
+  name: 'Sitemap',
   components: {
     HeaderComponent,
     FooterComponent

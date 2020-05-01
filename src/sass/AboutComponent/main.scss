@@ -1,1 +1,47 @@
 // TODO
+.about {
+    padding-bottom: to-em(272);
+
+    @include layout-1440() {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: to-em(64);
+
+        .main-title,
+        .main-subtitle {
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+        }
+
+        .main-title {
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        .main-subtitle {
+            font-weight: 600;
+            text-transform: uppercase;
+            grid-column-start: 2;
+        }
+
+        .main-text {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            padding: 0;
+        }
+    }
+
+    @include layout-1920() {
+        grid-gap: to-em(40);
+    }
+
+    @include layout-2560() {
+        grid-row-gap: to-em(40);
+        grid-column-gap: to-em(64);
+    }
+
+    &+.about {
+        margin-top: to-em(-170);
+    }
+}

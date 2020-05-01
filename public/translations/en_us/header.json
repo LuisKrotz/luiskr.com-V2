@@ -1,0 +1,19 @@
+{
+    "title": "Menu",
+    "toggle": [
+        "More",
+        "Less"
+    ],
+    "home": [
+        "/",
+        "Home"
+    ],
+    "about": [
+        "/about",
+        "About"
+    ],
+    "awards": [
+        "/awards",
+        "Awards"
+    ]
+}

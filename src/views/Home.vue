@@ -22,8 +22,6 @@
           <h4 class="home-project-at"><a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a></h4>
           <h5 class="home-project-role">{{ post.role }}</h5>
         </router-link>
-
-        <router-view/>
       </article>
     </main>
 

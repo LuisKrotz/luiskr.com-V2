@@ -1,42 +1,55 @@
 <template>
-    <footer class="footer-modal max-area" :style="absolute ? 'position: absolute' : ''">
-      <h4 class="hdn">More stuff</h4>
+    <footer class="footer-modal">
+      <div class="max-area" v-if="translations !== undefined">
+        <h4 class="hdn">{{ translations.title }}</h4>
 
-      <router-link :class="'footer-modal-link ' + (current === 'privacy-policy' ? 'active' : '')" to="/privacy-policy">
-        <p class="footer-modal-link-title">Privacy Policy</p>
-      </router-link>
+        <router-link class="footer-modal-link" :to="translations.privacy_policy[0]">
+          <p class="footer-modal-link-title">{{ translations.privacy_policy[1] }}</p>
+        </router-link>
 
-      <router-link :class="'footer-modal-link ' + (current === 'terms-of-use' ? 'active' : '')" to="/terms-of-use">
-        <p class="footer-modal-link-title">Terms of Use</p>
-      </router-link>
+        <router-link class="footer-modal-link" :to="translations.terms_of_use[0]">
+          <p class="footer-modal-link-title">{{ translations.terms_of_use[1] }}</p>
+        </router-link>
 
-      <router-link :class="'footer-modal-link center ' + (current === 'privacy-policy' ? 'active' : '')" to="/GDPR">
-        <p class="footer-modal-link-title">GDPR</p>
-      </router-link>
+        <router-link class="footer-modal-link center" :to="translations.GDPR[0]">
+          <p class="footer-modal-link-title">{{ translations.GDPR[1] }}</p>
+        </router-link>
 
-      <router-link :class="'footer-modal-link center-right ' + (current === 'privacy-policy' ? 'active' : '')" to="/credits">
-        <p class="footer-modal-link-title">Credits</p>
-      </router-link>
+        <router-link class="footer-modal-link center-right" :to="translations.credits[0]">
+          <p class="footer-modal-link-title">{{ translations.credits[1] }}</p>
+        </router-link>
 
-      <router-link :class="'footer-modal-link right ' + (current === 'privacy-policy' ? 'active' : '')" to="/">
-        <p class="footer-modal-link-title">Sitemap</p>
-      </router-link>
+        <router-link class="footer-modal-link right" :to="translations.sitemap[0]">
+          <p class="footer-modal-link-title">{{ translations.sitemap[1] }}</p>
+        </router-link>
+      </div>
     </footer>
 </template>
 
 <script>
 export default {
     name: 'FooterComponent',
+    data() {
+      return {
+        origin: this.$parent.origin,
+        translations: undefined
+      }
+    },
     props: {
       current: {
             type: '',
             required: false
-      },
-      absolute: {
-            type: Boolean,
-            default: false,
-            required: false
       }
+    },
+    created() {
+      let self = this;
+
+      fetch(`${self.origin}/translations/en_us/footer.json`)
+        .then((response) => {
+          return response.json();
+        }).then((data) => {
+          self.translations = data;
+        });
     }
 }
 </script>
