@@ -57,7 +57,7 @@ export default {
     name: 'HeaderComponent',
     data() {
       return {
-            origin: this.$parent.origin,
+            origin: window.location.origin,
             translations: undefined,
             open: false
         }

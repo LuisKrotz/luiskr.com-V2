@@ -1,6 +1,6 @@
 <template>
   <div class="footer-open">
-    <HeaderComponent current="info" />
+    <!-- <HeaderComponent current="info" /> -->
     <main class="max-area">
         <article>
           <div class="about main">
@@ -82,7 +82,7 @@
         </div>
         </article>
     </main>
-    <FooterComponent current="terms-of-use"/>
+    <!-- <FooterComponent current="terms-of-use"/> -->
   </div>
 </template>
 

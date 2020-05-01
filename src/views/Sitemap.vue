@@ -3,7 +3,7 @@
     <HeaderComponent current="info" />
     <main>
         <article class="main">
-            <h2 class="about-title">Sitemap</h2>
+            <h2 class="main-title">Sitemap</h2>
         </article>
     </main>
     <FooterComponent current="sitemap"/>

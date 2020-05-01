@@ -31,7 +31,7 @@ export default {
     name: 'FooterComponent',
     data() {
       return {
-        origin: this.$parent.origin,
+        origin: window.location.origin,
         translations: undefined
       }
     },
