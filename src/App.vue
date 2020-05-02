@@ -7,11 +7,12 @@
 
 <script>
 import Vue from 'vue'
-import WebFontLoader from 'webfontloader' //https://github.com/typekit/webfontloader
+import WebFontLoader from 'webfontloader'     // https://github.com/typekit/webfontloader
 
 export default {
   data() {
     return {
+      placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
       storage: 'https://storage.googleapis.com/luiskr.com/media',
       origin: window.location.origin
     }
@@ -19,7 +20,7 @@ export default {
   created() {
     WebFontLoader.load({
       google: {
-        families: ['Work+Sans:200,300,600']
+        families: ['Work+Sans:200,300,400,500']
       },
       active: this.setFontLoaded,
     });
@@ -32,7 +33,6 @@ export default {
       if(this.footeropen) {
         this.openclass = 'footer-open';
       }
-      
     }
   },
 };

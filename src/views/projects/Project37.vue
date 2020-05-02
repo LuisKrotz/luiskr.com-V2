@@ -11,6 +11,7 @@ export default {
     name: 'Project37',
     data() {
       return {
+        placeholder: this.$parent.placeholder,
         storage: this.$parent.storage,
         origin: this.$parent.origin
       }

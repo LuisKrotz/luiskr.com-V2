@@ -1,5 +1,3 @@
-// TODO
-
 // Max Area
 .max-area {
     max-width: 2560px;
@@ -56,18 +54,22 @@
 
 .main {
     padding-top: to-em(40);
-    padding-bottom: to-em(40);
+    padding-bottom: to-em(104);
 
     &-title {
         text-align: center;
         display: block;
         position: relative;
         margin: 0 auto;
-        font-size: to-em(104);
+        font-size: to-em(64);
+
+        @include layout-640() {
+            font-size: to-em(104);
+        }
     }
 
     &-subtitle {
-        text-align: center;
+        text-align: justify;
         display: block;
         position: relative;
         margin: 0 auto;
@@ -173,7 +175,6 @@
     }
 }
 
-
 .footer,
 .footer-modal {
     box-shadow: -1px -1px 3px 0 rgba(0, 0, 0, 0.05);
@@ -181,7 +182,6 @@
     background-color: $color-white;
     position: fixed;
     width: 100vw;
-    height: to-em(48);
     bottom: 0;
 
     .max-area {
@@ -224,9 +224,10 @@
     }
 }
 
-
 .footer {
     z-index: $z-footer;
+    padding-top: to-em(8);
+    height: to-em(48 + 8 + 20);
 
     .max-area {
         display: grid;
@@ -322,8 +323,13 @@
         transition: transform ease-out .5s;
         transform: translateY(150%);
         background: $color-black;
-        height: to-em(144);
-        bottom: to-em(24);
+        padding-top: to-em(8);
+        height: to-em(144 + 8 + 20);
+        bottom: to-em(24 + 8 + 20);
+
+        @include layout-1024() {
+            bottom: 0;
+        }
 
         .max-area {
             color: rgba(255, 255, 255, .8);
@@ -403,4 +409,8 @@
             }
         }
     }
+}
+
+.shuttle {
+    transform: rotate(-90deg);
 }

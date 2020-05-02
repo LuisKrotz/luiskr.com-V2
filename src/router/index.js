@@ -20,9 +20,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "About" */ '../views/About')
   },
   {
-    path: '/awards',
-    name: 'Awards',
-    component: () => import(/* webpackChunkName: "Awards" */ '../views/Awards')
+    path: '/social',
+    name: 'Social',
+    component: () => import(/* webpackChunkName: "Social" */ '../views/Social')
   },
   {
     path: '/credits',
@@ -43,11 +43,6 @@ const routes = [
     path: '/terms-of-use',
     name: 'Terms of Use',
     component: () => import(/* webpackChunkName: "TermsOfUse" */ '../views/TermsOfUse')
-  },
-  {
-    path: '/sitemap',
-    name: 'Sitemap',
-    component: () => import(/* webpackChunkName: "Sitemap" */ '../views/Sitemap')
   },
   {
     path: '/projects/metcha-website',

@@ -15,7 +15,7 @@ export default {
             platform: {},
             width: '100%',
             height: '100%',
-            origin: window.location.origin
+            origin: this.$parent.origin
         }
     },
     props: {

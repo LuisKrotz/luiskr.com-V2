@@ -19,9 +19,9 @@
           <p class="footer-modal-link-title">{{ translations.credits[1] }}</p>
         </router-link>
 
-        <router-link class="footer-modal-link right" :to="translations.sitemap[0]">
-          <p class="footer-modal-link-title">{{ translations.sitemap[1] }}</p>
-        </router-link>
+        <a class="footer-modal-link right" :href="translations.instagram[0]" rel="noopener">
+          <p class="footer-modal-link-title">{{ translations.instagram[1] }}</p>
+        </a>
       </div>
     </footer>
 </template>
@@ -31,7 +31,7 @@ export default {
     name: 'FooterComponent',
     data() {
       return {
-        origin: window.location.origin,
+        origin: this.$parent.origin,
         translations: undefined
       }
     },

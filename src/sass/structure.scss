@@ -6,6 +6,7 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,13 +49,20 @@ img {
     background: rgba(0, 0, 0, 0);
 }
 
-
-video,
-img {
-    background-color: rgba(0, 0, 0, 0.05);
+video {
+    background: rgba(0, 0, 0, 0.05) url("./icons/play.gif") no-repeat center center;
+    background-size: cover;
 
     .black & {
-        background-color: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, .025) url("./icons/play.gif") no-repeat center center;
+    }
+}
+img {
+    background: rgba(0, 0, 0, 0.05) url("./icons/vcr.gif") no-repeat center center;
+    background-size: cover;
+
+    .black & {
+        background: rgba(255, 255, 255, .025) url("./icons/vcr.gif") no-repeat center center;
     }
 }
 

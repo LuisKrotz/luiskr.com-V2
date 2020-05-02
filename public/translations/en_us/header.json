@@ -12,8 +12,8 @@
         "/about",
         "About"
     ],
-    "awards": [
-        "/awards",
-        "Awards"
+    "social": [
+        "/social",
+        "Social"
     ]
 }

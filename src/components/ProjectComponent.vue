@@ -13,8 +13,8 @@
         <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
       </video>
 
-      <h2 class="main-title">{{ translations.project }}</h2>
-      <h3 class="main-subtitle">{{ post.project }}</h3>
+      <h2 class="project-title">{{ translations.project }}</h2>
+      <h3 class="project-subtitle">{{ post.project }}</h3>
 
       <div class="project-info">
         <img v-if="post.img === undefined && post.video === undefined" class="project-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
@@ -99,9 +99,9 @@
           </span>
           <p class="hdn">{{ translations.prev }}</p>
         </router-link>
-        <router-link class="footer-link" :to="translations.home_link">
-          <svg width="18" height="18" style="fill:white">
-            <use xlink:href="#svg-home"/>
+        <router-link class="footer-link" to="/">
+          <svg width="18" height="18" style="fill:white" class="shuttle">
+            <use xlink:href="#svg-space-shuttle"/>
           </svg>
           <p class="footer-link-title">{{ translations.home }}</p>
         </router-link>
@@ -126,6 +126,7 @@
         </router-link>
       </div>
     </footer>
+    <router-view/>
   </div>
 </template>
 
@@ -160,6 +161,8 @@ export default {
     },
     created() {
       document.body.classList.add("black");
+      document.body.scrollTop = 0;                // For Safari
+      document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
     },
     mounted() {
       this.storage = this.$parent.storage,

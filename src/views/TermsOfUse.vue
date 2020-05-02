@@ -1,6 +1,6 @@
 <template>
   <div class="footer-open">
-    <!-- <HeaderComponent current="info" /> -->
+    <HeaderComponent current="info" />
     <main class="max-area">
         <article>
           <div class="about main">
@@ -80,9 +80,9 @@
         <div class="about main">
             <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"/>
         </div>
-        </article>
+      </article>
     </main>
-    <!-- <FooterComponent current="terms-of-use"/> -->
+    <FooterComponent current="terms-of-use"/>
   </div>
 </template>
 
@@ -98,8 +98,15 @@ export default {
     FooterComponent,
     HereMapsComponent
   },
+  data() {
+    return {
+      origin: this.$parent.origin
+    }
+  },
   created() {
     document.body.classList.add("black");
+    document.body.scrollTop = 0;                // For Safari
+    document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   }
 }
 </script>

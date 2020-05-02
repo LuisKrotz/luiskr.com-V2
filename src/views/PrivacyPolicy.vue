@@ -53,12 +53,19 @@ import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   name: 'PrivacyPolicy',
+  data() {
+    return {
+      origin: this.$parent.origin
+    }
+  },
   components: {
     HeaderComponent,
     FooterComponent
   },
   created() {
     document.body.classList.add("black");
+    document.body.scrollTop = 0;                // For Safari
+    document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   }
 }
 </script>

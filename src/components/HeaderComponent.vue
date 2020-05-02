@@ -13,39 +13,39 @@
             </span>
             </button>
 
-            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current === 'awards'" style="text-align: center">
+            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current === 'social'" style="text-align: center">
                 <span>
-                    <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-home"/>
+                    <svg width="18" height="18" style="fill:white" class="shuttle">
+                        <use xlink:href="#svg-space-shuttle"/>
                     </svg>
                     <p class="footer-link-title">{{ translations.home[1] }}</p>
                 </span>
             </router-link>
 
-            <router-link class="footer-link" :to="translations.about[0]" v-if="current !== 'about'" :style="'text-align: '+ (current === 'awards' ? 'right' : current === 'info' ? 'left' : 'center')">
+            <router-link class="footer-link" :to="translations.about[0]" v-if="current !== 'about'" :style="'text-align: '+ (current === 'social' ? 'right' : current === 'info' ? 'left' : 'center')">
                 <span>
                     <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-portrait"/>
+                        <use xlink:href="#svg-scroll"/>
                     </svg>
                     <p class="footer-link-title">{{ translations.about[1] }}</p>
                 </span>
             </router-link>
 
-            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current !== 'awards'" style="text-align: center">
+            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current !== 'social'" style="text-align: center">
                 <span>
-                    <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-home"/>
+                    <svg width="18" height="18" style="fill:white" class="shuttle">
+                        <use xlink:href="#svg-space-shuttle"/>
                     </svg>
                     <p class="footer-link-title">{{ translations.home[1] }}</p>
                 </span>
             </router-link>
 
-            <router-link class="footer-link" :to="translations.awards[0]" v-if="current !== 'awards'" style="text-align: right">
+            <router-link class="footer-link" :to="translations.social[0]" v-if="current !== 'social'" style="text-align: right">
                 <span>
                     <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-trophy"/>
+                        <use xlink:href="#svg-user-astronaut"/>
                     </svg>
-                    <p class="footer-link-title">{{ translations.awards[1] }}</p>
+                    <p class="footer-link-title">{{ translations.social[1] }}</p>
                 </span>
             </router-link>
         </div>
@@ -57,7 +57,7 @@ export default {
     name: 'HeaderComponent',
     data() {
       return {
-            origin: window.location.origin,
+            origin: this.$parent.origin,
             translations: undefined,
             open: false
         }
