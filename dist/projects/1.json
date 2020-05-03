@@ -1,0 +1,18 @@
+
+{
+    "id": "1",
+    "path": "/projects/genesysinf-sageweb",
+    "project": "GenesysInf | SageWeb",
+    "description": "Management and Business Automation System.",
+    "part": "Fullstack C# asp.net developer on the development team of the migration from desktop to web of GenesysInf Sageweb.",
+    "link": "http://177.37.54.153",
+    "img": {
+            "width": "1366",
+            "height": "728",
+            "alt": "GenesysInf | SageWeb",
+            "src": "/img/SagewebRelatoriosGerenciais2"
+    },
+    "at_link": "https://www.genesysinf.com.br",
+    "at_place": "@GenesysInf",
+    "role": "FullStack Developer"
+}

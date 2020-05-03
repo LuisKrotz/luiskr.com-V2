@@ -1,0 +1,19 @@
+
+{
+    "id": "55",
+    "path": "/projects/melissa-mapping",
+    "project": "Melissa | Mapping",
+    "description": "The S/S '18 collection's official page on Melissa's site. Crossed neighborhoods, streets, and alleys.Looked around. And Found the crucial inspiration for Mapping in cities themselves.",
+    "part": "Sr. Front end developer of the entire front end of the collection landing page.",
+    "link": "https://www.melissa.com.br/us/collections/mapping",
+    "video": {
+        "width": "853",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Melissa | Mapping",
+        "img": "/vids/poster/melissa.com.br-colecoes-mapping-31-03-19_1.jpg",
+        "src": "/vids/melissa.com.br-colecoes-mapping-31-03-19_1"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "role": "Frontend Developer"
+}

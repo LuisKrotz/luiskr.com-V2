@@ -1,0 +1,19 @@
+{
+    "id": "66",
+    "last": true,
+    "path": "/projects/metcha-website",
+    "project": "METCHA | the oracle of leather design culture.",
+    "description": "The oracle of leather design culture.",
+    "part": "Leading, creation an maintenence of METCHA's entire Front End development.",
+    "link": "https://metcha.com",
+    "video": {
+        "width": "768",
+        "height": "480",
+        "alt": "Video thumbnail of the project: METCHA",
+        "img": "/vids/poster/metcha.com.jpg",
+        "src": "/vids/metcha.com"
+    },
+    "at_link": "https://www.melissa.com.br/colecoes/color-me",
+    "at_place": "@transainc",
+    "role": "Leading Frontend Developer"
+}

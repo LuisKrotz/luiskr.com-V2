@@ -1,0 +1,19 @@
+
+{
+    "id": "61",
+    "path": "/projects/cicb-sustainability-forum-2018",
+    "project": "CICB Sustainability Forum | 2018",
+    "description": "CSCB Sustainability Forum, What is the return on sustainable investment?. November 8, 2018. Senai Institute of technology in leather and environment.",
+    "part": "Development of the entire Front End of the Landing Page.",
+    "link": "http://forum2018.cicb.org.br",
+    "video": {
+        "width": "768",
+        "height": "480",
+        "alt": "Video thumbnail of the project: CICB Sustainability Forum | 2018",
+        "img": "/vids/poster/forum-2018_1.jpg",
+        "src": "/vids/forum-2018_1"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "role": "Frontend Developer"
+}

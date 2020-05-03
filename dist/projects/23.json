@@ -1,0 +1,19 @@
+
+{
+    "id": "23",
+    "path": "/projects/melissa-dance-machine",
+    "project": "Melissa | Dance Machine / Improvements",
+    "description": "The official page for Melissa's Dance Machine. Inspired by the universal language of dance, giving life to a fun and democratic Fall/Winter '16 collection.",
+    "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
+    "link": "https://www.melissa.com.br/us/collections/dance-machine",
+    "video": {
+        "width": "853",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Melissa | Dance Machine / Improvements",
+        "img": "/vids/poster/melissa.com.br-colecoes-dance-machine-31-03-19-manutencao_1.jpg",
+        "src": "/vids/melissa.com.br-colecoes-dance-machine-31-03-19-manutencao_1"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "role": "Frontend Developer"
+}
