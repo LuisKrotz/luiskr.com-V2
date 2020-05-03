@@ -331,6 +331,14 @@
             bottom: 0;
         }
 
+        .info & {
+            bottom: to-em(28);
+
+            @include layout-1024() {
+                bottom: to-em(-24);
+            }
+        }
+
         .max-area {
             color: rgba(255, 255, 255, .8);
             display: grid;

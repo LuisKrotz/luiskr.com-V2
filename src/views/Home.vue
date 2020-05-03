@@ -1,19 +1,23 @@
 <template>
   <div>
     <HeaderComponent current="home" />
-
+    <video class="home-cover-bg" :poster="origin + '/assets/loopreflection.min.jpg'" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
+        <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/loopreflection' + '.m3u8'"/>
+        <source type="video/mp4" :src="origin + '/assets/loopreflection' + '.mp4'"/>
+        <source type="video/webm" :src="origin + '/assets/loopreflection' + '.webm'"/>
+    </video>
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
           <div class="max-area home-cover">
-            <h2 class="main-title">luiskr.com</h2>
+            <h2 class="main-title"><span>luiskr.com</span></h2>
             <h3 class="main-subtitle">Hy, I'm Luis.</h3>
 
-            <p class="main-text">I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>, living in Porto Alegre / Brazil and as a part time Freelancer.</p>
+            <p class="main-text"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>, living in Porto Alegre / Brazil and as a part time Freelancer.</span></p>
           </div>
           <div class="max-area home-cover">
-            <p class="main-text">In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked in on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></p>
-            <p class="main-text">Feel free to explore and contact me at any time, by <a href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a href="tel:+55982274782" rel="noopener">imessage</a> or <a href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</p>
+            <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked in on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
+            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a href="tel:+55982274782" rel="noopener">imessage</a> or <a href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
           </div>
         </div>
 
@@ -178,11 +182,297 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../sass/variables';
 @import '../sass/mixins';
 @import '../sass/placeholders';
 @import '../sass/extends';
 
-@import '../sass/HomeComponent/main.scss';
+.home {
+    .main {
+        padding: 0;
+    }
+
+    &-cover {
+        box-sizing: border-box;
+        padding-top: to-em(104);
+        padding-bottom: to-em(104);
+        min-height: 75vh;
+
+        .main-title {
+            font-size: to-em(40);
+            font-weight: 200;
+
+            span {
+                background: $color-black;
+                color: $color-white;
+            }
+        }
+
+        .main-subtitle {
+            text-align: center;
+        }
+
+        .main-text {
+            font-size: to-em(24);
+            line-height: to-em(64);
+            padding-top: to-em(168);
+
+            span {
+                background: $color-white;
+            }
+        }
+
+        @include layout-640() {
+            .main-title {
+                font-weight: 300;
+                font-size: to-em(104);
+            }
+        }
+
+        @include layout-1024() {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: to-em(64);
+
+            .main-title,
+            .main-subtitle {
+                margin: 0;
+                padding: 0;
+                text-align: justify;
+            }
+
+            .main-title {
+                grid-column-start: 2;
+                grid-column-end: -1;
+            }
+
+            .main-subtitle {
+                line-height: to-em(64);
+                font-weight: 600;
+                text-transform: uppercase;
+                grid-column-start: 1;
+            }
+
+            .main-text {
+                grid-column-start: 2;
+                grid-column-end: 5;
+                padding: 0;
+            }
+        }
+
+        @include layout-1280() {
+            .main-title {
+                grid-column-start: 3;
+                grid-column-end: 5;
+            }
+
+            .main-text {
+                grid-column-start: 3;
+                grid-column-end: 5;
+                padding: 0;
+            }
+        }
+
+        @include layout-1680() {
+            .main-subtitle {
+                grid-column-start: 2;
+            }
+        }
+
+        @include layout-1920() {
+            grid-gap: to-em(40);
+        }
+
+        @include layout-2560() {
+            grid-row-gap: to-em(40);
+            grid-column-gap: to-em(64);
+        }
+
+        &-bg {
+            background: none;
+            width: 102vw;
+            height: 100vh;
+            top: 0;
+            left: 50%;
+            position: fixed;
+            transform: translateX(-50%);
+            filter: blur(20px) invert(1) sepia(.5);
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.15;
+
+            @include layout-1024() {
+                transform: none;
+                filter: blur(20px) invert(1);
+                width: 50%;
+                right: 0;
+            }
+        }
+    }
+
+    &-projects {
+        padding-bottom: to-em(104);
+        position: relative;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .025) 25%);
+
+        .main-title {
+            padding-top: to-em(24);
+
+            @include layout-640() {
+                padding-top: to-em(16);
+            }
+
+            @include layout-768() {
+            }
+
+            @include layout-1024() {
+                padding-top: to-em(40);
+            }
+
+            @include layout-1280() {
+            }
+
+            @include layout-1680() {
+                padding-top: to-em(64);
+            }
+
+            @include layout-2560() {
+                padding-top: to-em(104);
+            }
+        }
+    }
+
+    &-project {
+        position: relative;
+        display: block;
+        text-align: center;
+
+        .home & {
+            background: $color-white;
+            box-shadow: -2px -2px 5px 0 rgba(0, 0, 0, .025), 2px 2px 5px 0 rgba(0, 0, 0, .05);
+            border-top-right-radius: to-em(2);
+            border-top-left-radius: to-em(2);
+            border-radius: to-em(4);
+            overflow: hidden;
+        }
+
+        &-parent {
+            background-size: cover;
+            position: relative;
+            display: grid;
+            padding-top: to-em($gap-320);
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-column-gap: to-em($gap-320);
+            grid-row-gap: to-em(24);
+
+            @include layout-640() {
+                padding-top: to-em($gap-640);
+                grid-column-gap: to-em($gap-640);
+                grid-row-gap: to-em(16);
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include layout-768() {
+                padding-top: to-em($gap-768);
+                grid-gap: to-em($gap-768);
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include layout-1024() {
+                padding-top: to-em($gap-1024);
+                grid-gap: to-em($gap-1024);
+                grid-row-gap: to-em(40);
+            }
+
+            @include layout-1280() {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include layout-1680() {
+                padding-top: to-em($gap-1680);
+                grid-gap: to-em($gap-1680);
+                grid-row-gap: to-em(64);
+            }
+
+            @include layout-2560() {
+                padding-top: to-em($gap-2560);
+                grid-row-gap: to-em(104);
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+
+        &-title,
+        &-at,
+        &-role {
+            position: relative;
+            text-align: justify;
+        }
+
+        &-title {
+            padding: to-em(24) to-em(16) 0;
+            span {
+                line-height: to-em(32);
+                font-size: to-em(24);
+                font-weight: 500
+            }
+        }
+
+        &-at {
+            padding: to-em(16) to-em(16) 0;
+            line-height: to-em(20);
+            font-size: to-em(16);
+
+            span {
+                font-weight: 400;
+            }
+
+            a {
+                font-weight: 400;
+            }
+        }
+
+        &-role {
+            padding: to-em(8) to-em(16) to-em(32);
+            text-transform: uppercase;
+            line-height: to-em(11);
+            font-size: to-em(11);
+
+            span {
+                font-weight: 300;
+            }
+        }
+
+        &-read {
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: right;
+            position: absolute;
+            right: 0;
+            padding: to-em(4) to-em(8);
+            padding-right: to-em(2);
+            word-break: break-all;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            color: white;
+            top: 50%;
+            border-top-left-radius: to-em(4);
+            border-bottom-left-radius: to-em(4);
+            transform: translateY(-100%);
+            box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, .15), 2px 2px 3px 0 rgba(0, 0, 0, .3);
+        }
+    }
+
+    &-media {
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+        max-width: 100%;
+        height: auto;
+        box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 1px 2px 3px rgba(0, 0, 0, .2);
+    }
+}
 </style>

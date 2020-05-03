@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueAnalytics from 'vue-analytics'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
-
 
 const routes = [
   {
@@ -373,6 +373,11 @@ const routes = [
     path: '/projects/genesysinf-sageweb',
     name: 'GenesysInf | SageWeb',
     component: ()  => import(/* webpackChunkName: 'Project1'*/ '../views/projects/Project1')
+  },
+  {
+    path: '*',
+    name: 'Error404',
+    component: () => import(/* webpackChunkName: 'Error404'*/ '../views/NotFound')
   }
 ]
 
@@ -381,6 +386,21 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+Vue.use(VueAnalytics, {
+  id: 'UA-142757641-2',
+  router,
+  autoTracking: {
+    skipSamePath: true,
+    pageviewTemplate (route) {
+      return {
+        page: route.path,
+        title: document.title,
+        location: window.location.href
+      }
+    }
+  }
 })
 
 export default router

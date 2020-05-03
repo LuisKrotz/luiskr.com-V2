@@ -80,7 +80,41 @@ export default {
         }
     },
     created() {
-      let self = this;
+        let self = this;
+
+        if (self.current !== 'info') {
+            let lastscroll = 0, lastresize = 0;
+
+            function close() {
+                document.body.classList.remove("footer-open");
+                self.open =  false;
+            }
+
+            close();
+            document.body.classList.add("info");
+
+            window.addEventListener('scroll', function() {
+                lastscroll++;
+
+                if (lastscroll > 5 && self.open) {
+                    close();
+                    lastscroll = 0;
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                lastresize++;
+
+                if (lastscroll > 10 && self.open) {
+                    close();
+                    lastscroll = 0;
+                }
+            });
+        } else {
+            document.body.classList.add("info");
+        }
+
+        self.open =  false;
 
       fetch(`${self.origin}/translations/en_us/header.json`)
         .then((response) => {

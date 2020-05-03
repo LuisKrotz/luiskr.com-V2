@@ -4,28 +4,11 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-#Redirect www to non-www
-RewriteCond %{HTTP_HOST} !^luiskr.com$
-RewriteRule (.*) https://luiskr.com/$1 [L,R=301]
-
-#Remove file extensions
+#Vue Router
+RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
-#Custom 400 errors
-ErrorDocument 400 /404
-
-#Custom 401 errors
-ErrorDocument 401 /401
-
-#Custom 403 errors
-ErrorDocument 403 /403
-
-#Custom 404 errors
-ErrorDocument 404 /404
-
-#Custom 500 errors
-ErrorDocument 500 /500
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
 
 #Prevent viewing of .htaccess file
 <Files .htaccess>
