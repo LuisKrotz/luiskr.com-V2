@@ -1,7 +1,7 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <img class="gdpr-bg" :src="origin + '/assets/gdpr.gif'" alt="" loading="lazy">
+    <img class="gdpr-bg" :src="storage + 'assets/gdpr.gif'" alt="" loading="lazy">
     <main class="max-area">
         <article class="about main">
           <h2 class="main-title">GDPR</h2>
@@ -29,6 +29,7 @@ export default {
   name: 'GDPR',
   data() {
     return {
+      storage: this.$parent.storage,
       origin: this.$parent.origin
     }
   },

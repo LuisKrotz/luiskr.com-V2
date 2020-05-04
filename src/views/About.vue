@@ -2,20 +2,20 @@
   <div>
     <HeaderComponent current="about" />
 
-    <video class="about-bg" loading="lazy" :poster="origin + '/assets/work' + webp" playsinline autoplay muted loop>
-      <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/work.m3u8'"/>
-      <source type="video/mp4" :src="origin + '/assets/work.mp4'"/>
-      <source type="video/webm" :src="origin + '/assets/work.webm'"/>
+    <video class="about-bg" loading="lazy" :poster="storage + 'assets/work' + webp" playsinline autoplay muted loop>
+      <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/work.m3u8'"/>
+      <source type="video/mp4" :src="storage + 'assets/work.mp4'"/>
+      <source type="video/webm" :src="storage + 'assets/work.webm'"/>
     </video>
     <main class="max-area">
         <article>
           <div class="about main">
             <h2 class="main-title">About</h2>
             <p class="main-text">I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated on August of 2014 in Technology in Sistems for the Internet.
-              <video loading="lazy" :poster="origin + '/assets/college' + webp" playsinline autoplay muted loop width="480" height="270">
-                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/college.m3u8'"/>
-                <source type="video/mp4" :src="origin + '/assets/college.mp4'"/>
-                <source type="video/webm" :src="origin + '/assets/college.webm'"/>
+              <video loading="lazy" :poster="storage + 'assets/college' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/college.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'assets/college.mp4'"/>
+                <source type="video/webm" :src="storage + 'assets/college.webm'"/>
               </video>
             </p>
             <h3 class="main-subtitle">Working at transainc</h3>
@@ -23,10 +23,10 @@
 
             <h3 class="main-subtitle">Freelacing</h3>
             <p class="main-text">I starded my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
-              <video loading="lazy" :poster="origin + '/assets/cat-lady' + webp" playsinline autoplay muted loop width="480" height="270">
-                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/cat-lady.m3u8'"/>
-                <source type="video/mp4" :src="origin + '/assets/cat-lady.mp4'"/>
-                <source type="video/webm" :src="origin + '/assets/cat-lady.webm'"/>
+              <video loading="lazy" :poster="storage + 'assets/cat-lady' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/cat-lady.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'assets/cat-lady.mp4'"/>
+                <source type="video/webm" :src="storage + 'assets/cat-lady.webm'"/>
               </video>
             </p>
             <h3 class="main-subtitle">Genesyinf / Dismaquinas</h3>
@@ -34,10 +34,10 @@
 
             <h3 class="main-subtitle">Whats keeps me sane</h3>
             <p class="main-text">I really enjoy listening to music, music is my way to relax after a hard, stressfull or plainly normal day, I can listen to music at any given moment - <em>if the moment allows it.</em>
-              <video loading="lazy" :poster="origin + '/assets/music' + webp" playsinline autoplay muted loop width="480" height="264">
-                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/music.m3u8'"/>
-                <source type="video/mp4" :src="origin + '/assets/music.mp4'"/>
-                <source type="video/webm" :src="origin + '/assets/music.webm'"/>
+              <video loading="lazy" :poster="storage + 'assets/music' + webp" playsinline autoplay muted loop width="480" height="264">
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/music.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'assets/music.mp4'"/>
+                <source type="video/webm" :src="storage + 'assets/music.webm'"/>
               </video>
             </p>
             <p class="main-text">Another passion of mine are video games, I love playing for hours and hours and hours.</p>
@@ -51,10 +51,10 @@
 
             <h3 class="main-subtitle">Languages</h3>
             <p class="main-text">I love learnign a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
-              <video loading="lazy" :poster="origin + '/assets/bean' + webp" playsinline autoplay muted loop width="480" height="270">
-                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/bean.m3u8'"/>
-                <source type="video/mp4" :src="origin + '/assets/bean.mp4'"/>
-                <source type="video/webm" :src="origin + '/assets/bean.webm'"/>
+              <video loading="lazy" :poster="storage + 'assets/bean' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/bean.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'assets/bean.mp4'"/>
+                <source type="video/webm" :src="storage + 'assets/bean.webm'"/>
               </video>
             </p>
 
@@ -110,6 +110,7 @@ export default {
   data() {
     return {
       placeholder: this.$parent.placeholder,
+      storage: this.$parent.storage,
       origin: this.$parent.origin
     }
   },

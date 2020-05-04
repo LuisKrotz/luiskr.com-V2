@@ -1,10 +1,10 @@
 <template>
 <div class="footer-open">
   <HeaderComponent current="info" />
-    <video class="credits-bg" :poster="origin + '/assets/the-end.min' + webp" loop muted autoplay playsinline alt="Bage background - the end">
-        <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/the-end' + '.m3u8'"/>
-        <source type="video/mp4" :src="origin + '/assets/the-end' + '.mp4'"/>
-        <source type="video/webm" :src="origin + '/assets/the-end' + '.webm'"/>
+    <video class="credits-bg" :poster="storage + 'assets/the-end.min' + webp" loop muted autoplay playsinline alt="Bage background - the end">
+        <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/the-end' + '.m3u8'"/>
+        <source type="video/mp4" :src="storage + 'assets/the-end' + '.mp4'"/>
+        <source type="video/webm" :src="storage + 'assets/the-end' + '.webm'"/>
     </video>
     <main class="max-area credits">
         <article>
@@ -54,6 +54,7 @@ export default {
   name: 'Credits',
   data() {
     return {
+      storage: this.$parent.storage,
       origin: this.$parent.origin,
       webp: this.$parent.webp
     }

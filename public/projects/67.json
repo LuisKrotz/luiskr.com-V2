@@ -3,8 +3,8 @@
     "last": false,
     "path": "/projects/metcha-cms",
     "project": "METCHA | CMS",
-    "description": "METCHA's content management system, developed by: <a href='https://www.linkedin.com/in/renanmachadoloureiro' rel='noopener' target='_blank'/><svg width='16' height='16' style='fill:white'><use xlink:href='#svg-linkedin'/></svg> Renan Machado</a>",
-    "part": "Front End improvements on styling anf visual touhups for UX improvement on Metcha CMS, developed by <a href='https://www.linkedin.com/in/renanmachadoloureiro' rel='noopener' target='_blank'/><svg width='16' height='16' style='fill:white'><use xlink:href='#svg-linkedin'/></svg> Renan Machado</a> with the use of Laravel, Bootstrap, Jquery, Mysql using the Framework Laraflex.",
+    "description": "METCHA's content management system, developed by: <a href='https://www.linkedin.com/in/renanmachadoloureiro' rel='noopener' target='_blank'/><svg width='16' height='10' style='fill:white'><use xlink:href='#svg-linkedin'/></svg> Renan Machado</a>",
+    "part": "Front End improvements on styling anf visual touhups for UX improvement on Metcha CMS, developed by <a href='https://www.linkedin.com/in/renanmachadoloureiro' rel='noopener' target='_blank'/><svg width='16' height='10' style='fill:white'><use xlink:href='#svg-linkedin'/></svg> Renan Machado</a> with the use of Laravel, Bootstrap, Jquery, Mysql using the Framework Laraflex.",
     "link": "http://cms.metcha.com",
     "video": {
         "width": "768",

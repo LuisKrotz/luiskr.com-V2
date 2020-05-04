@@ -1,10 +1,10 @@
 <template>
   <div>
     <HeaderComponent current="home" />
-    <video class="home-cover-bg" :poster="origin + '/assets/loopreflection.min' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
-        <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/loopreflection' + '.m3u8'"/>
-        <source type="video/mp4" :src="origin + '/assets/loopreflection' + '.mp4'"/>
-        <source type="video/webm" :src="origin + '/assets/loopreflection' + '.webm'"/>
+    <video class="home-cover-bg" :poster="storage + 'assets/loopreflection.min' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
+        <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/loopreflection' + '.m3u8'"/>
+        <source type="video/mp4" :src="storage + 'assets/loopreflection' + '.mp4'"/>
+        <source type="video/webm" :src="storage + 'assets/loopreflection' + '.webm'"/>
     </video>
     <main class="home">
       <article class="main">
@@ -27,14 +27,14 @@
 
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id">
               <picture v-if="post.video === undefined">
-                <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-                <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-                <img class="home-media" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+                <source type="image/jpeg" :srcset="storage + 'media' +post.img.src + '.jpg'">
+                <source type="image/webp" :srcset="storage + 'media' +post.img.src + '.webp'">
+                <img class="home-media" :src="storage + 'media' +post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
               </picture>
-              <video v-view="viewHandler" v-else class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
-                <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'">
-                <source type="video/mp4" :src="storage + post.video.src + '.mp4'">
-                <source type="video/webm" :src="storage + post.video.src + '.webm'">
+              <video v-view="viewHandler" v-else class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + 'media' +post.video.img" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'media' +post.video.src + '.m3u8'">
+                <source type="video/mp4" :src="storage + 'media' +post.video.src + '.mp4'">
+                <source type="video/webm" :src="storage + 'media' +post.video.src + '.webm'">
               </video>
 
               <h3 class="home-project-title">
@@ -140,7 +140,6 @@ export default {
         fetch(`${self.origin}/projects/${i}.json`)
         .then((response) => {
           return response.json();
-          //
         }).then((data) => {
           self.posts.push(data);
         })

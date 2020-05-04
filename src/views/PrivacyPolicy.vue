@@ -55,6 +55,7 @@ export default {
   name: 'PrivacyPolicy',
   data() {
     return {
+      storage: this.$parent.storage,
       origin: this.$parent.origin
     }
   },

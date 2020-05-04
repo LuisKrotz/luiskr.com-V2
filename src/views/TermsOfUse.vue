@@ -8,10 +8,10 @@
 
             <h3 class="main-subtitle">Version 1.0</h3>
              <p class="main-text">
-              <video loading="lazy" :poster="origin + '/assets/giphy' + webp" playsinline autoplay muted loop width="480" height="264">
-                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/giphy.m3u8'"/>
-                <source type="video/mp4" :src="origin + '/assets/giphy.mp4'"/>
-                <source type="video/webm" :src="origin + '/assets/giphy.webm'"/>
+              <video loading="lazy" :poster="storage + 'assets/giphy' + webp" playsinline autoplay muted loop width="480" height="264">
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/giphy.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'assets/giphy.mp4'"/>
+                <source type="video/webm" :src="storage + 'assets/giphy.webm'"/>
               </video>
             </p>
             <p class="main-text">The luiskr.com website located at luiskr.com is a copyrighted work belonging to Luis Krötz. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
@@ -108,6 +108,7 @@ export default {
   data() {
     return {
       webp: this.$parent.webp,
+      storage: this.$parent.storage,
       origin: this.$parent.origin
     }
   },
