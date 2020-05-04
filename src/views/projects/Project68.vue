@@ -1,6 +1,6 @@
 <template>
   <main class="project-internal">
-    <RenderProject data_id="48"/>
+    <RenderProject data_id="68"/>
   </main>
 </template>
 
@@ -8,7 +8,7 @@
 import RenderProject from '@/components/ProjectComponent.vue'
 
 export default {
-    name: 'Project48',
+    name: 'Project68',
     data() {
       return {
         placeholder: this.$parent.placeholder,
