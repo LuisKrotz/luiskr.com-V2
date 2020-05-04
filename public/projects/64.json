@@ -10,9 +10,10 @@
         "width": "768",
         "height": "480",
         "alt": "Video thumbnail of the project: Melissa | Color Me",
-        "img": "/vids/poster/www.melissa.com.br-colecoes-color-me.jpg",
+        "img": "/vids/poster/www.melissa.com.br-colecoes-color-me",
         "src": "/vids/www.melissa.com.br-colecoes-color-me"
     },
+    "has_mobile": true,
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
     "role": "Leading Frontend Developer"
