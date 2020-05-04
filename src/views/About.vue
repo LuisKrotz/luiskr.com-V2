@@ -2,22 +2,44 @@
   <div>
     <HeaderComponent current="about" />
 
+    <video class="about-bg" loading="lazy" :poster="origin + '/assets/work' + webp" playsinline autoplay muted loop>
+      <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/work.m3u8'"/>
+      <source type="video/mp4" :src="origin + '/assets/work.mp4'"/>
+      <source type="video/webm" :src="origin + '/assets/work.webm'"/>
+    </video>
     <main class="max-area">
         <article>
           <div class="about main">
             <h2 class="main-title">About</h2>
-            <p class="main-text">I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated on August of 2014 in Technology in Sistems for the Internet.</p>
+            <p class="main-text">I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated on August of 2014 in Technology in Sistems for the Internet.
+              <video loading="lazy" :poster="origin + '/assets/college' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/college.m3u8'"/>
+                <source type="video/mp4" :src="origin + '/assets/college.mp4'"/>
+                <source type="video/webm" :src="origin + '/assets/college.webm'"/>
+              </video>
+            </p>
             <h3 class="main-subtitle">Working at transainc</h3>
             <p class="main-text">Started as a Jr. front-end developer on Apr. 2016 they I learned a lot an became a front-end developer on dez. 2016 the oportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
 
             <h3 class="main-subtitle">Freelacing</h3>
-            <p class="main-text">I starded my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.</p>
-
+            <p class="main-text">I starded my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
+              <video loading="lazy" :poster="origin + '/assets/cat-lady' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/cat-lady.m3u8'"/>
+                <source type="video/mp4" :src="origin + '/assets/cat-lady.mp4'"/>
+                <source type="video/webm" :src="origin + '/assets/cat-lady.webm'"/>
+              </video>
+            </p>
             <h3 class="main-subtitle">Genesyinf / Dismaquinas</h3>
             <p class="main-text">When I graduated, I started working for a short period of time at Dismáquinas, on Frederico Westphalen, then I moved to Santana do Livramento, to live with my parents for a while, and work at Genesysinf, before leaving to Porto Alegre, my current home.</p>
 
             <h3 class="main-subtitle">Whats keeps me sane</h3>
-            <p class="main-text">I really enjoy listening to music, music is my way to relax after a hard, stressfull or plainly normal day, I can listen to music at any given moment - <em>if the moment allows it.</em></p>
+            <p class="main-text">I really enjoy listening to music, music is my way to relax after a hard, stressfull or plainly normal day, I can listen to music at any given moment - <em>if the moment allows it.</em>
+              <video loading="lazy" :poster="origin + '/assets/music' + webp" playsinline autoplay muted loop width="480" height="264">
+                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/music.m3u8'"/>
+                <source type="video/mp4" :src="origin + '/assets/music.mp4'"/>
+                <source type="video/webm" :src="origin + '/assets/music.webm'"/>
+              </video>
+            </p>
             <p class="main-text">Another passion of mine are video games, I love playing for hours and hours and hours.</p>
             <p class="main-text">I also love reading, the narratives, the places one can go while reading are fantastic. There is no better way to meet the unknown than a book.</p>
             <p class="main-text">I love to write, one of my favourite past time is to sit on my ipad and write a novel or an article by hand.</p>
@@ -28,7 +50,13 @@
             <p class="main-text">I learned english playing video games and listening to music, I learned to code by trial, error and bing watching tutorials. I can't get enought of experimenting, is so exciting.</p>
 
             <h3 class="main-subtitle">Languages</h3>
-            <p class="main-text">I love learnign a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.</p>
+            <p class="main-text">I love learnign a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
+              <video loading="lazy" :poster="origin + '/assets/bean' + webp" playsinline autoplay muted loop width="480" height="270">
+                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/bean.m3u8'"/>
+                <source type="video/mp4" :src="origin + '/assets/bean.mp4'"/>
+                <source type="video/webm" :src="origin + '/assets/bean.webm'"/>
+              </video>
+            </p>
 
             <h3 class="main-subtitle">Awards</h3>
             <p class="main-text">At the College I was awarded the prize of being placed between the <a href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
@@ -82,9 +110,7 @@ export default {
   data() {
     return {
       placeholder: this.$parent.placeholder,
-      storage: this.$parent.storage,
-      origin: this.$parent.origin,
-      translations: undefined
+      origin: this.$parent.origin
     }
   },
   created() {
@@ -103,4 +129,52 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
+
+.about-bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(7px) sepia(1) invert(1);
+    opacity: .2;
+}
+
+.about {
+  &-bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(7px) sepia(1) invert(1);
+    opacity: .2;
+  }
+
+  .main-text {
+    video {
+      display: block;
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto;
+      max-width: to-em(520);
+      margin-top: to-em(24);
+      margin-bottom: to-em(40);
+      width: 100%;
+      height: auto;
+      box-shadow: 10px 10px 0px 0 rgba(0, 0, 0, .1), 20px 20px 1px 0 rgba(0, 0, 0, 0.15);
+
+      @include layout-768() {
+         margin-top: to-em(40);
+         margin-bottom: to-em(24);
+      }
+
+      @include layout-1024() {
+        margin-left: 0;
+        max-width: calc(100% - 20px);
+      }
+    }
+  }
+}
 </style>

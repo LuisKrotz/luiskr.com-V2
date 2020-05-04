@@ -12,17 +12,23 @@ import WebFontLoader from 'webfontloader'     // https://github.com/typekit/webf
 export default {
   data() {
     return {
+      webp: false,
       placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
       storage: 'https://storage.googleapis.com/luiskr.com/media',
       origin: window.location.origin
     }
   },
   created() {
+    let self = this;
+    Modernizr.on('webp', function(result) {
+      self.webp = result ? '.webp' : '.jpg';
+    });
+
     WebFontLoader.load({
       google: {
         families: ['Work+Sans:200,300,400,500']
       },
-      active: this.setFontLoaded,
+      active: self.setFontLoaded,
     });
   },
   methods: {

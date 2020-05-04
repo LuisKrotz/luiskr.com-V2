@@ -67,7 +67,7 @@
             font-size: to-em(24);
 
             &-title {
-                font-weight: 400;
+                font-weight: 300;
                 vertical-align: text-bottom;
                 display: inline-block;
             }
@@ -79,7 +79,7 @@
             font-size: to-em(16);
 
             &-title {
-                font-weight: 400;
+                font-weight: 300;
             }
         }
 
@@ -90,7 +90,7 @@
             h6 {
                 letter-spacing: to-em(4);
                 font-size: to-em(16);
-                font-weight: 400;
+                font-weight: 300;
                 text-align: left;
                 padding: to-em(8) 0;
             }
@@ -130,7 +130,7 @@
                 display: block;
                 font-size: to-em(16);
                 text-transform: uppercase;
-                font-weight: 600;
+                font-weight: 500;
                 position: relative;
                 border-radius: 0;
                 overflow: visible;

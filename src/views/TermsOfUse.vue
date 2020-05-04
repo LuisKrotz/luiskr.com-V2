@@ -3,10 +3,17 @@
     <HeaderComponent current="info" />
     <main class="max-area">
         <article>
-          <div class="about main">
+          <div class="terms about main">
             <h2 class="main-title">Terms of Use</h2>
 
             <h3 class="main-subtitle">Version 1.0</h3>
+             <p class="main-text">
+              <video loading="lazy" :poster="origin + '/assets/giphy' + webp" playsinline autoplay muted loop width="480" height="264">
+                <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/giphy.m3u8'"/>
+                <source type="video/mp4" :src="origin + '/assets/giphy.mp4'"/>
+                <source type="video/webm" :src="origin + '/assets/giphy.webm'"/>
+              </video>
+            </p>
             <p class="main-text">The luiskr.com website located at luiskr.com is a copyrighted work belonging to Luis Krötz. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
             <p class="main-text">All such additional terms, guidelines, and rules are incorporated by reference into these Terms.</p>
             <p class="main-text">These Terms of Use described the legally binding terms and conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF THESE TERMS, DO NOT LOG INTO AND/OR USE TH           <p class="main-text">
@@ -100,6 +107,7 @@ export default {
   },
   data() {
     return {
+      webp: this.$parent.webp,
       origin: this.$parent.origin
     }
   },
@@ -118,4 +126,18 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
+
+.terms {
+  .main-text video {
+       display: block;
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto;
+      max-width: to-em(480);
+      width: 100%;
+      height: auto;
+      box-shadow: -2px -2px 3px 0 rgba(0,0,0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .15);
+  }
+}
 </style>

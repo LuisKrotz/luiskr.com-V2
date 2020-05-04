@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent current="home" />
-    <video class="home-cover-bg" :poster="origin + '/assets/loopreflection.min.jpg'" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
+    <video class="home-cover-bg" :poster="origin + '/assets/loopreflection.min' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
         <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/loopreflection' + '.m3u8'"/>
         <source type="video/mp4" :src="origin + '/assets/loopreflection' + '.mp4'"/>
         <source type="video/webm" :src="origin + '/assets/loopreflection' + '.webm'"/>
@@ -29,7 +29,7 @@
               <picture v-if="post.video === undefined">
                 <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
                 <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-                <img class="home-media" :src="storage + post.img.src + '.jpg'" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+                <img class="home-media" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
               </picture>
               <video v-view="viewHandler" v-else class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
                 <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'">
@@ -78,15 +78,16 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-      placeholder: this.$parent.placeholder,
-      storage: this.$parent.storage,
-      origin: this.$parent.origin,
-      total: Number,
-      projects: Object,
-      posts: [],
-      stop: true,
-      start: Number,
-      end: Number
+        placeholder: this.$parent.placeholder,
+        storage: this.$parent.storage,
+        origin: this.$parent.origin,
+        webp: (this.$parent.webp ? '.webp' : '.jpg'),
+        total: Number,
+        projects: Object,
+        posts: [],
+        stop: true,
+        start: Number,
+        end: Number
     }
   },
   created() {
@@ -182,7 +183,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../sass/variables';
 @import '../sass/mixins';
 @import '../sass/placeholders';
@@ -250,7 +251,7 @@ export default {
 
             .main-subtitle {
                 line-height: to-em(64);
-                font-weight: 600;
+                font-weight: 500;
                 text-transform: uppercase;
                 grid-column-start: 1;
             }
@@ -427,11 +428,11 @@ export default {
             font-size: to-em(16);
 
             span {
-                font-weight: 400;
+                font-weight: 300;
             }
 
             a {
-                font-weight: 400;
+                font-weight: 300;
             }
         }
 
@@ -442,7 +443,7 @@ export default {
             font-size: to-em(11);
 
             span {
-                font-weight: 300;
+                font-weight: 200;
             }
         }
 

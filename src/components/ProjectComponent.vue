@@ -5,9 +5,9 @@
       <picture v-else-if="post.video === undefined">
         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
         <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-        <img class="project-background" :src="storage + post.img.src + '.jpg'" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+        <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
       </picture>
-      <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop>
+      <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop>
         <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
         <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
         <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
@@ -21,9 +21,9 @@
         <picture v-else-if="post.video === undefined">
           <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
           <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-          <img :src="storage + post.img.src + '.jpg'" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+          <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
         </picture>
-        <video v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls>
+        <video v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls>
           <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
           <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
           <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
@@ -46,11 +46,29 @@
               <h6>{{ translations.contribuition}}</h6>
               <p v-html="post.part"></p>
             </div>
+
+            <div  v-if="post.extra !== undefined">
+              <div v-for="extra in post.extra" :key="extra.id" class="project-info-more">
+                <h6 class="title">{{ extra.alt }}</h6>
+                <p v-html="extra.title"></p>
+
+                <picture v-if="extra.type === 'img'">
+                  <source type="image/jpeg" :srcset="storage + extra.src + '.jpg'">
+                  <source type="image/webp" :srcset="storage + extra.src + '.webp'">
+                  <img :src="storage + extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt" loading="lazy">
+                </picture>
+                <video v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage + extra.img" :alt="extra.alt" loading="lazy" playsinline autoplay muted loop controls>
+                  <source type="application/vnd.apple.mpegurl" :src="storage + extra.src + '.m3u8'"/>
+                  <source type="video/mp4" :src="storage + extra.src + '.mp4'"/>
+                  <source type="video/webm" :src="storage + extra.src + '.webm'"/>
+                </video>
+              </div>
+            </div>
           </div>
 
           <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
             <img v-if="translations.animation_alt === undefined" class="project-info-check-it" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-            <video v-else class="project-info-check-it" width="480" height="480" :poster="origin + '/assets/animations/'+ random +'.jpg'" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
+            <video v-else class="project-info-check-it" width="480" height="480" :poster="origin + '/assets/animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/animations/' + random + '.m3u8'"/>
               <source type="video/mp4" :src="origin + '/assets/animations/' + random + '.mp4'"/>
               <source type="video/webm" :src="origin + '/assets/animations/' + random + '.webm'"/>
@@ -86,9 +104,9 @@
             <picture v-else-if="prev.video === undefined">
               <source type="image/jpeg" :srcset="storage + prev.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + prev.img.src + '.webp'">
-              <img :src="storage + prev.img.src + '.jpg'" class="footer-link-video" :width="prev.img.width" :height="prev.img.height" :alt="prev.img.alt" loading="lazy">
+              <img :src="storage + prev.img.src + webp" class="footer-link-video" :width="prev.img.width" :height="prev.img.height" :alt="prev.img.alt" loading="lazy">
             </picture>
-            <video v-else :width="prev.video.width" class="footer-link-video" :height="prev.video.height" :poster="storage + prev.video.img" :alt="prev.video.alt" loading="lazy" playsinline autoplay muted loop>
+            <video v-else :width="prev.video.width" class="footer-link-video" :height="prev.video.height" :poster="storage + prev.video.img + webp" :alt="prev.video.alt" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="storage + prev.video.src + '.m3u8'"/>
               <source type="video/mp4" :src="storage + prev.video.src + '.mp4'"/>
               <source type="video/webm" :src="storage + prev.video.src + '.webm'"/>
@@ -111,9 +129,9 @@
             <picture v-else-if="next.video === undefined">
               <source type="image/jpeg" :srcset="storage + next.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + next.img.src + '.webp'">
-              <img :src="storage + next.img.src + '.jpg'" class="footer-link-video" :width="next.img.width" :height="next.img.height" :alt="next.img.alt" loading="lazy">
+              <img :src="storage + next.img.src + webp" class="footer-link-video" :width="next.img.width" :height="next.img.height" :alt="next.img.alt" loading="lazy">
             </picture>
-            <video v-else :width="next.video.width" class="footer-link-video" :height="next.video.height" :poster="storage + next.video.img" :alt="next.video.alt" loading="lazy" playsinline autoplay muted loop>
+            <video v-else :width="next.video.width" class="footer-link-video" :height="next.video.height" :poster="storage + next.video.img + webp" :alt="next.video.alt" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="storage + next.video.src + '.m3u8'"/>
               <source type="video/mp4" :src="storage + next.video.src + '.mp4'"/>
               <source type="video/webm" :src="storage + next.video.src + '.webm'"/>
@@ -138,6 +156,7 @@ export default {
         ilink: '',
         itoggle: false,
         storage: '',
+        webp: this.$parent.webp,
         origin: this.$parent.origin,
         translations: Object,
         post: Object,

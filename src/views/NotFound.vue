@@ -1,7 +1,7 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <video class="notfound-bg" :poster="origin + '/assets/elvira.min.jpg'" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
+    <video class="notfound-bg" :poster="origin + '/assets/elvira.min' + webp" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
         <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/elvira' + '.m3u8'"/>
         <source type="video/mp4" :src="origin + '/assets/elvira' + '.mp4'"/>
         <source type="video/webm" :src="origin + '/assets/elvira' + '.webm'"/>
@@ -11,7 +11,7 @@
           <h2 class="main-title">Are u lost?</h2>
           <p class="main-subtitle">Click on any link at the bottom.</p>
           <h3 class="main-text">Looks like there is nothing here. Try going to luiskr.com at the home link.</h3>
-          <p class="main-text">If you make a request, I have one month to respond to you. If you would like to exercise any of these rights, please contact me at <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
+          <p class="main-text">If have q request, please contact me at <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
     <FooterComponent current="gdpr"/>
@@ -28,7 +28,8 @@ export default {
     return {
       placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
-      origin: this.$parent.origin
+      origin: this.$parent.origin,
+       webp: this.$parent.webp
     }
   },
   components: {

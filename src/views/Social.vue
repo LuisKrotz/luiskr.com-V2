@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent current="social" />
-    <video class="social-bg" :poster="origin + '/assets/glitch.min.jpg'" loop muted autoplay playsinline alt="Background - Glitch">
+    <video class="social-bg" :poster="origin + '/assets/glitch.min' + webp" loop muted autoplay playsinline alt="Background - Glitch">
         <source type="application/vnd.apple.mpegurl" :src="origin + '/assets/glitch' + '.m3u8'"/>
         <source type="video/mp4" :src="origin + '/assets/glitch' + '.mp4'"/>
         <source type="video/webm" :src="origin + '/assets/glitch' + '.webm'"/>
@@ -89,7 +89,8 @@ export default {
     return {
       placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
-      origin: this.$parent.origin
+      origin: this.$parent.origin,
+      webp: this.$parent.webp
     }
   },
   components: {

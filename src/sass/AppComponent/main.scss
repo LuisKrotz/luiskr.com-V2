@@ -209,7 +209,7 @@
 
         &-title {
             text-decoration: underline;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             font-size: to-em(11);
             letter-spacing: -0.04rem;
@@ -378,7 +378,7 @@
 
             &-title {
                 display: inline-block;
-                font-weight: 600;
+                font-weight: 500;
                 font-size: to-em(12);
                 letter-spacing: -.03rem;
                 text-transform: uppercase;
@@ -390,7 +390,7 @@
 
                 @include layout-640() {
                     font-size: to-em(16);
-                    font-weight: 300;
+                    font-weight: 200;
                     letter-spacing: 0;
                 }
 
