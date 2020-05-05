@@ -17,11 +17,11 @@
       <h3 class="project-subtitle">{{ post.project }}</h3>
 
       <div class="project-info">
-        <img v-if="post.img === undefined && post.video === undefined" class="project-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-        <picture v-else-if="post.video === undefined">
-          <source type="image/jpeg" :srcset="storage + 'media' +post.img.src + '.jpg'">
-          <source type="image/webp" :srcset="storage + 'media' +post.img.src + '.webp'">
-          <img :src="storage + 'media' +post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+        <img v-if="post.video === undefined && post.img === undefined" class="project-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <picture v-else-if="post.video === undefined">
+            <source type="image/jpeg" :srcset="storage + 'media' +post.img.src + '.jpg'">
+            <source type="image/webp" :srcset="storage + 'media' +post.img.src + '.webp'">
+            <img :src="storage + 'media' +post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
         </picture>
         <video v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + 'media' +post.video.img + webp" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls>
           <source type="application/vnd.apple.mpegurl" :src="storage + 'media' +post.video.src + '.m3u8'"/>
@@ -45,12 +45,18 @@
               <p v-html="post.description"></p>
               <h6>{{ translations.contribuition}}</h6>
               <p v-html="post.part"></p>
+              <h6 class="project-info-credit">{{ translations.credits}}</h6>
+              <p>
+                <a :href="post.at_link" rel="noopener" target="_blank">
+                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                  <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
+                </a>
+              </p>
             </div>
 
             <div  v-if="post.extra !== undefined">
               <div v-for="extra in post.extra" :key="extra.id" class="project-info-more">
                 <h6 class="title">{{ extra.alt }}</h6>
-                <p v-html="extra.title"></p>
 
                 <picture v-if="extra.type === 'img'">
                   <source type="image/jpeg" :srcset="storage + 'media' + extra.src + '.jpg'">

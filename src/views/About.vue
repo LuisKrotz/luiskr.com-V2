@@ -109,6 +109,7 @@ export default {
   },
   data() {
     return {
+      webp: this.$parent.webp,
       placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
       origin: this.$parent.origin

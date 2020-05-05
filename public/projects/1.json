@@ -7,8 +7,8 @@
     "part": "Fullstack C# asp.net developer on the development team of the migration from desktop to web of GenesysInf Sageweb.",
     "link": "http://177.37.54.153",
     "img": {
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "GenesysInf | SageWeb",
             "src": "/img/SagewebRelatoriosGerenciais2"
     },
@@ -16,8 +16,8 @@
         {
             "id": "e1",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Tree map showing SageWeb's sitemap.",
             "title": "SageWeb / Sitemap",
             "src": "/img/MapaSageweb"
@@ -25,8 +25,8 @@
         {
             "id": "e2",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Form showing styles and input of form data.",
             "title": "SageWeb / Registrations",
             "src": "/img/Sagewebcadastros"
@@ -34,8 +34,8 @@
         {
             "id": "e3",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's custom asp.net Color picker",
             "title": "SageWeb / Color Picker",
             "src": "/img/Sagewebcolorpicker"
@@ -43,8 +43,8 @@
         {
             "id": "e4",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's filters",
             "title": "SageWeb / Filters",
             "src": "/img/SagewebFiltros"
@@ -52,8 +52,8 @@
         {
             "id": "e5",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's Homepage",
             "title": "SageWeb / Homepage",
             "src": "/img/SagewebHome"
@@ -61,8 +61,8 @@
         {
             "id": "e6",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's NFE module",
             "title": "SageWeb / NFE module",
             "src": "/img/SagewebNFE"
@@ -70,8 +70,8 @@
         {
             "id": "e7",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's search module with asp.net and jquery",
             "title": "SageWeb / Search",
             "src": "/img/SagewebSistemapesquisasjquery"
@@ -79,8 +79,8 @@
         {
             "id": "e8",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's report modules",
             "title": "SageWeb / Search",
             "src": "/img/SagewebRelatóriosgerenciais"
@@ -88,8 +88,8 @@
         {
             "id": "e9",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's theme selector",
             "title": "SageWeb / Themes",
             "src": "/img/Sagewebtemasdosage"
@@ -97,8 +97,8 @@
         {
             "id": "e10",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's shortcut selector",
             "title": "SageWeb / Shortcuts",
             "src": "/img/Sagewebatalhos"
@@ -106,8 +106,8 @@
         {
             "id": "e11",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's shortcut selector customizations",
             "title": "SageWeb / Shortcuts Customizations",
             "src": "/img/Sagewebatalhosorder"
@@ -115,8 +115,8 @@
         {
             "id": "e12",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's shortcut selector customizations in list",
             "title": "SageWeb / Shortcuts List",
             "src": "/img/Sagwebatalhoslista"
@@ -124,8 +124,8 @@
         {
             "id": "e13",
             "type": "img",
-            "width": "1366",
-            "height": "768",
+            "width": "683",
+            "height": "384",
             "alt": "Print of SageWeb's personalization",
             "title": "SageWeb / Customization",
             "src": "/img/SagewebPersonalizar"
@@ -134,5 +134,6 @@
     "has_mobile": true,
     "at_link": "https://www.genesysinf.com.br",
     "at_place": "@GenesysInf",
+    "at_logo": "img/logo_genesys.png",
     "role": "FullStack Developer"
 }

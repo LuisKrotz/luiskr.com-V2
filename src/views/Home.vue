@@ -26,36 +26,40 @@
           <div class="max-area home-project-parent">
 
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id">
-              <picture v-if="post.video === undefined">
-                <source type="image/jpeg" :srcset="storage + 'media' +post.img.src + '.jpg'">
-                <source type="image/webp" :srcset="storage + 'media' +post.img.src + '.webp'">
-                <img class="home-media" :src="storage + 'media' +post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
-              </picture>
-              <video v-view="viewHandler" v-else class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + 'media' +post.video.img" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
-                <source type="application/vnd.apple.mpegurl" :src="storage + 'media' +post.video.src + '.m3u8'">
-                <source type="video/mp4" :src="storage + 'media' +post.video.src + '.mp4'">
-                <source type="video/webm" :src="storage + 'media' +post.video.src + '.webm'">
-              </video>
+                <div class="lz-container" v-if="post.video === undefined" :style="'padding-top:' + (post.img.width / post.img.height * tiles) + '%'">
+                    <picture>
+                        <source type="image/jpeg" :srcset="storage + 'media' +post.img.src + '.jpg'">
+                        <source type="image/webp" :srcset="storage + 'media' +post.img.src + '.webp'">
+                        <img class="home-media" :src="storage + 'media' +post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+                    </picture>
+                </div>
+                <div class="lz-container" v-else :style="'padding-top:' + (post.video.width / post.video.height * tiles) + '%'">
+                    <video v-view="viewHandler" class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + 'media' +post.video.img + webp" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
+                        <source type="application/vnd.apple.mpegurl" :src="storage + 'media' +post.video.src + '.m3u8'">
+                        <source type="video/mp4" :src="storage + 'media' +post.video.src + '.mp4'">
+                        <source type="video/webm" :src="storage + 'media' +post.video.src + '.webm'">
+                    </video>
+                </div>
 
-              <h3 class="home-project-title">
-                <span>{{ post.project }}</span>
-              </h3>
+                <h3 class="home-project-title">
+                    <span>{{ post.project }}</span>
+                </h3>
 
-              <h4 class="home-project-at">
-                <span>{{ projects.at }} </span>
-                <a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a>
-              </h4>
+                <h4 class="home-project-at">
+                    <span>{{ projects.at }} </span>
+                    <a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a>
+                </h4>
 
-              <h5 class="home-project-role">
-                <span>{{ projects.role }} </span>
-                <span>{{ post.role }}</span>
-              </h5>
+                <h5 class="home-project-role">
+                    <span>{{ projects.role }} </span>
+                    <span>{{ post.role }}</span>
+                </h5>
 
-              <router-link class="home-project-read" :to="post.path">
-                Read<br>More
-              </router-link>
+                <router-link class="home-project-read" :to="post.path">
+                    Read<br>More
+                </router-link>
 
-            </router-link>
+                </router-link>
           </div>
         </section>
       </article>
@@ -78,6 +82,7 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
+        tiles: 33.333,
         placeholder: this.$parent.placeholder,
         storage: this.$parent.storage,
         origin: this.$parent.origin,
@@ -94,6 +99,7 @@ export default {
     let self = this;
 
     document.body.classList.remove("black");
+    self.reflow();
 
     // Fetch projects translations
     fetch(`${self.origin}/translations/en_us/projects.json`)
@@ -127,12 +133,31 @@ export default {
           self.stop = self.start === 0;
         }
     });
+
+    window.addEventListener('resize', function() {
+        self.reflow();
+    });
+
+    window.addEventListener('orientationchange', function() {
+        self.reflow();
+    });
   },
   components: {
       HeaderComponent,
       FooterComponent
   },
   methods: {
+    reflow() {
+        let self = this, innerWidth = window.innerWidth;
+
+        if (innerWidth > 1921)
+            self.tiles = 20;
+        else if (innerWidth > 1279)
+            self.tiles = 33.333;
+        else if (innerWidth > 767)
+            self.tiles = 50;
+        
+    },
     getPosts(start, end) {
       let i = start, self = this;
   
@@ -414,6 +439,7 @@ export default {
 
         &-title {
             padding: to-em(24) to-em(16) 0;
+
             span {
                 line-height: to-em(32);
                 font-size: to-em(24);
@@ -467,11 +493,14 @@ export default {
     }
 
     &-media {
+        position: absolute;
+        top: 0;
+        left: 0;
         display: block;
         object-fit: cover;
         object-position: center center;
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        height: 100%;
         box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 1px 2px 3px rgba(0, 0, 0, .2);
     }
 }

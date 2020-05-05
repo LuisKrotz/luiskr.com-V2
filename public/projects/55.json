@@ -10,10 +10,11 @@
         "width": "853",
         "height": "480",
         "alt": "Video thumbnail of the project: Melissa | Mapping",
-        "img": "/vids/poster/melissa.com.br-colecoes-mapping-31-03-19_1",
-        "src": "/vids/melissa.com.br-colecoes-mapping-31-03-19_1"
+        "img": "/vids/melissa.com.br-colecoes-mapping-31-03-19",
+        "src": "/vids/melissa.com.br-colecoes-mapping-31-03-19"
     },
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"
 }

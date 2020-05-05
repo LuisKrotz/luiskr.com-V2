@@ -67,7 +67,7 @@
             font-size: to-em(24);
 
             &-title {
-                font-weight: 300;
+                font-weight: 400;
                 vertical-align: text-bottom;
                 display: inline-block;
             }
@@ -79,7 +79,7 @@
             font-size: to-em(16);
 
             &-title {
-                font-weight: 300;
+                font-weight: 400;
             }
         }
 
@@ -90,9 +90,22 @@
             h6 {
                 letter-spacing: to-em(4);
                 font-size: to-em(16);
-                font-weight: 300;
+                font-weight: 400;
                 text-align: left;
                 padding: to-em(8) 0;
+
+                &.project-info-credit {
+                    padding-top: to-em(40);
+                    padding-bottom: to-em(40);
+                    text-align: justify;
+                    font-size: to-em(16);
+                    text-transform: uppercase;
+                    padding-right: to-em(40);
+                    padding-left: to-em(40);
+                    text-align-last: justify;
+                    letter-spacing: to-em(16);
+                    font-weight: 400;
+                }
             }
 
             .first {
@@ -140,6 +153,31 @@
                 .project-info-check:focus & {
                     text-decoration: none;
                     color: rgba(255, 255, 255, .7);
+                }
+            }
+        }
+
+        &-credit {
+            &-logo {
+                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .1), 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
+                width: to-em(104);
+                height: to-em(104);
+                background: $color-white;
+                position: relative;
+                margin: 0 auto;
+                display: block;
+                object-fit: contain;
+                object-position: center center;
+                padding: to-em(16);
+                box-sizing: border-box;
+                margin-bottom: to-em(-8);
+
+                border-top-right-radius: to-em(16);
+                border-bottom-left-radius: to-em(16);
+                border-bottom-right-radius: to-em(4);
+
+                .black & {
+                    background: $color-white;
                 }
             }
         }

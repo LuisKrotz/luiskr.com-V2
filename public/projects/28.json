@@ -10,10 +10,11 @@
         "width": "853",
         "height": "480",
         "alt": "Video thumbnail of the project: CICB/ CSCB / Leather Law /Brazilian Leather",
-        "img": "/vids/poster/www.cicb.org.br-31-03-19_1",
-        "src": "/vids/www.cicb.org.br-31-03-19_1"
+        "img": "/vids/www.cicb.org.br-31-03-19",
+        "src": "/vids/www.cicb.org.br-31-03-19"
     },
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"
 }

@@ -7,13 +7,14 @@
     "part": "Developed the page of Melissa's NEXT contest Brazil edition. Based o the Previously created Melissa NEXT UK Edition, also coded by myself.",
     "link": "https://www.melissa.com.br/next",
     "video": {
-        "width": "768",
+        "width": "720",
         "height": "480",
         "alt": "Video thumbnail of the project: Melissa | Next",
-        "img": "/vids/poster/melissa-next-br",
-        "src": "/vids/melissa-next-br.com"
+        "img": "/vids/melissa-next-br",
+        "src": "/vids/melissa-next-br"
     },
     "at_link": "https://www.instagram.com/transainc_",
     "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
     "role": "Main Developer"
 }
