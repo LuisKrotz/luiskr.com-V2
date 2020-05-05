@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:13
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:10.066667,
+melissa.com.br:colecoes:we-are-flowers-31-03-19-0.ts
+#EXTINF:12.566667,
+melissa.com.br:colecoes:we-are-flowers-31-03-19-1.ts
+#EXT-X-ENDLIST

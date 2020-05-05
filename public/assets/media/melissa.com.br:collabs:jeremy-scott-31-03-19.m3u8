@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:16
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:16.466667,
+melissa.com.br:collabs:jeremy-scott-31-03-190.ts
+#EXTINF:4.200000,
+melissa.com.br:collabs:jeremy-scott-31-03-191.ts
+#EXTINF:5.700000,
+melissa.com.br:collabs:jeremy-scott-31-03-192.ts
+#EXT-X-ENDLIST

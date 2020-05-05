@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:16
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:16.366667,
+melissa.com.br:colecoes:wanna-be-carioca-31-03-19-0.ts
+#EXTINF:3.700000,
+melissa.com.br:colecoes:wanna-be-carioca-31-03-19-1.ts
+#EXTINF:9.233333,
+melissa.com.br:colecoes:wanna-be-carioca-31-03-19-2.ts
+#EXT-X-ENDLIST

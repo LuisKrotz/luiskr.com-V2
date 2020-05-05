@@ -1,0 +1,17 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:13
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:12.500000,
+newsletter-generator0.ts
+#EXTINF:8.333333,
+newsletter-generator1.ts
+#EXTINF:10.200000,
+newsletter-generator2.ts
+#EXTINF:11.900000,
+newsletter-generator3.ts
+#EXTINF:7.300000,
+newsletter-generator4.ts
+#EXTINF:4.216667,
+newsletter-generator5.ts
+#EXT-X-ENDLIST

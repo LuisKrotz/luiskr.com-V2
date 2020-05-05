@@ -1,10 +1,10 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <video class="notfound-bg" :poster="storage + 'assets/elvira.min' + webp" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
-        <source type="application/vnd.apple.mpegurl" :src="storage + 'assets/elvira' + '.m3u8'"/>
-        <source type="video/mp4" :src="storage + 'assets/elvira' + '.mp4'"/>
-        <source type="video/webm" :src="storage + 'assets/elvira' + '.webm'"/>
+    <video class="notfound-bg" :poster="storage + 'elvira.min' + webp" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
+        <source type="application/vnd.apple.mpegurl" :src="storage + 'elvira' + '.m3u8'"/>
+        <source type="video/mp4" :src="storage + 'elvira' + '.mp4'"/>
+        <source type="video/webm" :src="storage + 'elvira' + '.webm'"/>
     </video>
     <main class="max-area">
         <article class="about main">

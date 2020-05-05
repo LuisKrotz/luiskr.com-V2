@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:14
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:13.833333,
+minimelissa.com.br:ss18-31-03-190.ts
+#EXTINF:8.333333,
+minimelissa.com.br:ss18-31-03-191.ts
+#EXTINF:2.900000,
+minimelissa.com.br:ss18-31-03-192.ts
+#EXT-X-ENDLIST

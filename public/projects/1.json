@@ -10,7 +10,7 @@
             "width": "683",
             "height": "384",
             "alt": "GenesysInf | SageWeb",
-            "src": "/img/SagewebRelatoriosGerenciais2"
+            "src": "media/img/SagewebRelatoriosGerenciais2"
     },
     "extra": [
         {
@@ -20,7 +20,7 @@
             "height": "384",
             "alt": "Tree map showing SageWeb's sitemap.",
             "title": "SageWeb / Sitemap",
-            "src": "/img/MapaSageweb"
+            "src": "media/img/MapaSageweb"
         },
         {
             "id": "e2",
@@ -29,7 +29,7 @@
             "height": "384",
             "alt": "Form showing styles and input of form data.",
             "title": "SageWeb / Registrations",
-            "src": "/img/Sagewebcadastros"
+            "src": "media/img/Sagewebcadastros"
         },
         {
             "id": "e3",
@@ -38,7 +38,7 @@
             "height": "384",
             "alt": "Print of SageWeb's custom asp.net Color picker",
             "title": "SageWeb / Color Picker",
-            "src": "/img/Sagewebcolorpicker"
+            "src": "media/img/Sagewebcolorpicker"
         },
         {
             "id": "e4",
@@ -47,7 +47,7 @@
             "height": "384",
             "alt": "Print of SageWeb's filters",
             "title": "SageWeb / Filters",
-            "src": "/img/SagewebFiltros"
+            "src": "media/img/SagewebFiltros"
         },
         {
             "id": "e5",
@@ -56,7 +56,7 @@
             "height": "384",
             "alt": "Print of SageWeb's Homepage",
             "title": "SageWeb / Homepage",
-            "src": "/img/SagewebHome"
+            "src": "media/img/SagewebHome"
         },
         {
             "id": "e6",
@@ -65,7 +65,7 @@
             "height": "384",
             "alt": "Print of SageWeb's NFE module",
             "title": "SageWeb / NFE module",
-            "src": "/img/SagewebNFE"
+            "src": "media/img/SagewebNFE"
         },
         {
             "id": "e7",
@@ -74,7 +74,7 @@
             "height": "384",
             "alt": "Print of SageWeb's search module with asp.net and jquery",
             "title": "SageWeb / Search",
-            "src": "/img/SagewebSistemapesquisasjquery"
+            "src": "media/img/SagewebSistemapesquisasjquery"
         },
         {
             "id": "e8",
@@ -83,7 +83,7 @@
             "height": "384",
             "alt": "Print of SageWeb's report modules",
             "title": "SageWeb / Search",
-            "src": "/img/SagewebRelatóriosgerenciais"
+            "src": "media/img/SagewebRelatóriosgerenciais"
         },
         {
             "id": "e9",
@@ -92,7 +92,7 @@
             "height": "384",
             "alt": "Print of SageWeb's theme selector",
             "title": "SageWeb / Themes",
-            "src": "/img/Sagewebtemasdosage"
+            "src": "media/img/Sagewebtemasdosage"
         },
         {
             "id": "e10",
@@ -101,7 +101,7 @@
             "height": "384",
             "alt": "Print of SageWeb's shortcut selector",
             "title": "SageWeb / Shortcuts",
-            "src": "/img/Sagewebatalhos"
+            "src": "media/img/Sagewebatalhos"
         },
         {
             "id": "e11",
@@ -110,7 +110,7 @@
             "height": "384",
             "alt": "Print of SageWeb's shortcut selector customizations",
             "title": "SageWeb / Shortcuts Customizations",
-            "src": "/img/Sagewebatalhosorder"
+            "src": "media/img/Sagewebatalhosorder"
         },
         {
             "id": "e12",
@@ -119,7 +119,7 @@
             "height": "384",
             "alt": "Print of SageWeb's shortcut selector customizations in list",
             "title": "SageWeb / Shortcuts List",
-            "src": "/img/Sagwebatalhoslista"
+            "src": "media/img/Sagwebatalhoslista"
         },
         {
             "id": "e13",
@@ -128,10 +128,9 @@
             "height": "384",
             "alt": "Print of SageWeb's personalization",
             "title": "SageWeb / Customization",
-            "src": "/img/SagewebPersonalizar"
+            "src": "media/img/SagewebPersonalizar"
         }
     ],
-    "has_mobile": true,
     "at_link": "https://www.genesysinf.com.br",
     "at_place": "@GenesysInf",
     "at_logo": "img/logo_genesys.png",
