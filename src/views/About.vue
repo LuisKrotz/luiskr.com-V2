@@ -90,6 +90,12 @@
           
             <h3 class="main-subtitle">Thank You</h3>
             <p class="main-text">Thanks for reading, feel free to contact me at <a href="luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
+            
+            <h3 class="main-subtitle">Contact Information</h3>
+            <p class="main-text">Email: <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
+          </div>
+          <div class="about main">
+              <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"/>
           </div>
         </article>
     </main>
@@ -100,6 +106,7 @@
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+import HereMapsComponent from '@/components/HereMapsComponent.vue'
 
 export default {
   name: 'About',

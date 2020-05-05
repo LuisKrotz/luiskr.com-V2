@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderComponent current="home" />
-    <video class="home-cover-bg" :poster="storage + 'loopreflection.min' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
+    <video class="home-cover-bg" :poster="storage + 'loopreflection' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'loopreflection' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'loopreflection' + '.mp4'"/>
         <source type="video/webm" :src="storage + 'loopreflection' + '.webm'"/>

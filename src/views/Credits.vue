@@ -1,7 +1,7 @@
 <template>
 <div class="footer-open">
   <HeaderComponent current="info" />
-    <video class="credits-bg" :poster="storage + 'the-end.min' + webp" loop muted autoplay playsinline alt="Bage background - the end">
+    <video class="credits-bg" :poster="storage + 'the-end' + webp" loop muted autoplay playsinline alt="Bage background - the end">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'the-end' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'the-end' + '.mp4'"/>
         <source type="video/webm" :src="storage + 'the-end' + '.webm'"/>
@@ -29,6 +29,9 @@
             <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/gifs/filmeditor--halloween-elvira-l2YWnw4TcCv5Vkgb6"><iframe src="https://giphy.com/embed/l2YWnw4TcCv5Vkgb6" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a></p>
             <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/gifs/filmeditor--halloween-elvira-l2YWl72uc2Y15pIZy"><iframe src="https://giphy.com/embed/l2YWl72uc2Y15pIZy" width="480" height="264" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a></p>
             <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/stickers/gdpr-weople-space-U8ZBwmK5NbCQfHnXrD"><iframe src="https://giphy.com/embed/U8ZBwmK5NbCQfHnXrD" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a></p>
+            <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/gifs/filmstruck-black-and-white-vintage-cu1l1wN5bNDGUg9QME"><iframe src="https://giphy.com/embed/cu1l1wN5bNDGUg9QME" width="480" height="272" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a><p>
+            <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/gifs/yosub-l41YbnoUuc9S1vh4I"><iframe src="https://giphy.com/embed/l41YbnoUuc9S1vh4I" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a><p>
+            <p class="main-text"><a target="_blank" rel="noopener" href="https://giphy.com/gifs/indigo-devil-wears-prada-that-is-all-gnsrxBc8QM7HW"><iframe src="https://giphy.com/embed/gnsrxBc8QM7HW" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a><p>
 
             <h3 class="main-subtitle"><span>Tech</span></h3>
             <p class="main-text"><span><a target="_blank" rel="noopener" href="https://www.here.com/">Here Maps</a>, for the terms of use location map showing where to find me.</span></p>

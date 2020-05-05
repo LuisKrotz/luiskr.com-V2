@@ -1,6 +1,11 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
+    <video class="terms-bg" :poster="storage + 'terms' + webp" loop muted autoplay playsinline alt="Background - Glitch">
+        <source type="application/vnd.apple.mpegurl" :src="storage + 'terms' + '.m3u8'"/>
+        <source type="video/mp4" :src="storage + 'terms' + '.mp4'"/>
+        <source type="video/webm" :src="storage + 'terms' + '.webm'"/>
+    </video>
     <main class="max-area">
         <article>
           <div class="terms about main">
@@ -80,6 +85,11 @@
             <p class="main-text"><strong>Entire Terms.</strong> These Terms constitute the entire agreement between you and us regarding the use of the Site. Our failure to exercise or enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. The section titles in these Terms are for convenience only and have no legal or contractual effect. The word "including" means "including without limitation". If any provision of these Terms is held to be invalid or unenforceable, the other provisions of these Terms will be unimpaired and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law.  Your relationship to <strong>luiskr.com</strong> is that of an independent contractor, and neither party is an agent or partner of the other.  These Terms, and your rights and obligations herein, may not be assigned, subcontracted, delegated, or otherwise transferred by you without <strong>luiskr.com</strong>’s prior written consent, and any attempted assignment, subcontract, delegation, or transfer in violation of the foregoing will be null and void.  <strong>luiskr.com</strong> may freely assign these Terms.  The terms and conditions set forth in these Terms shall be binding upon assignees.</p>
             <p class="main-text"><strong>Your Privacy.</strong> Please read the Privacy Policy</a>.</p>
             <p class="main-text"><strong>Copyright/Trademark Information.</strong> Copyright ©. All rights reserved.  All trademarks, logos and service marks displayed on the Site are our property or the property of other third-parties. You are not permitted to use these Marks without our prior written consent or the consent of such third party which may own the Marks.</p>
+            <video class="main-text" loading="lazy" :poster="storage + 'thatsall' + webp" playsinline autoplay muted loop width="480" height="270">
+              <source type="application/vnd.apple.mpegurl" :src="storage + 'thatsall.m3u8'"/>
+              <source type="video/mp4" :src="storage + 'thatsall.mp4'"/>
+              <source type="video/webm" :src="storage + 'thatsall.webm'"/>
+            </video>
 
             <h3 class="main-subtitle">Contact Information</h3>
             <p class="main-text">Email: <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
@@ -139,6 +149,20 @@ export default {
       width: 100%;
       height: auto;
       box-shadow: -2px -2px 3px 0 rgba(0,0,0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .15);
+  }
+
+  &-bg {
+    object-fit: cover;
+    object-position: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    filter: blur(5px);
+    opacity: .1;
+
+    .black & {
+      background: none;
+    }
   }
 }
 </style>
