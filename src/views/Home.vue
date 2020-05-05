@@ -26,14 +26,17 @@
           <div class="max-area home-project-parent">
 
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id">
-                <div class="lz-container" v-if="post.video === undefined" :style="'padding-top:' + (post.img.width / post.img.height * tiles) + '%'">
+                <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
+                    <img v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                </div>
+                <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
                     <picture>
                         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
                         <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-                        <img class="home-media" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+                        <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
                     </picture>
                 </div>
-                <div class="lz-container" v-else :style="'padding-top:' + (post.video.width / post.video.height * tiles) + '%'">
+                <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
                     <video v-view="viewHandler" class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
                         <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'">
                         <source type="video/mp4" :src="storage + post.video.src + '.mp4'">
@@ -82,7 +85,6 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-        tiles: 33.333,
         placeholder: this.$parent.placeholder,
         storage: this.$parent.storage,
         origin: this.$parent.origin,
@@ -99,7 +101,6 @@ export default {
     let self = this;
 
     document.body.classList.remove("black");
-    self.reflow();
 
     // Fetch projects translations
     fetch(`${self.origin}/translations/en_us/projects.json`)
@@ -109,13 +110,13 @@ export default {
       self.projects = data;
 
       self.start = self.projects.total;
-      self.end = self.projects.total - 10;
+      self.end = self.projects.total - 2;
 
       self.getPosts(self.start, self.end);
       self.stop = false;
 
       self.start = self.end - 1;
-      self.end = self.end - 10;
+      self.end = self.end - 2;
     });
   },
   mounted() {
@@ -129,17 +130,9 @@ export default {
           self.getPosts(self.start, self.end);
 
           self.start = self.end - 1;
-          self.end = self.end - 10 > 0 ? self.end - 10 : 1;
+          self.end = self.end - 2 > 0 ? self.end - 2 : 1;
           self.stop = self.start === 0;
         }
-    });
-
-    window.addEventListener('resize', function() {
-        self.reflow();
-    });
-
-    window.addEventListener('orientationchange', function() {
-        self.reflow();
     });
   },
   components: {
@@ -147,17 +140,6 @@ export default {
       FooterComponent
   },
   methods: {
-    reflow() {
-        let self = this, innerWidth = window.innerWidth;
-
-        if (innerWidth > 1921)
-            self.tiles = 20;
-        else if (innerWidth > 1279)
-            self.tiles = 33.333;
-        else if (innerWidth > 767)
-            self.tiles = 50;
-        
-    },
     getPosts(start, end) {
       let i = start, self = this;
   

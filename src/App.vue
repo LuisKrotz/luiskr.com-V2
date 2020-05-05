@@ -11,37 +11,37 @@ import WebFontLoader from 'webfontloader'     // https://github.com/typekit/webf
 
 export default {
   data() {
-    return {
-      webp: false,
-      placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-      storage: window.location.origin + '/assets/',
-      origin: window.location.origin
-    }
-  },
-  created() {
-    let self = this;
-    Modernizr.on('webp', function(result) {
-      self.webp = result ? '.webp' : '.jpg';
-    });
-
-    WebFontLoader.load({
-      google: {
-        families: ['Work+Sans:200,300,400,500']
-      },
-      active: self.setFontLoaded,
-    });
-  },
-  methods: {
-    setFontLoaded() {
-      this.$emit('font-loaded');
-    },
-    footerOpen() {
-      if(this.footeropen) {
-        this.openclass = 'footer-open';
+      return {
+        webp: false,
+        placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+        storage: window.location.origin + '/assets/',
+        origin: window.location.origin
       }
-    }
-  },
-};
+    },
+    created() {
+      let self = this;
+      Modernizr.on('webp', function (result) {
+        self.webp = result ? '.webp' : '.jpg';
+      });
+
+      WebFontLoader.load({
+        google: {
+          families: ['Work+Sans:200,300,400,500']
+        },
+        active: self.setFontLoaded,
+      });
+    },
+    methods: {
+      setFontLoaded() {
+        this.$emit('font-loaded');
+      },
+      footerOpen() {
+        if (this.footeropen) {
+          this.openclass = 'footer-open';
+        }
+      }
+    },
+  };
 </script>
 
 <style lang="scss">
