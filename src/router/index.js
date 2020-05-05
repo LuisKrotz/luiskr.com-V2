@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueAnalytics from 'vue-analytics'
+import NProgress from 'nprogress';
+
 import Home from '../views/Home.vue'
+
+import '../../node_modules/nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
@@ -421,6 +425,17 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+      NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
 })
 
 Vue.use(VueAnalytics, {
