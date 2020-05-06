@@ -14,7 +14,7 @@ export default {
       return {
         webp: false,
         placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-        storage: window.location.origin + '/assets/',
+        storage: 'https://storage.googleapis.com/luiskr.com/public/',
         origin: window.location.origin
       }
     },

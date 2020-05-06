@@ -1,7 +1,7 @@
 <template>
     <div class="main">
     <article class="home-project max-area">
-      <img v-if="post.img === undefined && post.video === undefined" class="project-background" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+      <img v-if="post.img === undefined && post.video === undefined" class="project-background" :src="placehlolder" alt="">
       <picture v-else-if="post.video === undefined">
         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
         <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
@@ -17,7 +17,7 @@
       <h3 class="project-subtitle">{{ post.project }}</h3>
 
       <div class="project-info">
-        <img v-if="post.video === undefined && post.img === undefined" class="project-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+        <img v-if="post.video === undefined && post.img === undefined" class="project-media" :src="placehlolder" alt="">
             <picture v-else-if="post.video === undefined">
             <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
             <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
@@ -48,7 +48,7 @@
               <h6 class="project-info-credit">{{ translations.credits}}</h6>
               <p>
                 <a :href="post.at_link" rel="noopener" target="_blank">
-                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placehlolder" alt="">
                   <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
                 </a>
               </p>
@@ -74,7 +74,7 @@
 
 
           <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
-            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placehlolder" alt="">
             <video v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
               <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
@@ -107,7 +107,7 @@
       <div class="max-area">
         <router-link class="footer-link left" :to="prev.path">
           <span>
-            <img v-if="prev.img === undefined && prev.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img v-if="prev.img === undefined && prev.video === undefined" class="footer-link-video" :src="placehlolder" alt="">
             <picture v-else-if="prev.video === undefined">
               <source type="image/jpeg" :srcset="storage + prev.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + prev.img.src + '.webp'">
@@ -132,7 +132,7 @@
         </router-link>
         <router-link class="footer-link right" :to="next.path">
           <span>
-            <img v-if="next.img === undefined && next.video === undefined" class="footer-link-video" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img v-if="next.img === undefined && next.video === undefined" class="footer-link-video" :src="placehlolder" alt="">
             <picture v-else-if="next.video === undefined">
               <source type="image/jpeg" :srcset="storage + next.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + next.img.src + '.webp'">
@@ -164,6 +164,7 @@ export default {
         itoggle: false,
         storage: '',
         webp: this.$parent.webp,
+        placeholder: this.$parent.placehlolder,
         origin: this.$parent.origin,
         translations: Object,
         post: Object,
