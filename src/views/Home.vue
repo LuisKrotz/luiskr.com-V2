@@ -113,7 +113,7 @@ export default {
       self.stop = false;
 
       self.start = self.end - 1;
-      self.end = self.end - 2;
+      self.end = self.end - 1;
     });
   },
   mounted() {
@@ -127,7 +127,7 @@ export default {
           self.getPosts(self.start, self.end);
 
           self.start = self.end - 1;
-          self.end = self.end - 2 > 0 ? self.end - 2 : 1;
+          self.end = self.end - 1 > 0 ? self.end - 1 : 1;
           self.stop = self.start === 0;
         }
     });
