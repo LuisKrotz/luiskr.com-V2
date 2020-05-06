@@ -19,10 +19,10 @@
               </video>
             </p>
             <h3 class="main-subtitle">Working at transainc</h3>
-            <p class="main-text">Started as a Jr. front-end developer on Apr. 2016 they I learned a lot an became a front-end developer on dez. 2016 the oportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
+            <p class="main-text">Started as a Jr. front-end developer on Apr. 2016 then, I learned a lot an became a front-end developer on dez. 2016, the oportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
 
             <h3 class="main-subtitle">Freelacing</h3>
-            <p class="main-text">I starded my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
+            <p class="main-text">I started my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
               <video loading="lazy" :poster="storage + 'cat-lady' + webp" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'cat-lady.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'cat-lady.mp4'"/>

@@ -13,10 +13,10 @@
             <h2 class="main-title"><span>luiskr.com</span></h2>
             <h3 class="main-subtitle">Hy, I'm Luis.</h3>
 
-            <p class="main-text"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>, living in Porto Alegre / Brazil and as a part time Freelancer.</span></p>
+            <p class="main-text"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
           </div>
           <div class="max-area home-cover">
-            <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked in on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
+            <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
             <p class="main-text"><span>Feel free to explore and contact me at any time, by <a href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a href="tel:+55982274782" rel="noopener">imessage</a> or <a href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
           </div>
         </div>
