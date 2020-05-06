@@ -37,11 +37,11 @@
                     </picture>
                 </div>
                 <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
-                    <video v-view="viewHandler" class="home-media" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" loop playsinline muted autoplay>
-                        <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'">
-                        <source type="video/mp4" :src="storage + post.video.src + '.mp4'">
-                        <source type="video/webm" :src="storage + post.video.src + '.webm'">
-                    </video>
+                    <picture>
+                        <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
+                        <source type="image/webp" :srcset="storage + post.video.src + '.webp'">
+                        <img class="lazy home-media" :src="storage + post.video.src + webp" :width="post.video.height" :height="post.video.width" :alt="post.video.alt" loading="lazy">
+                    </picture>
                 </div>
 
                 <h3 class="home-project-title">
@@ -74,12 +74,9 @@
 
 <script>
 import Vue from 'vue'
-import checkView from 'vue-check-view'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import HereMapsComponent from '@/components/HereMapsComponent.vue'
-
-Vue.use(checkView);
 
 export default {
   name: 'HomeComponent',
@@ -154,36 +151,6 @@ export default {
     },
     footerOpen() {
       this.$parent.footerOpen();
-    },
-    viewHandler(e) {
-      let video, promise, i, t;
-
-      video = e.target.element;
-      if (e.percentInView > 0) {
-          for (i = 0, t = video.lenght; i < t; i+=1) {
-              promise = video[i].play();
-
-              if (promise !== undefined) {
-                  promise.then(_ => {
-                      resolve(video[i].play());
-                  }).catch(error => {
-                      return void(0);
-                  });
-              }
-          }
-      } else {
-          for (i = 0, t = video.lenght; i < t; i+=1) {
-              promise = video[i].pause();
-
-              if (promise !== undefined) {
-                  promise.then(_ => {
-                      resolve(video[i].pause());
-                  }).catch(error => {
-                      return void(0);
-                  });
-              }
-          }
-      }
     }
   }
 }
