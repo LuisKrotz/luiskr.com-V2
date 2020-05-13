@@ -1,11 +1,6 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <video class="privacy-bg" :poster="storage + 'privacy' + webp" loop muted autoplay playsinline alt="Background - Glitch">
-        <!-- <source type="application/vnd.apple.mpegurl" :src="storage + 'privacy' + '.m3u8'"/> -->
-        <source type="video/mp4" :src="storage + 'privacy' + '.mp4'"/>
-        <!-- <source type="video/webm" :src="storage + 'privacy' + '.webm'"/> -->
-    </video>
     <main class="max-area">
       <article class="about main">
         <h2 class="main-title">Privacy Policy</h2>
@@ -83,19 +78,4 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
-
-
-.privacy-bg {
-  object-fit: cover;
-  object-position: center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  filter: blur(5px);
-  opacity: .1;
-
-  .black & {
-    background: none;
-  }
-}
 </style>

@@ -1,11 +1,6 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <video class="terms-bg" :poster="storage + 'terms' + webp" loop muted autoplay playsinline alt="Background - Glitch">
-        <source type="application/vnd.apple.mpegurl" :src="storage + 'terms' + '.m3u8'"/>
-        <source type="video/mp4" :src="storage + 'terms' + '.mp4'"/>
-        <source type="video/webm" :src="storage + 'terms' + '.webm'"/>
-    </video>
     <main class="max-area">
         <article>
           <div class="terms about main">
@@ -149,20 +144,6 @@ export default {
       width: 100%;
       height: auto;
       box-shadow: -2px -2px 3px 0 rgba(0,0,0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .15);
-  }
-
-  &-bg {
-    object-fit: cover;
-    object-position: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    filter: blur(5px);
-    opacity: .1;
-
-    .black & {
-      background: none;
-    }
   }
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="footer-open">
     <HeaderComponent current="info" />
-    <img class="gdpr-bg" :src="storage + 'GDPR.gif'" alt="" loading="lazy">
     <main class="max-area">
         <article class="about main">
           <h2 class="main-title">GDPR</h2>
@@ -52,18 +51,4 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
-
-.gdpr-bg {
-  object-fit: cover;
-  object-position: center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  filter: blur(15px);
-  opacity: .6;
-
-  .black & {
-    background: none;
-  }
-}
 </style>

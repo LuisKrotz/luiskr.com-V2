@@ -1,12 +1,6 @@
 <template>
   <div>
     <HeaderComponent current="about" />
-
-    <video class="about-bg" loading="lazy" :poster="storage + 'work' + webp" playsinline autoplay muted loop>
-      <source type="application/vnd.apple.mpegurl" :src="storage + 'work.m3u8'"/>
-      <source type="video/mp4" :src="storage + 'work.mp4'"/>
-      <source type="video/webm" :src="storage + 'work.webm'"/>
-    </video>
     <main class="max-area">
         <article>
           <div class="about main">
@@ -150,16 +144,6 @@ export default {
 }
 
 .about {
-  &-bg {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    object-fit: cover;
-    object-position: center;
-    filter: blur(7px) sepia(1) invert(1);
-    opacity: .2;
-  }
-
   .main-text {
     video {
       display: block;

@@ -1,11 +1,6 @@
 <template>
   <div>
     <HeaderComponent current="home" />
-    <video class="home-cover-bg" :poster="storage + 'loopreflection' + webp" loop muted autoplay playsinline alt="Background - Loop animation - 3D reflective fractal from giphy.com">
-        <source type="application/vnd.apple.mpegurl" :src="storage + 'loopreflection' + '.m3u8'"/>
-        <source type="video/mp4" :src="storage + 'loopreflection' + '.mp4'"/>
-        <source type="video/webm" :src="storage + 'loopreflection' + '.webm'"/>
-    </video>
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
@@ -262,27 +257,6 @@ export default {
         @include layout-2560() {
             grid-row-gap: to-em(40);
             grid-column-gap: to-em(64);
-        }
-
-        &-bg {
-            background: none;
-            width: 102vw;
-            height: 100vh;
-            top: 0;
-            left: 50%;
-            position: fixed;
-            transform: translateX(-50%);
-            filter: blur(20px) invert(1) sepia(.5);
-            object-fit: cover;
-            object-position: center;
-            opacity: 0.15;
-
-            @include layout-1024() {
-                transform: none;
-                filter: blur(20px) invert(1);
-                width: 50%;
-                right: 0;
-            }
         }
     }
 
