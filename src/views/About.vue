@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderComponent current="about" />
     <main class="max-area">
         <article>
           <div class="about main">
@@ -80,7 +79,7 @@
             <p class="main-text">Cárla Callegaro Corrêa Kader ; Krotz, J.L . Criação do Sumário em HTML para o projeto Criação de Jogos educativos para o auxilio no aprendizado da Lingua Inglesa Instrumental. 2011. (Editoração/Catálogo).</p>
 
             <h3 class="main-subtitle">Some ART</h3>
-            <p class="main-text">Krotz.JL; Lewandowski, Isis . Banner - Seman de Integração da Calourada UFSM 2012. 2012. Computação Gráfica.</p>
+            <p class="main-text">Krotz.JL; Lewandowski, Isis . Banner - Semana de Integração da Calourada UFSM 2012. 2012. Computação Gráfica.</p>
           
             <h3 class="main-subtitle">Thank You</h3>
             <p class="main-text">Thanks for reading, feel free to contact me at <a href="luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
@@ -93,20 +92,16 @@
           </div>
         </article>
     </main>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 import HereMapsComponent from '@/components/HereMapsComponent.vue'
 
 export default {
   name: 'About',
   components: {
-    HeaderComponent,
-    FooterComponent
+    HereMapsComponent
   },
   data() {
     return {

@@ -1,6 +1,5 @@
 <template>
   <div class="footer-open">
-    <HeaderComponent current="info" />
     <main class="max-area">
         <article>
           <div class="terms about main">
@@ -94,20 +93,15 @@
         </div>
       </article>
     </main>
-    <FooterComponent current="terms-of-use"/>
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 import HereMapsComponent from '@/components/HereMapsComponent.vue'
 
 export default {
   name: 'TermsOfUse',
   components: {
-    HeaderComponent,
-    FooterComponent,
     HereMapsComponent
   },
   data() {

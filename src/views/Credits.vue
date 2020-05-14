@@ -1,6 +1,5 @@
 <template>
 <div class="footer-open">
-  <HeaderComponent current="info" />
     <video class="credits-bg" :poster="storage + 'the-end' + webp" loop muted autoplay playsinline alt="Bage background - the end">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'the-end' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'the-end' + '.mp4'"/>
@@ -40,14 +39,10 @@
           </div>
       </article>
     </main>
-    <FooterComponent current="credits"/>
 </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-
 export default {
   name: 'Credits',
   data() {
@@ -56,10 +51,6 @@ export default {
       origin: this.$parent.origin,
       webp: this.$parent.webp
     }
-  },
-  components: {
-    HeaderComponent,
-    FooterComponent
   },
   created() {
     document.body.classList.add("black");

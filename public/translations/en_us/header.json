@@ -1,8 +1,8 @@
 {
     "title": "Menu",
     "toggle": [
-        "More",
-        "Less"
+        "Open Menu",
+        "Close Menu"
     ],
     "home": [
         "/",
@@ -15,5 +15,9 @@
     "social": [
         "/social",
         "Social"
+    ],
+    "mail": [
+        "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
+        "Mail"
     ]
 }

@@ -1,6 +1,5 @@
 <template>
   <div class="footer-open">
-    <HeaderComponent current="info" />
     <main class="max-area">
         <article class="about main">
           <h2 class="main-title">GDPR</h2>
@@ -16,14 +15,10 @@
           <p class="main-text">If you make a request, I have one month to respond to you. If you would like to exercise any of these rights, please contact me at <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
-    <FooterComponent current="gdpr"/>
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-
 export default {
   name: 'GDPR',
   data() {
@@ -31,10 +26,6 @@ export default {
       storage: this.$parent.storage,
       origin: this.$parent.origin
     }
-  },
-  components: {
-    HeaderComponent,
-    FooterComponent
   },
   created() {
     document.body.classList.add("black");

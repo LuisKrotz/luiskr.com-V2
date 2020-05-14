@@ -17,7 +17,11 @@
         display: block;
         position: relative;
         margin: 0 auto;
-        font-size: to-em(104);
+        font-size: to-em(64);
+
+        @include layout-768() {
+            font-size: to-em(104);
+        }
     }
 
     &-subtitle {
@@ -36,14 +40,18 @@
         object-position: center center;
         display: block;
         position: relative;
-        margin: 48px auto 16px;
+        margin: to-em(48) auto to-em(16);
         max-width: 100%;
         height: auto;
+
+        .project-info-more & {
+            margin: to-em(0) auto;
+        }
     }
 
     &-info {
         box-sizing: border-box;
-        max-width: to-em(960)s;
+        max-width: to-em(960);
         width: fit-content;
         position: relative;
         margin: 0 auto;
@@ -84,7 +92,7 @@
         }
 
         &-more {
-            padding: 16px 0;
+            padding: to-em(16) 0;
             text-align: justify;
 
             h6 {
@@ -92,24 +100,34 @@
                 font-size: to-em(16);
                 font-weight: 400;
                 text-align: left;
-                padding: to-em(8) 0;
+                padding: to-em(40) 0 to-em(8);
 
                 &.project-info-credit {
                     padding-top: to-em(40);
-                    padding-bottom: to-em(40);
+                    padding-bottom: to-em(8);
                     text-align: justify;
-                    font-size: to-em(16);
-                    text-transform: uppercase;
-                    padding-right: to-em(40);
-                    padding-left: to-em(40);
                     text-align-last: justify;
+                    font-size: to-em(24);
+                    text-transform: uppercase;
+                    font-weight: 300;
                     letter-spacing: to-em(16);
-                    font-weight: 400;
+                    text-decoration: underline overline;
+                    display: inline-block;
+                    text-decoration-skip-ink: none;
+                    text-decoration-color: rgba(255, 255, 255, .025);
+                    line-height: to-em(64);
+                    text-underline-position: under;
+                    -webkit-text-decorations-in-effect: blink;
+
+                    @include layout-768() {
+                        padding-right: to-em(64);
+                        padding-left: to-em(64);
+                    }
                 }
             }
 
             .first {
-                padding: 0 0 to-em(8);
+                padding: to-em(24) 0 to-em(8);
             }
         }
 
@@ -143,7 +161,7 @@
                 display: block;
                 font-size: to-em(16);
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 300;
                 position: relative;
                 border-radius: 0;
                 overflow: visible;
@@ -160,8 +178,8 @@
         &-credit {
             &-logo {
                 box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .1), 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
-                width: to-em(104);
-                height: to-em(104);
+                width: 100%;
+                height: to-em(168);
                 background: $color-white;
                 position: relative;
                 margin: 0 auto;
@@ -175,6 +193,10 @@
                 border-top-right-radius: to-em(16);
                 border-bottom-left-radius: to-em(16);
                 border-bottom-right-radius: to-em(4);
+
+                @include layout-414() {
+                    width: to-em(168);
+                }
 
                 .black & {
                     background: $color-white;

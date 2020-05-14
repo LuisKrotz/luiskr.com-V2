@@ -1,53 +1,67 @@
 <template>
-    <header class="footer">
-        <div class="max-area" v-if="translations !== undefined">
-            <h3 class="hdn">{{ translations.title }}</h3>
+    <header class="header">
+        <!-- <h3 class="hdn">{{ header.title }}</h3> -->
+        <div class="max-area" v-if="header !== undefined">
+            <button class="header-link header-more" @click="headerOpen()">
+                <span v-if="!open" class="hdn">{{ header.toggle[0] }}</span>
+                <span v-else class="hdn">{{ header.toggle[1] }}</span>
 
-            <button class="footer-link footer-more" @click="footerOpen()" v-if="current !== 'info'" style="text-align: left">
-            <span>
-                <svg width="18" height="18" style="fill:white">
-                    <use xlink:href="#svg-caret-up"/>
-                </svg>
-                <p v-if="!open" class="footer-link-title">{{ translations.toggle[0] }}</p>
-                <p v-else class="footer-link-title">{{ translations.toggle[1] }}</p>
-            </span>
+                <span class="header-more-line top"></span>
+                <span class="header-more-line middle"></span>
+                <span class="header-more-line bottom"></span>
             </button>
+        </div>
 
-            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current === 'social'" style="text-align: center">
-                <span>
-                    <svg width="18" height="18" style="fill:white" class="shuttle">
-                        <use xlink:href="#svg-space-shuttle"/>
-                    </svg>
-                    <p class="footer-link-title">{{ translations.home[1] }}</p>
-                </span>
-            </router-link>
+        <div class="header-modal">
+            <nav class="max-area" v-if="header !== undefined && footer !== undefined">
+                <h4 class="hdn">luiskr.com</h4>
 
-            <router-link class="footer-link" :to="translations.about[0]" v-if="current !== 'about'" :style="'text-align: '+ (current === 'social' ? 'right' : current === 'info' ? 'left' : 'center')">
-                <span>
-                    <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-scroll"/>
-                    </svg>
-                    <p class="footer-link-title">{{ translations.about[1] }}</p>
-                </span>
-            </router-link>
+                    <div>
+                        <router-link class="header-modal-link" :to="header.home[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ header.home[1] }}</span>
+                        </router-link>
 
-            <router-link class="footer-link" :to="translations.home[0]" v-if="current !== 'home' && current !== 'social'" style="text-align: center">
-                <span>
-                    <svg width="18" height="18" style="fill:white" class="shuttle">
-                        <use xlink:href="#svg-space-shuttle"/>
-                    </svg>
-                    <p class="footer-link-title">{{ translations.home[1] }}</p>
-                </span>
-            </router-link>
+                        <router-link class="header-modal-link" :to="header.about[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ header.about[1] }}</span>
+                        </router-link>
 
-            <router-link class="footer-link" :to="translations.social[0]" v-if="current !== 'social'" style="text-align: right">
-                <span>
-                    <svg width="18" height="18" style="fill:white">
-                        <use xlink:href="#svg-user-astronaut"/>
-                    </svg>
-                    <p class="footer-link-title">{{ translations.social[1] }}</p>
-                </span>
-            </router-link>
+                        <router-link class="header-modal-link" :to="header.social[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ header.social[1] }}</span>
+                        </router-link>
+
+                        <a class="header-modal-link" :href="header.mail[0]" rel="noopener">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ header.mail[1] }}</span>
+                        </a>
+                    </div>
+
+                    <h4 class="hdn">{{ footer.title }}</h4>
+
+                    <div>
+                        <router-link class="header-modal-link" :to="footer.privacy_policy[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.privacy_policy[1] }}</span>
+                        </router-link>
+
+                        <router-link class="header-modal-link" :to="footer.terms_of_use[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.terms_of_use[1] }}</span>
+                        </router-link>
+
+                        <router-link class="header-modal-link" :to="footer.GDPR[0]">
+                            <span class="header-modal-link-title" @click="headerClose()"{{ footer.GDPR[1] }}</span>
+                        </router-link>
+
+                        <router-link class="header-modal-link" :to="footer.credits[0]">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.credits[1] }}</span>
+                        </router-link>
+
+                        <a class="header-modal-link" :href="footer.instagram[0]" rel="noopener">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.instagram[1] }}</span>
+                        </a>
+
+                        <a class="header-modal-link" :href="footer.phone[0]" rel="noopener">
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.phone[1] }}</span>
+                        </a>
+                    </div>
+            </nav>
         </div>
     </header>
 </template>
@@ -58,70 +72,65 @@ export default {
     data() {
       return {
             origin: this.$parent.origin,
-            translations: undefined,
+            header: undefined,
+            footer: undefined,
+            remember: 0,
             open: false
         }
     },
-    props: {
-      current: {
-            default: 'home',
-            required: true
-      }
-    },
     methods: {
-        footerOpen() {
+        headerClose() {
+            document.body.classList.remove("header-open");
+
+            window.scrollTo(0, this.remember);
+            document.querySelector("main").style = '';
+
+            this.open = false;
+        },
+        headerOpen() {
             if(this.open) {
-                document.body.classList.remove("footer-open");
-                this.open = false;
+                this.headerClose();
             } else {
-                document.body.classList.add("footer-open");
+                this.remember = window.scrollY;
+
+                document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
+                document.body.classList.add("header-open");
                 this.open = true;
             }
         }
     },
     created() {
-        let self = this;
+        let self = this, lastresize = 0;
 
-        if (self.current !== 'info') {
-            let lastscroll = 0, lastresize = 0;
-
-            function close() {
-                document.body.classList.remove("footer-open");
-                self.open =  false;
-            }
-
-            close();
-            document.body.classList.add("info");
-
-            window.addEventListener('scroll', function() {
-                lastscroll++;
-
-                if (lastscroll > 5 && self.open) {
-                    close();
-                    lastscroll = 0;
-                }
-            });
-
-            window.addEventListener('resize', function() {
-                lastresize++;
-
-                if (lastscroll > 10 && self.open) {
-                    close();
-                    lastscroll = 0;
-                }
-            });
-        } else {
-            document.body.classList.add("info");
+        function close() {
+            document.body.classList.remove("header-open");
+            self.open =  false;
         }
 
-        self.open =  false;
+        close();
+        fetch(`${self.origin}/translations/en_us/header.json`)
+            .then((response) => {
+                return response.json();
+            }).then((data) => {
+                self.header = data;
+            });
 
-      fetch(`${self.origin}/translations/en_us/header.json`)
-        .then((response) => {
-          return response.json();
-        }).then((data) => {
-          self.translations = data;
+        fetch(`${self.origin}/translations/en_us/footer.json`)
+            .then((response) => {
+                return response.json();
+            }).then((data) => {
+                self.footer = data;
+            });
+
+        window.addEventListener('resize', function() {
+            lastresize++;
+
+            if (lastresize > 10 && self.open) {
+                close();
+                lastresize = 0;
+            }
         });
+
     }
 }
 </script>

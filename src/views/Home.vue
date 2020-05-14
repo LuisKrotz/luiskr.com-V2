@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderComponent current="home" />
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
@@ -62,16 +61,12 @@
         </section>
       </article>
     </main>
-
-    <FooterComponent />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-import HereMapsComponent from '@/components/HereMapsComponent.vue'
 
 export default {
   name: 'HomeComponent',
@@ -128,8 +123,7 @@ export default {
     });
   },
   components: {
-      HeaderComponent,
-      FooterComponent
+      HeaderComponent
   },
   methods: {
     getPosts(start, end) {

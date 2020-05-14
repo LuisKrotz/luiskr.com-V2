@@ -1,6 +1,5 @@
 <template>
   <div class="footer-open">
-    <HeaderComponent current="info" />
     <video class="notfound-bg" :poster="storage + 'elvira' + webp" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'elvira' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'elvira' + '.mp4'"/>
@@ -14,14 +13,10 @@
           <p class="main-text">If have q request, please contact me at <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
-    <FooterComponent current="gdpr"/>
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-
 export default {
   name: 'NotFound',
   data() {
@@ -31,10 +26,6 @@ export default {
       origin: this.$parent.origin,
       webp: this.$parent.webp
     }
-  },
-  components: {
-    HeaderComponent,
-    FooterComponent
   },
   created() {
     document.body.classList.add("black");

@@ -1,6 +1,5 @@
 <template>
   <div class="footer-open">
-    <HeaderComponent current="info" />
     <main class="max-area">
       <article class="about main">
         <h2 class="main-title">Privacy Policy</h2>
@@ -44,13 +43,9 @@
         <p class="main-text"><router-link to="/">luiskr.com</router-link> does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on my website, I strongly encourage you to contact me <strong>immediately</strong> and I will do my best efforts to promptly find such information.</p>
       </article>
     </main>
-    <FooterComponent current="privacy-policy"/>
   </div>
 </template>
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-
 export default {
   name: 'PrivacyPolicy',
   data() {
@@ -58,10 +53,6 @@ export default {
       storage: this.$parent.storage,
       origin: this.$parent.origin
     }
-  },
-  components: {
-    HeaderComponent,
-    FooterComponent
   },
   created() {
     document.body.classList.add("black");

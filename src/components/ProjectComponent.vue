@@ -45,7 +45,7 @@
               <p v-html="post.description"></p>
               <h6>{{ translations.contribuition}}</h6>
               <p v-html="post.part"></p>
-              <h6 class="project-info-credit">{{ translations.credits}}</h6>
+              <h6 class="project-info-credit" v-html="translations.credits"></h6>
               <p>
                 <a :href="post.at_link" rel="noopener" target="_blank">
                   <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placehlolder" alt="">
@@ -118,14 +118,14 @@
               <source type="video/mp4" :src="storage + prev.video.src + '.mp4'"/>
               <source type="video/webm" :src="storage + prev.video.src + '.webm'"/>
             </video>
-            <svg width="24" height="24" style="fill:white">
+            <svg width="48" height="48" style="fill:white">
               <use xlink:href="#svg-arrow-left"/>
             </svg>
           </span>
           <p class="hdn">{{ translations.prev }}</p>
         </router-link>
-        <router-link class="footer-link" to="/">
-          <svg width="18" height="18" style="fill:white" class="shuttle">
+        <router-link class="footer-link home" to="/">
+          <svg width="36" height="36" style="fill:white" class="shuttle">
             <use xlink:href="#svg-space-shuttle"/>
           </svg>
           <p class="footer-link-title">{{ translations.home }}</p>
@@ -143,13 +143,13 @@
               <source type="video/mp4" :src="storage + next.video.src + '.mp4'"/>
               <source type="video/webm" :src="storage + next.video.src + '.webm'"/>
             </video>
-            <svg width="24" height="24" style="fill:white">
+            <svg width="48" height="48" style="fill:white">
               <use xlink:href="#svg-arrow-right"/>
             </svg>
           </span>
           <p class="hdn">{{ translations.next }}</p>
         </router-link>
-      </div>
+      </div> 
     </footer>
     <router-view/>
   </div>

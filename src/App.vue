@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1 class="hdn">luiskr.com</h1>
+    <HeaderComponent />
     <router-view/>
   </div>
 </template>
@@ -8,8 +9,12 @@
 <script>
 import Vue from 'vue'
 import WebFontLoader from 'webfontloader'     // https://github.com/typekit/webfontloader
+import HeaderComponent from '@/components/HeaderComponent.vue'
 
 export default {
+  components: {
+     HeaderComponent
+  },
   data() {
       return {
         webp: false,
@@ -26,7 +31,7 @@ export default {
 
       WebFontLoader.load({
         google: {
-          families: ['Work+Sans:200,300,400,500']
+          families: ['Work+Sans:200,300,400,500,600']
         },
         active: self.setFontLoaded,
       });

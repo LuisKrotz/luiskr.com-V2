@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderComponent current="social" />
     <video class="social-bg" :poster="storage + 'glitch' + webp" loop muted autoplay playsinline alt="Background - Glitch">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'glitch' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'glitch' + '.mp4'"/>
@@ -8,8 +7,8 @@
     </video>
     <main class="max-area">
         <article class="social main">
-            <h2 class="social-title">Social Media</h2>
-            <h2 class="social-text exception">Hey, this are my main contact and social media accounts. Feel free to leave a message.</h2>
+            <h2 class="social-title">Say Hello :)</h2>
+            <h2 class="social-text exception">This are my main contact and social media accounts. Feel free to leave me a message or start a chat.</h2>
             
             <a class="social-subtitle" href="mailto:luis.krotz@gmail.com">
               <svg width="128" height="128" style="fill:white">
@@ -75,14 +74,10 @@
             <a class="social-text" href="https://www.youtube.com/channel/UCtjY-xreMd_JF7ovY-paRAw?view_as=subscriber">Youtube</a>
         </article>
     </main>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-
 export default {
   name: 'Social',
   data() {
@@ -92,10 +87,6 @@ export default {
       origin: this.$parent.origin,
       webp: this.$parent.webp
     }
-  },
-  components: {
-    HeaderComponent,
-    FooterComponent
   },
   created() {
     document.body.classList.add("black");
