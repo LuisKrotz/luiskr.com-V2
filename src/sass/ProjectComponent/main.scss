@@ -51,10 +51,14 @@
 
     &-info {
         box-sizing: border-box;
-        max-width: to-em(960);
+        max-width: 100%;
         width: fit-content;
         position: relative;
         margin: 0 auto;
+
+        @include layout-1024() {
+            max-width: to-em(960);
+        }
 
         &-content {
             width: min-content;
