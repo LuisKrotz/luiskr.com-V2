@@ -114,10 +114,15 @@
           <p class="hdn">{{ translations.prev }}</p>
         </router-link>
         <router-link class="footer-link home" to="/">
-          <svg width="36" height="36" style="fill:white" class="shuttle">
-            <use xlink:href="#svg-space-shuttle"/>
-          </svg>
-          <p class="footer-link-title">{{ translations.home }}</p>
+          <span class="footer-link-icon">
+            <span class="footer-link-home first"></span>
+            <span class="footer-link-home second"></span>
+            <span class="footer-link-home third"></span>
+            <span class="footer-link-home fourth"></span>
+            <span class="footer-link-home fifth"></span>
+          </span>
+
+          <p class="hdn">{{ translations.home }}</p>
         </router-link>
         <router-link class="footer-link right" :to="next.path">
           <span class="footer-link-icon">

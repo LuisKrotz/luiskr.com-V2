@@ -46,7 +46,7 @@
                         </router-link>
 
                         <router-link class="header-modal-link" :to="footer.GDPR[0]">
-                            <span class="header-modal-link-title" @click="headerClose()"{{ footer.GDPR[1] }}</span>
+                            <span class="header-modal-link-title" @click="headerClose()">{{ footer.GDPR[1] }}</span>
                         </router-link>
 
                         <router-link class="header-modal-link" :to="footer.credits[0]">
