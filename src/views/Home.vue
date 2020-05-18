@@ -1,6 +1,8 @@
 <template>
   <div>
+      <img :src="storage + 'home/' + cover + '.gif'" class="home-cover-media">
     <main class="home">
+        
       <article class="main">
         <div class="home-cover-parent">
           <div class="max-area home-cover">
@@ -19,44 +21,45 @@
           <h3 class="main-title" id="portfolio">Portfolio</h3>
           <div class="max-area home-project-parent">
 
-            <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id">
-                <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
-                    <img v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
+                <div @mouseleave="clear()"  @mouseenter="random()">
+                    <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
+                        <img v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                    </div>
+                    <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
+                        <picture :key="'home-' + post.id">
+                            <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+                            <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+                            <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
+                        <video v-view="viewHandler" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
+                            <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
+                            <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
+                            <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
+                        </video>
+                    </div>
+
+                    <h3 class="home-project-title">
+                        <span>{{ post.project }}</span>
+                    </h3>
+
+                    <h4 class="home-project-at">
+                        <span>{{ projects.at }} </span>
+                        <a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a>
+                    </h4>
+
+                    <h5 class="home-project-role">
+                        <span>{{ projects.role }} </span>
+                        <span>{{ post.role }}</span>
+                    </h5>
+
+                    <router-link class="home-project-read" :to="post.path">
+                        Read<br>More
+                    </router-link>
                 </div>
-                <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
-                    <picture>
-                        <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-                        <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
-                        <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
-                    </picture>
-                </div>
-                <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
-                    <picture>
-                        <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
-                        <source type="image/webp" :srcset="storage + post.video.src + '.webp'">
-                        <img class="lazy home-media" :src="storage + post.video.src + webp" :width="post.video.height" :height="post.video.width" :alt="post.video.alt" loading="lazy">
-                    </picture>
-                </div>
-
-                <h3 class="home-project-title">
-                    <span>{{ post.project }}</span>
-                </h3>
-
-                <h4 class="home-project-at">
-                    <span>{{ projects.at }} </span>
-                    <a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a>
-                </h4>
-
-                <h5 class="home-project-role">
-                    <span>{{ projects.role }} </span>
-                    <span>{{ post.role }}</span>
-                </h5>
-
-                <router-link class="home-project-read" :to="post.path">
-                    Read<br>More
-                </router-link>
-
-                </router-link>
+            </router-link>
           </div>
         </section>
       </article>
@@ -66,7 +69,9 @@
 
 <script>
 import Vue from 'vue'
-import HeaderComponent from '@/components/HeaderComponent.vue'
+import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+
+Vue.use(checkView);
 
 export default {
   name: 'HomeComponent',
@@ -75,9 +80,12 @@ export default {
         placeholder: this.$parent.placeholder,
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        webp: (this.$parent.webp ? '.webp' : '.jpg'),
+        webp: this.$parent.webp,
+        webp2: this.$parent.webp2,
+        cover: Math.round(Math.random() * 2),
         total: Number,
         projects: Object,
+        sethover: '',
         posts: [],
         stop: true,
         start: Number,
@@ -122,9 +130,6 @@ export default {
         }
     });
   },
-  components: {
-      HeaderComponent
-  },
   methods: {
     getPosts(start, end) {
       let i = start, self = this;
@@ -138,8 +143,41 @@ export default {
         })
       }
     },
-    footerOpen() {
-      this.$parent.footerOpen();
+    viewHandler(e) {
+        let video, promise, i, t;
+
+        video = e.target.element;
+        if (e.percentInView > 0) {
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].play();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].play());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
+        } else {
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].pause();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].pause());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
+        }
+    },
+    random() {
+        this.sethover = `cursor: url(${this.storage}click/${Math.round(Math.random() * 13)}.gif), pointer`;
+    },
+    clear() {
+        this.sethover = '';
     }
   }
 }
@@ -151,274 +189,5 @@ export default {
 @import '../sass/placeholders';
 @import '../sass/extends';
 
-.home {
-    .main {
-        padding: 0;
-    }
-
-    &-cover {
-        box-sizing: border-box;
-        padding-top: to-em(104);
-        padding-bottom: to-em(104);
-        min-height: 75vh;
-
-        .main-title {
-            font-size: to-em(40);
-            font-weight: 200;
-
-            span {
-                background: $color-black;
-                color: $color-white;
-            }
-        }
-
-        .main-subtitle {
-            text-align: center;
-        }
-
-        .main-text {
-            font-size: to-em(24);
-            line-height: to-em(64);
-            padding-top: to-em(168);
-
-            span {
-                background: $color-white;
-            }
-        }
-
-        @include layout-640() {
-            .main-title {
-                font-weight: 300;
-                font-size: to-em(104);
-            }
-        }
-
-        @include layout-1024() {
-            display: grid;
-            min-height: 100vh;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: to-em(64);
-
-            .main-title,
-            .main-subtitle {
-                margin: 0;
-                padding: 0;
-                text-align: justify;
-            }
-
-            .main-title {
-                grid-column-start: 2;
-                grid-column-end: -1;
-            }
-
-            .main-subtitle {
-                line-height: to-em(64);
-                font-weight: 500;
-                text-transform: uppercase;
-                grid-column-start: 1;
-            }
-
-            .main-text {
-                grid-column-start: 2;
-                grid-column-end: 5;
-                padding: 0;
-            }
-        }
-
-        @include layout-1280() {
-            .main-title {
-                grid-column-start: 3;
-                grid-column-end: 5;
-            }
-
-            .main-text {
-                grid-column-start: 3;
-                grid-column-end: 5;
-                padding: 0;
-            }
-        }
-
-        @include layout-1680() {
-            .main-subtitle {
-                grid-column-start: 2;
-            }
-        }
-
-        @include layout-1920() {
-            grid-gap: to-em(40);
-        }
-
-        @include layout-2560() {
-            grid-row-gap: to-em(40);
-            grid-column-gap: to-em(64);
-        }
-    }
-
-    &-projects {
-        padding-bottom: to-em(104);
-        position: relative;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .025) 25%);
-
-        .main-title {
-            padding-top: to-em(24);
-
-            @include layout-640() {
-                padding-top: to-em(16);
-            }
-
-            @include layout-768() {
-            }
-
-            @include layout-1024() {
-                padding-top: to-em(40);
-            }
-
-            @include layout-1280() {
-            }
-
-            @include layout-1680() {
-                padding-top: to-em(64);
-            }
-
-            @include layout-2560() {
-                padding-top: to-em(104);
-            }
-        }
-    }
-
-    &-project {
-        position: relative;
-        display: block;
-        text-align: center;
-
-        .home & {
-            background: $color-white;
-            box-shadow: -2px -2px 5px 0 rgba(0, 0, 0, .025), 2px 2px 5px 0 rgba(0, 0, 0, .05);
-            border-top-right-radius: to-em(2);
-            border-top-left-radius: to-em(2);
-            border-radius: to-em(4);
-            overflow: hidden;
-        }
-
-        &-parent {
-            background-size: cover;
-            position: relative;
-            display: grid;
-            padding-top: to-em($gap-320);
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-column-gap: to-em($gap-320);
-            grid-row-gap: to-em(24);
-
-            @include layout-640() {
-                padding-top: to-em($gap-640);
-                grid-column-gap: to-em($gap-640);
-                grid-row-gap: to-em(16);
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @include layout-768() {
-                padding-top: to-em($gap-768);
-                grid-gap: to-em($gap-768);
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @include layout-1024() {
-                padding-top: to-em($gap-1024);
-                grid-gap: to-em($gap-1024);
-                grid-row-gap: to-em(40);
-            }
-
-            @include layout-1280() {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            @include layout-1680() {
-                padding-top: to-em($gap-1680);
-                grid-gap: to-em($gap-1680);
-                grid-row-gap: to-em(64);
-            }
-
-            @include layout-2560() {
-                padding-top: to-em($gap-2560);
-                grid-row-gap: to-em(104);
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
-
-        &-title,
-        &-at,
-        &-role {
-            position: relative;
-            text-align: justify;
-        }
-
-        &-title {
-            padding: to-em(24) to-em(16) 0;
-
-            span {
-                line-height: to-em(32);
-                font-size: to-em(24);
-                font-weight: 500
-            }
-        }
-
-        &-at {
-            padding: to-em(16) to-em(16) 0;
-            line-height: to-em(20);
-            font-size: to-em(16);
-
-            span {
-                font-weight: 300;
-            }
-
-            a {
-                font-weight: 300;
-            }
-        }
-
-        &-role {
-            padding: to-em(8) to-em(16) to-em(32);
-            text-transform: uppercase;
-            line-height: to-em(11);
-            font-size: to-em(11);
-
-            span {
-                font-weight: 200;
-            }
-        }
-
-        &-read {
-            text-transform: uppercase;
-            font-weight: 500;
-            text-align: right;
-            position: absolute;
-            right: 0;
-            padding: to-em(4) to-em(8);
-            padding-right: to-em(2);
-            word-break: break-all;
-            text-align: center;
-            background: rgba(0, 0, 0, .6);
-            color: white;
-            top: 50%;
-            border-top-left-radius: to-em(4);
-            border-bottom-left-radius: to-em(4);
-            transform: translateY(-100%);
-            box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, .15), 2px 2px 3px 0 rgba(0, 0, 0, .3);
-        }
-    }
-
-    &-media {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        object-fit: cover;
-        object-position: center center;
-        width: 100%;
-        height: 100%;
-        box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 1px 2px 3px rgba(0, 0, 0, .2);
-    }
-}
+@import '../sass/HomeComponent/main.scss';
 </style>

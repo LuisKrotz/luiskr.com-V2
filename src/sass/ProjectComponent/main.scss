@@ -67,6 +67,7 @@
         }
 
         &-description {
+            transition: width ease-out 1s, height ease-out 1s;
             text-align: justify;
             padding: to-em(8) to-em(16);
             border-radius: to-em(5);

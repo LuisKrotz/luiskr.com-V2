@@ -60,6 +60,7 @@ video {
 
     .black & {
         background: rgba(255, 255, 255, .025) url("./icons/play.gif") no-repeat center center;
+        background-size: cover;
     }
 }
 img {
@@ -68,6 +69,7 @@ img {
 
     .black & {
         background: rgba(255, 255, 255, .025) url("./icons/vcr.gif") no-repeat center center;
+        background-size: cover;
     }
 }
 

@@ -1,35 +1,35 @@
 <template>
     <div class="main">
     <article class="home-project max-area">
-      <img v-if="post.img === undefined && post.video === undefined" class="project-background" :src="placehlolder" alt="">
-      <picture v-else-if="post.video === undefined">
+      <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
+      <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-        <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
+        <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
         <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
       </picture>
-      <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop>
+      <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'bg-' + post.id">
         <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
         <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
         <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
       </video>
 
-      <h2 class="project-title">{{ translations.project }}</h2>
-      <h3 class="project-subtitle">{{ post.project }}</h3>
+      <h2 class="project-title" v-if="translations !== undefined">{{ translations.project }}</h2>
+      <h3 class="project-subtitle" v-if="post !== undefined">{{ post.project }}</h3>
 
       <div class="project-info">
-        <img v-if="post.video === undefined && post.img === undefined" class="project-media" :src="placehlolder" alt="">
-            <picture v-else-if="post.video === undefined">
+        <img v-if="post === undefined" class="project-media" :src="placeholder" alt="">
+        <picture v-else-if="post.video === undefined" :key="'media-' + post.id">
             <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-            <source type="image/webp" :srcset="storage + post.img.src + '.webp'">
+            <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
             <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
         </picture>
-        <video v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls>
+        <video v-view="viewHandler" v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls :key="'media-' + post.id">
           <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
           <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
           <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
         </video>
 
-        <div class="project-info-content">
+        <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
           <div class="project-info-description">
             <a class="project-info-link" :href="post.at_link">
               <h4 class="project-info-link-title">{{ translations.at }}</h4>
@@ -48,7 +48,7 @@
               <h6 class="project-info-credit" >{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h6>
               <p>
                 <a :href="post.at_link" rel="noopener" target="_blank">
-                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placehlolder" alt="">
+                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
                   <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
                 </a>
               </p>
@@ -72,9 +72,8 @@
             </div>
           </div>
 
-
           <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
-            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placehlolder" alt="">
+            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placeholder" alt="">
             <video v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
               <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
@@ -103,16 +102,17 @@
       </div>
 
     </article>
-    <footer class="footer has-media">
+    <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
-        <router-link class="footer-link left" :to="prev.path">
-          <span class="footer-link-icon">
+        <router-link class="footer-link left" :to="prev.path" v-if="prev !== undefined">
+          <span class="footer-link-icon" @click="nextprev(prev.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
           </span>
           <p class="hdn">{{ translations.prev }}</p>
         </router-link>
+
         <router-link class="footer-link home" to="/">
           <span class="footer-link-icon">
             <span class="footer-link-home first"></span>
@@ -124,104 +124,157 @@
 
           <p class="hdn">{{ translations.home }}</p>
         </router-link>
-        <router-link class="footer-link right" :to="next.path">
-          <span class="footer-link-icon">
+
+        <router-link class="footer-link right" :to="next.path" v-if="next !== undefined">
+          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
           </span>
           <p class="hdn">{{ translations.next }}</p>
         </router-link>
-      </div> 
+      </div>
     </footer>
-    <router-view/>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+
+Vue.use(checkView);
+
 export default {
-    name: 'ProjectComponent',
-    data() {
-      return {
-        ilink: '',
-        itoggle: false,
-        storage: '',
-        webp: this.$parent.webp,
-        placeholder: this.$parent.placehlolder,
-        origin: this.$parent.origin,
-        translations: Object,
-        post: Object,
-        random: Math.round(Math.random() * 4) + 1,
-        next: {
-          path: "/"
-        },
-        prev: {
-          path: "/"
-        }
+  name: 'Project',
+  data() {
+    return {
+      ilink: '',
+      itoggle: false,
+      storage: this.$parent.storage,
+      webp: this.$parent.webp,
+      webp2: this.$parent.webp2,
+      placeholder: this.$parent.placeholder,
+      origin: this.$parent.origin,
+      translations: undefined,
+      post: undefined,
+      random: Math.round(Math.random() * 4) + 1,
+      next: undefined,
+      prev: undefined,
+      total: Number
+    }
+  },
+  created() {
+    let self = this;
+    let meta = self.$route.meta;
+    let last = meta.last;
+
+    document.body.classList.add("black");
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    self.data_id = Number(meta.id);
+    self.last = Boolean(last !== undefined ? last : false);
+    self.total = Number(meta.total);
+  },
+  mounted() {
+    fetch(`${this.origin}/translations/en_us/projects.json`)
+      .then((response) => {
+        return response.json();
+      }).then((data) => {
+        this.translations = data;
+      });
+
+    this.getPost();
+  },
+  methods: {
+    getPost() {
+      let self = this;
+
+      fetch(`${self.origin}/projects/${self.data_id}.json`)
+        .then((response) => {
+          return response.json();
+        }).then((data) => {
+          let last, title, path;
+
+          self.post = data;
+          self.ilink = self.post.link;
+
+          last = self.post.last;
+          self.last = Boolean(last !== undefined ? last : false);
+
+          title = `luiskr.com | ${self.post.project}`;
+          path = self.origin + self.post.path;
+          document.title = title;
+          window.history.replaceState({ page: path }, title, path);
+        });
+
+      fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
+        .then((response) => {
+          return response.json();
+        }).then((data) => {
+          self.next = data;
+        });
+
+      fetch(`${self.origin}/projects/${self.data_id === 1 ? self.total : Number(self.data_id) -1 }.json`)
+        .then((response) => {
+          return response.json();
+        }).then((data) => {
+          self.prev = data;
+        });
+    },
+    toggleiframe() {
+      this.ilink = '';
+      if (this.itoggle) {
+        this.itoggle = false;
+        window.setTimeout(() => this.ilink = this.post.link, 500);
+      } else {
+        this.itoggle = true;
+        window.setTimeout(() => this.ilink = this.post.link, 500);
       }
     },
-    props: {
-      data_id: {
-        required: true
-      },
-      last: {
-        default: false,
-        required: false
-      }
-    },
-    created() {
-      document.body.classList.add("black");
-      document.body.scrollTop = 0;                // For Safari
-      document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
-    },
-    mounted() {
-      this.storage = this.$parent.storage,
+    nextprev(id) {
+      this.data_id = id;
       this.getPost();
     },
-    methods: {
-      getPost() {
-        let self = this;
+    viewHandler(e) {
+        let video, promise, i, t;
 
-          fetch(`${self.origin}/projects/${self.data_id}.json`)
-          .then((response) => {
-            return response.json();
-          }).then((data) => {
-            self.post = data;
-            self.ilink = self.post.link;
-          });
+        video = e.target.element;
+        if (e.percentInView > 0) {
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].play();
 
-          fetch(`${self.origin}/translations/en_us/projects.json`)
-          .then((response) => {
-            return response.json();
-          }).then((data) => {
-            self.translations = data;
-
-            fetch(`${self.origin}/projects/${Number(self.translations.total) === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
-            .then((response) => {
-              return response.json();
-            }).then((data) => {
-              self.next = data;
-            });
-
-            fetch(`${self.origin}/projects/${self.data_id === 1 ? self.translations.total : Number(self.data_id) -1 }.json`)
-            .then((response) => {
-              return response.json();
-            }).then((data) => {
-              self.prev = data;
-            });
-        });
-      },
-      toggleiframe() {
-        this.ilink = '';
-        if (this.itoggle) {
-          this.itoggle = false;
-          window.setTimeout(() => this.ilink = this.post.link, 500);
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].play());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
         } else {
-          this.itoggle = true;
-          window.setTimeout(() => this.ilink = this.post.link, 500);
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].pause();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].pause());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
         }
-      }
+
+        //console.log(e.type) // 'enter', 'exit', 'progress'
+        //console.log(e.percentInView) // 0..1 how much element overlap the viewport
+        //console.log(e.percentTop) // 0..1 position of element at viewport 0 - above , 1 - below
+        //console.log(e.percentCenter) // 0..1 position the center of element at viewport 0 - center at viewport top, 1 - center at viewport bottom
+        //console.log(e.scrollPercent) // 0..1 current scroll position of page
+        //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
+        //console.log(e.target.rect) // element.getBoundingClientRect() result
     }
+  }
 }
 </script>
 

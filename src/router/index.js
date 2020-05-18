@@ -9,6 +9,8 @@ import '../../node_modules/nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
+const total = 73;
+
 const routes = [
   {
     path: '/',
@@ -51,367 +53,660 @@ const routes = [
   {
     path: '/projects/melissa-next-br',
     name: 'Melissa | Next',
-    component: ()  => import(/* webpackChunkName: "Project73" */ '../views/projects/Project73')
+    meta: {
+      last: true,
+      id: 73,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-dreamers',
     name: 'Minimelissa | AW\'20',
-    component: ()  => import(/* webpackChunkName: "Project72" */ '../views/projects/Project72')
+    meta: {
+      id: 72,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-color-me',
     name: 'Minimelissa | SS\'20',
-    component: ()  => import(/* webpackChunkName: "Project71" */ '../views/projects/Project71')
+    meta: {
+      id: 71,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-dreamers-infinitos',
     name: 'Melissa | Dreamers / Infinitos',
-    component: ()  => import(/* webpackChunkName: "Project70" */ '../views/projects/Project70')
+    meta: {
+      id: 70,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/metcha-newsletter',
-    name: 'MMETCHA | Newsletter',
-    component: ()  => import(/* webpackChunkName: "Project69" */ '../views/projects/Project69')
+    name: 'METCHA | Newsletter',
+    meta: {
+      id: 69,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/metcha-newsletter-generator',
     name: 'METCHA | Newsletter Generator',
-    component: ()  => import(/* webpackChunkName: "Project68" */ '../views/projects/Project68')
+    meta: {
+      id: 68,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/metcha-cms',
     name: 'METCHA | CMS',
-    component: ()  => import(/* webpackChunkName: "Project67" */ '../views/projects/Project67')
+    meta: {
+      id: 67,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/metcha-website',
     name: 'METCHA | Website',
-    component: ()  => import(/* webpackChunkName: "Project66" */ '../views/projects/Project66')
+    meta: {
+      id: 66,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-sustainability',
     name: 'Melissa | Sustainability',
-    component: ()  => import(/* webpackChunkName: "Project65" */ '../views/projects/Project65')
+    meta: {
+      id: 65,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-color-me',
     name: 'Melissa | Color ME',
-    component: ()  => import(/* webpackChunkName: "Project64" */ '../views/projects/Project64')
+    meta: {
+      id: 64,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/transainc-muda',
     name: 'Transainc | Muda',
-    component: ()  => import(/* webpackChunkName: "Project63" */ '../views/projects/Project63')
+    meta: {
+      id: 63,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/cicb-sustainability-forum-2019',
     name: 'CICB | Sustainability Forum 2019',
-    component: ()  => import(/* webpackChunkName: "Project62" */ '../views/projects/Project62')
+    meta: {
+      id: 62,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/cicb-sustainability-forum-2018',
     name: 'CICB | Sustainability Forum 2018',
-    component: ()  => import(/* webpackChunkName: "Project61" */ '../views/projects/Project61')
+    meta: {
+      id: 61,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/cicb-sustainability-forum-2017',
     name: 'CICB | Sustainability Forum 2017',
-    component: ()  => import(/* webpackChunkName: "Project60" */ '../views/projects/Project60')
+    meta: {
+      id: 60,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/cicb-sustainability-forum-2016',
     name: 'CICB | Sustainability Forum 2016',
-    component: ()  => import(/* webpackChunkName: "Project59" */ '../views/projects/Project59')
+    meta: {
+      id: 59,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/coza-webpage',
     name: 'Coza | Webpage',
-    component: ()  => import(/* webpackChunkName: "Project58" */ '../views/projects/Project58')
+    meta: {
+      id: 58,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/coza-where-to-find',
     name: 'Coza | Where to Find',
-    component: ()  => import(/* webpackChunkName: "Project57" */ '../views/projects/Project57')
+    meta: {
+      id: 57,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-family',
     name: 'Melissa | Family',
-    component: ()  => import(/* webpackChunkName: "Project56" */ '../views/projects/Project56')
+    meta: {
+      id: 56,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-mapping',
     name: 'Melissa | Mapping',
-    component: ()  => import(/* webpackChunkName: "Project55" */ '../views/projects/Project55')
+    meta: {
+      id: 55,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-mirror',
     name: 'Melissa | Mirror',
-    component: ()  => import(/* webpackChunkName: "Project54" */ '../views/projects/Project54')
+    meta: {
+      id: 54,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-open-vibes',
     name: 'Melissa | Open Vibes',
-    component: ()  => import(/* webpackChunkName: "Project53" */ '../views/projects/Project53')
+    meta: {
+      id: 53,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-a-la-garconne',
     name: 'Melissa | À Lá Garçonne',
-    component: ()  => import(/* webpackChunkName: "Project52" */ '../views/projects/Project52')
+    meta: {
+      id: 52,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-awaytomars',
     name: 'Melissa | AWAYTOMARS',
-    component: ()  => import(/* webpackChunkName: "Project51" */ '../views/projects/Project51')
+    meta: {
+      id: 51,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-baja-east',
     name: 'Melissa | Baja East',
-    component: ()  => import(/* webpackChunkName: "Project50" */ '../views/projects/Project50')
+    meta: {
+      id: 50,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-melissa+csc',
     name: 'Melissa | Melissa + CSC',
-    component: ()  => import(/* webpackChunkName: "Project49" */ '../views/projects/Project49')
+    meta: {
+      id: 49,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-fabula',
     name: 'Melissa | Fábula',
-    component: ()  => import(/* webpackChunkName: "Project48" */ '../views/projects/Project48')
+    meta: {
+      id: 48,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-melissa+rider',
     name: 'Melissa | Melissa + Rider',
-    component: ()  => import(/* webpackChunkName: "Project47" */ '../views/projects/Project47')
+    meta: {
+      id: 47,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-galleries-sp-nyc-lon',
     name: 'Melissa | Galleries SP\/NYC\/LON',
-    component: ()  => import(/* webpackChunkName: "Project46" */ '../views/projects/Project46')
+    meta: {
+      id: 46,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-bike',
     name: 'Melissa | Bike',
-    component: ()  => import(/* webpackChunkName: "Project45" */ '../views/projects/Project45')
+    meta: {
+      id: 45,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-creatives',
     name: 'Melissa | Creatives',
-    component: ()  => import(/* webpackChunkName: "Project44" */ '../views/projects/Project44')
+    meta: {
+      id: 44,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-sk8',
     name: 'Melissa | SK8',
-    component: ()  => import(/* webpackChunkName: "Project43" */ '../views/projects/Project43')
+    meta: {
+      id: 43,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-possession',
     name: 'Melissa | Possession',
-    component: ()  => import(/* webpackChunkName: "Project42" */ '../views/projects/Project42')
+    meta: {
+      id: 42,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-candy-framework',
     name: 'Minimelissa | Candy Framework',
-    component: ()  => import(/* webpackChunkName: "Project41" */ '../views/projects/Project41')
+    meta: {
+      id: 41,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-website',
     name: 'Minimelissa | Website',
-    component: ()  => import(/* webpackChunkName: "Project40" */ '../views/projects/Project40')
+    meta: {
+      id: 40,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-a-w16',
     name: 'Minimelissa | A/W\'16',
-    component: ()  => import(/* webpackChunkName: "Project39" */ '../views/projects/Project39')
+    meta: {
+      id: 39,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-a-w17',
     name: 'Minimelissa | A/W\'17',
-    component: ()  => import(/* webpackChunkName: "Project38" */ '../views/projects/Project38')
+    meta: {
+      id: 38,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-a-w18',
     name: 'Minimelissa | A/W\'18',
-    component: ()  => import(/* webpackChunkName: "Project37" */ '../views/projects/Project37')
+    meta: {
+      id: 37,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-a-w19',
     name: 'Minimelissa | A/W\'19',
-    component: ()  => import(/* webpackChunkName: "Project36" */ '../views/projects/Project36')
+    meta: {
+      id: 36,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-where-to-find',
     name: 'Minimelissa | Where to Find',
-    component: ()  => import(/* webpackChunkName: "Project35" */ '../views/projects/Project35')
+    meta: {
+      id: 35,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-s-s16',
     name: 'Minimelissa | S/S\'16',
-    component: ()  => import(/* webpackChunkName: "Project34" */ '../views/projects/Project34')
+    meta: {
+      id: 34,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-s-s17',
     name: 'Minimelissa | S/S\'17',
-    component: ()  => import(/* webpackChunkName: "Project33" */ '../views/projects/Project33')
+    meta: {
+      id: 33,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-s-s18',
     name: 'Minimelissa | S/S\'18',
-    component: ()  => import(/* webpackChunkName: "Project32" */ '../views/projects/Project32')
+    meta: {
+      id: 32,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/minimelissa-s-s19',
     name: 'Minimelissa | S/S\'19',
-    component: ()  => import(/* webpackChunkName: "Project31" */ '../views/projects/Project31')
+    meta: {
+      id: 31,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/mor-website',
     name: 'Mor | Website',
-    component: ()  => import(/* webpackChunkName: "Project30" */ '../views/projects/Project30')
+    meta: {
+      id: 30,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/mor-where-to-find',
     name: 'Mor | Where to Find',
-    component: ()  => import(/* webpackChunkName: "Project29" */ '../views/projects/Project29')
+    meta: {
+      id: 29,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/cicb-cscb-leather-law-brazilian-portal',
     name: 'CICB / CSCB/ Leather Law / Brazilian Leather | Portal',
-    component: ()  => import(/* webpackChunkName: "Project28" */ '../views/projects/Project28')
+    meta: {
+      id: 28,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-new-features',
     name: 'Melissa | New Features',
-    component: ()  => import(/* webpackChunkName: "Project27" */ '../views/projects/Project27')
+    meta: {
+      id: 27,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-flygrl',
     name: 'Melissa | Flygrl',
-    component: ()  => import(/* webpackChunkName: "Project26" */ '../views/projects/Project26')
+    meta: {
+      id: 26,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-mashup',
     name: 'Melissa | Mashup',
-    component: ()  => import(/* webpackChunkName: "Project25" */ '../views/projects/Project25')
+    meta: {
+      id: 25,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-cine-melissa',
     name: 'Melissa | Cine Melissa',
-    component: ()  => import(/* webpackChunkName: "Project24" */ '../views/projects/Project24')
+    meta: {
+      id: 24,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-dance-machine',
     name: 'Melissa | Dance Machine',
-    component: ()  => import(/* webpackChunkName: "Project23" */ '../views/projects/Project23')
+    meta: {
+      id: 23,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-eat-my-melissa',
     name: 'Melissa | Eat My Melissa',
-    component: ()  => import(/* webpackChunkName: "Project22" */ '../views/projects/Project22')
+    meta: {
+      id: 22,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-nation',
     name: 'Melissa | Nation',
-    component: ()  => import(/* webpackChunkName: "Project21" */ '../views/projects/Project21')
+    meta: {
+      id: 21,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-starwalker',
     name: 'Melissa | Starwalker',
-    component: ()  => import(/* webpackChunkName: "Project20" */ '../views/projects/Project20')
+    meta: {
+      id: 20,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-wanna-be-carioca',
     name: 'Melissa | Wanna Be Carioca',
-    component: ()  => import(/* webpackChunkName: "Project19" */ '../views/projects/Project19')
+    meta: {
+      id: 19,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-we-are-flowers',
     name: 'Melissa | We are Flowers',
-    component: ()  => import(/* webpackChunkName: "Project18" */ '../views/projects/Project18')
+    meta: {
+      id: 18,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-campana',
     name: 'Melissa | Campana',
-    component: ()  => import(/* webpackChunkName: "Project17" */ '../views/projects/Project17')
+    meta: {
+      id: 17,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-gaetano-pesce',
     name: 'Melissa | Gaetano Pesce',
-    component: ()  => import(/* webpackChunkName: "Project16" */ '../views/projects/Project16')
+    meta: {
+      id: 16,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-gareth-pugh',
     name: 'Melissa | Gareth Pugh',
-    component: ()  => import(/* webpackChunkName: "Project15" */ '../views/projects/Project15')
+    meta: {
+      id: 15,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-j-maskrey',
     name: 'Melissa | J Maskrey',
-    component: ()  => import(/* webpackChunkName: "Project14" */ '../views/projects/Project14')
+    meta: {
+      id: 14,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-jason-wu',
     name: 'Melissa | Jason Wu',
-    component: ()  => import(/* webpackChunkName: "Project13" */ '../views/projects/Project13')
+    meta: {
+      id: 13,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-jeremy-scott',
     name: 'Melissa | Jeremy Scott',
-    component: ()  => import(/* webpackChunkName: "Project12" */ '../views/projects/Project12')
+    meta: {
+      id: 12,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-karl-lagerfeld',
     name: 'Melissa | Karl Lagerfeld',
-    component: ()  => import(/* webpackChunkName: "Project11" */ '../views/projects/Project11')
+    meta: {
+      id: 11,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-sebastian-errazuriz',
     name: 'Melissa | Sebastian Errazuriz',
-    component: ()  => import(/* webpackChunkName: "Project10" */ '../views/projects/Project10')
+    meta: {
+      id: 10,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-vitorino-campos',
     name: 'Melissa | Vitorino Campos',
-    component: ()  => import(/* webpackChunkName: "Project9" */ '../views/projects/Project9')
+    meta: {
+      id: 9,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-vivienne-westwood',
     name: 'Melissa | Vivienne Westwood',
-    component: ()  => import(/* webpackChunkName: "Project8" */ '../views/projects/Project8')
+    meta: {
+      id: 8,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-zaha-hadid',
     name: 'Melissa | Zaha Hadid',
-    component: ()  => import(/* webpackChunkName: "Project7" */ '../views/projects/Project7')
+    meta: {
+      id: 7,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-where-to-find',
     name: 'Melissa | Where to Find',
-    component: ()  => import(/* webpackChunkName: "Project6" */ '../views/projects/Project6')
+    meta: {
+      id: 6,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-roller-joy',
     name: 'Melissa | Roller Joy',
-    component: ()  => import(/* webpackChunkName: "Project5" */ '../views/projects/Project5')
+    meta: {
+      id: 5,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/melissa-tropico-surreal',
     name: 'Melissa | Tropico Surreal',
-    component: ()  => import(/* webpackChunkName: "Project4" */ '../views/projects/Project4')
+    meta: {
+      id: 4,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/mor-loja-mor',
     name: 'Mor | Loja Mor',
-    component: ()  => import(/* webpackChunkName: "Project3" */ '../views/projects/Project3')
+    meta: {
+      id: 3,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/vibra-website',
     name: 'Vibra | Website',
-    component: ()  => import(/* webpackChunkName: "Project2" */ '../views/projects/Project2')
+    meta: {
+      id: 2,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '/projects/genesysinf-sageweb',
     name: 'GenesysInf | SageWeb',
-    component: ()  => import(/* webpackChunkName: "Project1" */ '../views/projects/Project1')
+    meta: {
+      id: 1,
+      total: total
+    },
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project')
   },
   {
     path: '*',
@@ -446,7 +741,7 @@ Vue.use(VueAnalytics, {
     pageviewTemplate (route) {
       return {
         page: route.path,
-        title: document.title,
+        title: document.title, 
         location: window.location.href
       }
     }

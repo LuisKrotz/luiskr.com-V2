@@ -236,7 +236,7 @@
         color: $color-black;
         border-radius: 100%;
         transform: translate(to-em(-10), to-em(-8));
-        box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .05), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .1);
+        box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
 
         @include layout-1024() {
             border-radius: initial;
@@ -249,7 +249,7 @@
         .black & {
             color: $color-white;
             background: rgba(0, 0, 0, .5);
-            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .05);
+            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
         }
 
         &-line {
@@ -259,8 +259,10 @@
             box-sizing: border-box;
             height: 1px;
             background-color: $color-black;
+            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
 
             .black & {
+                box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
                 background-color: $color-white;
             }
 
@@ -647,4 +649,16 @@
 
 .lz-container {
     position: relative;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .5s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
