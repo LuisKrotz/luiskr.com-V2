@@ -1,8 +1,13 @@
 
 .home {
     .main {
+        background: $color-white;
         padding: 0;
-        background-attachment: fixed;
+        padding-top: calc(100vh + #{to-em(64)});
+
+        @include layout-1024() {
+            padding-top: 0;
+        }
 
         &-title {
             text-shadow: to-em(4) to-em(2) 0 rgba(0, 0, 0, 0.05);
@@ -11,7 +16,7 @@
 
     &-scroll-down {
         border: none;
-        transition: opacity ease-in .5s;
+        transition: opacity ease-out .25s;
         position: fixed;
         bottom: 0;
         left: 50%;
@@ -71,10 +76,8 @@
             &.first {
                 background: linear-gradient(rgba(255, 255, 255, 0) 0%,#FFF 5%,#FFF 100%);
                 padding-top: to-em(16);
-                margin-top: 100vh;
 
                 @include layout-1024() {
-                    margin-top: 0;
                     padding-top: 0;
                 }
             }

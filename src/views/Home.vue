@@ -138,7 +138,7 @@ export default {
       }
 
       if (offset < innerHeight)
-        scrolldownicon.style = `opacity: -${offset - 50};`
+        scrolldownicon.style = `opacity: -${offset - 1};`
     });
   },
   methods: {
