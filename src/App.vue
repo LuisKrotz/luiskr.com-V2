@@ -71,6 +71,13 @@ export default {
           eventValue: value,
         });
 
+        if (window.fbq !== undefined) {
+          window.fbq('track', 'Lead', {
+              content_name: label,
+              value: value
+          });
+        }
+
         // Show Analytics on consle, object to be recorded
         function Record(category, action, label, value) {
             this.category = category;

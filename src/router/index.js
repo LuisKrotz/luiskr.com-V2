@@ -1589,7 +1589,6 @@ router.beforeResolve((to, from, next) => {
     // Add the meta tags to the document head.
     .forEach(tag => document.head.appendChild(tag));
 
-
   next();
 })
 
