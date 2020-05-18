@@ -7,7 +7,7 @@
 
             <h3 class="main-subtitle">Version 1.0</h3>
              <p class="main-text">
-              <video loading="lazy" :poster="storage + 'giphy' + webp" playsinline autoplay muted loop width="480" height="264">
+              <video loading="lazy" :poster="storage + 'giphy' + webp2" playsinline autoplay muted loop width="480" height="264">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'giphy.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'giphy.mp4'"/>
                 <source type="video/webm" :src="storage + 'giphy.webm'"/>
@@ -77,9 +77,9 @@
             <p class="main-text"><strong>luiskr.com</strong> is located at the address in Section 10.8. If you are a California resident, you may report complaints to the Complaint Assistance Unit of the Division of Consumer Product of the California Department of Consumer Affairs by contacting them in writing at 400 R Street, Sacramento, CA 95814, or by telephone at (800) 952-5210.</p>
             <p class="main-text"><strong>Electronic Communications.</strong> The communications between you and <strong>luiskr.com</strong> use electronic means, whether you use the Site or send us emails, or whether <strong>luiskr.com</strong> posts notices on the Site or communicates with you via email. For contractual purposes, you (a) consent to receive communications from <strong>luiskr.com</strong> in an electronic form; and (b) agree that all terms and conditions, agreements, notices, disclosures, and other communications that <strong>luiskr.com</strong> provides to you electronically satisfy any legal obligation that such communications would satisfy if it were be in a hard copy writing.</p>
             <p class="main-text"><strong>Entire Terms.</strong> These Terms constitute the entire agreement between you and us regarding the use of the Site. Our failure to exercise or enforce any right or provision of these Terms shall not operate as a waiver of such right or provision. The section titles in these Terms are for convenience only and have no legal or contractual effect. The word "including" means "including without limitation". If any provision of these Terms is held to be invalid or unenforceable, the other provisions of these Terms will be unimpaired and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law.  Your relationship to <strong>luiskr.com</strong> is that of an independent contractor, and neither party is an agent or partner of the other.  These Terms, and your rights and obligations herein, may not be assigned, subcontracted, delegated, or otherwise transferred by you without <strong>luiskr.com</strong>’s prior written consent, and any attempted assignment, subcontract, delegation, or transfer in violation of the foregoing will be null and void.  <strong>luiskr.com</strong> may freely assign these Terms.  The terms and conditions set forth in these Terms shall be binding upon assignees.</p>
-            <p class="main-text"><strong>Your Privacy.</strong> Please read the Privacy Policy</a>.</p>
+            <p class="main-text"><strong>Your Privacy.</strong> Please read the Privacy Policy.</p>
             <p class="main-text"><strong>Copyright/Trademark Information.</strong> Copyright ©. All rights reserved.  All trademarks, logos and service marks displayed on the Site are our property or the property of other third-parties. You are not permitted to use these Marks without our prior written consent or the consent of such third party which may own the Marks.</p>
-            <video class="main-text" loading="lazy" :poster="storage + 'thatsall' + webp" playsinline autoplay muted loop width="480" height="270">
+            <video class="main-text" loading="lazy" :poster="storage + 'thatsall' + webp2" playsinline autoplay muted loop width="480" height="270">
               <source type="application/vnd.apple.mpegurl" :src="storage + 'thatsall.m3u8'"/>
               <source type="video/mp4" :src="storage + 'thatsall.mp4'"/>
               <source type="video/webm" :src="storage + 'thatsall.webm'"/>
@@ -106,7 +106,7 @@ export default {
   },
   data() {
     return {
-      webp: this.$parent.webp,
+      webp2: this.$parent.webp2,
       storage: this.$parent.storage,
       origin: this.$parent.origin
     }

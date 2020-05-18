@@ -1,6 +1,6 @@
 <template>
   <div class="footer-open">
-    <video class="notfound-bg" :poster="storage + 'elvira' + webp" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
+    <video class="notfound-bg" :poster="storage + 'elvira' + webp2" loop muted autoplay playsinline alt="Background - Elvira mistress of the dark scene - Exploding a gas station while driving - Feeling lost">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'elvira' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'elvira' + '.mp4'"/>
         <source type="video/webm" :src="storage + 'elvira' + '.webm'"/>
@@ -24,7 +24,7 @@ export default {
       placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
       origin: this.$parent.origin,
-      webp: this.$parent.webp
+      webp2: this.$parent.webp2
     }
   },
   created() {

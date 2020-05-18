@@ -1,6 +1,6 @@
 <template>
 <div class="footer-open">
-    <video class="credits-bg" :poster="storage + 'the-end' + webp" loop muted autoplay playsinline alt="Bage background - the end">
+    <video class="credits-bg" :poster="storage + 'the-end' + webp2" loop muted autoplay playsinline alt="Bage background - the end">
         <source type="application/vnd.apple.mpegurl" :src="storage + 'the-end' + '.m3u8'"/>
         <source type="video/mp4" :src="storage + 'the-end' + '.mp4'"/>
         <source type="video/webm" :src="storage + 'the-end' + '.webm'"/>
@@ -101,7 +101,7 @@ export default {
     return {
       storage: this.$parent.storage,
       origin: this.$parent.origin,
-      webp: this.$parent.webp
+      webp2: this.$parent.webp2
     }
   },
   created() {

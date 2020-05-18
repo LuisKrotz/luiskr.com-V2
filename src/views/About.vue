@@ -5,7 +5,7 @@
           <div class="about main">
             <h2 class="main-title">About</h2>
             <p class="main-text">I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated on August of 2014 in Technology in Sistems for the Internet.
-              <video loading="lazy" :poster="storage + 'college' + webp" playsinline autoplay muted loop width="480" height="270">
+              <video v-view="viewHandler" loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'college.mp4'"/>
                 <source type="video/webm" :src="storage + 'college.webm'"/>
@@ -16,7 +16,7 @@
 
             <h3 class="main-subtitle">Freelacing</h3>
             <p class="main-text">I started my "<em>one man army</em>" company on 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
-              <video loading="lazy" :poster="storage + 'cat-lady' + webp" playsinline autoplay muted loop width="480" height="270">
+              <video v-view="viewHandler" loading="lazy" :poster="storage + 'cat-lady' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'cat-lady.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'cat-lady.mp4'"/>
                 <source type="video/webm" :src="storage + 'cat-lady.webm'"/>
@@ -27,7 +27,7 @@
 
             <h3 class="main-subtitle">Whats keeps me sane</h3>
             <p class="main-text">I really enjoy listening to music, music is my way to relax after a hard, stressfull or plainly normal day, I can listen to music at any given moment - <em>if the moment allows it.</em>
-              <video loading="lazy" :poster="storage + 'music' + webp" playsinline autoplay muted loop width="480" height="264">
+              <video v-view="viewHandler" loading="lazy" :poster="storage + 'music' + webp2" playsinline autoplay muted loop width="480" height="264">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'music.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'music.mp4'"/>
                 <source type="video/webm" :src="storage + 'music.webm'"/>
@@ -44,7 +44,7 @@
 
             <h3 class="main-subtitle">Languages</h3>
             <p class="main-text">I love learnign a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
-              <video loading="lazy" :poster="storage + 'bean' + webp" playsinline autoplay muted loop width="480" height="270">
+              <video v-view="viewHandler" loading="lazy" :poster="storage + 'bean' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'bean.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'bean.mp4'"/>
                 <source type="video/webm" :src="storage + 'bean.webm'"/>
@@ -96,16 +96,52 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import HereMapsComponent from '@/components/HereMapsComponent.vue'
+import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+
+Vue.use(checkView);
 
 export default {
   name: 'About',
   components: {
     HereMapsComponent
   },
+  methods: {
+    viewHandler(e) {
+      let video, promise, i, t;
+
+      video = e.target.element;
+      if (e.percentInView > 0) {
+          for (i = 0, t = video.lenght; i < t; i+=1) {
+              promise = video[i].play();
+
+              if (promise !== undefined) {
+                  promise.then(_ => {
+                      resolve(video[i].play());
+                  }).catch(error => {
+                      return void(0);
+                  });
+              }
+          }
+      } else {
+          for (i = 0, t = video.lenght; i < t; i+=1) {
+              promise = video[i].pause();
+
+              if (promise !== undefined) {
+                  promise.then(_ => {
+                      resolve(video[i].pause());
+                  }).catch(error => {
+                      return void(0);
+                  });
+              }
+          }
+      }
+    }
+  },
   data() {
     return {
-      webp: this.$parent.webp,
+      webp2: this.$parent.webp2,
       placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
       origin: this.$parent.origin
