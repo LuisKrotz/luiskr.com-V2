@@ -228,15 +228,16 @@
         bottom:to-em(5);
         position: fixed;
         z-index: $z-header;
-        background: rgba(255, 255, 255, 1);
+        
         display: inline-block;
         cursor: pointer;
         width: to-em(50);
         height: to-em(50);
-        color: $color-black;
+        color: $color-white;
         border-radius: 100%;
         transform: translate(to-em(-10), to-em(-8));
-        box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
+        background: rgba(0, 0, 0, .98);
+        box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
 
         @include layout-1024() {
             border-radius: initial;
@@ -244,12 +245,22 @@
             border-bottom-right-radius: to-em(4);
             transform: translateX(-80%);
             bottom: initial;
+            color: $color-black;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
+
         }
 
         .black & {
-            color: $color-white;
-            background: rgba(0, 0, 0, .5);
-            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
+            color: $color-black;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
+
+            @include layout-1024() {
+                color: $color-white;
+                background: rgba(0, 0, 0, .5);
+                box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
+            }
         }
 
         &-line {
@@ -258,12 +269,22 @@
             margin: 8px auto;
             box-sizing: border-box;
             height: 1px;
-            background-color: $color-black;
-            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+            box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
+            background-color: $color-white;
+
+            @include layout-1024() {
+                background-color: $color-black;
+                box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+            }
 
             .black & {
-                box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
-                background-color: $color-white;
+                background-color: $color-black;
+                box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+
+                @include layout-1024() {
+                    box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
+                    background-color: $color-white;
+                }
             }
 
             &.top {

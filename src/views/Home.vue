@@ -1,15 +1,19 @@
 <template>
   <div>
-      <img :src="storage + 'home/' + cover + '.gif'" class="home-cover-media">
     <main class="home">
         
       <article class="main">
         <div class="home-cover-parent">
           <div class="max-area home-cover">
-            <h2 class="main-title"><span>luiskr.com</span></h2>
-            <h3 class="main-subtitle">Hy, I'm Luis.</h3>
+            <div class="home-cover-mobile" aria-hidden="true">
+              <span class="main-title"><span>luiskr.com</span></span>
+              <span class="main-subtitle">Hy, I'm Luis.</span>
+            </div>
 
-            <p class="main-text"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
+            <h2 class="main-title desk"><span>luiskr.com</span></h2>
+            <h3 class="main-subtitle desk">Hy, I'm Luis.</h3>
+
+            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
           </div>
           <div class="max-area home-cover">
             <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
@@ -82,7 +86,6 @@ export default {
         origin: this.$parent.origin,
         webp: this.$parent.webp,
         webp2: this.$parent.webp2,
-        cover: Math.round(Math.random() * 2),
         total: Number,
         projects: Object,
         sethover: '',

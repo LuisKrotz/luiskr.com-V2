@@ -5,30 +5,20 @@
         background-attachment: fixed;
 
         &-title {
-            mix-blend-mode: overlay;
             text-shadow: to-em(4) to-em(2) 0 rgba(0, 0, 0, 0.05);
         }
     }
 
     &-cover {
         box-sizing: border-box;
-        padding-top: to-em(104);
-        padding-bottom: to-em(104);
-        min-height: 75vh;
 
-        &-media {
-            top: 0;
-            left: 0;
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            filter: blur(20px);
-            object-fit: cover;
-            object-position: center center;
+        @include layout-1024() {
+            min-height: 75vh;
+            padding-top: to-em(104);
+            padding-bottom: to-em(104);
         }
 
         .main-title {
-            mix-blend-mode: initial;
             font-size: to-em(40);
             font-weight: 200;
 
@@ -36,17 +26,48 @@
                 background: $color-black;
                 color: $color-white;
             }
+
+            &.desk {
+                display: none;
+
+                @include layout-1024() {
+                    display: block;
+                }
+            }
         }
 
         .main-subtitle {
             text-align: center;
-            mix-blend-mode: overlay;
+
+            &.desk {
+                display: none;
+
+                @include layout-1024() {
+                    display: block;
+                }
+            }  
         }
 
         .main-text {
             font-size: to-em(24);
             line-height: to-em(64);
-            padding-top: to-em(168);
+            padding-bottom: to-em(168);
+            background: $color-white;
+
+            &.first {
+                background: linear-gradient(rgba(255, 255, 255, 0) 0%,#FFF 10%,#FFF 100%);
+                padding-top: to-em(16);
+                margin-top: 100vh;
+
+                @include layout-1024() {
+                    margin-top: 0;
+                    padding-top: 0;
+                }
+            }
+
+            @include layout-1024() {
+                padding-bottom: initial;
+            }
 
             span {
                 background: $color-white;
@@ -119,9 +140,22 @@
             grid-row-gap: to-em(40);
             grid-column-gap: to-em(64);
         }
+
+        &-mobile {
+            position: fixed;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include layout-1024(){
+                display: none;
+            }
+        }
     }
 
     &-projects {
+        background: $color-white;
         padding-bottom: to-em(104);
         position: relative;
 
