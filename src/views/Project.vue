@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <article class="home-project max-area">
+    <article class="project home-project max-area">
       <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
       <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
