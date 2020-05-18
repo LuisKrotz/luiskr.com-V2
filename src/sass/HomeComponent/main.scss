@@ -9,6 +9,20 @@
         }
     }
 
+    &-scroll-down {
+        border: none;
+        transition: opacity ease-in .5s;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        transform: translateX(-50%);
+        mix-blend-mode: difference;
+        pointer-events: none;
+    }
+
     &-cover {
         box-sizing: border-box;
 
@@ -151,6 +165,10 @@
             @include layout-1024(){
                 display: none;
             }
+        }
+
+        &-parent {
+            background-color: $color-white;
         }
     }
 

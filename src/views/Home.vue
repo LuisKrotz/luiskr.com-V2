@@ -66,6 +66,8 @@
             </router-link>
           </div>
         </section>
+
+        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0"/>
       </article>
     </main>
   </div>
@@ -122,15 +124,21 @@ export default {
         innerHeight = window.innerHeight;
 
     let half = innerHeight / 2;
+    let scrolldownicon = document.querySelector('.home-scroll-down');
 
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset + innerHeight >= document.body.scrollHeight - half && !self.stop) {
-          self.getPosts(self.start, self.end);
+      let offset = window.pageYOffset;
 
-          self.start = self.end - 1;
-          self.end = self.end - 1 > 0 ? self.end - 1 : 1;
-          self.stop = self.start === 0;
-        }
+      if (offset + innerHeight >= document.body.scrollHeight - half && !self.stop) {
+        self.getPosts(self.start, self.end);
+
+        self.start = self.end - 1;
+        self.end = self.end - 1 > 0 ? self.end - 1 : 1;
+        self.stop = self.start === 0;
+      }
+
+      if (offset < innerHeight)
+        scrolldownicon.style = `opacity: -${offset - 50};`
     });
   },
   methods: {
@@ -177,10 +185,10 @@ export default {
         }
     },
     random() {
-        this.sethover = `cursor: url(${this.storage}click/${Math.round(Math.random() * 13)}.gif), pointer`;
+      this.sethover = `cursor: url(${this.storage}click/${Math.round(Math.random() * 13)}.gif), pointer`;
     },
     clear() {
-        this.sethover = '';
+      this.sethover = '';
     }
   }
 }
