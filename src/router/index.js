@@ -158,12 +158,10 @@ const routes = [
   {
     path: '/projects/minimelissa-dreamers',
     name: 'Minimelissa | AW\'20',
-    meta: {
-      id: 72,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 72,
+      total: total,
       title: 'luiskr.com |  ',
       metaTags: [{
           name: 'description',
@@ -179,12 +177,10 @@ const routes = [
   {
     path: '/projects/minimelissa-color-me',
     name: 'Minimelissa | SS\'20',
-    meta: {
-      id: 71,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 71,
+      total: total,
       title: 'luiskr.com |  ',
       metaTags: [{
           name: 'description',
@@ -200,12 +196,10 @@ const routes = [
   {
     path: '/projects/melissa-dreamers-infinitos',
     name: 'Melissa | Dreamers / Infinitos',
-    meta: {
-      id: 70,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 70,
+      total: total,
       title: 'luiskr.com |  ',
       metaTags: [{
           name: 'description',
@@ -221,12 +215,10 @@ const routes = [
   {
     path: '/projects/metcha-newsletter',
     name: 'METCHA | Newsletter',
-    meta: {
-      id: 69,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 69,
+      total: total,
       title: 'luiskr.com | METCHA | Newsletter',
       metaTags: [{
           name: 'description',
@@ -242,12 +234,10 @@ const routes = [
   {
     path: '/projects/metcha-newsletter-generator',
     name: 'METCHA | Newsletter Generator',
-    meta: {
-      id: 68,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 68,
+      total: total,
       title: 'luiskr.com | METCHA | Newsletter Generator',
       metaTags: [{
           name: 'description',
@@ -263,12 +253,10 @@ const routes = [
   {
     path: '/projects/metcha-cms',
     name: 'METCHA | CMS',
-    meta: {
-      id: 67,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 67,
+      total: total,
       title: 'luiskr.com | METCHA | CMS',
       metaTags: [{
           name: 'description',
@@ -284,12 +272,10 @@ const routes = [
   {
     path: '/projects/metcha-website',
     name: 'METCHA | Website',
-    meta: {
-      id: 66,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 66,
+      total: total,
       title: 'luiskr.com | METCHA | Website',
       metaTags: [{
           name: 'description',
@@ -305,12 +291,10 @@ const routes = [
   {
     path: '/projects/melissa-sustainability',
     name: 'Melissa | Sustainability',
-    meta: {
-      id: 65,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 65,
+      total: total,
       title: 'luiskr.com | Melissa | Sustainability',
       metaTags: [{
           name: 'description',
@@ -326,12 +310,10 @@ const routes = [
   {
     path: '/projects/melissa-color-me',
     name: 'Melissa | Color ME',
-    meta: {
-      id: 64,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 64,
+      total: total,
       title: 'luiskr.com | Melissa | Color ME',
       metaTags: [{
           name: 'description',
@@ -347,12 +329,10 @@ const routes = [
   {
     path: '/projects/transainc-muda',
     name: 'Transainc | Muda',
-    meta: {
-      id: 63,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 63,
+      total: total,
       title: 'luiskr.com | Transainc | Muda',
       metaTags: [{
           name: 'description',
@@ -368,12 +348,10 @@ const routes = [
   {
     path: '/projects/cicb-sustainability-forum-2019',
     name: 'CICB | Sustainability Forum 2019',
-    meta: {
-      id: 62,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 62,
+      total: total,
       title: 'luiskr.com | CICB | Sustainability Forum 2019',
       metaTags: [{
           name: 'description',
@@ -389,12 +367,10 @@ const routes = [
   {
     path: '/projects/cicb-sustainability-forum-2018',
     name: 'CICB | Sustainability Forum 2018',
-    meta: {
-      id: 61,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 61,
+      total: total,
       title: 'luiskr.com | CICB | Sustainability Forum 2018',
       metaTags: [{
           name: 'description',
@@ -410,12 +386,10 @@ const routes = [
   {
     path: '/projects/cicb-sustainability-forum-2017',
     name: 'CICB | Sustainability Forum 2017',
-    meta: {
-      id: 60,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 60,
+      total: total,
       title: 'luiskr.com | CICB | Sustainability Forum 2017',
       metaTags: [{
           name: 'description',
@@ -431,12 +405,10 @@ const routes = [
   {
     path: '/projects/cicb-sustainability-forum-2016',
     name: 'CICB | Sustainability Forum 2016',
-    meta: {
-      id: 59,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 59,
+      total: total,
       title: 'luiskr.com | CICB | Sustainability Forum 2016',
       metaTags: [{
           name: 'description',
@@ -452,12 +424,10 @@ const routes = [
   {
     path: '/projects/coza-webpage',
     name: 'Coza | Webpage',
-    meta: {
-      id: 58,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 58,
+      total: total,
       title: 'luiskr.com | Coza | Webpage',
       metaTags: [{
           name: 'description',
@@ -473,12 +443,10 @@ const routes = [
   {
     path: '/projects/coza-where-to-find',
     name: 'Coza | Where to Find',
-    meta: {
-      id: 57,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 57,
+      total: total,
       title: 'luiskr.com | Coza | Where to Find',
       metaTags: [{
           name: 'description',
@@ -494,12 +462,10 @@ const routes = [
   {
     path: '/projects/melissa-family',
     name: 'Melissa | Family',
-    meta: {
-      id: 56,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 56,
+      total: total,
       title: 'luiskr.com | Melissa | Family',
       metaTags: [{
           name: 'description',
@@ -515,12 +481,10 @@ const routes = [
   {
     path: '/projects/melissa-mapping',
     name: 'Melissa | Mapping',
-    meta: {
-      id: 55,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 55,
+      total: total,
       title: 'luiskr.com | Melissa | Mapping',
       metaTags: [{
           name: 'description',
@@ -536,12 +500,10 @@ const routes = [
   {
     path: '/projects/melissa-mirror',
     name: 'Melissa | Mirror',
-    meta: {
-      id: 54,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 54,
+      total: total,
       title: 'luiskr.com | Melissa | Mirror',
       metaTags: [{
           name: 'description',
@@ -557,12 +519,10 @@ const routes = [
   {
     path: '/projects/melissa-open-vibes',
     name: 'Melissa | Open Vibes',
-    meta: {
-      id: 53,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 53,
+      total: total,
       title: 'luiskr.com | Melissa | Open Vibes',
       metaTags: [{
           name: 'description',
@@ -578,12 +538,10 @@ const routes = [
   {
     path: '/projects/melissa-a-la-garconne',
     name: 'Melissa | À Lá Garçonne',
-    meta: {
-      id: 52,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 52,
+      total: total,
       title: 'luiskr.com | Melissa | À Lá Garçonne',
       metaTags: [{
           name: 'description',
@@ -599,12 +557,10 @@ const routes = [
   {
     path: '/projects/melissa-awaytomars',
     name: 'Melissa | AWAYTOMARS',
-    meta: {
-      id: 51,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 51,
+      total: total,
       title: 'luiskr.com | Melissa | AWAYTOMARS',
       metaTags: [{
           name: 'description',
@@ -620,12 +576,10 @@ const routes = [
   {
     path: '/projects/melissa-baja-east',
     name: 'Melissa | Baja East',
-    meta: {
-      id: 50,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 50,
+      total: total,
       title: 'luiskr.com | Melissa | Baja East',
       metaTags: [{
           name: 'description',
@@ -641,12 +595,10 @@ const routes = [
   {
     path: '/projects/melissa-melissa+csc',
     name: 'Melissa | Melissa + CSC',
-    meta: {
-      id: 49,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 49,
+      total: total,
       title: 'luiskr.com | Melissa | Melissa + CSC',
       metaTags: [{
           name: 'description',
@@ -662,12 +614,10 @@ const routes = [
   {
     path: '/projects/melissa-fabula',
     name: 'Melissa | Fábula',
-    meta: {
-      id: 48,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 48,
+      total: total,
       title: 'luiskr.com | Melissa | Fábula',
       metaTags: [{
           name: 'description',
@@ -683,12 +633,10 @@ const routes = [
   {
     path: '/projects/melissa-melissa+rider',
     name: 'Melissa | Melissa + Rider',
-    meta: {
-      id: 47,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 47,
+      total: total,
       title: 'luiskr.com | Melissa | Melissa + Rider',
       metaTags: [{
           name: 'description',
@@ -704,12 +652,10 @@ const routes = [
   {
     path: '/projects/melissa-galleries-sp-nyc-lon',
     name: 'Melissa | Galleries SP\/NYC\/LON',
-    meta: {
-      id: 46,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 46,
+      total: total,
       title: 'luiskr.com | Melissa | Galleries SP\/NYC\/LON',
       metaTags: [{
           name: 'description',
@@ -725,12 +671,10 @@ const routes = [
   {
     path: '/projects/melissa-bike',
     name: 'Melissa | Bike',
-    meta: {
-      id: 45,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 45,
+      total: total,
       title: 'luiskr.com | Melissa | Bike',
       metaTags: [{
           name: 'description',
@@ -746,12 +690,10 @@ const routes = [
   {
     path: '/projects/melissa-creatives',
     name: 'Melissa | Creatives',
-    meta: {
-      id: 44,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 44,
+      total: total,
       title: 'luiskr.com | Melissa | Creatives',
       metaTags: [{
           name: 'description',
@@ -767,12 +709,10 @@ const routes = [
   {
     path: '/projects/melissa-sk8',
     name: 'Melissa | SK8',
-    meta: {
-      id: 43,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 43,
+      total: total,
       title: 'luiskr.com | Melissa | SK8',
       metaTags: [{
           name: 'description',
@@ -788,12 +728,10 @@ const routes = [
   {
     path: '/projects/melissa-possession',
     name: 'Melissa | Possession',
-    meta: {
-      id: 42,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 42,
+      total: total,
       title: 'luiskr.com | Melissa | Possession',
       metaTags: [{
           name: 'description',
@@ -809,12 +747,10 @@ const routes = [
   {
     path: '/projects/minimelissa-candy-framework',
     name: 'Minimelissa | Candy Framework',
-    meta: {
-      id: 41,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 41,
+      total: total,
       title: 'luiskr.com | Minimelissa | Candy Framework',
       metaTags: [{
           name: 'description',
@@ -830,12 +766,10 @@ const routes = [
   {
     path: '/projects/minimelissa-website',
     name: 'Minimelissa | Website',
-    meta: {
-      id: 40,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 40,
+      total: total,
       title: 'luiskr.com | Minimelissa | Website',
       metaTags: [{
           name: 'description',
@@ -851,12 +785,10 @@ const routes = [
   {
     path: '/projects/minimelissa-a-w16',
     name: 'Minimelissa | A/W\'16',
-    meta: {
-      id: 39,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 39,
+      total: total,
       title: 'luiskr.com | Minimelissa | A/W\'16',
       metaTags: [{
           name: 'description',
@@ -872,12 +804,10 @@ const routes = [
   {
     path: '/projects/minimelissa-a-w17',
     name: 'Minimelissa | A/W\'17',
-    meta: {
-      id: 38,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 38,
+      total: total,
       title: 'luiskr.com | Minimelissa | A/W\'17',
       metaTags: [{
           name: 'description',
@@ -893,12 +823,10 @@ const routes = [
   {
     path: '/projects/minimelissa-a-w18',
     name: 'Minimelissa | A/W\'18',
-    meta: {
-      id: 37,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 37,
+      total: total,
       title: 'luiskr.com | Minimelissa | A/W\'18',
       metaTags: [{
           name: 'description',
@@ -914,12 +842,10 @@ const routes = [
   {
     path: '/projects/minimelissa-a-w19',
     name: 'Minimelissa | A/W\'19',
-    meta: {
-      id: 36,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 36,
+      total: total,
       title: 'luiskr.com | Minimelissa | A/W\'19',
       metaTags: [{
           name: 'description',
@@ -935,12 +861,10 @@ const routes = [
   {
     path: '/projects/minimelissa-where-to-find',
     name: 'Minimelissa | Where to Find',
-    meta: {
-      id: 35,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 35,
+      total: total,
       title: 'luiskr.com | Minimelissa | Where to Find',
       metaTags: [{
           name: 'description',
@@ -956,12 +880,10 @@ const routes = [
   {
     path: '/projects/minimelissa-s-s16',
     name: 'Minimelissa | S/S\'16',
-    meta: {
-      id: 34,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 34,
+      total: total,
       title: 'luiskr.com | Minimelissa | S/S\'16',
       metaTags: [{
           name: 'description',
@@ -977,12 +899,10 @@ const routes = [
   {
     path: '/projects/minimelissa-s-s17',
     name: 'Minimelissa | S/S\'17',
-    meta: {
-      id: 33,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 33,
+      total: total,
       title: 'luiskr.com | Minimelissa | S/S\'17',
       metaTags: [{
           name: 'description',
@@ -998,12 +918,10 @@ const routes = [
   {
     path: '/projects/minimelissa-s-s18',
     name: 'Minimelissa | S/S\'18',
-    meta: {
-      id: 32,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 32,
+      total: total,
       title: 'luiskr.com | Minimelissa | S/S\'18',
       metaTags: [{
           name: 'description',
@@ -1019,12 +937,10 @@ const routes = [
   {
     path: '/projects/minimelissa-s-s19',
     name: 'Minimelissa | S/S\'19',
-    meta: {
-      id: 31,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 31,
+      total: total,
       title: 'luiskr.com | Minimelissa | S/S\'19',
       metaTags: [{
           name: 'description',
@@ -1040,12 +956,10 @@ const routes = [
   {
     path: '/projects/mor-website',
     name: 'Mor | Website',
-    meta: {
-      id: 30,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 30,
+      total: total,
       title: 'luiskr.com | Mor | Website',
       metaTags: [{
           name: 'description',
@@ -1061,12 +975,10 @@ const routes = [
   {
     path: '/projects/mor-where-to-find',
     name: 'Mor | Where to Find',
-    meta: {
-      id: 29,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 29,
+      total: total,
       title: 'luiskr.com | Mor | Where to Find',
       metaTags: [{
           name: 'description',
@@ -1082,12 +994,10 @@ const routes = [
   {
     path: '/projects/cicb-cscb-leather-law-brazilian-portal',
     name: 'CICB / CSCB/ Leather Law / Brazilian Leather | Portal',
-    meta: {
-      id: 28,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 28,
+      total: total,
       title: 'luiskr.com | CICB / CSCB/ Leather Law / Brazilian Leather | Portal',
       metaTags: [{
           name: 'description',
@@ -1103,12 +1013,10 @@ const routes = [
   {
     path: '/projects/melissa-new-features',
     name: 'Melissa | New Features',
-    meta: {
-      id: 27,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 27,
+      total: total,
       title: 'luiskr.com | Melissa | New Features',
       metaTags: [{
           name: 'description',
@@ -1124,12 +1032,10 @@ const routes = [
   {
     path: '/projects/melissa-flygrl',
     name: 'Melissa | Flygrl',
-    meta: {
-      id: 26,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 26,
+      total: total,
       title: 'luiskr.com | Melissa | Flygrl',
       metaTags: [{
           name: 'description',
@@ -1145,12 +1051,10 @@ const routes = [
   {
     path: '/projects/melissa-mashup',
     name: 'Melissa | Mashup',
-    meta: {
-      id: 25,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 25,
+      total: total,
       title: 'luiskr.com | Melissa | Mashup',
       metaTags: [{
           name: 'description',
@@ -1166,12 +1070,10 @@ const routes = [
   {
     path: '/projects/melissa-cine-melissa',
     name: 'Melissa | Cine Melissa',
-    meta: {
-      id: 24,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 24,
+      total: total,
       title: 'luiskr.com | Melissa | Cine Melissa',
       metaTags: [{
           name: 'description',
@@ -1187,12 +1089,10 @@ const routes = [
   {
     path: '/projects/melissa-dance-machine',
     name: 'Melissa | Dance Machine',
-    meta: {
-      id: 23,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 23,
+      total: total,
       title: 'luiskr.com | Melissa | Dance Machine',
       metaTags: [{
           name: 'description',
@@ -1208,12 +1108,10 @@ const routes = [
   {
     path: '/projects/melissa-eat-my-melissa',
     name: 'Melissa | Eat My Melissa',
-    meta: {
-      id: 22,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 22,
+      total: total,
       title: 'luiskr.com | Melissa | Eat My Melissa',
       metaTags: [{
           name: 'description',
@@ -1229,12 +1127,10 @@ const routes = [
   {
     path: '/projects/melissa-nation',
     name: 'Melissa | Nation',
-    meta: {
-      id: 21,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 21,
+      total: total,
       title: 'luiskr.com | Melissa | Nation',
       metaTags: [{
           name: 'description',
@@ -1250,12 +1146,10 @@ const routes = [
   {
     path: '/projects/melissa-starwalker',
     name: 'Melissa | Starwalker',
-    meta: {
-      id: 20,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 20,
+      total: total,
       title: 'luiskr.com | Melissa | Starwalker',
       metaTags: [{
           name: 'description',
@@ -1271,12 +1165,10 @@ const routes = [
   {
     path: '/projects/melissa-wanna-be-carioca',
     name: 'Melissa | Wanna Be Carioca',
-    meta: {
-      id: 19,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 19,
+      total: total,
       title: 'luiskr.com | Melissa | Wanna Be Carioca',
       metaTags: [{
           name: 'description',
@@ -1292,12 +1184,10 @@ const routes = [
   {
     path: '/projects/melissa-we-are-flowers',
     name: 'Melissa | We are Flowers',
-    meta: {
-      id: 18,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 18,
+      total: total,
       title: 'luiskr.com | Melissa | We are Flowers',
       metaTags: [{
           name: 'description',
@@ -1313,12 +1203,10 @@ const routes = [
   {
     path: '/projects/melissa-campana',
     name: 'Melissa | Campana',
-    meta: {
-      id: 17,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 17,
+      total: total,
       title: 'luiskr.com | Melissa | Campana',
       metaTags: [{
           name: 'description',
@@ -1334,12 +1222,10 @@ const routes = [
   {
     path: '/projects/melissa-gaetano-pesce',
     name: 'Melissa | Gaetano Pesce',
-    meta: {
-      id: 16,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 16,
+      total: total,
       title: 'luiskr.com | Melissa | Gaetano Pesce',
       metaTags: [{
           name: 'description',
@@ -1355,12 +1241,10 @@ const routes = [
   {
     path: '/projects/melissa-gareth-pugh',
     name: 'Melissa | Gareth Pugh',
-    meta: {
-      id: 15,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 15,
+      total: total,
       title: 'luiskr.com | Melissa | Gareth Pugh',
       metaTags: [{
           name: 'description',
@@ -1376,12 +1260,10 @@ const routes = [
   {
     path: '/projects/melissa-j-maskrey',
     name: 'Melissa | J Maskrey',
-    meta: {
-      id: 14,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 14,
+      total: total,
       title: 'luiskr.com | Melissa | J Maskrey',
       metaTags: [{
           name: 'description',
@@ -1397,12 +1279,10 @@ const routes = [
   {
     path: '/projects/melissa-jason-wu',
     name: 'Melissa | Jason Wu',
-    meta: {
-      id: 13,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 13,
+      total: total,
       title: 'luiskr.com | Melissa | Jason Wu',
       metaTags: [{
           name: 'description',
@@ -1418,12 +1298,10 @@ const routes = [
   {
     path: '/projects/melissa-jeremy-scott',
     name: 'Melissa | Jeremy Scott',
-    meta: {
-      id: 12,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 12,
+      total: total,
       title: 'luiskr.com | Melissa | Jeremy Scott',
       metaTags: [{
           name: 'description',
@@ -1439,12 +1317,10 @@ const routes = [
   {
     path: '/projects/melissa-karl-lagerfeld',
     name: 'Melissa | Karl Lagerfeld',
-    meta: {
-      id: 11,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 11,
+      total: total,
       title: 'luiskr.com | Melissa | Karl Lagerfeld',
       metaTags: [{
           name: 'description',
@@ -1460,12 +1336,10 @@ const routes = [
   {
     path: '/projects/melissa-sebastian-errazuriz',
     name: 'Melissa | Sebastian Errazuriz',
-    meta: {
-      id: 10,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 10,
+      total: total,
       title: 'luiskr.com | Melissa | Sebastian Errazuriz',
       metaTags: [{
           name: 'description',
@@ -1481,12 +1355,10 @@ const routes = [
   {
     path: '/projects/melissa-vitorino-campos',
     name: 'Melissa | Vitorino Campos',
-    meta: {
-      id: 9,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 9,
+      total: total,
       title: 'luiskr.com | Melissa | Vitorino Campos',
       metaTags: [{
           name: 'description',
@@ -1502,12 +1374,10 @@ const routes = [
   {
     path: '/projects/melissa-vivienne-westwood',
     name: 'Melissa | Vivienne Westwood',
-    meta: {
-      id: 8,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 8,
+      total: total,
       title: 'luiskr.com | Melissa | Vivienne Westwood',
       metaTags: [{
           name: 'description',
@@ -1523,12 +1393,10 @@ const routes = [
   {
     path: '/projects/melissa-zaha-hadid',
     name: 'Melissa | Zaha Hadid',
-    meta: {
-      id: 7,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 7,
+      total: total,
       title: 'luiskr.com | Melissa | Zaha Hadid',
       metaTags: [{
           name: 'description',
@@ -1544,12 +1412,10 @@ const routes = [
   {
     path: '/projects/melissa-where-to-find',
     name: 'Melissa | Where to Find',
-    meta: {
-      id: 6,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 6,
+      total: total,
       title: 'luiskr.com | Melissa | Where to Find',
       metaTags: [{
           name: 'description',
@@ -1565,12 +1431,10 @@ const routes = [
   {
     path: '/projects/melissa-roller-joy',
     name: 'Melissa | Roller Joy',
-    meta: {
-      id: 5,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 5,
+      total: total,
       title: 'luiskr.com | Melissa | Roller Joy',
       metaTags: [{
           name: 'description',
@@ -1586,12 +1450,10 @@ const routes = [
   {
     path: '/projects/melissa-tropico-surreal',
     name: 'Melissa | Tropico Surreal',
-    meta: {
-      id: 4,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 4,
+      total: total,
       title: 'luiskr.com | Melissa | Tropico Surreal',
       metaTags: [{
           name: 'description',
@@ -1607,12 +1469,10 @@ const routes = [
   {
     path: '/projects/mor-loja-mor',
     name: 'Mor | Loja Mor',
-    meta: {
-      id: 3,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 3,
+      total: total,
       title: 'luiskr.com | Mor | Loja Mor',
       metaTags: [{
           name: 'description',
@@ -1628,12 +1488,10 @@ const routes = [
   {
     path: '/projects/vibra-website',
     name: 'Vibra | Website',
-    meta: {
-      id: 2,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 2,
+      total: total,
       title: 'luiskr.com | Vibra | Website',
       metaTags: [{
           name: 'description',
@@ -1649,12 +1507,10 @@ const routes = [
   {
     path: '/projects/genesysinf-sageweb',
     name: 'GenesysInf | SageWeb',
-    meta: {
-      id: 1,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
+      id: 1,
+      total: total,
       title: 'luiskr.com | GenesysInf | SageWeb',
       metaTags: [{
           name: 'description',
