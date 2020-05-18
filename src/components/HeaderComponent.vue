@@ -95,6 +95,7 @@ export default {
                     this.headerClose();
                 } else {
                     this.remember = window.scrollY;
+                     window.scrollTo(0, 0);
 
                     document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
                     document.body.classList.add("header-open");
