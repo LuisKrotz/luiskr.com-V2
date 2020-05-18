@@ -55,6 +55,7 @@ img {
 }
 
 video {
+    transition: opacity ease-in-out .5s, visibility ease-in-out .5s;
     background: rgba(0, 0, 0, 0.05) url("./icons/play.gif") no-repeat center center;
     background-size: cover;
 
@@ -74,11 +75,15 @@ img {
 }
 
 
-
 .reverse {
     @extend %reverse;
 }
 
 .rel {
     position: relative;
+}
+
+.view-out {
+    visibility: hidden;
+    opacity: 0;
 }

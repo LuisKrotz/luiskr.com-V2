@@ -28,7 +28,7 @@
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
                 <div @mouseleave="clear()"  @mouseenter="random()">
                     <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
-                        <img v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                        <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
                     </div>
                     <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
                         <picture :key="'home-' + post.id">
