@@ -10,7 +10,7 @@
           <h2 class="main-title">Are u lost?</h2>
           <p class="main-subtitle">Click on any link at the bottom.</p>
           <h3 class="main-text">Looks like there is nothing here. Try going to luiskr.com at the home link.</h3>
-          <p class="main-text">If have q request, please contact me at <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
+          <p class="main-text">If have q request, please contact me at <a  @click="sendAnalyticsEvent('not_found_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
   </div>
@@ -33,8 +33,8 @@ export default {
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   },
   methods: {
-    tracking(category, action, label, value) {
-      this.$parent.tracking(category, action, label, value);
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
     }
   }
 }
@@ -47,20 +47,5 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
-
-.notfound-bg {
-  background: none;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  position: fixed;
-  filter: blur(5px);
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  filter: blur(8px);
-  opacity: .9;
-}
+@import '../sass/NotFoundComponent/main.scss';
 </style>

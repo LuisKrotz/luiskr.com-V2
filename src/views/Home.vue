@@ -13,11 +13,11 @@
             <h2 class="main-title desk"><span>luiskr.com</span></h2>
             <h3 class="main-subtitle desk">Hy, I'm Luis.</h3>
 
-            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a href="" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
+            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
           </div>
           <div class="max-area home-cover">
             <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
-            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a href="tel:+55982274782" rel="noopener">imessage</a> or <a href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
+            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
           </div>
         </div>
 
@@ -26,7 +26,7 @@
           <div class="max-area home-project-parent">
 
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
-                <div @mouseleave="clear()"  @mouseenter="random()">
+                <div @mouseleave="clear()"  @mouseenter="random()" @click="sendAnalyticsEvent('portfolio_link', 'click', post.project, 100)">
                     <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
                         <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
                     </div>
@@ -51,7 +51,7 @@
 
                     <h4 class="home-project-at">
                         <span>{{ projects.at }} </span>
-                        <a :href="post.at_link" target="_blank" rel="noopenner">{{ post.at_place }}</a>
+                        <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
                     </h4>
 
                     <h5 class="home-project-role">
@@ -67,7 +67,7 @@
           </div>
         </section>
 
-        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0"/>
+        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" />
       </article>
     </main>
   </div>
@@ -188,6 +188,9 @@ export default {
     },
     clear() {
       this.sethover = '';
+    },
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
     }
   }
 }

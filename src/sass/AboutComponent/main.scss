@@ -96,4 +96,30 @@
     &+.about {
         margin-top: to-em(-170);
     }
+
+    .main-text {
+        video {
+        display: block;
+        position: relative;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 auto;
+        max-width: to-em(520);
+        margin-top: to-em(24);
+        margin-bottom: to-em(40);
+        width: 100%;
+        height: auto;
+        box-shadow: 10px 10px 0px 0 rgba(0, 0, 0, .1), 20px 20px 1px 0 rgba(0, 0, 0, 0.15);
+
+            @include layout-768() {
+                margin-top: to-em(40);
+                margin-bottom: to-em(24);
+            }
+
+            @include layout-1024() {
+                margin-left: 0;
+                max-width: calc(100% - 20px);
+            }
+        }
+    }
 }

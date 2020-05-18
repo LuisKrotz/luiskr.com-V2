@@ -3,9 +3,9 @@
     <main class="max-area">
       <article class="about main">
         <h2 class="main-title">Privacy Policy</h2>
-        <p class="main-text">At <router-link to="/">luiskr.com</router-link>, accessible from <router-link to="/">https://luiskr.com</router-link>, one of my main priorities is the privacy of my visitors. This Privacy Policy document contains types of information that is collected and recorded by <router-link to="/">luiskr.com</router-link> and how I use it.</p>
+        <p class="main-text">At <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link>, accessible from <router-link to="/">https://luiskr.com</router-link>, one of my main priorities is the privacy of my visitors. This Privacy Policy document contains types of information that is collected and recorded by <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link> and how I use it.</p>
         <p class="main-text">If you have additional questions or require more information about my Privacy Policy, do not hesitate to contact me.</p>
-        <p class="main-text">This Privacy Policy applies only to my online activities and is valid for visitors to my website with regards to the information that they shared and/or collect in <router-link to="/">luiskr.com</router-link>. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+        <p class="main-text">This Privacy Policy applies only to my online activities and is valid for visitors to my website with regards to the information that they shared and/or collect in <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link>. This policy is not applicable to any information collected offline or via channels other than this website.</p>
 
         <h3 class="main-subtitle">Consent</h3>
         <p class="main-text">By using my website, you hereby consent to my Privacy Policy and agree to its terms.</p>
@@ -25,10 +25,10 @@
             <li>Log Files</li>
           </ol>
         </p>
-        <p class="main-text"><router-link to="/">luiskr.com</router-link> follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. My Privacy Policy was created with the help of the Privacy Policy Generator and the Disclaimer Generator.</p>
+        <p class="main-text"><router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link> follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. My Privacy Policy was created with the help of the Privacy Policy Generator and the Disclaimer Generator.</p>
 
         <h3 class="main-subtitle">Third Party Privacy Policies</h3>
-        <p class="main-text"><router-link to="/">luiskr.com</router-link>'s Privacy Policy does not apply to other advertisers or websites. Thus, I'm advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</p>
+        <p class="main-text"><router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link>'s Privacy Policy does not apply to other advertisers or websites. Thus, I'm advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</p>
         <p class="main-text">You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
 
         <h3 class="main-subtitle">CCPA Privacy Rights (Do Not Sell My Personal Information)</h3>
@@ -40,7 +40,7 @@
 
         <h3 class="main-subtitle">Children's Information</h3>
         <p class="main-text">Another part of my priority is adding protection for children while using the internet. I encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-        <p class="main-text"><router-link to="/">luiskr.com</router-link> does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on my website, I strongly encourage you to contact me <strong>immediately</strong> and I will do my best efforts to promptly find such information.</p>
+        <p class="main-text"><router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link> does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on my website, I strongly encourage you to contact me <strong>immediately</strong> and I will do my best efforts to promptly find such information.</p>
       </article>
     </main>
   </div>
@@ -58,6 +58,11 @@ export default {
     document.body.classList.add("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
+  },
+  methods: {
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
+    }
   }
 }
 </script>

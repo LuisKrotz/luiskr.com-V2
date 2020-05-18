@@ -45,6 +45,42 @@ export default {
     methods: {
       setFontLoaded() {
         this.$emit('font-loaded');
+      },
+      getUrlParam(parameter, defaultvalue){
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+
+            return vars;
+        }
+
+        var urlparameter = defaultvalue;
+          if (window.location.href.indexOf(parameter) > -1)
+              urlparameter = getUrlVars()[parameter];
+
+        return urlparameter;
+      },
+      sendAnalyticsEvent(category, action, label, value) {
+        // General Method to send Analytics, to be inheriteed
+        this.$ga.event({
+          eventCategory: category,
+          eventAction: action,
+          eventLabel: label,
+          eventValue: value,
+        });
+
+        // Show Analytics on consle, object to be recorded
+        function Record(category, action, label, value) {
+            this.category = category;
+            this.action = action,
+            this.label = label,
+            this.value = value;
+        }
+
+        // Show Analytics on console, display table with recordings
+        if (this.records) console.table(new Record(category, action, label, value));
       }
     }
   };

@@ -47,7 +47,7 @@
               <p v-html="post.part"></p>
               <h6 class="project-info-credit" >{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h6>
               <p>
-                <a :href="post.at_link" rel="noopener" target="_blank">
+                <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('project_link', 'click', post.at_place, 25)">
                   <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
                   <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
                 </a>
@@ -72,7 +72,7 @@
             </div>
           </div>
 
-          <a class="project-info-check" :href="post.link" target="_blank" rel="noopener">
+          <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
             <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placeholder" alt="">
             <video v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
               <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
@@ -85,7 +85,7 @@
           </a>
         </div>
       </div>
-      <div class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''">
+      <div class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
         <button class="project-iframe-toggle" @click="toggleiframe()">
           <span class="project-iframe-mark" :style="itoggle ? 'transform: translateX(100%);': ''"></span>
           <span class="project-iframe-slide">
@@ -104,7 +104,7 @@
     </article>
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
-        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined">
+        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
           <span class="footer-link-icon" @click="nextprev(prev.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
@@ -114,7 +114,7 @@
         </a>
 
         <router-link class="footer-link home" to="/">
-          <span class="footer-link-icon">
+          <span class="footer-link-icon" @click="sendAnalyticsEvent('project_link', 'click', translations.home, 100)">
             <span class="footer-link-home first"></span>
             <span class="footer-link-home second"></span>
             <span class="footer-link-home third"></span>
@@ -126,7 +126,7 @@
         </router-link>
 
         <a class="footer-link right" :href="next.path" v-if="next !== undefined">
-          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
+          <span class="footer-link-icon" @click.prevent="nextprev(next.id)" @click="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
@@ -273,6 +273,9 @@ export default {
         //console.log(e.scrollPercent) // 0..1 current scroll position of page
         //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
         //console.log(e.target.rect) // element.getBoundingClientRect() result
+    },
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
     }
   }
 }

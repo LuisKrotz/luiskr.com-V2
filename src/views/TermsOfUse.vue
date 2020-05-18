@@ -15,7 +15,7 @@
             </p>
             <p class="main-text">The luiskr.com website located at luiskr.com is a copyrighted work belonging to Luis Krötz. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
             <p class="main-text">All such additional terms, guidelines, and rules are incorporated by reference into these Terms.</p>
-            <p class="main-text">These Terms of Use described the legally binding terms and conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF THESE TERMS, DO NOT LOG INTO AND/OR USE TH           <p class="main-text">
+            <p class="main-text">These Terms of Use described the legally binding terms and conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF THESE TERMS, DO NOT LOG INTO AND/OR USE THE WEBSITE.</p>
             <p class="main-text">These terms require the use of arbitration Section 10.2 on an individual basis to resolve disputes and also limit the remedies available to you in the event of a dispute.</p>
 
             <h3 class="main-subtitle">Access to the Site</h3>
@@ -86,10 +86,10 @@
             </video>
 
             <h3 class="main-subtitle">Contact Information</h3>
-            <p class="main-text">Email: <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
+            <p class="main-text">Email: <a @click="sendAnalyticsEvent('terms_of_use_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
         </div>
         <div class="about main">
-            <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"/>
+            <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"  click="sendAnalyticsEvent('map', 'click', 'about - map', 100)" />
         </div>
       </article>
     </main>
@@ -115,6 +115,11 @@ export default {
     document.body.classList.add("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
+  },
+  methods: {
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
+    }
   }
 }
 </script>
@@ -126,18 +131,5 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
-
-.terms {
-  .main-text video {
-       display: block;
-      position: relative;
-      object-fit: cover;
-      object-position: center;
-      margin: 0 auto;
-      max-width: to-em(480);
-      width: 100%;
-      height: auto;
-      box-shadow: -2px -2px 3px 0 rgba(0,0,0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .15);
-  }
-}
+@import '../sass/TermsComponent/main.scss';
 </style>

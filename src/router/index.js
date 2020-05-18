@@ -1599,14 +1599,14 @@ router.afterEach((to, from) => {
 
 
 Vue.use(VueAnalytics, {
-  id: 'UA-142757641-2',
+  id: 'UA-142757641-1',
   router,
   autoTracking: {
     skipSamePath: true,
     pageviewTemplate (route) {
       return {
         page: route.path,
-        title: document.title, 
+        title: document.title,
         location: window.location.href
       }
     }

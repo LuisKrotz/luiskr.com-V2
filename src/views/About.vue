@@ -36,7 +36,7 @@
             <p class="main-text">Another passion of mine are video games, I love playing for hours and hours and hours.</p>
             <p class="main-text">I also love reading, the narratives, the places one can go while reading are fantastic. There is no better way to meet the unknown than a book.</p>
             <p class="main-text">I love to write, one of my favourite past time is to sit on my ipad and write a novel or an article by hand.</p>
-            <p class="main-text">I love Photography, check out some <a href="https://www.instagram.com/j_luiskrotz" rel="noopener">instagram pictures</a> of mine.</p>
+            <p class="main-text">I love Photography, check out some <a @click="sendAnalyticsEvent('about_link', 'click', 'instagram', 100)" href="https://www.instagram.com/j_luiskrotz" rel="noopener">instagram pictures</a> of mine.</p>
             
             <h3 class="main-subtitle">I love to Learn</h3>
             <p class="main-text">Be it watching a ted talk, an video on youtube, coding for fun, developing a crazu system just by the sake of it, learning a new language, I just love learning.</p>
@@ -52,7 +52,7 @@
             </p>
 
             <h3 class="main-subtitle">Awards</h3>
-            <p class="main-text">At the College I was awarded the prize of being placed between the <a href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
+            <p class="main-text">At the College I was awarded the prize of being placed between the <a @click="sendAnalyticsEvent('about_link', 'click', '40 melhores', 100)" href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
             <p class="main-text">Recently I submited the version 1.0 of this website to AWWWARDS and got a nomination.</p>
 
             <h3 class="main-subtitle">Published Articles</h3>
@@ -82,13 +82,13 @@
             <p class="main-text">Krotz.JL; Lewandowski, Isis . Banner - Semana de Integração da Calourada UFSM 2012. 2012. Computação Gráfica.</p>
           
             <h3 class="main-subtitle">Thank You</h3>
-            <p class="main-text">Thanks for reading, feel free to contact me at <a href="luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
+            <p class="main-text">Thanks for reading, feel free to contact me at <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
             
             <h3 class="main-subtitle">Contact Information</h3>
-            <p class="main-text">Email: <a href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
+            <p class="main-text">Email: <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
           </div>
           <div class="about main">
-              <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"/>
+              <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px" @click="sendAnalyticsEvent('map', 'click', 'about - map', 100)"/>
           </div>
         </article>
     </main>
@@ -152,6 +152,11 @@ export default {
 
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
+  },
+  methods: {
+    sendAnalyticsEvent(category, action, label, value) {
+      this.$parent.sendAnalyticsEvent(category, action, label, value);
+    }
   }
 }
 </script>
@@ -163,42 +168,4 @@ export default {
 @import '../sass/extends';
 
 @import '../sass/AboutComponent/main.scss';
-
-.about-bg {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    object-fit: cover;
-    object-position: center;
-    filter: blur(7px) sepia(1) invert(1);
-    opacity: .2;
-}
-
-.about {
-  .main-text {
-    video {
-      display: block;
-      position: relative;
-      object-fit: cover;
-      object-position: center;
-      margin: 0 auto;
-      max-width: to-em(520);
-      margin-top: to-em(24);
-      margin-bottom: to-em(40);
-      width: 100%;
-      height: auto;
-      box-shadow: 10px 10px 0px 0 rgba(0, 0, 0, .1), 20px 20px 1px 0 rgba(0, 0, 0, 0.15);
-
-      @include layout-768() {
-         margin-top: to-em(40);
-         margin-bottom: to-em(24);
-      }
-
-      @include layout-1024() {
-        margin-left: 0;
-        max-width: calc(100% - 20px);
-      }
-    }
-  }
-}
 </style>

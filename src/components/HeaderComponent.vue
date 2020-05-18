@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <!-- <h3 class="hdn">{{ header.title }}</h3> -->
+        <h3 class="hdn" v-if="header !== undefined">{{ header.title }}</h3>
         <div class="max-area" v-if="header !== undefined">
             <button class="header-link header-more" @click="headerOpen()">
                 <span v-if="!open" class="hdn">{{ header.toggle[0] }}</span>
@@ -18,19 +18,27 @@
 
                 <div>
                     <router-link class="header-modal-link" :style="sethover" :to="header.home[0]">
-                        <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.home[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', header.home[1], 100)">
+                            <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.home[1] }}</span>
+                        </span>
                     </router-link>
 
                     <router-link class="header-modal-link" :style="sethover" :to="header.about[0]">
-                        <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.about[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', header.about[1], 100)">
+                            <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.about[1] }}</span>
+                        </span>
                     </router-link>
 
                     <router-link class="header-modal-link" :style="sethover" :to="header.social[0]">
-                        <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.social[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 100)">
+                            <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.social[1] }}</span>
+                        </span>
                     </router-link>
 
                     <a class="header-modal-link" :style="sethover" :href="header.mail[0]" rel="noopener">
-                        <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.mail[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 200)">
+                            <span class="header-modal-link-title" @click="headerClose()"  @mouseleave="clear()"  @mouseenter="random()">{{ header.mail[1] }}</span>
+                        </span>
                     </a>
                 </div>
 
@@ -38,28 +46,39 @@
 
                 <div>
                     <router-link class="header-modal-link" :style="sethover" :to="footer.privacy_policy[0]">
-                        <span class="header-modal-link-title"
-                            @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.privacy_policy[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.privacy_policy[1], 50)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.privacy_policy[1] }}</span>
+                        </span>
                     </router-link>
 
                     <router-link class="header-modal-link" :style="sethover" :to="footer.terms_of_use[0]">
-                        <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.terms_of_use[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.terms_of_use[1], 50)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.terms_of_use[1] }}</span>
+                        </span>
                     </router-link>
 
                     <router-link class="header-modal-link" :style="sethover" :to="footer.GDPR[0]">
-                        <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.GDPR[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.GDPR[1], 50)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.GDPR[1] }}</span>
+                        </span>
                     </router-link>
 
                     <router-link class="header-modal-link" :style="sethover" :to="footer.credits[0]">
-                        <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.credits[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.credits[1], 50)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.credits[1] }}</span>
+                        </span>
                     </router-link>
 
                     <a class="header-modal-link" :style="sethover" :href="footer.instagram[0]" rel="noopener">
-                        <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.instagram[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.instagram[1], 100)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.instagram[1] }}</span>
+                        </span>
                     </a>
 
                     <a class="header-modal-link" :style="sethover" :href="footer.phone[0]" rel="noopener">
-                        <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.phone[1] }}</span>
+                        <span @click="sendAnalyticsEvent('modal_link', 'click', footer.phone[1], 200)">
+                            <span class="header-modal-link-title" @click="headerClose()" @mouseleave="clear()"  @mouseenter="random()">{{ footer.phone[1] }}</span>
+                        </span>
                     </a>
                 </div>
             </nav>
@@ -79,34 +98,6 @@ export default {
                 sethover: '',
                 remember: 0,
                 open: false
-            }
-        },
-        methods: {
-            headerClose() {
-                document.body.classList.remove("header-open");
-
-                window.scrollTo(0, this.remember);
-                document.querySelector("main").style = '';
-
-                this.open = false;
-            },
-            headerOpen() {
-                if (this.open) {
-                    this.headerClose();
-                } else {
-                    this.remember = window.scrollY;
-                     window.scrollTo(0, 0);
-
-                    document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
-                    document.body.classList.add("header-open");
-                    this.open = true;
-                }
-            },
-            random() {
-                this.sethover = `cursor: url(${this.storage}glitches/${Math.round(Math.random() * 30)}.gif), pointer`;
-            },
-            clear() {
-                this.sethover = '';
             }
         },
         created() {
@@ -141,6 +132,39 @@ export default {
                     lastresize = 0;
                 }
             });
+        },
+        methods: {
+            headerClose() {
+                document.body.classList.remove("header-open");
+
+                window.scrollTo(0, this.remember);
+                document.querySelector("main").style = '';
+
+                this.open = false;
+            },
+            headerOpen() {
+                if (this.open) {
+                    this.headerClose();
+                    this.sendAnalyticsEvent('modal', 'click', 'open', 100)
+                } else {
+                    this.remember = window.scrollY;
+                     window.scrollTo(0, 0);
+
+                    document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
+                    document.body.classList.add("header-open");
+                    this.open = true;
+                    this.sendAnalyticsEvent('modal', 'click', 'close', 50)
+                }
+            },
+            random() {
+                this.sethover = `cursor: url(${this.storage}glitches/${Math.round(Math.random() * 30)}.gif), pointer`;
+            },
+            clear() {
+                this.sethover = '';
+            },
+            sendAnalyticsEvent(category, action, label, value) {
+                this.$parent.sendAnalyticsEvent(category, action, label, value);
+            }
         }
     }
 </script>
