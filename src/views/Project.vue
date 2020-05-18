@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+  <main class="main">
     <article class="home-project max-area">
       <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
       <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
@@ -104,14 +104,14 @@
     </article>
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
-        <router-link class="footer-link left" :to="prev.path" v-if="prev !== undefined">
+        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined">
           <span class="footer-link-icon" @click="nextprev(prev.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
           </span>
           <p class="hdn">{{ translations.prev }}</p>
-        </router-link>
+        </a>
 
         <router-link class="footer-link home" to="/">
           <span class="footer-link-icon">
@@ -125,17 +125,17 @@
           <p class="hdn">{{ translations.home }}</p>
         </router-link>
 
-        <router-link class="footer-link right" :to="next.path" v-if="next !== undefined">
+        <a class="footer-link right" :href="next.path" v-if="next !== undefined">
           <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
           </span>
           <p class="hdn">{{ translations.next }}</p>
-        </router-link>
+        </a>
       </div>
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>

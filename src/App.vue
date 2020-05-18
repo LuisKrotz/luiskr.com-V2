@@ -46,7 +46,7 @@ export default {
       setFontLoaded() {
         this.$emit('font-loaded');
       }
-    },
+    }
   };
 </script>
 
