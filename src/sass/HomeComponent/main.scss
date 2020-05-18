@@ -159,6 +159,7 @@
         }
 
         &-mobile {
+            transition: transform ease-in-out .25s;
             position: fixed;
             width: 100%;
             top: 50%;
