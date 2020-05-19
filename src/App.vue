@@ -74,7 +74,8 @@ export default {
         if (window.fbq !== undefined) {
           window.fbq('track', 'Lead', {
               content_name: label,
-              value: value
+              value: value,
+              currency: 'BRL'
           });
         }
 
