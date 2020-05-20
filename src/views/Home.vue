@@ -26,7 +26,7 @@
           <div class="max-area home-project-parent">
 
             <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
-                <div @mouseleave="clear()"  @mouseenter="random()" @click="sendAnalyticsEvent('portfolio_link', 'click', post.project, 100)">
+                <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="sendAnalyticsEvent('portfolio_link', 'click', post.project, 100)">
                     <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
                         <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
                     </div>
@@ -67,7 +67,8 @@
           </div>
         </section>
 
-        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" />
+        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
+        <img :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
       </article>
     </main>
   </div>
@@ -94,7 +95,14 @@ export default {
         posts: [],
         stop: true,
         start: Number,
-        end: Number
+        end: Number,
+        hovers: 13,
+        showhover: false,
+        random: 0,
+        page: {
+          left : 0,
+          top: 0
+        }
     }
   },
   created() {
@@ -183,11 +191,18 @@ export default {
             }
         }
     },
-    random() {
-      this.sethover = `cursor: url(${this.storage}click/${Math.round(Math.random() * 13)}.gif), pointer`;
+    onMouseMove(e) {
+        this.page.left = e.pageX - 50;
+        this.page.top = e.pageY - 50;
+    },
+    hover(e) {
+        this.showhover = true;
+        this.random = Math.round(Math.random() * this.hovers);
+
+        this.onMouseMove(e);
     },
     clear() {
-      this.sethover = '';
+        this.showhover = false;
     },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
