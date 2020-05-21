@@ -88,22 +88,15 @@
             <h3 class="main-subtitle">Contact Information</h3>
             <p class="main-text">Email: <a @click="sendAnalyticsEvent('terms_of_use_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
         </div>
-        <div class="about main">
-            <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px"  click="sendAnalyticsEvent('map', 'click', 'about - map', 100)" />
-        </div>
       </article>
     </main>
   </div>
 </template>
 
 <script>
-import HereMapsComponent from '@/components/HereMapsComponent.vue'
 
 export default {
   name: 'TermsOfUse',
-  components: {
-    HereMapsComponent
-  },
   data() {
     return {
       webp2: this.$parent.webp2,

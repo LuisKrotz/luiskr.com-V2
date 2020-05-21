@@ -87,9 +87,6 @@
             <h3 class="main-subtitle">Contact Information</h3>
             <p class="main-text">Email: <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
           </div>
-          <div class="about main">
-              <HereMapsComponent class="main-map" lat="-30.039770" lng="-51.217720" width="100%" height="835px" @click="sendAnalyticsEvent('map', 'click', 'about - map', 100)"/>
-          </div>
         </article>
     </main>
   </div>
@@ -97,16 +94,12 @@
 
 <script>
 import Vue from 'vue'
-import HereMapsComponent from '@/components/HereMapsComponent.vue'
 import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
 
 Vue.use(checkView);
 
 export default {
   name: 'About',
-  components: {
-    HereMapsComponent
-  },
   methods: {
     viewHandler(e) {
       this.$parent.viewHandler(e);

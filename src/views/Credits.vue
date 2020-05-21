@@ -80,7 +80,6 @@
             <p class="main-text"><a @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/nasa-nasareactions-Js7cqIkpxFy0bILFFA"><iframe src="https://giphy.com/embed/Js7cqIkpxFy0bILFFA" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></a></p>
 
             <h3 class="main-subtitle"><span>Tech</span></h3>
-            <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Here Maps', 50)" href="https://www.here.com/">Here Maps</a>, for the terms of use location map showing where to find me.</span></p>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'VueJS', 50)" href="https://vuejs.org/">VUEJS</a>, for Vue being the most handy and amazing framework to build quick, reliable and easy to maintain projects. Great shout out. </span></p>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Google Fonts', 50)" href="https://fonts.google.com/">Google Fonts</a>, for providing with amazing typography without cost to beautify the web.</span></p>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Sass', 50)" href="https://sass-lang.com/">Sass</a>, for making my life a lot easier</span></p>
