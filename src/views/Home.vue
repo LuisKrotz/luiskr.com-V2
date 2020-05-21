@@ -3,7 +3,7 @@
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
-          <div class="max-area home-cover" v-parallax=".25">
+          <div class="max-area home-cover">
             <div class="home-cover-mobile" aria-hidden="true">
               <span class="main-title"><span>luiskr.com</span></span>
               <span class="main-subtitle">Hy, I'm Luis.</span>

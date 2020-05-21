@@ -85,7 +85,7 @@
           </a>
         </div>
       </div>
-      <div class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
+      <div v-if="showiframe" class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
         <button class="project-iframe-toggle" @click="toggleiframe()">
           <span class="project-iframe-mark" :style="itoggle ? 'transform: translateX(100%);': ''"></span>
           <span class="project-iframe-slide">
@@ -155,6 +155,7 @@ export default {
       webp2: this.$parent.webp2,
       placeholder: this.$parent.placeholder,
       origin: this.$parent.origin,
+      showiframe: Boolean(localStorage.getItem('cookie:accepted')) === true,
       translations: undefined,
       post: undefined,
       random: Math.round(Math.random() * 4) + 1,
@@ -191,6 +192,7 @@ export default {
       let self = this;
 
       document.body.classList.add("getting");
+      self.showiframe = Boolean(localStorage.getItem('cookie:accepted')) === true;
 
       fetch(`${self.origin}/projects/${self.data_id}.json`)
         .then((response) => {

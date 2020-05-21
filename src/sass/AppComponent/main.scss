@@ -814,3 +814,202 @@
         transform: translateY(4px);
     }
 }
+
+
+.Cookie--base {
+    padding: to-em(16) 0 0;
+    margin: 0;
+}
+
+.Cookie>* {
+    margin: 0;
+}
+
+.cookie-law {
+    box-shadow: -1px -2px 2px 0 rgba(0,0,0, .2);
+    background-color: $color-black;
+    width: 100%;
+}
+
+.cookie-banner .max-area {
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    grid-gap: to-em($gap-640);
+    width: 100vw;
+    overflow: scroll;
+    max-height: to-em(104);
+
+    @include layout-768() {
+        grid-gap: to-em($gap-768);
+    }
+
+    @include layout-1024() {
+        max-height: to-em(80);
+        grid-gap: to-em($gap-1024);
+    }
+
+    @include layout-1440() {
+        max-height: to-em(104);
+    }
+
+    p {
+        grid-column-end: 5;
+        grid-column-start: 1;
+        color: $color-white;
+        font-size: to-em(12);
+        line-height: to-em(16);
+        font-weight: 400;
+        letter-spacing: to-em(2);
+        text-transform: uppercase;
+        text-align: justify;
+        grid-column-end: 4;
+
+        @include layout-960() {
+            grid-column-end: 5;
+        }
+
+        @include layout-1280() {
+            padding-bottom: to-em(16);
+        }
+
+        @include layout-1680() {
+            text-align: left;
+            grid-column-end: 4;
+        }
+
+        @include layout-2560() {
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+    }
+
+    a {
+        color: $color-white;
+        text-decoration: underline;
+        font-style: oblique;
+        text-transform: lowercase;
+        font-size: to-em(16);
+        line-height: to-em(16);
+        text-decoration-skip-ink: none;
+        font-weight: 300;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .second-column {
+        position: relative;
+        grid-column-start: 5;
+
+        @include layout-1024() {
+            grid-row-start: initial;
+        }
+
+        &-fixed {
+            position: fixed;
+            right: 0;
+
+            padding-right: to-em(($un-320 - $grid-max-area-320) / 2);
+
+            @include layout-375() {
+                padding-right: to-em(($un-375 - $grid-max-area-375) / 2);
+            }
+        
+            @include layout-414() {
+                padding-right: to-em(($un-414 - $grid-max-area-414) / 2);
+            }
+        
+            @include layout-640() {
+                padding-right: to-em(($un-640 - $grid-max-area-640) / 2);
+            }
+        
+            @include layout-768() {
+                padding-right: to-em(($un-768 - $grid-max-area-768) / 2);
+            }
+        
+            @include layout-960() {
+                padding-right: to-em(($un-960 - $grid-max-area-960) / 2);
+            }
+
+            @include layout-1024() {
+                padding-right: to-em(($un-1024 - $grid-max-area-1024) / 2);
+            }
+        
+            @include layout-1280() {
+                padding-right: to-em(($un-1280 - $grid-max-area-1280) / 2);
+            }
+        
+            @include layout-1440() {
+                padding-right: to-em(($un-1440 - $grid-max-area-1440) / 2);
+            }
+        
+            @include layout-1680() {
+                padding-right: to-em(($un-1680 - $grid-max-area-1680) / 2);
+            }
+        
+            @include layout-1920() {
+                padding-right: to-em(($un-1920 - $grid-max-area-1920) / 2);
+            }
+        
+            @include layout-2560() {
+                padding-right: to-em(($un-2560 - $grid-max-area-2560) / 2);
+            }
+        }
+    }
+
+    .accept,
+    .refuse {
+        background: transparent;
+        border: none;
+        font: 300 to-em(12) "Work Sans", sans-serif;
+        letter-spacing: to-em(4);
+        text-transform: uppercase;
+        display: block;
+        margin: 0 0 to-em(8);
+        box-sizing: border-box;
+        cursor: pointer;
+        width: to-em(100);
+        border-radius: to-em(24);
+        padding: to-em(8);
+        width: 100%;
+
+        @include layout-375() {
+            padding: to-em(8) to-em(16);
+        }
+
+        @include layout-640() {
+            padding: to-em(8);
+        }
+
+        @include layout-960() {
+            word-spacing: to-em(16);
+        }
+
+        @include layout-1024() {
+            padding: to-em(8) to-em(16);
+        }
+    }
+
+    .accept {
+        color: $color-black;
+        box-shadow: -1px -1px 2px 0 rgba(255, 255, 255, .1), 1px 1px 3px 0 rgba(255, 255, 255, .2);
+        background: $color-white;
+
+        &:hover {
+            background: #4bc18b;
+        }
+    }
+
+    .refuse {
+        color: $color-white;
+        box-shadow: -1px -1px 2px 0 rgba(255, 255, 255, .1), 1px 1px 3px 0 rgba(255, 255, 255, .2);
+        background: #525252;
+        
+
+        &:hover {
+            background: #8e4646;
+        }
+    }
+}

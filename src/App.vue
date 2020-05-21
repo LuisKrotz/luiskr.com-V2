@@ -16,6 +16,25 @@
       <span class="loading-6">n</span>
       <span class="loading-7">g</span>
     </span>
+
+    <cookie-law class="cookie-law">
+      <div slot-scope="props" class="cookie-banner">
+        <div class="max-area">
+          <p>
+            This site uses third party cookies from Google Analytics and Faceboook Pixel to track page visits.<br>
+            <router-link to="/?show-recors=true">Click here</router-link> and open your browser console to see the annonimous data sent to Google and Pixel Analytics.<br>
+            Get more info about data, cookies and terms of use at: <router-link to="GDPR">GDPR</router-link>, <router-link to="terms-of-use">Terms of Use</router-link>, and <router-link to="privacy-policy">Privacy policy</router-link> of this website.<br>
+            This page doesn't send pageviews and events without consent, and don't store any visitor's data.<br>This consent can be revoked by cleaning your browser locally stored data referent to the current web address.
+          </p>
+          <div class="second-column">
+            <div class="second-column-fixed">
+              <button class="accept" @click="props.accept"><span>I accept</span></button>
+              <button class="refuse" @click="props.close"><span>Ignore me</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </cookie-law>
   </div>
 </template>
 
@@ -23,11 +42,13 @@
 import Vue from 'vue'
 import WebFontLoader from 'webfontloader'                         // https://github.com/typekit/webfontloader
 import HeaderComponent from '@/components/HeaderComponent.vue'
-import checkView from 'vue-check-view' 
+import checkView from 'vue-check-view'
+import CookieLaw from 'vue-cookie-law'
 
 export default {
   components: {
-     HeaderComponent
+     HeaderComponent,
+     CookieLaw
   },
   data() {
       return {
@@ -82,32 +103,35 @@ export default {
         return urlparameter;
       },
       sendAnalyticsEvent(category, action, label, value) {
-        // General Method to send Analytics, to be inheriteed
-        this.$ga.event({
-          eventCategory: category,
-          eventAction: action,
-          eventLabel: label,
-          eventValue: value,
-        });
-
-        if (window.fbq !== undefined) {
-          window.fbq('track', 'Lead', {
-              content_name: label,
-              value: value,
-              currency: 'BRL'
+        if (Boolean(localStorage.getItem('cookie:accepted')) === true) {
+          // General Method to send Analytics, to be inheriteed
+          this.$ga.event({
+            eventCategory: category,
+            eventAction: action,
+            eventLabel: label,
+            eventValue: value,
           });
-        }
 
-        // Show Analytics on consle, object to be recorded
-        function Record(category, action, label, value) {
-            this.category = category;
-            this.action = action,
-            this.label = label,
-            this.value = value;
-        }
+          if (window.fbq !== undefined) {
+            window.fbq('track', 'Lead', {
+                content_name: label,
+                value: value,
+                currency: 'BRL'
+            });
+          }
 
-        // Show Analytics on console, display table with recordings
-        if (this.records) console.table(new Record(category, action, label, value));
+          // Show Analytics on consle, object to be recorded
+          function Record(category, action, label, value) {
+              this.category = category;
+              this.action = action,
+              this.label = label,
+              this.value = value;
+          }
+
+          // Show Analytics on console, display table with recordings
+          if (this.records) console.table(new Record(category, action, label, value));
+
+        } else if(this.records) console.log('Not tracking. Cookies not allowed');
       },
       viewHandler(e) {
         let video, promise, i, t;

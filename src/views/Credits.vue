@@ -86,6 +86,7 @@
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Sass', 50)" href="https://sass-lang.com/">Sass</a>, for making my life a lot easier</span></p>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Modernizr', 50)" href="https://modernizr.com/download/?-webp-setclasses">Modernizr</a>, for the feature detection</span></p>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Checkview', 50)" href="https://vtimofeev.github.io/vue-check-view/index.html">Check Viewport Plugin from Vtimofeev</a>, an amazing plugin to detect if an object is on the current viewport, used for the play and pause funcions of the videos on the homepage.</span></p>
+            <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Cookie Law', 50)" href="https://www.npmjs.com/package/vue-cookie-law">Vue Cookie LawPlugin</a>, a super usefull and great plugin to create the third parties cookie banner according to the GDPR.</span></p>
 
             <h3 class="main-subtitle"><span>Font Awsome</span></h3>
             <p class="main-text"><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Font Awsome', 50)" href="https://fontawesome.com/license">Font Awsome</a>, for the amazing icons.</span></p>

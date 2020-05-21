@@ -1594,20 +1594,29 @@ router.afterEach((to, from) => {
   NProgress.done();
 })
 
-
-Vue.use(VueAnalytics, {
-  id: 'UA-142757641-1',
-  router,
-  autoTracking: {
-    skipSamePath: true,
-    pageviewTemplate (route) {
-      return {
-        page: route.path,
-        title: document.title,
-        location: window.location.href
+function init() {
+  Vue.use(VueAnalytics, {
+    id: 'UA-142757641-1',
+    router,
+    autoTracking: {
+      skipSamePath: true,
+      pageviewTemplate (route) {
+        return {
+          page: route.path,
+          title: document.title,
+          location: window.location.href
+        }
       }
     }
-  }
-})
+  })
+}
+
+if (Boolean(localStorage.getItem('cookie:accepted')) === true)
+  init();
+else
+  window.addEventListener('storage', function(e) {
+    if (Boolean(localStorage.getItem('cookie:accepted')) === true)
+      init();
+  });
 
 export default router
