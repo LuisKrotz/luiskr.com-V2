@@ -819,11 +819,13 @@
 // --------------
 // Cookies Banner
 
-.Cookie--base {
+.Cookie--base,
+.Cookie--base.cookie-law,
+.cookie-law,
+.Cookie.cookie-law {
     padding: to-em(16) 0 0;
     margin: 0;
     box-shadow: -1px -2px 2px 0 rgba(0,0,0, .2);
-    background-color: $color-black;
     width: 100%;
     background-color: $color-black;
     color: $color-white;
