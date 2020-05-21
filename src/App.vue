@@ -6,6 +6,16 @@
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
+
+    <span class="loading">
+      <span class="loading-1">L</span>
+      <span class="loading-2">o</span>
+      <span class="loading-3">a</span>
+      <span class="loading-4">d</span>
+      <span class="loading-5">i</span>
+      <span class="loading-6">n</span>
+      <span class="loading-7">g</span>
+    </span>
   </div>
 </template>
 
@@ -13,6 +23,7 @@
 import Vue from 'vue'
 import WebFontLoader from 'webfontloader'                         // https://github.com/typekit/webfontloader
 import HeaderComponent from '@/components/HeaderComponent.vue'
+import checkView from 'vue-check-view' 
 
 export default {
   components: {
@@ -20,6 +31,7 @@ export default {
   },
   data() {
       return {
+        has_touch: false,
         webp: '.jpg',
         webp2: '.jpg',
         placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
@@ -41,6 +53,13 @@ export default {
         },
         active: self.setFontLoaded,
       });
+
+      try {
+        document.createEvent("TouchEvent");
+        self.has_touch =  true;
+      } catch (e) {
+        self.has_touch =  false;
+      }
     },
     methods: {
       setFontLoaded() {
@@ -89,6 +108,44 @@ export default {
 
         // Show Analytics on console, display table with recordings
         if (this.records) console.table(new Record(category, action, label, value));
+      },
+      viewHandler(e) {
+        let video, promise, i, t;
+
+        video = e.target.element;
+        if (e.percentInView > 0) {
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].play();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].play());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
+        } else {
+            for (i = 0, t = video.lenght; i < t; i+=1) {
+                promise = video[i].pause();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        resolve(video[i].pause());
+                    }).catch(error => {
+                        return void(0);
+                    });
+                }
+            }
+        }
+
+        //console.log(e.type) // 'enter', 'exit', 'progress'
+        //console.log(e.percentInView) // 0..1 how much element overlap the viewport
+        //console.log(e.percentTop) // 0..1 position of element at viewport 0 - above , 1 - below
+        //console.log(e.percentCenter) // 0..1 position the center of element at viewport 0 - center at viewport top, 1 - center at viewport bottom
+        //console.log(e.scrollPercent) // 0..1 current scroll position of page
+        //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
+        //console.log(e.target.rect) // element.getBoundingClientRect() result
       }
     }
   };

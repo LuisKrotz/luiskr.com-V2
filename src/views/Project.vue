@@ -125,8 +125,8 @@
           <p class="hdn">{{ translations.home }}</p>
         </router-link>
 
-        <a class="footer-link right" :href="next.path" v-if="next !== undefined">
-          <span class="footer-link-icon" @click.prevent="nextprev(next.id)" @click="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
+        <a class="footer-link right" :href="next.path" v-if="next !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
+          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
@@ -190,6 +190,8 @@ export default {
     getPost() {
       let self = this;
 
+      document.body.classList.add("getting");
+
       fetch(`${self.origin}/projects/${self.data_id}.json`)
         .then((response) => {
           return response.json();
@@ -206,6 +208,8 @@ export default {
           path = self.origin + self.post.path;
           document.title = title;
           window.history.replaceState({ page: path }, title, path);
+
+          document.body.classList.remove("getting");
         });
 
       fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
@@ -235,44 +239,19 @@ export default {
     nextprev(id) {
       this.data_id = id;
       this.getPost();
+
+      const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, c - c / 8);
+        }
+      };
+
+      scrollToTop();
     },
     viewHandler(e) {
-        let video, promise, i, t;
-
-        video = e.target.element;
-        if (e.percentInView > 0) {
-            for (i = 0, t = video.lenght; i < t; i+=1) {
-                promise = video[i].play();
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        resolve(video[i].play());
-                    }).catch(error => {
-                        return void(0);
-                    });
-                }
-            }
-        } else {
-            for (i = 0, t = video.lenght; i < t; i+=1) {
-                promise = video[i].pause();
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        resolve(video[i].pause());
-                    }).catch(error => {
-                        return void(0);
-                    });
-                }
-            }
-        }
-
-        //console.log(e.type) // 'enter', 'exit', 'progress'
-        //console.log(e.percentInView) // 0..1 how much element overlap the viewport
-        //console.log(e.percentTop) // 0..1 position of element at viewport 0 - above , 1 - below
-        //console.log(e.percentCenter) // 0..1 position the center of element at viewport 0 - center at viewport top, 1 - center at viewport bottom
-        //console.log(e.scrollPercent) // 0..1 current scroll position of page
-        //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
-        //console.log(e.target.rect) // element.getBoundingClientRect() result
+      this.$parent.viewHandler(e);
     },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);

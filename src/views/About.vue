@@ -109,34 +109,7 @@ export default {
   },
   methods: {
     viewHandler(e) {
-      let video, promise, i, t;
-
-      video = e.target.element;
-      if (e.percentInView > 0) {
-          for (i = 0, t = video.lenght; i < t; i+=1) {
-              promise = video[i].play();
-
-              if (promise !== undefined) {
-                  promise.then(_ => {
-                      resolve(video[i].play());
-                  }).catch(error => {
-                      return void(0);
-                  });
-              }
-          }
-      } else {
-          for (i = 0, t = video.lenght; i < t; i+=1) {
-              promise = video[i].pause();
-
-              if (promise !== undefined) {
-                  promise.then(_ => {
-                      resolve(video[i].pause());
-                  }).catch(error => {
-                      return void(0);
-                  });
-              }
-          }
-      }
+      this.$parent.viewHandler(e);
     }
   },
   data() {

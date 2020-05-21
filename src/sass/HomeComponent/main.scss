@@ -336,6 +336,7 @@
     }
 
     &-media {
+        will-change: visibility, opacity;
         position: absolute;
         top: 0;
         left: 0;

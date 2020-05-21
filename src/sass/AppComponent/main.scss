@@ -144,7 +144,7 @@
         overflow: hidden;
         box-shadow: -2px -3px 7px 0 rgba(255, 255, 255, .3), 3px 3px 7px 0 rgba(255, 255, 255, .2);
         transition: opacity .5s ease-in;
-        opacity: 0;
+        opacity: 1;
         position: relative;
         width:100%;
         height: to-em(568);
@@ -167,10 +167,6 @@
             margin: 0 auto;
             grid-column-start: 2;
             grid-column-end: 5;
-        }
-
-        .wf-active & {
-            opacity: 1;
         }
     }
 }
@@ -264,6 +260,7 @@
         }
 
         &-line {
+            will-change: transform;
             display: block;
             width: 60%;
             margin: 8px auto;
@@ -313,6 +310,7 @@
     }
 
     &-modal {
+        will-change: transform;
         z-index: 2;
         transition: transform ease-in 1s;
         transform: translateY(100%);
@@ -492,6 +490,7 @@
             margin-top: to-em(2);
 
             .home & {
+                will-change: transform;
                 width: to-em(50);
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
@@ -533,6 +532,7 @@
             }
 
             &.first {
+                will-change: transform;
                 width: to-em(40);
                 height: to-em(1);
                 left: 50%;
@@ -546,6 +546,7 @@
             }
 
             &.second {
+                will-change: transform;
                 position: absolute;
                 bottom: 0;
                 width: to-em(1);
@@ -560,6 +561,7 @@
             }
 
             &.third {
+                will-change: transform;
                 width: to-em(1);
                 height: to-em(30);
                 position: absolute;
@@ -574,6 +576,7 @@
             }
 
             &.fourth {
+                will-change: transform;
                 width: to-em(41);
                 height: to-em(1);
                 position: absolute;
@@ -587,6 +590,7 @@
             }
 
             &.fifth {
+                will-change: transform;
                 width: to-em(41);
                 height: to-em(1);
                 position: absolute;
@@ -602,6 +606,7 @@
 
 
         &-arrow {
+            will-change: transform;
             transition: transform ease-in .3s, visibility ease-out .15s, opacity ease-out .15s;
             backface-visibility: hidden;
             position: absolute;
@@ -685,6 +690,7 @@
 }
 
 .hover {
+    transition: ease .1s;
     pointer-events: none;
     z-index: 100;
     background: none;
@@ -701,5 +707,110 @@
 
     .home & {
         mix-blend-mode: exclusion;
+    }
+}
+
+.loading {
+    will-change: transform;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    transition: transform ease-out .5s;
+    height: to-em(82);
+    line-height: to-em(82);
+    background: $color-white;
+    color: $color-black;
+    width: 100vw;
+    font-size: to-em(16);
+    right: 0;
+    bottom: to-em(-82);
+    position: fixed;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: -0.031rem -0.031rem 0.063rem 0 rgba(0, 0, 0, 0.02), 0.063rem 0.063rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+    padding-right: to-em(8);
+    $jump-timing: 1s;
+
+    @include layout-640() {
+        padding-right: to-em(16);
+    }
+
+    @include layout-768() {
+        padding-right: to-em(32);
+    }
+
+    @include layout-1024() {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .black & {
+        background: $color-black;
+        color: $color-white;
+    }
+
+    .getting & {
+        transform: translateY(-100%);
+    }
+
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5,
+    &-6,
+    &-7 {
+        font-weight: 500;
+        margin: 0 to-em(8);
+        transition: transform ease-in-out $jump-timing;
+        display: inline-block;
+        animation-play-state: paused;
+
+        .getting & {
+            animation-play-state: running;
+        }
+    }
+
+    &-1 {
+        animation: jump $jump-timing linear 0s infinite alternate;
+    }
+
+    &-2 {
+        animation: jump $jump-timing linear $jump-timing infinite alternate;
+    }
+
+    &-3 {
+        animation: jump $jump-timing linear $jump-timing * 2 infinite alternate;
+    }
+
+    &-4 {
+        animation: jump $jump-timing linear $jump-timing * 3 infinite alternate;
+    }
+
+    &-5 {
+        animation: jump $jump-timing linear $jump-timing * 4 infinite alternate;
+    }
+
+    &-6 {
+        animation: jump $jump-timing linear $jump-timing * 5 infinite alternate;
+    }
+
+    &-7 {
+        animation: jump $jump-timing linear $jump-timing * 6 infinite alternate;
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-4px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(4px);
     }
 }

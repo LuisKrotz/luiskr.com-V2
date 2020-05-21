@@ -136,14 +136,12 @@ const routes = [
   {
     path: '/projects/melissa-next-br',
     name: 'Melissa | Next',
-    meta: {
-      last: true,
-      id: 73,
-      total: total
-    },
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
       title: 'luiskr.com |  ',
+      last: true,
+      id: 73,
+      total: total,
       metaTags: [{
           name: 'description',
           content: 'Hy, I\'m Luis. Check out the project '

@@ -77,22 +77,15 @@
     <link rel="stylesheet" href="<%= BASE_URL %>css/general.css" media="screen">
 
     <style>
-      body {
-        background: rgba(0, 0, 0, 1);
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      a, p, h1, h2, h3, h4, h5, h6, code, pre, hr, ul, ol, span, header, footer, aside, button {
+      a, p, h1, h2, h3, h4, h5, h6, code, pre, hr, ul, ol, span, header, footer, aside, button, img, video {
+        transition: ease-in .5s;
         text-rendering: geometricprecision;
         font-family: 'Work Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        transition: visibility 1s ease-in 1s, opacity 1s ease-in 1s;
-        opacity: 0;
-        visibility: hidden;
         font-weight: 300;
         letter-spacing: .0625rem;
+        opacity: 0;
     }
 
     em, i {
@@ -156,10 +149,10 @@
 
     <div id="app"></div>
 
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+    <script async src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script async src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script async src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <script async src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace("no-js","js");
