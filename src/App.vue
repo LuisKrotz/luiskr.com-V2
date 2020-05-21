@@ -21,10 +21,10 @@
       <div slot-scope="props" class="cookie-banner">
         <div class="max-area">
           <p>
-            This site uses third party cookies from Google Analytics and Faceboook Pixel to track page visits.<br>
-            <router-link to="/?show-recors=true">Click here</router-link> and open your browser console to see the annonimous data sent to Google and Pixel Analytics.<br>
+            This site uses third party cookies from Google Analytics and Faceboook Pixel to track page visits and events.<br>
+            <router-link to="/?show-recors=true">Click here</router-link> and open your browser's console to see the annonimous data sent to Google and Pixel Analytics.<br>
             Get more info about data, cookies and terms of use at: <router-link to="GDPR">GDPR</router-link>, <router-link to="terms-of-use">Terms of Use</router-link>, and <router-link to="privacy-policy">Privacy policy</router-link> of this website.<br>
-            This page doesn't send pageviews and events without consent, and don't store any visitor's data.<br>This consent can be revoked by cleaning your browser locally stored data referent to the current web address.
+            This page don't send pageviews and events without consent and don't store any visitor's data.<br>The consent can be revoked by cleaning your browser's locally stored data.
           </p>
           <div class="second-column">
             <div class="second-column-fixed">
