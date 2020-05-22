@@ -17,8 +17,8 @@
       <span class="loading-7">g</span>
     </span>
 
-    <cookie-law class="cookie-law">
-      <div slot-scope="props" class="cookie-banner">
+    <transition name="cookie">
+      <div v-if="!show_cookie" class="cookie-banner">
         <div class="max-area">
           <p>
             This site uses third-party cookies from Google Analytics and Facebook Pixel to track page visits and events.<br>
@@ -30,13 +30,13 @@
           </p>
           <div class="second-column">
             <div class="second-column-fixed">
-              <button class="accept" @click="props.accept"><span>I accept</span></button>
-              <button class="refuse" @click="props.close"><span>Ignore me</span></button>
+              <button class="accept" @click="accept()"><span>I accept</span></button>
+              <button class="refuse" @click="close()"><span>Ignore me</span></button>
             </div>
           </div>
         </div>
       </div>
-    </cookie-law>
+    </transition>
   </div>
 </template>
 
@@ -45,15 +45,14 @@ import Vue from 'vue'
 import WebFontLoader from 'webfontloader'                         // https://github.com/typekit/webfontloader
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import checkView from 'vue-check-view'
-import CookieLaw from 'vue-cookie-law'
 
 export default {
   components: {
-     HeaderComponent,
-     CookieLaw
+     HeaderComponent
   },
   data() {
       return {
+        show_cookie: Boolean(localStorage.getItem('cookie')),
         has_touch: false,
         webp: '.jpg',
         webp2: '.jpg',
@@ -172,6 +171,15 @@ export default {
         //console.log(e.scrollPercent) // 0..1 current scroll position of page
         //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
         //console.log(e.target.rect) // element.getBoundingClientRect() result
+      },
+      accept() {
+        localStorage.setItem('cookie', true);
+        this.show_cookie = true;
+
+        document.dispatchEvent(new Event("accepted"));
+      },
+      close() {
+          this.show_cookie = true;
       }
     }
   };

@@ -1611,12 +1611,13 @@ function init() {
   })
 }
 
-if (Boolean(localStorage.getItem('cookie:accepted')) === true)
+if (Boolean(localStorage.getItem('cookie')) === true) {
   init();
-else
-  window.addEventListener('storage', function(e) {
-    if (Boolean(localStorage.getItem('cookie:accepted')) === true)
+} else {
+  document.addEventListener('accepted', function() {
+    if (Boolean(localStorage.getItem('cookie')) === true) {
       init();
+    }
   });
-
+}
 export default router
