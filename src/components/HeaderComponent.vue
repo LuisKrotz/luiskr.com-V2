@@ -157,10 +157,12 @@ export default {
             headerOpen() {
                 if (this.open) {
                     this.headerClose();
+                    this.clear();
                     this.sendAnalyticsEvent('modal', 'click', 'open', 100);
                 } else {
                     this.remember = window.scrollY;
-                     window.scrollTo(0, 0);
+                    window.scrollTo(0, 0);
+                    this.clear();
 
                     document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
                     document.body.classList.add("header-open");
@@ -179,12 +181,10 @@ export default {
                     this.showhover = true;
                     this.random = Math.round(Math.random() * this.hovers);
 
-                    document.body.classList.all("mouseenter");
                     this.onMouseMove(e);
                 }
             },
             clear() {
-                document.body.classList.remove("mouseenter");
                 this.showhover = false;
             },
             sendAnalyticsEvent(category, action, label, value) {

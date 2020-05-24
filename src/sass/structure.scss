@@ -25,6 +25,8 @@ body {
 }
 
 main {
+    will-change: scroll-position, position, height, transform;
+
     .header-open & {
         position: fixed;
     }

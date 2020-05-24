@@ -98,13 +98,14 @@
     }
 
     .main-text {
-        video {
+        video,
+        iframe {
         display: block;
         position: relative;
         object-fit: cover;
         object-position: center;
         margin: 0 auto;
-        max-width: to-em(520);
+        max-width: 100%;
         margin-top: to-em(24);
         margin-bottom: to-em(40);
         width: 100%;
@@ -112,6 +113,7 @@
         box-shadow: 10px 10px 0px 0 rgba(0, 0, 0, .1), 20px 20px 1px 0 rgba(0, 0, 0, 0.15);
 
             @include layout-768() {
+                max-width: to-em(520);
                 margin-top: to-em(40);
                 margin-bottom: to-em(24);
             }
@@ -120,6 +122,10 @@
                 margin-left: 0;
                 max-width: calc(100% - 20px);
             }
+        }
+
+        iframe {
+            height: to-em(520);
         }
     }
 }

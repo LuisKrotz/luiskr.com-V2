@@ -87,7 +87,7 @@
       </div>
       <div v-if="showiframe" class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
         <button class="project-iframe-toggle" @click="toggleiframe()">
-          <span class="project-iframe-mark" :style="itoggle ? 'transform: translateX(100%);': ''"></span>
+          <span class="project-iframe-mark" :style="itoggle ? 'transform: translate3D(100%, 0, 1px);': ''"></span>
           <span class="project-iframe-slide">
             <svg class="left" width="13" height="13" style="fill:white">
               <use xlink:href="#svg-desktop"/>

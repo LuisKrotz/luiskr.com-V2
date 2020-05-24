@@ -23,7 +23,7 @@
         width: 100px;
         height: 100px;
         object-fit: cover;
-        transform: translateX(-50%);
+        transform: translate3D(-50%, 0, 1px);
         mix-blend-mode: difference;
         pointer-events: none;
     }
@@ -164,7 +164,7 @@
             width: 100%;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate3D(-50%, -50%, 1px);
 
             @include layout-1024(){
                 display: none;
@@ -329,7 +329,7 @@
             top: 50%;
             border-top-left-radius: to-em(4);
             border-bottom-left-radius: to-em(4);
-            transform: translateY(-100%);
+            transform: translate3D(0, -100%, 1px);
             box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, .15), 2px 2px 3px 0 rgba(0, 0, 0, .3);
         }
     }
