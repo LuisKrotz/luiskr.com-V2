@@ -86,7 +86,7 @@
             </div>
         </header>
 
-        <img :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px); visibility: '+ (showhover ? 'visible' : 'hidden')" aria-hidden="true">
+        <img :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px); '+ (showhover ? 'visibility: visible; opacity: 1' : 'visibility: hidden: opacity: 0')" aria-hidden="true">
     </div>
 </template>
 
@@ -179,10 +179,12 @@ export default {
                     this.showhover = true;
                     this.random = Math.round(Math.random() * this.hovers);
 
+                    document.body.classList.all("mouseenter");
                     this.onMouseMove(e);
                 }
             },
             clear() {
+                document.body.classList.remove("mouseenter");
                 this.showhover = false;
             },
             sendAnalyticsEvent(category, action, label, value) {
