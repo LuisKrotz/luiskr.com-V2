@@ -71,7 +71,7 @@ export default {
 
       WebFontLoader.load({
         google: {
-          families: ['Work+Sans:200,300,400,500,600']
+          families: ['Work+Sans:200,300,400,500,900']
         },
         active: self.setFontLoaded,
       });

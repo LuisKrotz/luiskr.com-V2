@@ -661,10 +661,6 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
-
-    .home & {
-        mix-blend-mode: exclusion;
-    }
 }
 
 .loading {
