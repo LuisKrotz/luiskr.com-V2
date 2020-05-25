@@ -3,28 +3,28 @@
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
-          <div class="max-area home-cover">
+          <div class="max-area home-cover" v-view>
             <div class="home-cover-mobile" aria-hidden="true">
-              <span class="main-title"><span>luiskr.com</span></span>
-              <span class="main-subtitle">Hy, I'm Luis.</span>
+              <span class="main-title" v-view><span>luiskr.com</span></span>
+              <span class="main-subtitle" v-view>Hy, I'm Luis.</span>
             </div>
 
-            <h2 class="main-title desk"><span>luiskr.com</span></h2>
-            <h3 class="main-subtitle desk">Hy, I'm Luis.</h3>
+            <h2 class="main-title desk" v-view><span>luiskr.com</span></h2>
+            <h3 class="main-subtitle desk" v-view>Hy, I'm Luis.</h3>
 
-            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
+            <p class="main-text first" v-view><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
           </div>
-          <div class="max-area home-cover black">
-            <p class="main-text"><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years, and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
-            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
+          <div class="max-area home-cover second" v-view>
+            <p class="main-text" v-view><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years, and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
+            <p class="main-text" v-view><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
           </div>
         </div>
 
-        <section class="home-projects">
-          <h3 class="main-title" id="portfolio">Portfolio</h3>
+        <section class="home-projects" v-view>
+          <h3 class="main-title" id="portfolio" v-view>Portfolio</h3>
           <div class="max-area home-project-parent">
 
-            <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">
+            <router-link  v-view class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">
                 <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
                   <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
                       <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">

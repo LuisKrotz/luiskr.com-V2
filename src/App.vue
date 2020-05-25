@@ -65,8 +65,8 @@ export default {
       let self = this;
 
       Modernizr.on('webp', function (result) {
-        self.webp = result ? '.webp' : seld.webp;
-        self.webp2 = result ? '.jpg.webp' : seld.webp2;
+        self.webp = result ? '.webp' : self.webp;
+        self.webp2 = result ? '.jpg.webp' : self.webp2;
       });
 
       WebFontLoader.load({

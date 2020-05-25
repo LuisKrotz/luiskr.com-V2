@@ -279,7 +279,7 @@
 
     &-modal {
         z-index: 2;
-        background: $color-black;
+        background: black;
         min-height: 100vh;
         bottom: 0;
 
@@ -495,7 +495,7 @@
             &.first {
                 will-change: transform;
                 width: to-em(40);
-                height: to-em(1);
+                height: to-em(2);
                 left: 50%;
                 transform: translate3D(-50%, 0, 1px) scale(0.75);
                 position: absolute;
@@ -510,9 +510,9 @@
                 will-change: transform;
                 position: absolute;
                 bottom: 0;
-                width: to-em(1);
-                height: to-em(30);
-                left: to-em(5);
+                width: to-em(2);
+                height: to-em(34);
+                left: to-em(4);
                 transform: scale(0.75) translate3D(to-em(7), to-em(4), 1px);
 
                 .footer-link:hover & {
@@ -523,8 +523,8 @@
 
             &.third {
                 will-change: transform;
-                width: to-em(1);
-                height: to-em(30);
+                width: to-em(2);
+                height: to-em(34);
                 position: absolute;
                 bottom: 0;
                 right: to-em(5);
@@ -539,13 +539,11 @@
             &.fourth {
                 will-change: transform;
                 width: to-em(41);
-                height: to-em(1);
+                height: to-em(2);
                 position: absolute;
                 transform: rotate(-45deg) scale(.75) translate3D(0, to-em(7), 1px);
                 left: to-em(-10);
                 top: to-em(15);
-
-
 
                 .footer-link:hover & {
                     transform: rotate(0deg) translate3D(to-em(15), to-em(5), 1px);
@@ -555,7 +553,7 @@
             &.fifth {
                 will-change: transform;
                 width: to-em(41);
-                height: to-em(1);
+                height: to-em(2);
                 position: absolute;
                 transform: rotate(45deg) scale(.75) translate3D(0, to-em(7), 1px);
                 top: 15px;
@@ -779,6 +777,7 @@
 // Cookies Banner
 
 .cookie-banner {
+    z-index: 100;
     padding: to-em(16) 0 0;
     margin: 0;
     box-shadow: -1px -2px 2px 0 rgba(0,0,0, .2);

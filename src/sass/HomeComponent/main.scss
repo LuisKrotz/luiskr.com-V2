@@ -29,7 +29,13 @@
     }
 
     &-cover {
+        transition: background-color ease-in-out .5s;
         box-sizing: border-box;
+
+        &.second.view-out--above {
+            background-color: $color-black;
+            color: $color-white;
+        }
 
         @include layout-1024() {
             min-height: 75vh;
@@ -38,8 +44,14 @@
         }
 
         .main-title {
+            transition: transform ease-in-out 1.5s, opacity ease-in-out .5s;
             font-size: to-em(40);
             font-weight: 200;
+
+            &.view-out--above {
+                transform: translate3D(5%, 0, 0);
+                opacity: 0;
+            }
 
             span {
                 background: $color-black;
@@ -56,7 +68,14 @@
         }
 
         .main-subtitle {
+            transition: transform ease-in-out 1s, opacity ease-in-out .5s;
             text-align: center;
+
+            &.view-out--above {
+                transform: translate3D(-5%, 0, 0);
+                opacity: 0;
+            }
+
 
             &.desk {
                 display: none;
@@ -68,10 +87,15 @@
         }
 
         .main-text {
+            transition: transform ease-in-out 1s, opacity ease-in-out .5s;
             font-size: to-em(24);
             line-height: to-em(64);
             padding-bottom: to-em(168);
-            background: $color-white;
+
+            &.view-out--above {
+                transform: translate3D(5%, 0, 0);
+                opacity: 0;
+            }
 
             &.first {
                 padding-top: to-em(16);
@@ -176,9 +200,14 @@
     }
 
     &-projects {
-        background: $color-white;
+        transition: background-color ease-in-out .5s;
         padding-bottom: to-em(104);
         position: relative;
+        background-color: transparent;
+
+        &.view-out--above {
+            background-color: rgba(0, 0, 0, 0.05)
+        }
 
         .main-title {
             padding-top: to-em(24);
@@ -187,14 +216,8 @@
                 padding-top: to-em(16);
             }
 
-            @include layout-768() {
-            }
-
             @include layout-1024() {
                 padding-top: to-em(40);
-            }
-
-            @include layout-1280() {
             }
 
             @include layout-1680() {
@@ -208,9 +231,15 @@
     }
 
     &-project {
+        transition: opacity ease-in .1s;
         position: relative;
         display: block;
         text-align: center;
+        opacity: 1;
+
+        &.view-out--above {
+            opacity: 0;
+        }
 
         .home & {
             background: $color-white;
@@ -346,7 +375,6 @@
         height: 100%;
         opacity: 1;
         visibility: visible;
-        box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 1px 2px 3px rgba(0, 0, 0, .2);
 
         &.view-out {
             visibility: hidden;
