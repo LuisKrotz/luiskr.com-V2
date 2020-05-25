@@ -174,9 +174,10 @@
             &-content {
                 position: absolute;
                 top: 50vh;
-                left: 50%;
-                transform: translate3D(-50%, -50%, 0);
+                left: 0;
+                transform: translate3D(0, -50%, 0);
                 margin-top: to-em(-64);
+                width: 100%;
             }
 
             @include layout-1024() {
