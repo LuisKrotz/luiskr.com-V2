@@ -22,8 +22,8 @@
           </div>
         </div>
 
-        <section class="home-projects" v-view>
-          <h3 class="main-title" id="portfolio" v-view>Portfolio</h3>
+        <section class="home-projects">
+          <h3 class="main-title" id="portfolio" v-view><span>Portfolio</span></h3>
           <div class="max-area home-project-parent">
 
             <router-link  v-view class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">

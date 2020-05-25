@@ -196,10 +196,6 @@
         position: relative;
         background-color: transparent;
 
-        &.view-out--above {
-            background-color: rgba(0, 0, 0, 0.05)
-        }
-
         .main-title {
             padding-top: to-em(24);
 
@@ -218,11 +214,25 @@
             @include layout-2560() {
                 padding-top: to-em(104);
             }
+
+            span {
+                background: $color-black;
+                color: $color-white;
+                letter-spacing: to-em(2);
+                margin-left:to-em(-8);
+                box-shadow: to-em(4) to-em(4) 0 0 rgba(0,0,0, .25), to-em(8) to-em(8) 0 0 rgba(0,0,0, .25), to-em(12) to-em(12) 0 0 rgba(0,0,0, .25);
+
+                @include layout-640() {
+                    letter-spacing: to-em(8);
+                    margin-left:to-em(-24);
+                    box-shadow: to-em(8) to-em(8) 0 0 rgba(0,0,0, .5), to-em(16) to-em(16) 0 0 rgba(0,0,0, .5), to-em(24) to-em(24) 0 0 rgba(0,0,0, .5);
+                }
+            }
         }
     }
 
     &-project {
-        transition: opacity ease-in .1s;
+        transition: opacity ease-in .1s, box-shadow ease-in-out .3s;
         position: relative;
         display: block;
         text-align: center;
@@ -232,11 +242,15 @@
             opacity: 0;
         }
 
+        &:hover {
+            .home & {
+                box-shadow: -2px -2px 5px 0 rgba(0, 0, 0, .025), 2px 2px 5px 0 rgba(0, 0, 0, 0.05);
+            }
+        }
+
         .home & {
             background: $color-white;
-            box-shadow: -2px -2px 5px 0 rgba(0, 0, 0, .025), 2px 2px 5px 0 rgba(0, 0, 0, .05);
-            border-top-right-radius: to-em(2);
-            border-top-left-radius: to-em(2);
+            box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .025), 2px 2px 3px 0 rgba(0, 0, 0, .05);
             border-radius: to-em(4);
             overflow: hidden;
 
