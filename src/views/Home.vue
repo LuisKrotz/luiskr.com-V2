@@ -24,52 +24,51 @@
           <h3 class="main-title" id="portfolio">Portfolio</h3>
           <div class="max-area home-project-parent">
 
-            <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
+            <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">
                 <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
-                    <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
-                        <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-                    </div>
-                    <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
-                        <picture v-if="loaded" :key="'home-' + post.id">
-                            <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-                            <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-                            <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
-                        <video v-if="loaded" v-view="viewHandler" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
-                            <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
-                            <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
-                            <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
-                        </video>
-                    </div>
+                  <div v-if="post.video === undefined && post.img === undefined" :style="'padding-top:' + (480 / 720 * 100) + '%'">
+                      <img v-view v-if="prev.img === undefined && prev.video === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                  </div>
+                  <div class="lz-container" v-else-if="post.video === undefined" :style="'padding-top:' + (post.img.height / post.img.width * 100) + '%'">
+                      <picture v-if="loaded" :key="'home-' + post.id">
+                          <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+                          <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+                          <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
+                      </picture>
+                  </div>
+                  <div class="lz-container" v-else :style="'padding-top:' + (post.video.height / post.video.width * 100) + '%'">
+                      <video v-if="loaded" v-view="viewHandler" :data-key="index" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
+                          <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
+                          <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
+                          <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
+                      </video>
+                  </div>
+                  <h3 class="home-project-title">
+                      <span>{{ post.project }}</span>
+                  </h3>
 
-                    <h3 class="home-project-title">
-                        <span>{{ post.project }}</span>
-                    </h3>
+                  <h4 class="home-project-at">
+                      <span>{{ projects.at }} </span>
+                      <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
+                  </h4>
 
-                    <h4 class="home-project-at">
-                        <span>{{ projects.at }} </span>
-                        <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
-                    </h4>
+                  <h5 class="home-project-role">
+                      <span>{{ projects.role }} </span>
+                      <span>{{ post.role }}</span>
+                  </h5>
 
-                    <h5 class="home-project-role">
-                        <span>{{ projects.role }} </span>
-                        <span>{{ post.role }}</span>
-                    </h5>
-
-                    <router-link class="home-project-read" :to="post.path">
-                        Read<br>More
-                    </router-link>
+                  <router-link class="home-project-read" :to="post.path">
+                      Read<br>More
+                  </router-link>
                 </div>
             </router-link>
           </div>
         </section>
 
-        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
         <img v-if="loaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 1px); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
       </article>
     </main>
+    <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
   </div>
 </template>
 
@@ -168,8 +167,18 @@ export default {
         })
       }
     },
-    viewHandler(e) {
+    viewHandler(e, key) {
       this.$parent.viewHandler(e);
+
+      this.offloadElement(e);
+    },
+    offloadElement(e) {
+      let key = e.target.element.dataset.key,
+          el = this.posts[key];
+
+      el.percentInView = e.percentInView;
+
+      this.posts[key] = el;
     },
     onMouseMove(e) {
       if(!this.$parent.has_touch) {

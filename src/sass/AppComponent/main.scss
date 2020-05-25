@@ -162,7 +162,6 @@
             font-weight: 200;
             text-transform: uppercase;
             font-size: to-em(64);
-            //letter-spacing: -0.04rem;
 
             .header-link:hover &,
             .header-link:focus &,
@@ -279,10 +278,7 @@
     }
 
     &-modal {
-        will-change: transform, scroll-position, position;
         z-index: 2;
-        transition: transform linear 1s;
-        transform: translate3d(0, 100%, 1px);
         background: $color-black;
         min-height: 100vh;
         bottom: 0;
@@ -320,10 +316,6 @@
             @include layout-2560() {
                 grid-column-gap: to-em(64);
             }
-        }
-
-        .header-open & {
-            transform: translate3D(0, 0, 1px);
         }
 
         .black & {
@@ -973,7 +965,6 @@
         color: $color-white;
         box-shadow: -1px -1px 2px 0 rgba(255, 255, 255, .1), 1px 1px 3px 0 rgba(255, 255, 255, .2);
         background: #525252;
-        
 
         &:hover {
             background: #8e4646;
@@ -985,6 +976,17 @@
 .cookie-leave-active {
     transition: transform .5s ease-in-out;
 }
-.cookie-enter, .cookie-leave-to /* .fade-leave-active em versões anteriores a 2.1.8 */ {
+.cookie-enter,
+.cookie-leave-to {
+    transform: translate3D(0, 100%, 1px);
+}
+
+.menu-open-enter-active,
+.menu-open-leave-active {
+    transition: transform linear 1s;
+    transform: translate3d(0, 0, 1px);
+}
+.menu-open-enter,
+.menu-open-leave-to {
     transform: translate3D(0, 100%, 1px);
 }

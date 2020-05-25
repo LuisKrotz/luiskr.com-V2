@@ -1,107 +1,108 @@
 <template>
-  <main class="main">
-    <article class="project home-project max-area">
-      <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
-      <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
-        <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-        <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-        <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
-      </picture>
-      <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'bg-' + post.id">
-        <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
-        <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
-        <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
-      </video>
-
-      <h2 class="project-title" v-if="translations !== undefined">{{ translations.project }}</h2>
-      <h3 class="project-subtitle" v-if="post !== undefined">{{ post.project }}</h3>
-
-      <div class="project-info">
-        <img v-if="post === undefined" class="project-media" :src="placeholder" alt="">
-        <picture v-else-if="post.video === undefined" :key="'media-' + post.id">
-            <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-            <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-            <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+  <div>
+    <main class="main">
+      <article class="project home-project max-area">
+        <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
+        <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
+          <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+          <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+          <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
         </picture>
-        <video v-view="viewHandler" v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls :key="'media-' + post.id">
+        <video v-else class="project-background" :width="post.video.width" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'bg-' + post.id">
           <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
           <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
           <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
         </video>
 
-        <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
-          <div class="project-info-description">
-            <a class="project-info-link" :href="post.at_link">
-              <h4 class="project-info-link-title">{{ translations.at }}</h4>
-              {{ post.at_place }}
-              </a>
+        <h2 class="project-title" v-if="translations !== undefined">{{ translations.project }}</h2>
+        <h3 class="project-subtitle" v-if="post !== undefined">{{ post.project }}</h3>
 
-            <h5 class="project-info-role">
-              <span class="project-info-role-title">{{ translations.role }}</span> <span>{{ post.role }}</span>
-            </h5>
+        <div class="project-info">
+          <img v-if="post === undefined" class="project-media" :src="placeholder" alt="">
+          <picture v-else-if="post.video === undefined" :key="'media-' + post.id">
+              <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+              <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+              <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
+          </picture>
+          <video v-view="viewHandler" v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls :key="'media-' + post.id">
+            <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
+            <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
+            <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
+          </video>
 
-            <div class="project-info-more">
-              <h6 class="first">{{ translations.description}}</h6>
-              <p v-html="post.description"></p>
-              <h6>{{ translations.contribuition}}</h6>
-              <p v-html="post.part"></p>
-              <h6 class="project-info-credit" >{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h6>
-              <p>
-                <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('project_link', 'click', post.at_place, 25)">
-                  <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
-                  <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
+          <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
+            <div class="project-info-description">
+              <a class="project-info-link" :href="post.at_link">
+                <h4 class="project-info-link-title">{{ translations.at }}</h4>
+                {{ post.at_place }}
                 </a>
-              </p>
-            </div>
 
-            <div  v-if="post.extra !== undefined">
-              <div v-for="extra in post.extra" :key="extra.id" class="project-info-more">
-                <h6 class="title">{{ extra.alt }}</h6>
+              <h5 class="project-info-role">
+                <span class="project-info-role-title">{{ translations.role }}</span> <span>{{ post.role }}</span>
+              </h5>
 
-                <picture v-if="extra.type === 'img'">
-                  <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
-                  <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
-                  <img :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt" loading="lazy">
-                </picture>
-                <video v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" loading="lazy" playsinline autoplay muted loop controls>
-                  <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
-                  <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
-                  <source type="video/webm" :src="storage +  extra.src + '.webm'"/>
-                </video>
+              <div class="project-info-more">
+                <h6 class="first">{{ translations.description}}</h6>
+                <p v-html="post.description"></p>
+                <h6>{{ translations.contribuition}}</h6>
+                <p v-html="post.part"></p>
+                <h6 class="project-info-credit" >{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h6>
+                <p>
+                  <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('project_link', 'click', post.at_place, 25)">
+                    <img v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
+                    <img v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
+                  </a>
+                </p>
+              </div>
+
+              <div  v-if="post.extra !== undefined">
+                <div v-for="extra in post.extra" :key="extra.id" class="project-info-more">
+                  <h6 class="title">{{ extra.alt }}</h6>
+
+                  <picture v-if="extra.type === 'img'">
+                    <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
+                    <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
+                    <img :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt" loading="lazy">
+                  </picture>
+                  <video v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" loading="lazy" playsinline autoplay muted loop controls>
+                    <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
+                    <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
+                    <source type="video/webm" :src="storage +  extra.src + '.webm'"/>
+                  </video>
+                </div>
               </div>
             </div>
+
+            <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
+              <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placeholder" alt="">
+              <video v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
+                <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
+                <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
+                <source type="video/webm" :src="storage + 'animations/' + random + '.webm'"/>
+              </video>
+              <span class="project-info-check-txt">
+              {{ translations.checkit }}
+              </span>
+            </a>
           </div>
-
-          <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
-            <img v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placeholder" alt="">
-            <video v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" loading="lazy" playsinline autoplay muted loop>
-              <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
-              <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
-              <source type="video/webm" :src="storage + 'animations/' + random + '.webm'"/>
-            </video>
-            <span class="project-info-check-txt">
-            {{ translations.checkit }}
-            </span>
-          </a>
         </div>
-      </div>
-      <div v-if="showiframe" class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
-        <button class="project-iframe-toggle" @click="toggleiframe()">
-          <span class="project-iframe-mark" :style="itoggle ? 'transform: translate3D(100%, 0, 1px);': ''"></span>
-          <span class="project-iframe-slide">
-            <svg class="left" width="13" height="13" style="fill:white">
-              <use xlink:href="#svg-desktop"/>
-            </svg>
+        <div v-if="showiframe" class="project-iframe-parent" :style="itoggle ? 'width: 414px': ''" @click="sendAnalyticsEvent('project_link', 'toggle', 'iframe', 100)">
+          <button class="project-iframe-toggle" @click="toggleiframe()">
+            <span class="project-iframe-mark" :style="itoggle ? 'transform: translate3D(100%, 0, 1px);': ''"></span>
+            <span class="project-iframe-slide">
+              <svg class="left" width="13" height="13" style="fill:white">
+                <use xlink:href="#svg-desktop"/>
+              </svg>
 
-            <svg class="right" width="14" height="14" style="fill:white">
-              <use xlink:href="#svg-mobile"/>
-            </svg>
-          </span>
-        </button>
-        <iframe class="project-iframe" frameborder="0" :src="ilink"/>
-      </div>
-
-    </article>
+              <svg class="right" width="14" height="14" style="fill:white">
+                <use xlink:href="#svg-mobile"/>
+              </svg>
+            </span>
+          </button>
+          <iframe class="project-iframe" frameborder="0" :src="ilink"/>
+        </div>
+      </article>
+    </main>
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
         <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
@@ -135,7 +136,7 @@
         </a>
       </div>
     </footer>
-  </main>
+  </div>
 </template>
 
 <script>

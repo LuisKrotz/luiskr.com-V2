@@ -74,7 +74,6 @@
             background: $color-white;
 
             &.first {
-                background: linear-gradient(rgba(255, 255, 255, 0) 0%,#FFF 5%,#FFF 100%);
                 padding-top: to-em(16);
 
                 @include layout-1024() {
@@ -162,11 +161,11 @@
             transition: transform ease-in-out .25s;
             position: fixed;
             width: 100%;
-            top: 50%;
+            top: 50vh;
             left: 50%;
-            transform: translate3D(-50%, -50%, 1px);
+            transform: translate3D(-50%, -50%, 0);
 
-            @include layout-1024(){
+            @include layout-1024() {
                 display: none;
             }
         }
@@ -220,6 +219,10 @@
             border-top-left-radius: to-em(2);
             border-radius: to-em(4);
             overflow: hidden;
+
+            .lz-container {
+                background: rgba(0, 0, 0, .8);
+            }
         }
 
         &-parent {
@@ -240,29 +243,25 @@
             }
 
             @include layout-768() {
-                padding-top: to-em(104);
                 grid-gap: to-em($gap-768);
                 grid-row-gap: to-em(104);
-                grid-template-columns: repeat(2, 1fr);
             }
 
             @include layout-1024() {
-                padding-top: to-em(104);
                 grid-gap: to-em($gap-1024);
                 grid-row-gap: to-em(104);
             }
 
             @include layout-1280() {
-                padding-top: to-em(104);
+                grid-template-columns: repeat(3, 1fr);
                 grid-gap: to-em($gap-1280);
                 grid-row-gap: to-em(168);
-                grid-template-columns: repeat(3, 1fr);
             }
 
             @include layout-1680() {
                 padding-top: to-em(168);
                 grid-gap: to-em($gap-1680);
-                grid-row-gap: to-em(274);
+                grid-row-gap: to-em(274)
             }
 
             @include layout-2560() {
@@ -325,7 +324,7 @@
             word-break: break-all;
             text-align: center;
             background: rgba(0, 0, 0, .6);
-            color: white;
+            color: $color-white;
             top: 50%;
             border-top-left-radius: to-em(4);
             border-bottom-left-radius: to-em(4);
@@ -335,6 +334,7 @@
     }
 
     &-media {
+        transition: opacity ease-in-out .5s, visibility ease-in-out .5s;
         will-change: visibility, opacity;
         position: absolute;
         top: 0;
@@ -344,6 +344,13 @@
         object-position: center center;
         width: 100%;
         height: 100%;
+        opacity: 1;
+        visibility: visible;
         box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 1px 2px 3px rgba(0, 0, 0, .2);
+
+        &.view-out {
+            visibility: hidden;
+            opacity: 0;
+        }
     }
 }

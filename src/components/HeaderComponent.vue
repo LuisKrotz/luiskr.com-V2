@@ -13,80 +13,81 @@
                 </button>
             </div>
 
-            <div class="header-modal">
-                <nav class="max-area" v-if="header !== undefined && footer !== undefined">
-                    <h4 class="hdn">luiskr.com</h4>
+            <transition name="menu-open">
+                <div class="header-modal" v-show="open">
+                    <nav class="max-area" v-if="header !== undefined && footer !== undefined">
+                        <h4 class="hdn">luiskr.com</h4>
 
-                    <div>
-                        <router-link class="header-modal-link" :style="sethover" :to="header.home[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.home[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()" >{{ header.home[1] }}</span>
-                            </span>
-                        </router-link>
+                        <div>
+                            <router-link class="header-modal-link" :style="sethover" :to="header.home[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.home[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()" >{{ header.home[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <router-link class="header-modal-link" :style="sethover" :to="header.about[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.about[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()" >{{ header.about[1] }}</span>
-                            </span>
-                        </router-link>
+                            <router-link class="header-modal-link" :style="sethover" :to="header.about[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.about[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()" >{{ header.about[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <router-link class="header-modal-link" :style="sethover" :to="header.social[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()" >{{ header.social[1] }}</span>
-                            </span>
-                        </router-link>
+                            <router-link class="header-modal-link" :style="sethover" :to="header.social[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()" >{{ header.social[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <a class="header-modal-link" :style="sethover" :href="header.mail[0]" rel="noopener">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()" >{{ header.mail[1] }}</span>
-                            </span>
-                        </a>
-                    </div>
+                            <a class="header-modal-link" :style="sethover" :href="header.mail[0]" rel="noopener">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', header.social[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()" >{{ header.mail[1] }}</span>
+                                </span>
+                            </a>
 
-                    <h4 class="hdn">{{ footer.title }}</h4>
+                            <a class="header-modal-link" :style="sethover" :href="footer.phone[0]" rel="noopener">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.phone[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.phone[1] }}</span>
+                                </span>
+                            </a>
+                        </div>
 
-                    <div>
-                        <router-link class="header-modal-link" :style="sethover" :to="footer.privacy_policy[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.privacy_policy[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.privacy_policy[1] }}</span>
-                            </span>
-                        </router-link>
+                        <h4 class="hdn">{{ footer.title }}</h4>
 
-                        <router-link class="header-modal-link" :style="sethover" :to="footer.terms_of_use[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.terms_of_use[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.terms_of_use[1] }}</span>
-                            </span>
-                        </router-link>
+                        <div>
+                            <router-link class="header-modal-link" :style="sethover" :to="footer.credits[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.credits[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.credits[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <router-link class="header-modal-link" :style="sethover" :to="footer.GDPR[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.GDPR[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.GDPR[1] }}</span>
-                            </span>
-                        </router-link>
+                            <a class="header-modal-link" :style="sethover" :href="footer.instagram[0]" rel="noopener">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.instagram[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.instagram[1] }}</span>
+                                </span>
+                            </a>
 
-                        <router-link class="header-modal-link" :style="sethover" :to="footer.credits[0]">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.credits[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.credits[1] }}</span>
-                            </span>
-                        </router-link>
+                            <router-link class="header-modal-link" :style="sethover" :to="footer.GDPR[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.GDPR[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.GDPR[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <a class="header-modal-link" :style="sethover" :href="footer.instagram[0]" rel="noopener">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.instagram[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.instagram[1] }}</span>
-                            </span>
-                        </a>
+                            <router-link class="header-modal-link" :style="sethover" :to="footer.terms_of_use[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.terms_of_use[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.terms_of_use[1] }}</span>
+                                </span>
+                            </router-link>
 
-                        <a class="header-modal-link" :style="sethover" :href="footer.phone[0]" rel="noopener">
-                            <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.phone[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <span class="header-modal-link-title" @click="headerClose()">{{ footer.phone[1] }}</span>
-                            </span>
-                        </a>
-                    </div>
-                </nav>
-            </div>
+                            <router-link class="header-modal-link" :style="sethover" :to="footer.privacy_policy[0]">
+                                <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', footer.privacy_policy[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                    <span class="header-modal-link-title" @click="headerClose()">{{ footer.privacy_policy[1] }}</span>
+                                </span>
+                            </router-link>
+                        </div>
+                    </nav>
+                </div>
+            </transition>
         </header>
-
-        <img :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px); '+ (showhover ? 'visibility: visible; opacity: 1' : 'visibility: hidden: opacity: 0')" aria-hidden="true">
+        <img v-if="open" :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px); '+ (showhover ? 'visibility: visible; opacity: 1' : 'visibility: hidden: opacity: 0')" aria-hidden="true">
     </div>
 </template>
 
