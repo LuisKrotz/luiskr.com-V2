@@ -5,8 +5,10 @@
         <div class="home-cover-parent">
           <div class="max-area home-cover" v-view>
             <div class="home-cover-mobile" aria-hidden="true">
-              <span class="main-title" v-view><span>luiskr.com</span></span>
-              <span class="main-subtitle" v-view>Hy, I'm Luis.</span>
+              <div class="home-cover-mobile-content">
+                <span class="main-title" v-view><span>luiskr.com</span></span>
+                <span class="main-subtitle" v-view>Hy, I'm Luis.</span>
+              </div>
             </div>
 
             <h2 class="main-title desk" v-view><span>luiskr.com</span></h2>

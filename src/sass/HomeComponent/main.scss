@@ -3,15 +3,6 @@
     .main {
         background: $color-white;
         padding: 0;
-        padding-top: calc(100vh + #{to-em(64)});
-
-        @include layout-1024() {
-            padding-top: 0;
-        }
-
-        &-title {
-            text-shadow: to-em(4) to-em(2) 0 rgba(0, 0, 0, 0.05);
-        }
     }
 
     &-scroll-down {
@@ -29,13 +20,7 @@
     }
 
     &-cover {
-        transition: background-color ease-in-out .5s;
         box-sizing: border-box;
-
-        &.second.view-out--above {
-            background-color: $color-black;
-            color: $color-white;
-        }
 
         @include layout-1024() {
             min-height: 75vh;
@@ -182,12 +167,17 @@
         }
 
         &-mobile {
-            transition: transform ease-in-out .25s;
-            position: fixed;
+            position: relative;
             width: 100%;
-            top: 50vh;
-            left: 50%;
-            transform: translate3D(-50%, -50%, 0);
+            height: 100vh;
+
+            &-content {
+                position: absolute;
+                top: 50vh;
+                left: 50%;
+                transform: translate3D(-50%, -50%, 0);
+                margin-top: to-em(-64);
+            }
 
             @include layout-1024() {
                 display: none;
