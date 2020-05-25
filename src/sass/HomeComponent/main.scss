@@ -61,7 +61,6 @@
                 opacity: 0;
             }
 
-
             &.desk {
                 display: none;
 
@@ -237,12 +236,21 @@
         text-align: center;
 
         .home & {
+            box-shadow: to-em(0) to-em(-8) to-em(4) 0 rgba(0, 0, 0, .05), to-em(0) to-em(8) to-em(4) 0 rgba(0, 0, 0, .05);
             background: $color-white;
-            box-shadow: to-em(-2) to-em(-2) to-em(3) 0 rgba(0, 0, 0, .025), to-em(2) to-em(2) to-em(3) 0 rgba(0, 0, 0, .05);
-            border-radius: to-em(4);
             overflow: hidden;
+            margin: 0 to-em(-16);
+            padding: 0 to-em(16);
 
             @include layout-640() {
+                margin: 0 to-em(-24);
+                padding: 0 to-em(24);
+            }
+
+            @include layout-768() {
+                box-shadow: to-em(-2) to-em(-2) to-em(3) 0 rgba(0, 0, 0, .025), to-em(2) to-em(2) to-em(3) 0 rgba(0, 0, 0, .05);
+                margin: 0;
+                padding: 0;
                 border-radius: to-em(8);
             }
 
@@ -255,18 +263,16 @@
             background-size: cover;
             position: relative;
             display: grid;
-            padding-top: to-em(64);
+            padding-top: to-em(104);
             grid-template-rows: auto;
-            grid-row-gap: to-em(64);
+            grid-row-gap: to-em(168);
 
             @include layout-640() {
                 padding-top: to-em(104);
-                grid-row-gap: to-em(104);
             }
 
             @include layout-768() {
                 padding-top: to-em(168);
-                grid-row-gap: to-em(168);
             }
 
             @include layout-1024() {
@@ -294,7 +300,7 @@
         }
 
         &-title {
-            padding: to-em(104) to-em(2) to-em(74);
+            padding: to-em(272) to-em(2) to-em(242);
 
             @include layout-768() {
                 padding: to-em(168) to-em(8) to-em(146);
@@ -307,7 +313,7 @@
             span {
                 color: $color-white;
                 background: $color-black;
-                line-height: to-em(64);
+                line-height: to-em(56);
                 font-size: to-em(40);
                 font-weight: 900;
                 text-transform: uppercase;
@@ -363,7 +369,7 @@
             padding-right: to-em(2);
             word-break: break-all;
             text-align: center;
-            background: rgba(0, 0, 0, .8);
+            background: $color-black;
             color: $color-white;
             bottom: to-em(8);
             border-top-left-radius: to-em(4);

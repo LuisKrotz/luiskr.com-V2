@@ -189,10 +189,9 @@
 
     &-more {
         backface-visibility: hidden;
-        bottom:to-em(5);
+        bottom:to-em(16);
         position: fixed;
         z-index: $z-header;
-        
         display: inline-block;
         cursor: pointer;
         width: to-em(50);
