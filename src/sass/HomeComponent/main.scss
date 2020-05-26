@@ -260,6 +260,12 @@
             }
         }
 
+        &:hover {
+            .home & {
+                cursor: none;
+            }
+        }
+
         &-parent {
             background-size: cover;
             position: relative;

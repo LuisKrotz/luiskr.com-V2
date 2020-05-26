@@ -28,20 +28,17 @@
           <div class="max-area home-project-parent">
             <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">
                 <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
-                    <img v-if="post.video === undefined && post.img === undefined" class="home-media" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-
-                    <picture v-else-if="loaded && post.video === undefined" :key="'home-' + post.id">
+                    <picture v-if="post.img !== undefined" :key="'home-' + post.id">
                         <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
                         <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
                         <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
                     </picture>
 
-                    <video v-else-if="loaded" v-view="viewHandler" :data-key="index" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
+                    <video v-if="post.video !== undefined" v-view="viewHandler" :data-key="index" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
                         <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
                         <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
                         <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
                     </video>
-
                   <div>
                     <h3 class="home-project-title">
                         <span>{{ post.project }}</span>
@@ -178,8 +175,8 @@ export default {
     },
     onMouseMove(e) {
       if(!this.$parent.has_touch) {
-        this.page.left = e.pageX;
-        this.page.top = e.pageY;
+        this.page.left = e.pageX - 50;
+        this.page.top = e.pageY - 25;
       }
     },
     hover(e) {

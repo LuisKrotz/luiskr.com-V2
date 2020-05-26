@@ -173,8 +173,8 @@ export default {
             },
             onMouseMove(e) {
                 if(!this.$parent.has_touch) {
-                    this.page.left = e.pageX;
-                    this.page.top = e.pageY;
+                    this.page.left = e.pageX - 50;
+                    this.page.top = e.pageY - 50;
                 }
             },
             hover(e) {

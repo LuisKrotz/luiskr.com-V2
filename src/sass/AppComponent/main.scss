@@ -155,7 +155,7 @@
     }
 
     &-link {
-        cursor: pointer;
+        cursor: none;
 
         &-title {
             text-decoration: underline;
@@ -643,7 +643,7 @@
 }
 
 .hover {
-    transition: transform ease 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s;
+    transition: transform linear 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s;
     pointer-events: none;
     z-index: 100;
     background: none;
