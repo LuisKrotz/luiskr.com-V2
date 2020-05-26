@@ -263,7 +263,7 @@
         &-parent {
             background-size: cover;
             position: relative;
-            display: grid;
+            
             padding-top: to-em(104);
             grid-template-rows: auto;
             grid-row-gap: to-em(168);
@@ -277,6 +277,7 @@
             }
 
             @include layout-1024() {
+                display: grid;
                 grid-row-gap: to-em(104);
             }
 

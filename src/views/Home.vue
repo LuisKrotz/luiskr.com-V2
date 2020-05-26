@@ -16,6 +16,7 @@
 
             <p class="main-text first" v-view><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part time Freelancer.</span></p>
           </div>
+
           <div class="max-area home-cover second" v-view>
             <p class="main-text" v-view><span>In this page you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years, and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
             <p class="main-text" v-view><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
