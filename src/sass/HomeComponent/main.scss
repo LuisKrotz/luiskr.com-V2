@@ -263,7 +263,7 @@
         &-parent {
             background-size: cover;
             position: relative;
-            
+            display: grid;
             padding-top: to-em(104);
             grid-template-rows: auto;
             grid-row-gap: to-em(168);
@@ -277,7 +277,6 @@
             }
 
             @include layout-1024() {
-                display: grid;
                 grid-row-gap: to-em(104);
             }
 
@@ -386,7 +385,6 @@
 
     &-media {
         transition: opacity ease-in-out .5s, visibility ease-in-out .5s;
-        will-change: visibility, opacity;
         position: absolute;
         top: 50%;
         left: 50%;

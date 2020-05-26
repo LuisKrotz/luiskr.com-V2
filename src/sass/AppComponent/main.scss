@@ -227,7 +227,6 @@
         }
 
         &-line {
-            will-change: transform;
             display: block;
             width: 60%;
             margin: 8px auto;
@@ -450,7 +449,6 @@
             margin-top: to-em(2);
 
             .home & {
-                will-change: transform;
                 width: to-em(50);
                 left: 50%;
                 transform: translate3D(-50%, -50%, 1px);
@@ -492,7 +490,6 @@
             }
 
             &.first {
-                will-change: transform;
                 width: to-em(40);
                 height: to-em(2);
                 left: 50%;
@@ -506,7 +503,6 @@
             }
 
             &.second {
-                will-change: transform;
                 position: absolute;
                 bottom: 0;
                 width: to-em(2);
@@ -521,7 +517,6 @@
             }
 
             &.third {
-                will-change: transform;
                 width: to-em(2);
                 height: to-em(34);
                 position: absolute;
@@ -536,7 +531,6 @@
             }
 
             &.fourth {
-                will-change: transform;
                 width: to-em(41);
                 height: to-em(2);
                 position: absolute;
@@ -550,7 +544,6 @@
             }
 
             &.fifth {
-                will-change: transform;
                 width: to-em(41);
                 height: to-em(2);
                 position: absolute;
@@ -567,7 +560,6 @@
 
 
         &-arrow {
-            will-change: transform;
             transition: transform ease-in .3s, visibility ease-out .15s, opacity ease-out .15s;
             backface-visibility: hidden;
             position: absolute;
@@ -663,7 +655,6 @@
 }
 
 .loading {
-    will-change: transform;
     justify-content: flex-end;
     display: flex;
     flex-direction: row;
