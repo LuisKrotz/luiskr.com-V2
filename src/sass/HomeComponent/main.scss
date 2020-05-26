@@ -234,6 +234,7 @@
         position: relative;
         display: block;
         text-align: center;
+        background-color: rgba(0,0,0, 1);
 
         .home & {
             box-shadow: to-em(0) to-em(-8) to-em(4) 0 rgba(0, 0, 0, .05), to-em(0) to-em(8) to-em(4) 0 rgba(0, 0, 0, .05);
