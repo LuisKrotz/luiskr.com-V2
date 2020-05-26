@@ -39,6 +39,7 @@
             }
 
             span {
+                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
                 background: $color-black;
                 color: $color-white;
             }
@@ -234,11 +235,10 @@
         position: relative;
         display: block;
         text-align: center;
-        background-color: rgba(0,0,0, 1);
 
         .home & {
-            box-shadow: to-em(0) to-em(-8) to-em(4) 0 rgba(0, 0, 0, .05), to-em(0) to-em(8) to-em(4) 0 rgba(0, 0, 0, .05);
-            background: $color-white;
+            box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .25);
+            background-color: rgba(0,0,0, 1);
             overflow: hidden;
             margin: 0 to-em(-16);
             padding: 0 to-em(16);
@@ -249,14 +249,8 @@
             }
 
             @include layout-768() {
-                box-shadow: to-em(-2) to-em(-2) to-em(3) 0 rgba(0, 0, 0, .025), to-em(2) to-em(2) to-em(3) 0 rgba(0, 0, 0, .05);
                 margin: 0;
                 padding: 0;
-                border-radius: to-em(8);
-            }
-
-            @include layout-1024() {
-                border-radius: to-em(16);
             }
         }
 
@@ -328,6 +322,7 @@
                 letter-spacing: to-em(0);
                 word-spacing: to-em(40);
                 min-width: 100%;
+                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
 
                 @include layout-1280() {
                     margin: 0;
@@ -342,8 +337,9 @@
             color: $color-white;
             padding: 0 to-em(164) to-em(16) to-em(4);
             text-transform: uppercase;
-            line-height: to-em(11);
-            font-size: to-em(11);
+            line-height: to-em(16);
+            font-size: to-em(16);
+            
 
             @include layout-768() {
                 padding: 0 to-em(8) to-em(32);
@@ -354,12 +350,7 @@
             }
 
             span {
-                color: $color-white;
-                background: $color-black;
-                font-weight: 300;
-            }
-
-            a {
+                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
                 color: $color-white;
                 background: $color-black;
                 font-weight: 300;
@@ -381,7 +372,7 @@
             bottom: to-em(8);
             border-top-left-radius: to-em(4);
             border-bottom-left-radius: to-em(4);
-            box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, .15), 2px 2px 3px 0 rgba(0, 0, 0, .3);
+            box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
 
             @include layout-1024() {
                 bottom: to-em(24);

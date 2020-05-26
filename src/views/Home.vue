@@ -45,8 +45,9 @@
                     </h3>
 
                     <h4 class="home-project-at">
-                        <span>{{ projects.at }} </span>
-                        <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
+                        <span>{{ projects.at }} 
+                          <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
+                        </span>
                     </h4>
                   </div>
 
