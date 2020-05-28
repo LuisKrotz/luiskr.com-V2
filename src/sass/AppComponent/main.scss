@@ -643,6 +643,7 @@
 }
 
 .hover {
+    //transition: transform linear 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s, mix-blend-mode 75ms ease-in;
     transition: transform linear 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s;
     pointer-events: none;
     z-index: 100;
@@ -652,6 +653,15 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
+
+    // mix-blend-mode: exclusion;
+    // background: $color-white;
+    // object-fit: contain;
+    // object-position: center center;
+    // width: 100px;
+    // height: 100px;
+    // padding: 16px;
+    // border-radius: 100%;
 }
 
 .loading {

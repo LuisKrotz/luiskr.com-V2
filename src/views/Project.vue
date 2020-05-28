@@ -193,7 +193,7 @@ export default {
       let self = this;
 
       document.body.classList.add("getting");
-      self.showiframe = Boolean(localStorage.getItem('cookie:accepted')) === true;
+      self.showiframe = Boolean(localStorage.getItem('cookie')) === true;
 
       fetch(`${self.origin}/projects/${self.data_id}.json`)
         .then((response) => {
