@@ -643,7 +643,6 @@
 }
 
 .hover {
-    //transition: transform linear 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s, mix-blend-mode 75ms ease-in;
     transition: transform linear 75ms, opacity ease-in-out .2s, visibility ease-in-out .2s;
     pointer-events: none;
     z-index: 100;
