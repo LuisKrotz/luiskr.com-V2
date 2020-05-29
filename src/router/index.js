@@ -1548,6 +1548,14 @@ const router = new VueRouter({
 })
 
 
+const n_options = {
+  latencyThreshold: 0,        // Number of ms before progressbar starts showing, default: 100,
+  router: true,               // Show progressbar when navigating routes, default: true
+  http: true                 // Show progressbar when doing Vue.http, default: true
+};
+
+Vue.use(NProgress, n_options)
+
 // This callback runs before every route change, including on page load.
 router.beforeResolve((to, from, next) => {
   if (to.name) {
