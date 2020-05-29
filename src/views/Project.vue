@@ -24,7 +24,7 @@
               <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
               <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt" loading="lazy">
           </picture>
-          <video v-view="viewHandler" v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop controls :key="'media-' + post.id">
+          <video v-view="viewHandler" v-else :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'media-' + post.id">
             <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
             <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
             <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
@@ -64,7 +64,7 @@
                     <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
                     <img :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt" loading="lazy">
                   </picture>
-                  <video v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" loading="lazy" playsinline autoplay muted loop controls>
+                  <video v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" loading="lazy" playsinline autoplay muted loop>
                     <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
                     <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
                     <source type="video/webm" :src="storage +  extra.src + '.webm'"/>
