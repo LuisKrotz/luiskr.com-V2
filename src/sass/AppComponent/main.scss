@@ -206,7 +206,7 @@
             border-radius: initial;
             border-bottom-left-radius: to-em(4);
             border-bottom-right-radius: to-em(4);
-            transform: translate3D(-80%, 0, 1px);
+            transform: translate3D(-80%, 0, 0);
             bottom: initial;
             color: $color-black;
             background: rgba(255, 255, 255, 1);
@@ -323,7 +323,7 @@
         &-link {
             text-align: justify;
             display: block;
-            transform: translate3D(0, to-em(104), 1px);
+            transform: translate3D(0, to-em(104), 0);
             transition: transform 1.5s ease-in-out;
 
             .header-open & {
@@ -451,7 +451,7 @@
             .home & {
                 width: to-em(50);
                 left: 50%;
-                transform: translate3D(-50%, -50%, 1px);
+                transform: translate3D(-50%, -50%, 0);
             }
 
             &:hover {
@@ -464,7 +464,7 @@
                 }
 
                 .footer-link-arrow.middle {
-                    transform: translate3D(0, -50%, 1px);
+                    transform: translate3D(0, -50%, 0);
                     visibility: visible;
                     opacity: 1;
                 }
@@ -498,7 +498,7 @@
                 bottom: 0;
 
                 .footer-link:hover & {
-                    transform: translate3D(-50%, 0, 1px);
+                    transform: translate3D(-50%, 0, 0);
                 }
             }
 
@@ -508,10 +508,10 @@
                 width: to-em(2);
                 height: to-em(34);
                 left: to-em(4);
-                transform: scale(0.75) translate3D(to-em(7), to-em(4), 1px);
+                transform: scale(0.75) translate3D(to-em(7), to-em(4), 0);
 
                 .footer-link:hover & {
-                    transform: rotate(90deg) translate3D(to-em(15), to-em(-15), 1px);
+                    transform: rotate(90deg) translate3D(to-em(15), to-em(-15), 0);
                     opacity: 0;
                 }
             }
@@ -522,10 +522,10 @@
                 position: absolute;
                 bottom: 0;
                 right: to-em(5);
-                transform: rotate(180deg) scale(0.75) translate3D(to-em(5), to-em(-5), 1px);
+                transform: rotate(180deg) scale(0.75) translate3D(to-em(5), to-em(-5), 0);
 
                 .footer-link:hover & {
-                    transform: rotate(90deg) translate3D(15px, 15px, 1px);
+                    transform: rotate(90deg) translate3D(15px, 15px, 0);
                     opacity: 0;
                 }
             }
@@ -534,12 +534,12 @@
                 width: to-em(41);
                 height: to-em(2);
                 position: absolute;
-                transform: rotate(-45deg) scale(.75) translate3D(0, to-em(7), 1px);
+                transform: rotate(-45deg) scale(.75) translate3D(0, to-em(7), 0);
                 left: to-em(-10);
                 top: to-em(15);
 
                 .footer-link:hover & {
-                    transform: rotate(0deg) translate3D(to-em(15), to-em(5), 1px);
+                    transform: rotate(0deg) translate3D(to-em(15), to-em(5), 0);
                 }
             }
 
@@ -547,12 +547,12 @@
                 width: to-em(41);
                 height: to-em(2);
                 position: absolute;
-                transform: rotate(45deg) scale(.75) translate3D(0, to-em(7), 1px);
+                transform: rotate(45deg) scale(.75) translate3D(0, to-em(7), 0);
                 top: 15px;
                 right: -10px;
 
                 .footer-link:hover & {
-                    transform: translate3D(to-em(-15), to-em(20), 1px);
+                    transform: translate3D(to-em(-15), to-em(20), 0);
                     
                 }
             }
@@ -758,13 +758,13 @@
         transform: translate3D(0, 0, 0);
     }
     25% {
-        transform: translate3D(0, to-em(-4), 1px);
+        transform: translate3D(0, to-em(-4), 0);
     }
     50% {
         transform: translate3D(0, 0, 0);
     }
     75% {
-        transform: translate3D(0, to-em(4), 1px);
+        transform: translate3D(0, to-em(4), 0);
     }
 }
 
@@ -973,15 +973,15 @@
 }
 .cookie-enter,
 .cookie-leave-to {
-    transform: translate3D(0, 100%, 1px);
+    transform: translate3D(0, 100%, 0);
 }
 
 .menu-open-enter-active,
 .menu-open-leave-active {
     transition: transform linear 1s;
-    transform: translate3d(0, 0, 1px);
+    transform: translate3d(0, 0, 0);
 }
 .menu-open-enter,
 .menu-open-leave-to {
-    transform: translate3D(0, 100%, 1px);
+    transform: translate3D(0, 100%, 0);
 }

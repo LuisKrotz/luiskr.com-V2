@@ -14,7 +14,7 @@
         width: 100px;
         height: 100px;
         object-fit: cover;
-        transform: translate3D(-50%, 0, 1px);
+        transform: translate3D(-50%, 0, 0);
         mix-blend-mode: difference;
         pointer-events: none;
     }
@@ -388,7 +388,7 @@
         display: block;
         object-fit: cover;
         object-position: center center;
-        transform: translate3D(-50%, -50%, 1px);
+        transform: translate3D(-50%, -50%, 0);
         width: 125%;
         height: 125%;
         visibility: visible;

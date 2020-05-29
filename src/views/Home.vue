@@ -60,7 +60,7 @@
         </section>
 
         <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
-        <img v-if="loaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 1px); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
+        <img v-if="loaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
       </article>
     </main>
   </div>
