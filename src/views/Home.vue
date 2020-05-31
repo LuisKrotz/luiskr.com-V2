@@ -60,7 +60,7 @@
         </section>
 
         <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
-        <img v-if="loaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
+        <img :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0); visibility: '+ (showhover ? 'visible' : 'hidden')" alt="" aria-hidden="true">
       </article>
     </main>
   </div>
@@ -76,7 +76,6 @@ export default {
   name: 'HomeComponent',
   data() {
     return {
-        loaded: document.readyState === "complete",
         placeholder: this.$parent.placeholder,
         storage: this.$parent.storage,
         origin: this.$parent.origin,
@@ -137,8 +136,6 @@ export default {
           self.start = self.end - 1;
           self.end = self.end - 1 > 0 ? self.end - 1 : 1;
           self.stop = self.start === 0;
-
-          self.loaded = document.readyState === "complete";
         }
 
         scrolldownicon.style = `opacity: -${offset - 1};`

@@ -212,7 +212,7 @@ export default {
           document.title = title;
           window.history.replaceState({ page: path }, title, path);
 
-          fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
+        fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
             .then((response) => {
               return response.json();
             }).then((data) => {
