@@ -212,21 +212,21 @@ export default {
           document.title = title;
           window.history.replaceState({ page: path }, title, path);
 
+          fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
+            .then((response) => {
+              return response.json();
+            }).then((data) => {
+              self.next = data;
+            });
+
+          fetch(`${self.origin}/projects/${self.data_id === 1 ? self.total : Number(self.data_id) -1 }.json`)
+            .then((response) => {
+              return response.json();
+            }).then((data) => {
+              self.prev = data;
+            });
+
           document.body.classList.remove("getting");
-        });
-
-      fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
-        .then((response) => {
-          return response.json();
-        }).then((data) => {
-          self.next = data;
-        });
-
-      fetch(`${self.origin}/projects/${self.data_id === 1 ? self.total : Number(self.data_id) -1 }.json`)
-        .then((response) => {
-          return response.json();
-        }).then((data) => {
-          self.prev = data;
         });
     },
     toggleiframe() {
