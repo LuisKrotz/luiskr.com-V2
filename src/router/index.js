@@ -17,14 +17,14 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'luiskr.com | Portfolio',
+      title: 'luiskr.com | Luis Krötz |Personal Portfolio.',
       metaTags: [{
           name: 'description',
-          content: 'Hy, I\'m Luis.'
+          content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'
         },
         {
           property: 'og:description',
-          content: 'Hy, I\'m Luis.'
+          content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'
         }
       ]
     }
