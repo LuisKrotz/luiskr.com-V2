@@ -112,11 +112,7 @@ export default {
       self.start = self.projects.total;
       self.end = self.projects.total - 2;
 
-      self.getPosts(self.start, self.end);
       self.stop = false;
-
-      self.start = self.end - 1;
-      self.end = self.end - 1;
     });
   },
   mounted() {
