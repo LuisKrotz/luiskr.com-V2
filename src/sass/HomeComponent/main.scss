@@ -10,13 +10,58 @@
         transition: opacity ease-out .25s;
         position: fixed;
         bottom: 0;
-        left: 50%;
-        width: 100px;
-        height: 100px;
+        width: to-em(104);
+        height: to-em(104);
+        right: to-em(0);
         object-fit: cover;
-        transform: translate3D(-50%, 0, 0);
         mix-blend-mode: difference;
         pointer-events: none;
+
+        right: to-em(($un-320 - $grid-max-area-320) / 2);
+
+        @include layout-375() {
+            right: to-em(($un-375 - $grid-max-area-375) / 2);
+        }
+    
+        @include layout-414() {
+            right: to-em(($un-414 - $grid-max-area-414) / 2);
+        }
+    
+        @include layout-640() {
+            right: to-em(($un-640 - $grid-max-area-640) / 2);
+        }
+    
+        @include layout-768() {
+            right: to-em(($un-768 - $grid-max-area-768) / 2);
+        }
+    
+        @include layout-960() {
+            right: to-em(($un-960 - $grid-max-area-960) / 2);
+        }
+
+        @include layout-1024() {
+            right: to-em(($un-1024 - $grid-max-area-1024) / 2);
+        }
+    
+        @include layout-1280() {
+            right: to-em(($un-1280 - $grid-max-area-1280) / 2);
+        }
+    
+        @include layout-1440() {
+            right: to-em(($un-1440 - $grid-max-area-1440) / 2);
+        }
+    
+        @include layout-1680() {
+            right: to-em(($un-1680 - $grid-max-area-1680) / 2);
+        }
+    
+        @include layout-1920() {
+            right: to-em(($un-1920 - $grid-max-area-1920) / 2);
+        }
+    
+        @include layout-2560() {
+            right: to-em(($un-2560 - $grid-max-area-2560) / 2);
+        }
     }
 
     &-cover {
