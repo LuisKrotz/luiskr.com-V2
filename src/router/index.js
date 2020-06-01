@@ -16,7 +16,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'luiskr.com | Luis Krötz |Personal Portfolio.',
+      title: 'luiskr.com | Luis Krötz | Personal Portfolio.',
       metaTags: [{
           name: 'description',
           content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'

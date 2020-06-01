@@ -8,7 +8,7 @@
     <main class="max-area">
         <article class="social main">
             <h2 class="social-title">Say Hello :)</h2>
-            <h2 class="social-text exception">This are my main contact and social media accounts. Feel free to leave me a message or start a chat.</h2>
+            <h2 class="social-text exception">These are my main contact and social media accounts. Feel free to leave me a message or start a chat.</h2>
             
             <a class="social-subtitle" @click="sendAnalyticsEvent('social_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com">
               <svg width="128" height="128" style="fill:white">
