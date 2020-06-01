@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueAnalytics from 'vue-analytics'
-import {getCLS, getFID, getLCP} from 'web-vitals';
 import NProgress from 'nprogress';
 import Home from '../views/Home.vue'
 
@@ -1603,14 +1602,6 @@ router.afterEach((to, from) => {
   NProgress.done();
 })
 
-function sendToAnalytics(metric) {
-  const body = JSON.stringify(metric);
-  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
-  (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-      fetch('/analytics', {body, method: 'POST', keepalive: true});
-}
-
-
 function init() {
   Vue.use(VueAnalytics, {
     id: 'UA-142757641-1',
@@ -1626,11 +1617,6 @@ function init() {
       }
     }
   });
-
-
-  getCLS(sendToAnalytics);
-  getFID(sendToAnalytics);
-  getLCP(sendToAnalytics);
 }
 
 if (Boolean(localStorage.getItem('cookie')) === true) {
