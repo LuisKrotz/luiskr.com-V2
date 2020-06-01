@@ -42,7 +42,6 @@
 
 <script>
 import Vue from 'vue'
-import WebFontLoader from 'webfontloader'                         // https://github.com/typekit/webfontloader
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import checkView from 'vue-check-view'
 
@@ -69,13 +68,6 @@ export default {
         self.webp2 = result ? '.jpg.webp' : self.webp2;
       });
 
-      WebFontLoader.load({
-        google: {
-          families: ['Work+Sans:200,300,400,500,900']
-        },
-        active: self.setFontLoaded,
-      });
-
       try {
         document.createEvent("TouchEvent");
         self.has_touch =  true;
@@ -84,9 +76,6 @@ export default {
       }
     },
     methods: {
-      setFontLoaded() {
-        this.$emit('font-loaded');
-      },
       getUrlParam(parameter, defaultvalue){
         function getUrlVars() {
             var vars = {};
