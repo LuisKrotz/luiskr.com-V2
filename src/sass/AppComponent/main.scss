@@ -652,6 +652,21 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    padding: to-em(8);
+    width: to-em(80);
+    height: to-em(80);
+    object-fit: cover;
+    object-position: center center;
+    box-shadow: -1px -1px 0 0 rgba(255, 255, 255, .1), 1px 1px 0 0 rgba(255, 255, 255, .2);
+
+    .home & {
+        object-fit: contain;
+    }
 }
 
 .loading {
