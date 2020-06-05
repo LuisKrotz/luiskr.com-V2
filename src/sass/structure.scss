@@ -54,26 +54,6 @@ img {
     background: rgba(0, 0, 0, 0);
 }
 
-video {
-    transition: opacity ease-in-out .5s, visibility ease-in-out .5s;
-    background: rgba(0, 0, 0, 0.05) url("./icons/play.gif") no-repeat center center;
-    background-size: cover;
-
-    .black & {
-        background: rgba(255, 255, 255, .025) url("./icons/play.gif") no-repeat center center;
-        background-size: cover;
-    }
-}
-img {
-    background: rgba(0, 0, 0, 0.05) url("./icons/vcr.gif") no-repeat center center;
-    background-size: cover;
-
-    .black & {
-        background: rgba(255, 255, 255, .025) url("./icons/vcr.gif") no-repeat center center;
-        background-size: cover;
-    }
-}
-
 
 .reverse {
     @extend %reverse;

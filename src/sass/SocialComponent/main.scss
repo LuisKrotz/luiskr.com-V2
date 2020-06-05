@@ -6,7 +6,6 @@
 
 
     &-title {
-        mix-blend-mode: difference;
         text-align: center;
         display: block;
         position: relative;
@@ -138,7 +137,6 @@
 
     svg {
         fill: $color-white;
-        mix-blend-mode: difference;
         width: to-em(64);
         height: to-em(64);
 

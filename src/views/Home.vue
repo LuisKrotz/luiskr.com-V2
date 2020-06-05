@@ -3,43 +3,43 @@
     <main class="home">
       <article class="main">
         <div class="home-cover-parent">
-          <div class="max-area home-cover" v-view>
+          <div class="max-area home-cover">
             <div class="home-cover-mobile" aria-hidden="true">
               <div class="home-cover-mobile-content">
-                <span class="main-title" v-view><span>luiskr.com</span></span>
-                <span class="main-subtitle" v-view>Hy, I'm Luis.</span>
+                <span class="main-title"><span>luiskr.com</span></span>
+                <span class="main-subtitle">Hy, I'm Luis.</span>
               </div>
             </div>
 
-            <h2 class="main-title desk" v-view><span>luiskr.com</span></h2>
-            <h3 class="main-subtitle desk" v-view>Hy, I'm Luis.</h3>
+            <h2 class="main-title desk"><span>luiskr.com</span></h2>
+            <h3 class="main-subtitle desk">Hy, I'm Luis.</h3>
 
-            <p class="main-text first" v-view><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part-time Freelancer.</span></p>
+            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part-time Freelancer.</span></p>
           </div>
 
-          <div class="max-area home-cover second" v-view>
-            <p class="main-text" v-view><span>In this page, you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
-            <p class="main-text" v-view><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
+          <div class="max-area home-cover second">
+            <p class="main-text"><span>In this page, you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
+            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
           </div>
         </div>
 
         <section class="home-projects">
-          <h3 class="main-title" id="portfolio" v-view><span>Portfolio</span></h3>
+          <h3 class="main-title" id="portfolio"><span>Portfolio</span></h3>
           <div class="max-area home-project-parent">
-            <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="post.id" :style="sethover">
+            <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
                 <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
                     <picture v-if="post.img !== undefined" :key="'home-' + post.id">
-                        <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-                        <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-                        <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt" loading="lazy">
+                      <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+                      <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+                      <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt">
                     </picture>
 
-                    <video v-if="post.video !== undefined" v-view="viewHandler" :data-key="index" :width="post.video.width" class="lazy home-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" loading="lazy" playsinline autoplay muted loop :key="'home-' + post.id">
-                        <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
-                        <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
-                        <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
-                    </video>
-                  <div>
+                    <picture v-if="post.video !== undefined" :key="'home-' + post.id">
+                      <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
+                      <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
+                      <img class="lazy home-media" :src="storage + post.video.src + webp" :width="post.video.height" :height="post.video.width" :alt="post.video.alt">
+                    </picture>
+
                     <h3 class="home-project-title">
                         <span>{{ post.project }}</span>
                     </h3>
@@ -49,17 +49,13 @@
                           <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
                         </span>
                     </h4>
-                  </div>
 
-                  <router-link class="home-project-read" :to="post.path">
-                      Read<br>More
-                  </router-link>
+                  <span class="home-project-read" :to="post.path">Read<br>More</span>
                 </div>
             </router-link>
           </div>
         </section>
 
-        <img :src="storage + 'scroll-down.gif'" class="home-scroll-down" border="0" @mouseenter="sendAnalyticsEvent('home_link', 'hover','scroll bottom', 10)" alt="Scroll Down"/>
         <img :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
       </article>
     </main>
@@ -67,11 +63,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
-
-Vue.use(checkView);
-
 export default {
   name: 'HomeComponent',
   data() {
@@ -120,21 +111,18 @@ export default {
         innerHeight = window.innerHeight;
 
     let half = innerHeight;
-    let scrolldownicon = document.querySelector('.home-scroll-down');
 
     window.addEventListener('scroll', function() {
       if(self.$router.currentRoute.name === 'Home') {
-        let offset = window.pageYOffset;
+          let offset = window.pageYOffset;
 
-        if (offset + innerHeight >= document.body.scrollHeight - half && !self.stop) {
-          self.getPosts(self.start, self.end);
+          if (offset + innerHeight >= document.body.scrollHeight - half && !self.stop) {
+            self.getPosts(self.start, self.end);
 
-          self.start = self.end - 1;
-          self.end = self.end - 1 > 0 ? self.end - 1 : 1;
-          self.stop = self.start === 0;
-        }
-
-        scrolldownicon.style = `opacity: -${offset - 1};`
+            self.start = self.end - 1;
+            self.end = self.end - 1 > 0 ? self.end - 1 : 1;
+            self.stop = self.start === 0;
+          }
         }
     });
   },
@@ -153,19 +141,6 @@ export default {
           document.body.classList.remove("getting");
         })
       }
-    },
-    viewHandler(e, key) {
-      this.$parent.viewHandler(e);
-
-      this.offloadElement(e);
-    },
-    offloadElement(e) {
-      let key = e.target.element.dataset.key,
-          el = this.posts[key];
-
-      el.percentInView = e.percentInView;
-
-      this.posts[key] = el;
     },
     onMouseMove(e) {
       if(!this.$parent.has_touch) {
@@ -188,7 +163,6 @@ export default {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
     },
     projectClick(category, action, label, value) {
-
       this.$parent.sendAnalyticsEvent(category, action, label, value);
     }
   }
