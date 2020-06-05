@@ -43,7 +43,6 @@
 <script>
 import Vue from 'vue'
 import HeaderComponent from '@/components/HeaderComponent.vue'
-import checkView from 'vue-check-view'
 
 export default {
   components: {
@@ -57,7 +56,8 @@ export default {
         webp2: '.jpg',
         placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
         storage: 'https://storage.googleapis.com/luiskr.com/public/',
-        origin: window.location.origin
+        origin: window.location.origin,
+        domLoaded: false
       }
     },
     created() {
@@ -74,6 +74,10 @@ export default {
       } catch (e) {
         self.has_touch =  false;
       }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        self.domLoaded = true;
+      });
     },
     methods: {
       getUrlParam(parameter, defaultvalue){
@@ -122,44 +126,6 @@ export default {
           if (this.records) console.table(new Record(category, action, label, value));
 
         } else if(this.records) console.log('Not tracking. Cookies not allowed');
-      },
-      viewHandler(e) {
-        let video, promise, i, t;
-
-        video = e.target.element;
-        if (e.percentInView > 0) {
-            for (i = 0, t = video.lenght; i < t; i+=1) {
-                promise = video[i].play();
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        resolve(video[i].play());
-                    }).catch(error => {
-                        return void(0);
-                    });
-                }
-            }
-        } else {
-            for (i = 0, t = video.lenght; i < t; i+=1) {
-                promise = video[i].pause();
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        resolve(video[i].pause());
-                    }).catch(error => {
-                        return void(0);
-                    });
-                }
-            }
-        }
-
-        //console.log(e.type) // 'enter', 'exit', 'progress'
-        //console.log(e.percentInView) // 0..1 how much element overlap the viewport
-        //console.log(e.percentTop) // 0..1 position of element at viewport 0 - above , 1 - below
-        //console.log(e.percentCenter) // 0..1 position the center of element at viewport 0 - center at viewport top, 1 - center at viewport bottom
-        //console.log(e.scrollPercent) // 0..1 current scroll position of page
-        //console.log(e.scrollValue) // 0..1 last scroll value (change of page scroll offset)
-        //console.log(e.target.rect) // element.getBoundingClientRect() result
       },
       accept() {
         localStorage.setItem('cookie', true);

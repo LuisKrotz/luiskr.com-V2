@@ -56,7 +56,7 @@
           </div>
         </section>
 
-        <img :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
+        <img v-if="this.$parent.domLoaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
       </article>
     </main>
   </div>
