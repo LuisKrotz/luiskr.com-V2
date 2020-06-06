@@ -101,18 +101,6 @@
           <p class="hdn">{{ translations.prev }}</p>
         </a>
 
-        <router-link class="footer-link home" to="/">
-          <span class="footer-link-icon" @click="sendAnalyticsEvent('project_link', 'click', translations.home, 100)">
-            <span class="footer-link-home first"></span>
-            <span class="footer-link-home second"></span>
-            <span class="footer-link-home third"></span>
-            <span class="footer-link-home fourth"></span>
-            <span class="footer-link-home fifth"></span>
-          </span>
-
-          <p class="hdn">{{ translations.home }}</p>
-        </router-link>
-
         <a class="footer-link right" :href="next.path" v-if="next !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
           <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>

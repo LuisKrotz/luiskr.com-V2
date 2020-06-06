@@ -1,6 +1,12 @@
 
 .project {
     width: 100vw;
+
+
+    @include layout-1024() {
+        margin-bottom: to-em(-91);
+    }
+
     &-background {
         z-index: -1;
         width: 100vw;
@@ -144,6 +150,10 @@
             margin: to-em(98) auto;
             display: block;
             position: relative;
+
+            @include layout-1024() {
+                margin: to-em(98) auto 0;
+            }
 
             &-it {
                 display: block;
