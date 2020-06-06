@@ -98,8 +98,56 @@ export default {
             return {
                 origin: this.$parent.origin,
                 storage: this.$parent.storage,
-                header: undefined,
-                footer: undefined,
+                header: {
+                    "title": "Menu",
+                    "toggle": [
+                        "Open Menu",
+                        "Close Menu"
+                    ],
+                    "home": [
+                        "/",
+                        "Home"
+                    ],
+                    "about": [
+                        "/about",
+                        "About"
+                    ],
+                    "social": [
+                        "/social",
+                        "Social"
+                    ],
+                    "mail": [
+                        "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
+                        "Mail"
+                    ]
+                },
+                footer: {
+                    "title": "More stuff",
+                    "privacy_policy": [
+                        "/privacy-policy",
+                        "Privacy Policy"
+                    ],
+                    "terms_of_use": [
+                        "/terms-of-use",
+                        "Terms of Use"
+                    ],
+                    "GDPR": [
+                        "/GDPR",
+                        "GDPR"
+                    ],
+                    "credits": [
+                        "/credits",
+                        "Credits"
+                    ],
+                    "instagram": [
+                        "https://www.instagram.com/j_luiskrotz",
+                        "Instagram"
+                    ],
+                    "phone": [
+                        "tel:+5551982274782",
+                        "phone"
+                    ]
+                },
                 hovers: 30,
                 sethover: '',
                 remember: 0,
@@ -122,20 +170,6 @@ export default {
             }
 
             close();
-
-            fetch(`${self.origin}/translations/en_us/header.json`)
-                .then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    self.header = data;
-                });
-
-            fetch(`${self.origin}/translations/en_us/footer.json`)
-                .then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    self.footer = data;
-                });
 
             window.addEventListener('resize', function () {
                 lastresize++;

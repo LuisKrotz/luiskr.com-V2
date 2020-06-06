@@ -57,7 +57,33 @@ export default {
         placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
         storage: 'https://storage.googleapis.com/luiskr.com/public/',
         origin: window.location.origin,
-        domLoaded: false
+        domLoaded: false,
+        projects: {
+            "project":          "Project",
+            "at":               "Developed at:",
+            "role":             "Role:",
+            "credits":          ["Check out for more info about ", " at:"],
+            "checkit":          "Visit this project",
+            "next":             "next: ",
+            "prev":             "previous: ",
+            "home":             "home",
+            "home_link":        "home",
+            "animation_title":  "Animation by Giphy.com, credits on luiskr.com/credits",
+            "animation_alt": [
+                "GIPHY.com animation of ",
+                "representing the mouse cursor, more info at: luiskr.com/credits"
+            ],
+            "animation":[
+                "hands touching in pink background",
+                "hands touching in universe background",
+                "cat trying to get mouse pointer on computer",
+                "3d face o looking to poiner",
+                "handrawn man juggling an arrow "
+            ],
+            "contribuition":    "My Contribuition:",
+            "description":      "Description:",
+            "total":            73
+        }
       }
     },
     created() {

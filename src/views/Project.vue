@@ -140,7 +140,7 @@ export default {
       webp2: this.$parent.webp2,
       placeholder: this.$parent.placeholder,
       origin: this.$parent.origin,
-      translations: undefined,
+      translations: this.parent.projects,
       post: undefined,
       random: Math.round(Math.random() * 4) + 1,
       next: undefined,
@@ -162,13 +162,6 @@ export default {
     self.total = Number(meta.total);
   },
   mounted() {
-    fetch(`${this.origin}/translations/en_us/projects.json`)
-      .then((response) => {
-        return response.json();
-      }).then((data) => {
-        this.translations = data;
-      });
-
     this.getPost();
   },
   methods: {

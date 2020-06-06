@@ -73,7 +73,7 @@ export default {
         webp: this.$parent.webp,
         webp2: this.$parent.webp2,
         total: Number,
-        projects: Object,
+        projects: this.$parent.projects,
         sethover: '',
         posts: [],
         stop: true,
@@ -93,18 +93,10 @@ export default {
 
     document.body.classList.remove("black");
 
-    // Fetch projects translations
-    fetch(`${self.origin}/translations/en_us/projects.json`)
-    .then((response) => {
-      return response.json();
-    }).then((data) => {
-      self.projects = data;
+    self.start = self.projects.total;
+    self.end = self.projects.total - 2;
 
-      self.start = self.projects.total;
-      self.end = self.projects.total - 2;
-
-      self.stop = false;
-    });
+    self.stop = false;
   },
   mounted() {
     let self = this,
