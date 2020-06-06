@@ -222,7 +222,7 @@
             @include layout-1024() {
                 color: $color-white;
                 background: rgba(0, 0, 0, .5);
-                box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
+                box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .05), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .1);
             }
         }
 
@@ -232,20 +232,16 @@
             margin: 8px auto;
             box-sizing: border-box;
             height: 1px;
-            box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
             background-color: $color-white;
 
             @include layout-1024() {
                 background-color: $color-black;
-                box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
             }
 
             .black & {
                 background-color: $color-black;
-                box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
 
                 @include layout-1024() {
-                    box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, .1);
                     background-color: $color-white;
                 }
             }
@@ -316,10 +312,6 @@
             }
         }
 
-        .black & {
-            box-shadow: -1px -1px 10px -5px rgba(255, 255, 255, .1);
-        }
-
         &-link {
             text-align: justify;
             display: block;
@@ -375,9 +367,8 @@
 
 
 .footer {
-    box-shadow: -1px -1px 3px 0 rgba(0, 0, 0, 0.05);
     align-items: center;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: $color-white;
     position: fixed;
     width: 100vw;
     bottom: 0;
@@ -402,8 +393,7 @@
     }
 
     .black & {
-        box-shadow: none;
-        background-color: rgba(0, 0, 0, .97);
+        background-color: $color-black;
     }
 
     &-link {
@@ -490,12 +480,13 @@
             }
 
             &.first {
-                width: to-em(40);
-                height: to-em(2);
+                width: to-em(29);
+                height: to-em(1);
+                margin-left: to-em(1);
                 left: 50%;
-                transform: translate3D(-50%, 0, 1px) scale(0.75);
+                transform: translate3D(-52%, 0, 0) scale(1.45);
                 position: absolute;
-                bottom: 0;
+                bottom: to-em(-4);
 
                 .footer-link:hover & {
                     transform: translate3D(-50%, 0, 0);
@@ -505,55 +496,56 @@
             &.second {
                 position: absolute;
                 bottom: 0;
-                width: to-em(2);
-                height: to-em(34);
+                width: to-em(1);
+                height: to-em(26);
                 left: to-em(4);
-                transform: scale(0.75) translate3D(to-em(7), to-em(4), 0);
+                transform: rotate(90deg) translate3D(to-em(15), to-em(-15), 0);
+                opacity: 0;
 
                 .footer-link:hover & {
-                    transform: rotate(90deg) translate3D(to-em(15), to-em(-15), 0);
-                    opacity: 0;
+                    transform: translate3D(to-em(7), to-em(4), 0);
+                    opacity: 1;
                 }
             }
 
             &.third {
-                width: to-em(2);
-                height: to-em(34);
+                width: to-em(1);
+                height: to-em(26);
                 position: absolute;
-                bottom: 0;
+                bottom: to-em(1);
                 right: to-em(5);
-                transform: rotate(180deg) scale(0.75) translate3D(to-em(5), to-em(-5), 0);
+                transform: rotate(90deg) translate3D(15px, 15px, 0);
+                opacity: 0;
 
                 .footer-link:hover & {
-                    transform: rotate(90deg) translate3D(15px, 15px, 0);
-                    opacity: 0;
+                    transform: rotate(180deg) translate3D(to-em(5), to-em(-5), 0);
+                    opacity: 1;
                 }
             }
 
             &.fourth {
                 width: to-em(41);
-                height: to-em(2);
+                height: to-em(1);
                 position: absolute;
-                transform: rotate(-45deg) scale(.75) translate3D(0, to-em(7), 0);
+                transform: rotate(0deg) translate3D(to-em(15), to-em(5), 0);
                 left: to-em(-10);
                 top: to-em(15);
 
                 .footer-link:hover & {
-                    transform: rotate(0deg) translate3D(to-em(15), to-em(5), 0);
+                    transform: rotate(-45deg) scale(.75) translate3D(0, to-em(7), 0);
                 }
             }
 
             &.fifth {
                 width: to-em(41);
-                height: to-em(2);
+                height: to-em(1);
                 position: absolute;
-                transform: rotate(45deg) scale(.75) translate3D(0, to-em(7), 0);
+                transform: translate3D(to-em(-15), to-em(20), 0);
                 top: 15px;
                 right: -10px;
 
                 .footer-link:hover & {
-                    transform: translate3D(to-em(-15), to-em(20), 0);
-                    
+                    transform: rotate(45deg) scale(.75) translate3D(0, to-em(7), 0);
                 }
             }
         }
@@ -643,7 +635,6 @@
 }
 
 .hover {
-    transition: transform linear 75ms, opacity ease-in-out 75ms, visibility ease-in-out 75ms;
     pointer-events: none;
     z-index: 100;
     background: none;
@@ -662,7 +653,6 @@
     height: to-em(80);
     object-fit: cover;
     object-position: center center;
-    box-shadow: -1px -1px 0 0 rgba(255, 255, 255, .1), 1px 1px 0 0 rgba(255, 255, 255, .2);
 
     .home & {
         object-fit: contain;
@@ -685,7 +675,6 @@
     position: fixed;
     text-transform: uppercase;
     text-align: center;
-    box-shadow: -0.031rem -0.031rem 0.063rem 0 rgba(0, 0, 0, 0.02), 0.063rem 0.063rem 0.125rem 0 rgba(0, 0, 0, 0.05);
     padding-right: to-em(8);
     $jump-timing: 1s;
 
@@ -781,7 +770,6 @@
     z-index: 101;
     padding: to-em(16) 0 0;
     margin: 0;
-    box-shadow: -1px -2px 2px 0 rgba(0,0,0, .2);
     background: $color-black;
     color: $color-white;
     width: 100vw;
@@ -953,7 +941,6 @@
 
     .accept {
         color: $color-black;
-        box-shadow: -1px -1px 2px 0 rgba(255, 255, 255, .1), 1px 1px 3px 0 rgba(255, 255, 255, .2);
         background: $color-white;
 
         &:hover {
@@ -963,7 +950,6 @@
 
     .refuse {
         color: $color-white;
-        box-shadow: -1px -1px 2px 0 rgba(255, 255, 255, .1), 1px 1px 3px 0 rgba(255, 255, 255, .2);
         background: #525252;
 
         &:hover {

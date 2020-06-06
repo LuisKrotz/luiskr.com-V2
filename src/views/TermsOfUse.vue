@@ -102,8 +102,7 @@ export default {
   data() {
     return {
       webp2: this.$parent.webp2,
-      storage: this.$parent.storage,
-      origin: this.$parent.origin
+      storage: this.$parent.storage
     }
   },
   created() {

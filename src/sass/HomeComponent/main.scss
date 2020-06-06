@@ -19,13 +19,7 @@
             font-size: to-em(40);
             font-weight: 200;
 
-            &.view-out--above {
-                transform: translate3D(5%, 0, 0);
-                opacity: 0;
-            }
-
             span {
-                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
                 background: $color-black;
                 color: $color-white;
             }
@@ -205,13 +199,9 @@
                 background: $color-black;
                 color: $color-white;
                 letter-spacing: to-em(2);
-                margin-left:to-em(-8);
-                box-shadow: to-em(4) to-em(4) 0 0 rgba(0,0,0, .25), to-em(8) to-em(8) 0 0 rgba(0,0,0, .25), to-em(12) to-em(12) 0 0 rgba(0,0,0, .25);
 
                 @include layout-640() {
                     letter-spacing: to-em(8);
-                    margin-left:to-em(-24);
-                    box-shadow: to-em(8) to-em(8) 0 0 rgba(0,0,0, .5), to-em(16) to-em(16) 0 0 rgba(0,0,0, .5), to-em(24) to-em(24) 0 0 rgba(0,0,0, .5);
                 }
             }
         }
@@ -224,7 +214,7 @@
         text-align: center;
 
         .home & {
-            box-shadow: -2px -2px 3px 0 rgba(0, 0, 0, .05), 2px 2px 3px 0 rgba(0, 0, 0, .25);
+            box-shadow: -1px -1px 3px 0 rgba(0, 0, 0, .025), 1px 1px 3px 0 rgba(0, 0, 0, .1);
             background-color: $color-white;
             overflow: hidden;
             padding: 0 to-em(16);
@@ -292,7 +282,6 @@
                 letter-spacing: to-em(0);
                 word-spacing: to-em(40);
                 min-width: 100%;
-                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
 
                 @include layout-1280() {
                     margin: 0;
@@ -320,7 +309,6 @@
             }
 
             span {
-                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
                 color: $color-white;
                 background: $color-black;
                 font-weight: 300;
@@ -342,7 +330,6 @@
             bottom: to-em(8);
             border-top-left-radius: to-em(4);
             border-bottom-left-radius: to-em(4);
-            box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .15), 2px 2px 3px 0 rgba(0, 0, 0, .8);
 
             @include layout-1024() {
                 bottom: to-em(24);

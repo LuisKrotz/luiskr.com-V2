@@ -5,7 +5,7 @@
           <div class="about main">
             <h2 class="main-title">About</h2>
             <p class="main-text">I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
-              <video v-view="viewHandler" loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
+              <video loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'college.mp4'"/>
                 <source type="video/webm" :src="storage + 'college.webm'"/>
@@ -16,7 +16,7 @@
 
             <h3 class="main-subtitle">Freelancing</h3>
             <p class="main-text">I started my "<em>one-man army</em>" company in 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
-              <video v-view="viewHandler" loading="lazy" :poster="storage + 'cat-lady' + webp2" playsinline autoplay muted loop width="480" height="270">
+              <video loading="lazy" :poster="storage + 'cat-lady' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'cat-lady.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'cat-lady.mp4'"/>
                 <source type="video/webm" :src="storage + 'cat-lady.webm'"/>
@@ -27,7 +27,7 @@
 
             <h3 class="main-subtitle">Whats keeps me sane</h3>
             <p class="main-text">I enjoy listening to music, music is my way to relax after a hard, stressful or normal day, I can listen to music at any given moment - <em>if the moment allows it.</em>
-              <video v-view="viewHandler" loading="lazy" :poster="storage + 'music' + webp2" playsinline autoplay muted loop width="480" height="264">
+              <video loading="lazy" :poster="storage + 'music' + webp2" playsinline autoplay muted loop width="480" height="264">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'music.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'music.mp4'"/>
                 <source type="video/webm" :src="storage + 'music.webm'"/>
@@ -44,7 +44,7 @@
 
             <h3 class="main-subtitle">Languages</h3>
             <p class="main-text">I love learning a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
-              <video v-view="viewHandler" loading="lazy" :poster="storage + 'bean' + webp2" playsinline autoplay muted loop width="480" height="270">
+              <video loading="lazy" :poster="storage + 'bean' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'bean.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'bean.mp4'"/>
                 <source type="video/webm" :src="storage + 'bean.webm'"/>
@@ -93,29 +93,18 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
-
-Vue.use(checkView);
-
 export default {
   name: 'About',
-  methods: {
-    viewHandler(e) {
-      this.$parent.viewHandler(e);
-    }
-  },
   data() {
     return {
       webp2: this.$parent.webp2,
-      placeholder: this.$parent.placeholder,
-      storage: this.$parent.storage,
-      origin: this.$parent.origin
+      storage: this.$parent.storage
     }
   },
   created() {
     let self = this;
 
+    document.body.classList.remove("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   },

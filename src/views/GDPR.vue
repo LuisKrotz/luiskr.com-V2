@@ -23,8 +23,7 @@ export default {
   name: 'GDPR',
   data() {
     return {
-      storage: this.$parent.storage,
-      origin: this.$parent.origin
+      storage: this.$parent.storage
     }
   },
   created() {

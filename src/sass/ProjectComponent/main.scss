@@ -20,7 +20,7 @@
         position: relative;
         margin: 0 auto;
         font-size: to-em(64);
-        text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
+        text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
 
         @include layout-768() {
             font-size: to-em(104);
@@ -28,7 +28,7 @@
     }
 
     &-subtitle {
-        text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
+        text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
         text-align: center;
         display: block;
         position: relative;
@@ -38,7 +38,6 @@
     }
 
     &-media {
-        box-shadow: -1px -1px 3px 0 rgba(255, 255, 255, 0.1), 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
         border-radius: to-em(5);
         object-fit: cover;
         object-position: center center;
@@ -77,7 +76,6 @@
             border-radius: to-em(5);
             box-sizing: border-box;
             background: rgba(0, 0, 0, 0.5);
-            box-shadow: -1px -1px 3px 0 rgba(255, 255, 255, 0.1), 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
         }
 
         &-link {
@@ -151,7 +149,6 @@
                 display: block;
                 position: relative;
                 margin: 0 auto;
-                box-shadow: -1px -1px 3px 0 rgba(255, 255, 255, 0.1), 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
                 border-radius: 100%;
                 width: to-em(104);
                 height: to-em(104);
@@ -165,7 +162,7 @@
                 letter-spacing: to-em(8);
                 box-sizing: border-box;
                 text-align: justify;
-                text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
+                text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
                 padding-top: to-em(8);
                 display: block;
                 font-size: to-em(16);
@@ -186,7 +183,6 @@
 
         &-credit {
             &-logo {
-                box-shadow: -2px -2px 3px 0 rgba(255, 255, 255, .1), 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
                 width: 100%;
                 height: to-em(168);
                 background: $color-white;

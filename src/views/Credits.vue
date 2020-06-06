@@ -100,7 +100,6 @@ export default {
   data() {
     return {
       storage: this.$parent.storage,
-      origin: this.$parent.origin,
       webp2: this.$parent.webp2
     }
   },

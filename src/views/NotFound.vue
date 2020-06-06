@@ -21,9 +21,7 @@ export default {
   name: 'NotFound',
   data() {
     return {
-      placeholder: this.$parent.placeholder,
       storage: this.$parent.storage,
-      origin: this.$parent.origin,
       webp2: this.$parent.webp2
     }
   },
