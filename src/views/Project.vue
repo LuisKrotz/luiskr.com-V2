@@ -140,7 +140,7 @@ export default {
       webp2: this.$parent.webp2,
       placeholder: this.$parent.placeholder,
       origin: this.$parent.origin,
-      translations: this.parent.projects,
+      translations: this.$parent.projects,
       post: undefined,
       random: Math.round(Math.random() * 4) + 1,
       next: undefined,
