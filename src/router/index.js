@@ -1,15 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueAnalytics from 'vue-analytics'
-import NProgress from 'nprogress';
 import Home from '../views/Home.vue'
-
-import '../../node_modules/nprogress/nprogress.css'
 
 Vue.use(VueRouter)
 
 const total = 73;
-
 const routes = [
   {
     path: '/',
@@ -1547,21 +1543,8 @@ const router = new VueRouter({
   routes
 })
 
-
-const n_options = {
-  latencyThreshold: 0,        // Number of ms before progressbar starts showing, default: 100,
-  router: true,               // Show progressbar when navigating routes, default: true
-  http: true                 // Show progressbar when doing Vue.http, default: true
-};
-
-Vue.use(NProgress, n_options)
-
 // This callback runs before every route change, including on page load.
 router.beforeResolve((to, from, next) => {
-  if (to.name) {
-      NProgress.start()
-  }
-
   // This goes through the matched routes from last to first, finding the closest route with a title.
   // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
@@ -1596,10 +1579,6 @@ router.beforeResolve((to, from, next) => {
     .forEach(tag => document.head.appendChild(tag));
 
   next();
-})
-
-router.afterEach((to, from) => {
-  NProgress.done();
 })
 
 function init() {
