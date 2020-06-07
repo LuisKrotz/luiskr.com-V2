@@ -3,6 +3,7 @@
     background: $color-black;
 
     .main-title {
+        transition: transform ease-out 1s;
         text-align: justify;
         text-transform: uppercase;
         font-weight: 900;
@@ -64,6 +65,10 @@
 
         @media screen and(max-width: #{$bk-640}) {
             @include ignore-br();
+        }
+
+        .show-banner & {
+            transform: translateY(-104px);
         }
     }
 

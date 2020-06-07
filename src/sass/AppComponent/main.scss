@@ -685,7 +685,7 @@
     }
 
     p {
-        grid-column-end: 5;
+        grid-column-end: 4;
         grid-column-start: 1;
         color: $color-white;
         font-size: to-em(12);
@@ -694,7 +694,10 @@
         letter-spacing: to-em(2);
         text-transform: uppercase;
         text-align: justify;
-        grid-column-end: 5;
+
+        @include layout-768() {
+            grid-column-end: 5;
+        }
 
         @include layout-1280() {
             padding-bottom: to-em(16);

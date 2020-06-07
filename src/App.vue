@@ -156,11 +156,13 @@ export default {
       accept() {
         localStorage.setItem('cookie', true);
         this.show_cookie = true;
+        document.body.classList.remove('show-banner');
 
         document.dispatchEvent(new Event("accepted"));
       },
       close() {
           this.show_cookie = true;
+          document.body.classList.remove('show-banner');
       }
     }
   };

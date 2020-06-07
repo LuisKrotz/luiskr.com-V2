@@ -265,7 +265,7 @@
         }
     </script>
   </head>
-  <body>
+  <body class="show-banner">
     <div id="app">
       <div class="lds-ripple"><div></div><div></div></div>
       <span class="loader">ᄂӨΛDIПG</span>
@@ -299,10 +299,12 @@
     }
 
     if (Boolean(localStorage.getItem('cookie')) === true) {
+      document.body.classList.remove('show-banner');
       pixel();
     } else {
       document.addEventListener('accepted', function() {
         if (Boolean(localStorage.getItem('cookie')) === true) {
+          document.body.classList.remove('show-banner');
           pixel();
         }
       });
