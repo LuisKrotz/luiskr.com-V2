@@ -2,7 +2,7 @@
   <div>
     <main class="home">
       <article class="main max-area">
-            <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link><br> Check out the projects I worked on in the last years bellow.</span></h3>
+            <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link><br>Check out the projects I worked on in the last years' bellow.</span></h3>
             <div class="home-projects">
               <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
                     <h3 class="home-project-title"  @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
