@@ -7,17 +7,22 @@
     </video>
     <main class="max-area">
         <article class="about main">
-          <h2 class="main-title" @click="sendAnalyticsEvent('not_found_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
-          <h3 class="main-subtitle">Are u lost?</h3>
-          <p class="main-text">Looks like there is nothing here. Try going to luiskr.com at the home link.</p>
-          <p class="main-subtitle">Click on any link at the bottom.</p>
-          <p class="main-text">If have q request, please contact me at <a  @click="sendAnalyticsEvent('not_found_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
+          <h2 class="main-title" v-view @click="sendAnalyticsEvent('not_found_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+          <h3 class="main-subtitle" v-view>Are u lost?</h3>
+          <p class="main-text" v-view>Looks like there is nothing here. Try going to luiskr.com at the home link.</p>
+          <p class="main-subtitle" v-view>Click on any link at the bottom.</p>
+          <p class="main-text" v-view>If have q request, please contact me at <a  @click="sendAnalyticsEvent('not_found_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+
+Vue.use(checkView);
+
 export default {
   name: 'NotFound',
   data() {

@@ -1,7 +1,7 @@
 
+
 .project {
     width: 100vw;
-
 
     @include layout-1024() {
         margin-bottom: to-em(-91);
@@ -165,7 +165,14 @@
                 margin: to-em(98) auto 0;
             }
 
+            &:hover {
+                .project-info-check-it {
+                    transform: scaleX(-1);
+                }
+            }
+
             &-it {
+                transition: transform ease-in-out .5s;
                 display: block;
                 position: relative;
                 margin: 0 auto;
@@ -174,10 +181,14 @@
                 height: to-em(104);
                 object-fit: cover;
                 object-position: center center;
+
+                &.view-in {
+                    opacity: 1;
+                }
             }
 
             &-txt {
-                transition: background-color ease-in .5s;
+                transition: background-color ease-in .5s, opacity ease-in .3s;
                 text-decoration: underline;
                 letter-spacing: to-em(8);
                 box-sizing: border-box;
@@ -203,6 +214,7 @@
 
         &-credit {
             &-logo {
+                transition: transform ease-in .5s, opacity ease-in .3s;
                 width: 100%;
                 height: to-em(168);
                 background: $color-white;
@@ -214,15 +226,43 @@
                 padding: to-em(16);
                 box-sizing: border-box;
                 margin-bottom: to-em(-8);
-
                 border-top-right-radius: to-em(16);
                 border-bottom-left-radius: to-em(16);
                 border-bottom-right-radius: to-em(4);
+                opacity: 0;
+                transform: scale(0.95);
+
+                &:hover.view-in {
+                    transform: scale(0.95);
+                }
 
                 @include layout-414() {
                     width: to-em(168);
                 }
+
+                &.view-in {
+                    opacity: 1;
+                    transform: scale(1);
+                }
             }
         }
+    }
+}
+
+
+
+.project-title,
+.project-subtitle,
+.project-media,
+.project-info-link,
+.project-info-role,
+.project-info-more,
+.project-info-credit,
+.project-info-check-txt {
+    transition: opacity ease-in .3s;
+    opacity: 0;
+
+    &.view-in {
+        opacity: 1;
     }
 }
