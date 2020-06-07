@@ -6,7 +6,7 @@
             <div class="home-projects">
               <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
                     <h3 class="home-project-title"  @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
-                        <span>{{ post.name }}</span>
+                        <span v-view>{{ post.name }}</span>
                     </h3>
               </router-link>
             </div>
@@ -17,6 +17,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+
+Vue.use(checkView);
+
 export default {
   name: 'HomeComponent',
   data() {
@@ -326,11 +331,6 @@ export default {
           }
         ]
     }
-  },
-  created() {
-    let self = this;
-
-    document.body.classList.remove("black");
   },
   methods: {
     onMouseMove(e) {

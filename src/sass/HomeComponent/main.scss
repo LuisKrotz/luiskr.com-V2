@@ -65,7 +65,6 @@
         @media screen and(max-width: #{$bk-640}) {
             @include ignore-br();
         }
-
     }
 
     .main {
@@ -125,8 +124,8 @@
             text-align: justify;
 
             span {
-                transition: transform ease-in .3s;
-                transform: skewX(-15deg) translateX(10px);
+                transition: transform ease-in 1s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .5s;
+                transform: skewX(0) translate3D(10px, 25px, 0);
                 display: block;
                 color: $color-white;
                 line-height: to-em(40);
@@ -137,6 +136,7 @@
                 letter-spacing: to-em(2);
                 word-spacing: to-em(40);
                 min-width: 100%;
+                opacity: 0;
 
                 @include layout-1280() {
                     margin: 0;
@@ -150,11 +150,18 @@
                     font-size: to-em(168);
                     letter-spacing: to-em(40);
                 }
+
+                &.view-in {
+                    transition: transform ease-in .3s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .2s;
+                    transform: skewX(-10deg) translate3D(10px, 0, 0);
+                    opacity: 1;
+                }
             }
 
             &:hover {
                 span {
-                    transform: skewX(0) translateX(0);
+                    transform: skewX(0) translate3D(10px, 0, 0);
+                    text-decoration: underline;
                 }
             }
         }
