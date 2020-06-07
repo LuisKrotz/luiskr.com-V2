@@ -125,7 +125,7 @@
 
             span {
                 transition: transform ease-in 1s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .5s;
-                transform: skewX(0) translate3D(10px, 25px, 0);
+                transform: skewX(0) translate3D(0, 25px, 0);
                 display: block;
                 color: $color-white;
                 line-height: to-em(40);
@@ -153,14 +153,14 @@
 
                 &.view-in {
                     transition: transform ease-in .3s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .2s;
-                    transform: skewX(-10deg) translate3D(10px, 0, 0);
+                    transform: skewX(-10deg) translate3D(0, 0, 0);
                     opacity: 1;
                 }
             }
 
             &:hover {
                 span {
-                    transform: skewX(0) translate3D(10px, 0, 0);
+                    transform: skewX(0) translate3D(0, 0, 0);
                     text-decoration: underline;
                 }
             }
