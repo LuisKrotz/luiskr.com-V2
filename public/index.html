@@ -19,7 +19,6 @@
 
 
     <link rel="preconnect" href="https://storage.googleapis.com">
-    <link rel="preload" href="https://luiskr.com/projects/1.json" as="fetch">
     <link rel="preload" href="https://fonts.gstatic.com/s/worksans/v7/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/worksans/v7/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/worksans/v7/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2" as="font" type="font/woff2" crossorigin>
@@ -185,12 +184,10 @@
     }
 
     body {
-      background-color: rgba(255, 255, 255, 1);
+      background-color: #000;
+      color: #FFF;
     }
 
-    body.black {
-      background-color: rgba(0, 0, 0, 1);
-    }
 
     .loader {
       width: 100vw;
@@ -199,8 +196,6 @@
       font-size: 4em;
       line-height: 100vh;
       text-align: center;
-      color: #FFF;
-      background: #000;
       position: fixed;
       top: 0;
       left: 0;

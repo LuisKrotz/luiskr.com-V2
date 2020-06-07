@@ -16,7 +16,7 @@
           <img class="project-background" :src="storage + post.video.src + webp" :width="post.video.width" :height="post.video.height" :alt="post.video.alt">
         </picture>
 
-        <h2 class="project-title" v-if="translations !== undefined">{{ translations.project }}</h2>
+        <h2 class="project-title" v-if="translations !== undefined" @click="sendAnalyticsEvent('project_link', 'click','home', 100)"><router-link to="/" :style="'background-color: #' + random_colors[random_color]">luiskr</router-link></h2>
         <h3 class="project-subtitle" v-if="post !== undefined">{{ post.project }}</h3>
 
         <div class="project-info">
@@ -92,8 +92,8 @@
     </main>
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
-        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
-          <span class="footer-link-icon" @click="nextprev(prev.id)">
+        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
+          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
@@ -101,7 +101,7 @@
           <p class="hdn">{{ translations.prev }}</p>
         </a>
 
-        <a class="footer-link right" :href="next.path" v-if="next !== undefined" @click="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
+        <a class="footer-link right" :href="next.path" v-if="next !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
           <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
@@ -130,10 +130,17 @@ export default {
       origin: this.$parent.origin,
       translations: this.$parent.projects,
       post: undefined,
-      random: Math.round(Math.random() * 4) + 1,
+      random: Math.round(Math.random() * 4),
       next: undefined,
       prev: undefined,
-      total: Number
+      total: Number,
+      random_color: Math.round(Math.random() * 18) - 1,
+      random_colors: [
+        '3f3fec', '2929e2', '1a1a48', '55daad', '38886d', '38886d',
+        '25463b', '573279', '962626', '191970', '5f9ea0', '4bc18b',
+        '525252', 'A1D470', '580edc', '723c7b', '009688', 'c54a8d',
+        '29d',
+      ]
     }
   },
   created() {
@@ -195,6 +202,7 @@ export default {
     nextprev(id) {
       this.data_id = id;
       this.getPost();
+      this.random_color = Math.round(Math.random() * 18) - 1;
 
       const scrollToTop = () => {
         const c = document.documentElement.scrollTop || document.body.scrollTop;

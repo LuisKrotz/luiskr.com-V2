@@ -7,9 +7,10 @@
     </video>
     <main class="max-area">
         <article class="about main">
-          <h2 class="main-title">Are u lost?</h2>
+          <h2 class="main-title" @click="sendAnalyticsEvent('not_found_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+          <h3 class="main-subtitle">Are u lost?</h3>
+          <p class="main-text">Looks like there is nothing here. Try going to luiskr.com at the home link.</p>
           <p class="main-subtitle">Click on any link at the bottom.</p>
-          <h3 class="main-text">Looks like there is nothing here. Try going to luiskr.com at the home link.</h3>
           <p class="main-text">If have q request, please contact me at <a  @click="sendAnalyticsEvent('not_found_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a></p>
         </article>
     </main>
@@ -26,7 +27,6 @@ export default {
     }
   },
   created() {
-    document.body.classList.add("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   },
@@ -44,6 +44,5 @@ export default {
 @import '../sass/placeholders';
 @import '../sass/extends';
 
-@import '../sass/AboutComponent/main.scss';
 @import '../sass/NotFoundComponent/main.scss';
 </style>

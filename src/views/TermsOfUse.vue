@@ -3,9 +3,10 @@
     <main class="max-area">
         <article>
           <div class="terms about main">
-            <h2 class="main-title">Terms of Use</h2>
+            <h2 class="main-title" @click="sendAnalyticsEvent('terms_of_use_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
 
-            <h3 class="main-subtitle">Version 1.0</h3>
+            <h3 class="main-subtitle">Terms of Use</h3>
+            <p class="main-text">Version 1.0</p>
              <p class="main-text">
               <video loading="lazy" :poster="storage + 'giphy' + webp2" playsinline autoplay muted loop width="480" height="264">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'giphy.m3u8'"/>
@@ -106,7 +107,6 @@ export default {
     }
   },
   created() {
-    document.body.classList.add("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   },
@@ -117,13 +117,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import '../sass/variables';
-@import '../sass/mixins';
-@import '../sass/placeholders';
-@import '../sass/extends';
-
-@import '../sass/AboutComponent/main.scss';
-@import '../sass/TermsComponent/main.scss';
-</style>

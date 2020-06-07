@@ -31,6 +31,16 @@
         @include layout-768() {
             font-size: to-em(104);
         }
+
+        a {
+            text-transform: uppercase;
+            padding: 0 to-em(8);
+            border-radius: to-em(6);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     &-subtitle {
@@ -211,10 +221,6 @@
 
                 @include layout-414() {
                     width: to-em(168);
-                }
-
-                .black & {
-                    background: $color-white;
                 }
             }
         }

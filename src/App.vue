@@ -174,4 +174,6 @@ export default {
 @import 'sass/extends';
 
 @import 'sass/AppComponent/main.scss';
+@import 'sass/HomeComponent/main.scss';
+@import 'sass/AboutComponent/main.scss';
 </style>

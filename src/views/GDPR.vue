@@ -2,8 +2,9 @@
   <div class="footer-open">
     <main class="max-area">
         <article class="about main">
-          <h2 class="main-title">GDPR</h2>
-          <h3 class="main-subtitle">Data Protection Rights</h3>
+          <h2 class="main-title" @click="sendAnalyticsEvent('gdpr_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+          <h3 class="main-subtitle">GDPR</h3>
+          <h3 class="main-text">Data Protection Rights</h3>
 
           <p class="main-text">I would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
           <p class="main-text"><strong>The right to access</strong> – You have the right to request copies of your personal data. I do not store any data, I'm happy to share any data from Google analytics collected if needed, no personal data is stored on this website.</p>
@@ -27,7 +28,6 @@ export default {
     }
   },
   created() {
-    document.body.classList.add("black");
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
   },
@@ -38,12 +38,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import '../sass/variables';
-@import '../sass/mixins';
-@import '../sass/placeholders';
-@import '../sass/extends';
-
-@import '../sass/AboutComponent/main.scss';
-</style>

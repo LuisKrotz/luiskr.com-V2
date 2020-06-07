@@ -1,249 +1,115 @@
 
 .home {
-    .main {
-        background: $color-white;
-        padding: 0;
-    }
+    background: $color-black;
 
-    &-cover {
-        box-sizing: border-box;
+    .main-title {
+        text-align: justify;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $color-white;
+        position: fixed;
+        bottom: to-em(104);
+        font-size: 5.63vh;
+        padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
 
-        @include layout-1024() {
-            min-height: 75vh;
-            padding-top: to-em(104);
-            padding-bottom: to-em(104);
+        @include layout-375() {
+            padding: 0 to-em(($un-375 - $grid-max-area-375) / 2) 0 0;
         }
 
-        .main-title {
-            transition: transform ease-in-out 1.5s, opacity ease-in-out .5s;
-            font-size: to-em(40);
-            font-weight: 200;
-
-            span {
-                background: $color-black;
-                color: $color-white;
-            }
-
-            &.desk {
-                display: none;
-
-                @include layout-1024() {
-                    display: block;
-                }
-            }
-        }
-
-        .main-subtitle {
-            transition: transform ease-in-out 1s, opacity ease-in-out .5s;
-            text-align: center;
-
-            &.view-out--above {
-                transform: translate3D(-5%, 0, 0);
-                opacity: 0;
-            }
-
-            &.desk {
-                display: none;
-
-                @include layout-1024() {
-                    display: block;
-                }
-            }  
-        }
-
-        .main-text {
-            transition: transform ease-in-out 1s, opacity ease-in-out .5s;
-            font-size: to-em(24);
-            line-height: to-em(64);
-            padding-bottom: to-em(168);
-
-            &.view-out--above {
-                transform: translate3D(5%, 0, 0);
-                opacity: 0;
-            }
-
-            &.first {
-                padding-top: to-em(16);
-
-                @include layout-1024() {
-                    padding-top: 0;
-                }
-            }
-
-            @include layout-1024() {
-                padding-bottom: initial;
-            }
-
-            span {
-                background: $color-white;
-            }
+        @include layout-414() {
+            padding: 0 to-em(($un-414 - $grid-max-area-414) / 2) 0 0;
         }
 
         @include layout-640() {
-            .main-title {
-                font-weight: 300;
-                font-size: to-em(104);
-            }
+            font-size: 7.04vh;
+            padding: 0 to-em(($un-640 - $grid-max-area-640) / 2) 0 0;
         }
-
+    
+        @include layout-768() {
+            padding: 0 to-em(($un-768 - $grid-max-area-768) / 2) 0 0;
+        }
+    
+        @include layout-960() {
+            font-size: 6.25vh;
+            padding: 0 to-em(($un-960 - $grid-max-area-960) / 2) 0 0;
+        }
+    
         @include layout-1024() {
-            display: grid;
-            min-height: 100vh;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: to-em(64);
-
-            .main-title,
-            .main-subtitle {
-                margin: 0;
-                padding: 0;
-                text-align: justify;
-            }
-
-            .main-title {
-                grid-column-start: 2;
-                grid-column-end: -1;
-            }
-
-            .main-subtitle {
-                line-height: to-em(64);
-                font-weight: 500;
-                text-transform: uppercase;
-                grid-column-start: 1;
-            }
-
-            .main-text {
-                grid-column-start: 2;
-                grid-column-end: 5;
-                padding: 0;
-            }
+            padding: 0 to-em(($un-1024 - $grid-max-area-1024) / 2) 0 0;
         }
-
+    
         @include layout-1280() {
-            .main-title {
-                grid-column-start: 3;
-                grid-column-end: 5;
-            }
-
-            .main-text {
-                grid-column-start: 3;
-                grid-column-end: 5;
-                padding: 0;
-            }
+            font-size: 11.55vh;
+            padding: 0 to-em(($un-1280 - $grid-max-area-1280) / 2) 0 0;
         }
 
+        @include layout-1440() {
+            padding: 0 to-em(($un-1440 - $grid-max-area-1440) / 2) 0 0;
+        }
+    
         @include layout-1680() {
-            .main-subtitle {
-                grid-column-start: 2;
-            }
+            padding: 0 to-em(($un-1680 - $grid-max-area-1680) / 2) 0 0;
         }
-
+    
         @include layout-1920() {
-            grid-gap: to-em(40);
+            font-size: 9.63vh;
+            padding: 0 to-em(($un-1920 - $grid-max-area-1920) / 2) 0 0;
         }
 
         @include layout-2560() {
-            grid-row-gap: to-em(40);
-            grid-column-gap: to-em(64);
+            font-size: 11.66vh;
+            padding: 0 to-em(($un-2560 - $grid-max-area-2560) / 2) 0 0;
+            bottom: to-em(168);
         }
 
-        &-mobile {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-
-            &-content {
-                position: absolute;
-                top: 50vh;
-                left: 0;
-                transform: translate3D(0, -50%, 0);
-                margin-top: to-em(-64);
-                width: 100%;
-            }
-
-            @include layout-1024() {
-                display: none;
-            }
+        @media screen and(max-width: #{$bk-640}) {
+            @include ignore-br();
         }
 
-        &-parent {
-            background-color: $color-white;
-        }
     }
 
+    .main {
+        padding-top: 100vh;
+    }
+
+
     &-projects {
-        transition: background-color ease-in-out .5s;
-        padding-bottom: to-em(104);
+        padding: to-em(104) 0;
         position: relative;
-        background-color: transparent;
-
-        .main-title {
-            padding-top: to-em(24);
-
-            @include layout-640() {
-                padding-top: to-em(16);
-            }
-
-            @include layout-1024() {
-                padding-top: to-em(40);
-            }
-
-            @include layout-1680() {
-                padding-top: to-em(64);
-            }
-
-            @include layout-2560() {
-                padding-top: to-em(104);
-            }
-
-            span {
-                background: $color-black;
-                color: $color-white;
-                letter-spacing: to-em(2);
-
-                @include layout-640() {
-                    letter-spacing: to-em(8);
-                }
-            }
-        }
+        background-color: $color-black;
     }
 
     &-project {
-        overflow: hidden;
         position: relative;
         display: block;
         text-align: center;
 
         .home & {
-            box-shadow: -1px -1px 3px 0 rgba(0, 0, 0, .025), 1px 1px 3px 0 rgba(0, 0, 0, .1);
-            background-color: $color-white;
-            overflow: hidden;
-            padding: 0 to-em(16);
-            margin: to-em(168 / 2) to-em(-16);
+            overflow: visible;
+            margin: 0 0 to-em(104);
 
             @include layout-640() {
-                margin: to-em(168 / 2) to-em(-24);
-                padding: 0 to-em(24);
+                margin: 0 0 to-em(104);
             }
 
             @include layout-768() {
-                padding: 0;
-                margin: to-em(168 / 2) -0;
-            }
-
-            @include layout-1024() {
-                margin: to-em(104 / 2) 0;
+                margin: 0 0 to-em(104);
             }
 
             @include layout-1280() {
-                margin: to-em(168 / 2) 0;
+                margin: 0 0 to-em(104);
             }
 
             @include layout-1440() {
-                margin: to-em(272 / 2) 0;
+                margin: 0 0 to-em(104);
             }
 
             @include layout-1680() {
-                margin: to-em(442 / 2) 0;
+                margin: 0 0 to-em(104);
+            }
+
+            @include layout-2560() {
+                margin: 0 0 to-em(168);
             }
         }
 
@@ -254,100 +120,43 @@
         }
 
 
-        &-title,
-        &-at {
+        &-title {
             position: relative;
             text-align: justify;
-        }
-
-        &-title {
-            padding: to-em(272) to-em(2) to-em(242);
-
-            @include layout-768() {
-                padding: to-em(168) to-em(8) to-em(146);
-            }
-
-            @include layout-1920() {
-                padding: to-em(272) to-em(8) to-em(250);
-            }
 
             span {
+                transition: transform ease-in .3s;
+                transform: skewX(-15deg) translateX(10px);
+                display: block;
                 color: $color-white;
-                background: $color-black;
-                line-height: to-em(56);
+                line-height: to-em(40);
                 font-size: to-em(40);
                 font-weight: 900;
                 text-transform: uppercase;
                 word-break: break-word;
-                letter-spacing: to-em(0);
+                letter-spacing: to-em(2);
                 word-spacing: to-em(40);
                 min-width: 100%;
 
                 @include layout-1280() {
                     margin: 0;
-                    line-height: to-em(168);
+                    line-height: to-em(104);
                     font-size: to-em(104);
                     letter-spacing: to-em(24);
                 }
+
+                @include layout-2560() {
+                    line-height: to-em(168);
+                    font-size: to-em(168);
+                    letter-spacing: to-em(40);
+                }
+            }
+
+            &:hover {
+                span {
+                    transform: skewX(0) translateX(0);
+                }
             }
         }
-
-        &-at {
-            color: $color-white;
-            padding: 0 to-em(164) to-em(16) to-em(4);
-            text-transform: uppercase;
-            line-height: to-em(16);
-            font-size: to-em(16);
-            
-
-            @include layout-768() {
-                padding: 0 to-em(8) to-em(32);
-            }
-
-            @include layout-1440() {
-                padding: 0 to-em(8) to-em(32);
-            }
-
-            span {
-                color: $color-white;
-                background: $color-black;
-                font-weight: 300;
-            }
-        }
-
-        &-read {
-            text-transform: uppercase;
-            font-weight: 500;
-            text-align: right;
-            position: absolute;
-            right: 0;
-            padding: to-em(4) to-em(8);
-            padding-right: to-em(2);
-            word-break: break-all;
-            text-align: center;
-            background: $color-black;
-            color: $color-white;
-            bottom: to-em(8);
-            border-top-left-radius: to-em(4);
-            border-bottom-left-radius: to-em(4);
-
-            @include layout-1024() {
-                bottom: to-em(24);
-            }
-        }
-    }
-
-    &-media {
-        overflow: hidden;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: block;
-        object-fit: cover;
-        object-position: center center;
-        transform: translate3D(-50%, -50%, 0);
-        width: 125%;
-        height: 125%;
-        filter: blur(5px);
     }
 }

@@ -16,7 +16,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'luiskr.com | Luis Krötz | Personal Portfolio.',
+      title: 'luiskr.com | Home',
       metaTags: [{
           name: 'description',
           content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'
@@ -49,18 +49,18 @@ const routes = [
     }
   },
   {
-    path: '/social',
-    name: 'Social',
-    component: () => import(/* webpackChunkName: "Social" */ '../views/Social'),
+    path: '/productions',
+    name: 'Productions',
+    component: () => import(/* webpackChunkName: "Social" */ '../views/Productions'),
     meta: {
-      title: 'luiskr.com | Social',
+      title: 'luiskr.com | Projects',
       metaTags: [{
           name: 'description',
-          content: 'Hy, I\'m Luis. Check out my social network links.'
+          content: 'Hy, I\'m Luis. Check out my the articles I wrote, and projects I participated.'
         },
         {
           property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my social network links.'
+          content: 'Hy, I\'m Luis. Check out my the articles I wrote, and projects I participated.'
         }
       ]
     }

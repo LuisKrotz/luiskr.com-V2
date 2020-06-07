@@ -66,6 +66,19 @@
         @include layout-640() {
             font-size: to-em(104);
         }
+
+        a {
+            display: block;
+            text-align: left;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-decoration-style: solid;
+
+            &:hover {
+                text-decoration: underline;
+                
+            }
+        }
     }
 
     &-subtitle {
@@ -189,7 +202,7 @@
 
     &-more {
         backface-visibility: hidden;
-        bottom:to-em(16);
+        bottom:to-em(9);
         position: fixed;
         z-index: $z-header;
         display: inline-block;
@@ -198,9 +211,8 @@
         height: to-em(50);
         color: $color-white;
         border-radius: 100%;
-        transform: translate3D(to-em(-10), to-em(-8), -1);
-        background: rgba(0, 0, 0, .98);
-        box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .1), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .25);
+        transform: translate3D(to-em(-10), to-em(-8), 0);
+        background-color: $color-white;
 
         @include layout-1024() {
             border-radius: initial;
@@ -208,22 +220,6 @@
             border-bottom-right-radius: to-em(4);
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
-            color: $color-black;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
-
-        }
-
-        .black & {
-            color: $color-black;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(0, 0, 0, .02), to-em(1) to-em(1) to-em(2) 0 rgba(0, 0, 0, .05);
-
-            @include layout-1024() {
-                color: $color-white;
-                background: rgba(0, 0, 0, .5);
-                box-shadow: to-em(-.5) to-em(-.5) to-em(1) 0 rgba(255, 255, 255, .05), to-em(1) to-em(1) to-em(3) 0 rgba(255, 255, 255, .1);
-            }
         }
 
         &-line {
@@ -232,19 +228,7 @@
             margin: 8px auto;
             box-sizing: border-box;
             height: 1px;
-            background-color: $color-white;
-
-            @include layout-1024() {
-                background-color: $color-black;
-            }
-
-            .black & {
-                background-color: $color-black;
-
-                @include layout-1024() {
-                    background-color: $color-white;
-                }
-            }
+            background-color: $color-black;
 
             &.top {
                 transition: transform .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -371,6 +355,11 @@
     width: 100vw;
     bottom: 0;
     height: to-em(82);
+    background-color: $color-black;
+
+    @include layout-1024() {
+        background-color: transparent;
+    }
 
     .max-area {
         display: grid;
@@ -390,18 +379,10 @@
         }
     }
 
-    .black & {
-        background-color: $color-black;
-
-        @include layout-1024() {
-            background-color: transparent;
-        }
-    }
-
     &-link {
         box-sizing: border-box;
         min-width: to-em(48);
-        padding: to-em(4) 0;
+        padding: to-em(4) 0 0;
         cursor: pointer;
         text-align: center;
 
@@ -477,7 +458,7 @@
             position: absolute;
             height: to-em(1);
             border-radius: to-em(3);
-            background: $color-black;
+            background: $color-white;
             display: block;
             width: to-em(24);
             margin: to-em(8) 0;
@@ -488,10 +469,6 @@
             @include layout-1024() {
                 left: 0;
                 transform: translate3D(0, -50%, 0);
-            }
-
-            .black & {
-                background: $color-white;
             }
 
             &.top {
@@ -533,9 +510,6 @@
         }
     }
 
-    .shuttle {
-        transform: rotate(-90deg);
-    }
 }
 
 .lz-container {
@@ -576,6 +550,7 @@
 
     .home & {
         object-fit: contain;
+        border-radius: 50%;
     }
 }
 
@@ -586,8 +561,6 @@
     transition: transform ease-out .5s;
     height: to-em(82);
     line-height: to-em(82);
-    background: $color-white;
-    color: $color-black;
     width: 100vw;
     font-size: to-em(16);
     right: 0;
@@ -597,6 +570,8 @@
     text-align: center;
     padding-right: to-em(8);
     $jump-timing: 1s;
+    background: $color-black;
+    color: $color-white;
 
     @include layout-640() {
         padding-right: to-em(16);
@@ -609,11 +584,6 @@
     @include layout-1024() {
         padding: 0;
         justify-content: center;
-    }
-
-    .black & {
-        background: $color-black;
-        color: $color-white;
     }
 
     .getting & {

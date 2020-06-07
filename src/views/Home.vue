@@ -1,61 +1,15 @@
 <template>
   <div>
     <main class="home">
-      <article class="main">
-        <div class="home-cover-parent">
-          <div class="max-area home-cover">
-            <div class="home-cover-mobile" aria-hidden="true">
-              <div class="home-cover-mobile-content">
-                <span class="main-title"><span>luiskr.com</span></span>
-                <span class="main-subtitle">Hy, I'm Luis.</span>
-              </div>
-            </div>
-
-            <h2 class="main-title desk"><span>luiskr.com</span></h2>
-            <h3 class="main-subtitle desk">Hy, I'm Luis.</h3>
-
-            <p class="main-text first"><span>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('home_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part-time Freelancer.</span></p>
-          </div>
-
-          <div class="max-area home-cover second">
-            <p class="main-text"><span>In this page, you'll find more info about the <a href="#portfolio">jobs and projects</a> I worked on in the past few years and a little bit <router-link class="footer-link" to="/about">about me.</router-link></span></p>
-            <p class="main-text"><span>Feel free to explore and contact me at any time, by <a @click="sendAnalyticsEvent('home_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('home_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('home_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.</span></p>
-          </div>
-        </div>
-
-        <section class="home-projects">
-          <h3 class="main-title" id="portfolio"><span>Portfolio</span></h3>
-          <div class="max-area home-project-parent">
-            <router-link class="home-project" :to="post.path" v-for="post in posts" :key="post.id" :style="sethover">
-                <div @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
-                    <picture v-if="post.img !== undefined" :key="'home-' + post.id">
-                      <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-                      <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-                      <img class="lazy home-media" :src="storage + post.img.src + webp" :width="post.img.height" :height="post.img.width" :alt="post.img.alt">
-                    </picture>
-
-                    <picture v-if="post.video !== undefined" :key="'home-' + post.id">
-                      <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
-                      <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
-                      <img class="lazy home-media" :src="storage + post.video.src + webp" :width="post.video.height" :height="post.video.width" :alt="post.video.alt">
-                    </picture>
-
-                    <h3 class="home-project-title">
-                        <span>{{ post.project }}</span>
+      <article class="main max-area">
+            <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link><br> Check out the projects I worked on in the last years bellow.</span></h3>
+            <div class="home-projects">
+              <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
+                    <h3 class="home-project-title"  @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
+                        <span>{{ post.name }}</span>
                     </h3>
-
-                    <h4 class="home-project-at">
-                        <span>{{ projects.at }} 
-                          <a :href="post.at_link" target="_blank" rel="noopenner" @click="sendAnalyticsEvent('portfolio_link', 'click', projects.at + ': ' + post.at_place, 25)">{{ post.at_place }}</a>
-                        </span>
-                    </h4>
-
-                  <span class="home-project-read" :to="post.path">Read<br>More</span>
-                </div>
-            </router-link>
-          </div>
-        </section>
-
+              </router-link>
+            </div>
         <img v-if="this.$parent.domLoaded" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
       </article>
     </main>
@@ -69,70 +23,316 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        webp: this.$parent.webp,
-        webp2: this.$parent.webp2,
-        total: Number,
-        projects: this.$parent.projects,
         sethover: '',
-        posts: [],
-        stop: true,
-        start: Number,
-        end: Number,
         hovers: 13,
         showhover: false,
         random: 0,
         page: {
           left : 0,
           top: 0
-        }
+        },
+        posts: [
+          {
+            path: '/projects/melissa-next-br',
+            name: 'Melissa | Next'
+          },
+          {
+            path: '/projects/minimelissa-dreamers',
+            name: 'Minimelissa | AW\'20'
+          },
+          {
+            path: '/projects/minimelissa-color-me',
+            name: 'Minimelissa | SS\'20'
+          },
+          {
+            path: '/projects/melissa-dreamers-infinitos',
+            name: 'Melissa | Dreamers / Infinitos'
+          },
+          {
+            path: '/projects/metcha-newsletter',
+            name: 'METCHA | Newsletter'
+          },
+          {
+            path: '/projects/metcha-newsletter-generator',
+            name: 'METCHA | Newsletter Generator'
+          },
+          {
+            path: '/projects/metcha-cms',
+            name: 'METCHA | CMS'
+          },
+          {
+            path: '/projects/metcha-website',
+            name: 'METCHA | Website'
+          },
+          {
+            path: '/projects/melissa-sustainability',
+            name: 'Melissa | Sustainability'
+          },
+          {
+            path: '/projects/melissa-color-me',
+            name: 'Melissa | Color ME'
+          },
+          {
+            path: '/projects/transainc-muda',
+            name: 'Transainc | Muda'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2019',
+            name: 'CICB | Sustainability Forum 2019'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2018',
+            name: 'CICB | Sustainability Forum 2018'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2017',
+            name: 'CICB | Sustainability Forum 2017'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2016',
+            name: 'CICB | Sustainability Forum 2016'
+          },
+          {
+            path: '/projects/coza-webpage',
+            name: 'Coza | Webpage'
+          },
+          {
+            path: '/projects/coza-where-to-find',
+            name: 'Coza | Where to Find'
+          },
+          {
+            path: '/projects/melissa-family',
+            name: 'Melissa | Family'
+          },
+          {
+            path: '/projects/melissa-mapping',
+            name: 'Melissa | Mapping'
+          },
+          {
+            path: '/projects/melissa-mirror',
+            name: 'Melissa | Mirror'
+          },
+          {
+            path: '/projects/melissa-open-vibes',
+            name: 'Melissa | Open Vibes'
+          },
+          {
+            path: '/projects/melissa-a-la-garconne',
+            name: 'Melissa | À Lá Garçonne'
+          },
+          {
+            path: '/projects/melissa-awaytomars',
+            name: 'Melissa | AWAYTOMARS'
+          },
+          {
+            path: '/projects/melissa-baja-east',
+            name: 'Melissa | Baja East'
+          },
+          {
+            path: '/projects/melissa-melissa+csc',
+            name: 'Melissa | Melissa + CSC'
+          },
+          {
+            path: '/projects/melissa-fabula',
+            name: 'Melissa | Fábula'
+          },
+          {
+            path: '/projects/melissa-melissa+rider',
+            name: 'Melissa | Melissa + Rider'
+          },
+          {
+            path: '/projects/melissa-galleries-sp-nyc-lon',
+            name: 'Melissa | Galleries SP\/NYC\/LON'
+          },
+          {
+            path: '/projects/melissa-bike',
+            name: 'Melissa | Bike'
+          },
+          {
+            path: '/projects/melissa-creatives',
+            name: 'Melissa | Creatives'
+          },
+          {
+            path: '/projects/melissa-sk8',
+            name: 'Melissa | SK8'
+          },
+          {
+            path: '/projects/melissa-possession',
+            name: 'Melissa | Possession'
+          },
+          {
+            path: '/projects/minimelissa-candy-framework',
+            name: 'Minimelissa | Candy Framework'
+          },
+          {
+            path: '/projects/minimelissa-website',
+            name: 'Minimelissa | Website'
+          },
+          {
+            path: '/projects/minimelissa-a-w16',
+            name: 'Minimelissa | A/W\'16'
+          },
+          {
+            path: '/projects/minimelissa-a-w17',
+            name: 'Minimelissa | A/W\'17'
+          },
+          {
+            path: '/projects/minimelissa-a-w18',
+            name: 'Minimelissa | A/W\'18'
+          },
+          {
+            path: '/projects/minimelissa-a-w19',
+            name: 'Minimelissa | A/W\'19'
+          },
+          {
+            path: '/projects/minimelissa-where-to-find',
+            name: 'Minimelissa | Where to Find'
+          },
+          {
+            path: '/projects/minimelissa-s-s16',
+            name: 'Minimelissa | S/S\'16'
+          },
+          {
+            path: '/projects/minimelissa-s-s17',
+            name: 'Minimelissa | S/S\'17'
+          },
+          {
+            path: '/projects/minimelissa-s-s18',
+            name: 'Minimelissa | S/S\'18'
+          },
+          {
+            path: '/projects/minimelissa-s-s19',
+            name: 'Minimelissa | S/S\'19'
+          },
+          {
+            path: '/projects/mor-website',
+            name: 'Mor | Website'
+          },
+          {
+            path: '/projects/mor-where-to-find',
+            name: 'Mor | Where to Find'
+          },
+          {
+            path: '/projects/cicb-cscb-leather-law-brazilian-portal',
+            name: 'CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
+          },
+          {
+            path: '/projects/melissa-new-features',
+            name: 'Melissa | New Features'
+          },
+          {
+            path: '/projects/melissa-flygrl',
+            name: 'Melissa | Flygrl'
+          },
+          {
+            path: '/projects/melissa-mashup',
+            name: 'Melissa | Mashup'
+          },
+          {
+            path: '/projects/melissa-cine-melissa',
+            name: 'Melissa | Cine Melissa'
+          },
+          {
+            path: '/projects/melissa-dance-machine',
+            name: 'Melissa | Dance Machine'
+          },
+          {
+            path: '/projects/melissa-eat-my-melissa',
+            name: 'Melissa | Eat My Melissa'
+          },
+          {
+            path: '/projects/melissa-nation',
+            name: 'Melissa | Nation'
+          },
+          {
+            path: '/projects/melissa-starwalker',
+            name: 'Melissa | Starwalker'
+          },
+          {
+            path: '/projects/melissa-wanna-be-carioca',
+            name: 'Melissa | Wanna Be Carioca'
+          },
+          {
+            path: '/projects/melissa-we-are-flowers',
+            name: 'Melissa | We are Flowers'
+          },
+          {
+            path: '/projects/melissa-campana',
+            name: 'Melissa | Campana'
+          },
+          {
+            path: '/projects/melissa-gaetano-pesce',
+            name: 'Melissa | Gaetano Pesce'
+          },
+          {
+            path: '/projects/melissa-gareth-pugh',
+            name: 'Melissa | Gareth Pugh'
+          },
+          {
+            path: '/projects/melissa-j-maskrey',
+            name: 'Melissa | J Maskrey'
+          },
+          {
+            path: '/projects/melissa-jason-wu',
+            name: 'Melissa | Jason Wu'
+          },
+          {
+            path: '/projects/melissa-jeremy-scott',
+            name: 'Melissa | Jeremy Scott'
+          },
+          {
+            path: '/projects/melissa-karl-lagerfeld',
+            name: 'Melissa | Karl Lagerfeld'
+          },
+          {
+            path: '/projects/melissa-sebastian-errazuriz',
+            name: 'Melissa | Sebastian Errazuriz'
+          },
+          {
+            path: '/projects/melissa-vitorino-campos',
+            name: 'Melissa | Vitorino Campos'
+          },
+          {
+            path: '/projects/melissa-vivienne-westwood',
+            name: 'Melissa | Vivienne Westwood'
+          },
+          {
+            path: '/projects/melissa-zaha-hadid',
+            name: 'Melissa | Zaha Hadid'
+          },
+          {
+            path: '/projects/melissa-where-to-find',
+            name: 'Melissa | Where to Find'
+          },
+          {
+            path: '/projects/melissa-roller-joy',
+            name: 'Melissa | Roller Joy'
+          },
+          {
+            path: '/projects/melissa-tropico-surreal',
+            name: 'Melissa | Tropico Surreal'
+          },
+          {
+            path: '/projects/mor-loja-mor',
+            name: 'Mor | Loja Mor'
+          },
+          {
+            path: '/projects/vibra-website',
+            name: 'Vibra | Website'
+          },
+          {
+            path: '/projects/genesysinf-sageweb',
+            name: 'GenesysInf | SageWeb'
+          }
+        ]
     }
   },
   created() {
     let self = this;
 
     document.body.classList.remove("black");
-
-    self.start = self.projects.total;
-    self.end = self.projects.total - 2;
-
-    self.stop = false;
-  },
-  mounted() {
-    let self = this,
-        innerHeight = window.innerHeight;
-
-    let half = innerHeight;
-
-    window.addEventListener('scroll', function() {
-      if(self.$router.currentRoute.name === 'Home') {
-          let offset = window.pageYOffset;
-
-          if (offset + innerHeight >= document.body.scrollHeight - half && !self.stop) {
-            self.getPosts(self.start, self.end);
-
-            self.start = self.end - 1;
-            self.end = self.end - 1 > 0 ? self.end - 1 : 1;
-            self.stop = self.start === 0;
-          }
-        }
-    });
   },
   methods: {
-    getPosts(start, end) {
-      let i = start, self = this;
- 
-      document.body.classList.add("getting");
-
-      for(i = start; end <= i; i--) {
-        fetch(`${self.origin}/projects/${i}.json`)
-        .then((response) => {
-          return response.json();
-        }).then((data) => {
-          self.posts.push(data);
-          document.body.classList.remove("getting");
-        })
-      }
-    },
     onMouseMove(e) {
       if(!this.$parent.has_touch) {
         this.page.left = e.pageX - 50;
@@ -160,11 +360,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../sass/variables';
-@import '../sass/mixins';
-@import '../sass/placeholders';
-@import '../sass/extends';
-
-@import '../sass/HomeComponent/main.scss';
-</style>

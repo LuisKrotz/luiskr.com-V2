@@ -112,7 +112,6 @@
         height: auto;
 
             @include layout-768() {
-                max-width: to-em(520);
                 margin-top: to-em(40);
                 margin-bottom: to-em(24);
             }
