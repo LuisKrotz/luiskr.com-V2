@@ -257,12 +257,13 @@
 .project-info-link,
 .project-info-role,
 .project-info-more,
-.project-info-credit,
-.project-info-check-txt {
-    transition: opacity ease-in .3s;
+.project-info-credit {
+    transition: opacity ease-in .3s, transform ease-in-out .3s;
     opacity: 0;
+    transform: scale(.95);
 
     &.view-in {
         opacity: 1;
+        transform: scale(1);
     }
 }

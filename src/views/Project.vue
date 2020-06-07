@@ -82,7 +82,7 @@
                 <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
                 <source type="video/webm" :src="storage + 'animations/' + random + '.webm'"/>
               </video>
-              <span v-view class="project-info-check-txt">
+              <span class="project-info-check-txt">
               {{ translations.checkit }}
               </span>
             </a>
