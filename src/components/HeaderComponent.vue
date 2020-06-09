@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="header">
+        <!-- <header class="header">
             <h3 class="hdn">{{ array.title }}</h3>
             <div class="max-area">
                 <button class="header-link header-more" @click="headerOpen()">
@@ -97,7 +97,7 @@
                 </div>
             </transition>
         </header>
-        <img v-if="open && this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px) '+ (showhover ? 'scale(1); visibility: visible; opacity: 1' : 'scale(0); visibility: hidden: opacity: 0')" aria-hidden="true">
+        <img v-if="open && this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px) '+ (showhover ? 'scale(1); visibility: visible; opacity: 1' : 'scale(0); visibility: hidden: opacity: 0')" aria-hidden="true"> -->
     </div>
 </template>
 
