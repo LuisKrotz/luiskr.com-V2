@@ -17,7 +17,7 @@
       <span class="loading-7">g</span>
     </span>
 
-    <transition name="cookie">
+    <!-- <transition name="cookie">
       <div v-if="!show_cookie && domLoaded" class="cookie-banner">
         <div class="max-area">
           <p>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
