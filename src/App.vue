@@ -18,11 +18,11 @@
     </span>
 
     <transition name="cookie">
-      <div v-if="!show_cookie" class="cookie-banner">
+      <div v-if="!show_cookie && domLoaded" class="cookie-banner">
         <div class="max-area">
           <p>
             This site uses third-party cookies from Google Analytics and Facebook Pixel to track page visits and events.<br>
-            <router-link to="/?show-recors=true">Click here</router-link> and open your browser's console to see the ANONYMOUS data sent to Google and Pixel Analytics.<br>
+            <router-link to="/?show-recors=true">Click here to reload this page</router-link> and open your browser's console to see the ANONYMOUS data sent to Google and Pixel Analytics.<br>
             Get more info about data, cookies and terms of use at <router-link to="GDPR">GDPR</router-link>, <router-link to="terms-of-use">Terms of Use</router-link>, and <router-link to="privacy-policy">Privacy policy</router-link> of this website.<br>
             This page don't send pageviews and events without consent and don't store any visitor's data.<br>
             All session data is stored locally on your own browser, by the use of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" rel="noopener" target="_blank">local storage API</a>.<br>

@@ -307,12 +307,12 @@
             }
 
             &-title {
+                text-transform: lowercase;
                 display: inline-block;
                 font-weight: 300;
-                font-size: to-em(24);
-                line-height: to-em(40);
+                font-size: to-em(32);
+                line-height: to-em(64);
                 letter-spacing: to-em(16);
-                text-transform: uppercase;
                 text-decoration: underline;
                 text-decoration-color: rgba(255, 255, 255, .05);
                 color: $color-white;
@@ -321,10 +321,7 @@
                 position: relative;
 
                 @include layout-375() {
-                    text-transform: lowercase;
-                    font-weight: 300;
                     font-size: to-em(40);
-                    line-height: to-em(64);
                     letter-spacing: to-em(16);
                 }
 
