@@ -101,8 +101,11 @@ export default {
         self.has_touch =  false;
       }
 
-      window.addEventListener("load", function(){
-        self.domLoaded = true;
+      document.addEventListener('readystatechange', event => { 
+          // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+          if (event.target.readyState === "complete") {
+              self.domLoaded = true;
+          }
       });
     },
     methods: {
