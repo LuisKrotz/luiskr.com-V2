@@ -2,12 +2,8 @@
   <div>
     <main class="home">
       <article class="main ">
-            <div id="square-1"></div>
-            <div id="square-2"></div>
-            <div id="square-3"></div>
-
             <div class="max-area">
-              <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link>Check out the projects I worked on in the last years' bellow.</span></h3>
+              <h3 class="main-title"><router-link to="/about">Hy, I'm Luis.</router-link><span>Check out the projects I worked on in the last years' bellow.</span></h3>
             </div>
             <div class="home-projects">
               <div class="max-area">
@@ -341,10 +337,7 @@ export default {
     }
   },
   mounted() {
-    const scroll1 = document.body.querySelector('#square-1'),
-          scroll2 = document.body.querySelector('#square-2'),
-          scroll3 = document.body.querySelector('#square-3'),
-          title = document.body.querySelector('.main-title');
+    const title = document.body.querySelector('.main-title');
 
     let last_known_scroll_position = 0,
         ticking = false,
@@ -352,15 +345,6 @@ export default {
 
       function animate(scroll_pos) {
         title.style = `opacity: ${vh / scroll_pos}`;
-        if (window.innerWidth < 640)
-          scroll1.style = `transform: translate3d(-${scroll_pos}px, 0, 0)`;
-        else if (window.innerWidth < 1024)
-          scroll1.style = `transform: translate3d(0, -${scroll_pos}px , 0)`;
-        else
-          scroll1.style = `transform: translate3d(${scroll_pos}px, 0, 0)`;
-        
-        scroll2.style = `transform: translate3d(${scroll_pos}px, 0, 0)`;
-        scroll3.style = `transform: translate3d(-${scroll_pos}px, 0, 0)`;
       }
 
       window.addEventListener('scroll', function(e) {
