@@ -101,7 +101,7 @@ export default {
         self.has_touch =  false;
       }
 
-      window.addEventListener('DOMContentLoaded', (event) => {
+      window.addEventListener("load", function(){
         self.domLoaded = true;
       });
     },
