@@ -210,14 +210,10 @@
         width: to-em(50);
         height: to-em(50);
         color: $color-white;
-        border-radius: 100%;
-        transform: translate3D(to-em(-10), to-em(-8), 0);
+        transform: translate3D(0, to-em(-8), 0);
         background-color: $color-white;
 
         @include layout-1024() {
-            border-radius: initial;
-            border-bottom-left-radius: to-em(4);
-            border-bottom-right-radius: to-em(4);
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
         }
@@ -674,6 +670,7 @@
     display: grid;
     grid-gap: to-em($gap-640);
     max-height: to-em(104);
+    min-height: to-em(76);
     overflow: scroll;
     
     @include layout-768() {
@@ -684,15 +681,12 @@
         grid-gap: to-em($gap-1024);
     }
 
-    p {
+    p, a {
         grid-column-end: 4;
         grid-column-start: 1;
         color: $color-white;
         font-size: to-em(12);
-        line-height: to-em(16);
-        font-weight: 400;
-        letter-spacing: to-em(2);
-        text-transform: uppercase;
+        line-height: to-em(14);
         text-align: justify;
 
         @include layout-768() {
@@ -719,10 +713,7 @@
         text-decoration: underline;
         font-style: oblique;
         text-transform: lowercase;
-        font-size: to-em(16);
-        line-height: to-em(16);
         text-decoration-skip-ink: none;
-        font-weight: 300;
         cursor: pointer;
 
         &:hover {
@@ -798,7 +789,7 @@
         letter-spacing: to-em(4);
         text-transform: uppercase;
         display: block;
-        margin: 0 0 to-em(24);
+        margin: 0 0 to-em(16);
         box-sizing: border-box;
         cursor: pointer;
         width: to-em(100);
@@ -816,6 +807,7 @@
 
         @include layout-960() {
             word-spacing: to-em(16);
+            margin: 0 0 to-em(8);
         }
 
         @include layout-1024() {
@@ -828,7 +820,8 @@
         background: $color-white;
 
         &:hover {
-            background: #4bc18b;
+            color: $color-white;
+            background: rgb(0, 125, 0);
         }
     }
 
@@ -837,7 +830,7 @@
         background: #525252;
 
         &:hover {
-            background: #8e4646;
+            background: rgb(150, 0, 0);
         }
     }
 }

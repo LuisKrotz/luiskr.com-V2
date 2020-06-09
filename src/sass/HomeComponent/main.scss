@@ -12,6 +12,7 @@
         bottom: to-em(104);
         font-size: 5.63vh;
         padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
+        z-index: 1;
 
         @include layout-375() {
             padding: 0 to-em(($un-375 - $grid-max-area-375) / 2) 0 0;
@@ -25,13 +26,13 @@
             font-size: 7.04vh;
             padding: 0 to-em(($un-640 - $grid-max-area-640) / 2) 0 0;
         }
-    
+
         @include layout-768() {
+            font-size: 8.25vh;
             padding: 0 to-em(($un-768 - $grid-max-area-768) / 2) 0 0;
         }
     
         @include layout-960() {
-            font-size: 6.25vh;
             padding: 0 to-em(($un-960 - $grid-max-area-960) / 2) 0 0;
         }
     
@@ -53,7 +54,7 @@
         }
     
         @include layout-1920() {
-            font-size: 9.63vh;
+            font-size: 10.63vh;
             padding: 0 to-em(($un-1920 - $grid-max-area-1920) / 2) 0 0;
         }
 
@@ -73,7 +74,7 @@
     }
 
     .main {
-        padding-top: 100vh;
+        padding-top: 190vh;
     }
 
 
@@ -81,6 +82,7 @@
         padding: to-em(104) 0;
         position: relative;
         background-color: $color-black;
+        z-index: 1;
     }
 
     &-project {
@@ -133,15 +135,21 @@
                 transform: skewX(0) translate3D(0, 25px, 0);
                 display: block;
                 color: $color-white;
-                line-height: to-em(40);
-                font-size: to-em(40);
+                line-height: to-em(32);
+                font-size: to-em(32);
                 font-weight: 900;
                 text-transform: uppercase;
                 word-break: break-word;
                 letter-spacing: to-em(2);
-                word-spacing: to-em(40);
+                word-spacing: to-em(32);
                 min-width: 100%;
                 opacity: 0;
+
+                @include layout-375() {
+                    line-height: to-em(40);
+                    font-size: to-em(40);
+                    word-spacing: to-em(40);
+                }
 
                 @include layout-1280() {
                     margin: 0;
@@ -158,8 +166,12 @@
 
                 &.view-in {
                     transition: transform ease-in .3s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .2s;
-                    transform: skewX(-10deg) translate3D(0, 0, 0);
+                    transform: skewX(-5deg) translate3D(0, 0, 0);
                     opacity: 1;
+
+                    @include layout-768() {
+                        transform: skewX(-10deg) translate3D(0, 0, 0);
+                    }
                 }
             }
 
@@ -170,5 +182,172 @@
                 }
             }
         }
+    }
+}
+
+
+#square-1,
+#square-2,
+#square-3 {
+    transition: background-color ease-in-out 1s;
+    position: fixed;
+    top: 0;
+    width: 33.33vh;
+    height: 33.33vh;
+    min-width: 50vw;
+    min-height: 50vw;
+
+    @include layout-640() {
+        min-width: 67vh;
+        min-height: 67vh;
+
+        max-width: 75vh;
+        max-height: 75vh;
+    }
+
+    @include layout-1024() {
+        max-width: initial;
+        max-height: initial;
+        min-width: initial;
+        min-height: initial;
+        width: 30vw;
+        height: 50vh;
+    }
+}
+
+#square-1 {
+    left: 0;
+    animation: square-1 linear 8s infinite;
+    border-radius: 100%;
+
+    @include layout-640() {
+        border-radius: 0;
+        border-bottom-right-radius: 15vw;
+        border-bottom-left-radius: 15vw;
+    }
+
+    @include layout-1024() {
+        left: initial;
+        top: 0;
+        right: 15vw;
+        width: 50vw;
+        height: 50vh; 
+        z-index: 1;
+        border-bottom-right-radius: 5vw;
+        border-bottom-left-radius: 5vw;
+    }
+}
+
+#square-2 {
+    top: 33.333vh;
+    right: 0;
+    animation: square-2 linear 8s infinite;
+    border-top-left-radius: 10vw;
+    border-bottom-left-radius: 10vw;
+    height: 50vh;
+
+    @include layout-640() {
+        border-radius: 0;
+        border-top-left-radius: 10vw;
+    }
+
+    @include layout-1024() {
+        right: initial;
+        top: initial;
+        bottom: 0;
+        right: 0;
+        width: 50vw;
+        height: 65vh;
+        border-radius: 0;
+    }
+}
+
+#square-3 {
+    top: 66.666vh;
+    left: 0;
+    animation: square-3 linear 8s infinite;
+    border-top-right-radius: 10vw;
+
+    @include layout-1024() {
+        top: initial;
+        left: initial;
+        bottom: 0;
+        left: 0;
+        width: 50vw;
+        height: 75vh;
+        z-index: 1;
+    }
+}
+
+@keyframes square-1 {
+    0% {
+        background-color: #E64D76;
+    }
+    27.333% {
+        background-color: #E64D76;
+    }
+    33.333% {
+        background-color: #B3D76C;
+    }
+    60.666% {
+        background-color: #B3D76C;
+    }
+    66.666% {
+        background-color: #52BFBF;
+    }
+    94.999% {
+        background-color: #52BFBF;
+    }
+    100% {
+        background-color: #E64D76;
+    }
+}
+
+@keyframes square-2 {
+    0% {
+        background-color: #B3D76C;
+    }
+    27.333% {
+        background-color: #B3D76C;
+    }
+    33.333% {
+        background-color: #52BFBF;
+    }
+    60.666% {
+        background-color: #52BFBF;
+    }
+    66.666% {
+        background-color: #E64D76;
+    }
+    94.999% {
+        background-color: #E64D76;
+    }
+    100% {
+        background-color: #B3D76C;
+    }
+}
+
+
+@keyframes square-3 {
+    0% {
+        background-color: #52BFBF;
+    }
+    27.333% {
+        background-color: #52BFBF;
+    }
+    33.333% {
+        background-color: #E64D76;
+    }
+    60.666% {
+        background-color: #E64D76;
+    }
+    66.666% {
+        background-color: #B3D76C;
+    }
+    94.999% {
+        background-color: #B3D76C;
+    }
+    100% {
+        background-color: #52BFBF;
     }
 }

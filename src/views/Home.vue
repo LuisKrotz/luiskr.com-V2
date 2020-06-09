@@ -1,14 +1,22 @@
 <template>
   <div>
     <main class="home">
-      <article class="main max-area">
-            <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link>Check out the projects I worked on in the last years' bellow.</span></h3>
+      <article class="main ">
+            <div id="square-1"></div>
+            <div id="square-2"></div>
+            <div id="square-3"></div>
+
+            <div class="max-area">
+              <h3 class="main-title"><span><router-link to="/about">Hy, I'm Luis.</router-link>Check out the projects I worked on in the last years' bellow.</span></h3>
+            </div>
             <div class="home-projects">
+              <div class="max-area">
               <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
                     <h3 class="home-project-title"  @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
                         <span v-view>{{ post.name }}</span>
                     </h3>
               </router-link>
+              </div>
             </div>
         <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
       </article>
@@ -331,6 +339,42 @@ export default {
           }
         ]
     }
+  },
+  mounted() {
+    const scroll1 = document.body.querySelector('#square-1'),
+          scroll2 = document.body.querySelector('#square-2'),
+          scroll3 = document.body.querySelector('#square-3'),
+          title = document.body.querySelector('.main-title');
+
+    let last_known_scroll_position = 0,
+        ticking = false,
+        vh = window.innerHeight / 10;
+
+      function animate(scroll_pos) {
+        title.style = `opacity: ${vh / scroll_pos}`;
+        if (window.innerWidth < 640)
+          scroll1.style = `transform: translate3d(-${scroll_pos}px, 0, 0)`;
+        else if (window.innerWidth < 1024)
+          scroll1.style = `transform: translate3d(0, -${scroll_pos}px , 0)`;
+        else
+          scroll1.style = `transform: translate3d(${scroll_pos}px, 0, 0)`;
+        
+        scroll2.style = `transform: translate3d(${scroll_pos}px, 0, 0)`;
+        scroll3.style = `transform: translate3d(-${scroll_pos}px, 0, 0)`;
+      }
+
+      window.addEventListener('scroll', function(e) {
+        last_known_scroll_position = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            animate(last_known_scroll_position);
+            ticking = false;
+          });
+
+          ticking = true;
+        }
+      });
   },
   methods: {
     onMouseMove(e) {
