@@ -5,7 +5,7 @@
           
         </div>
         <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">Hy, I'm Luis.</router-link><span>Check out the projects I worked on in the last years' bellow.</span></h3>
+          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span>Check out the projects I've worked on in the past few years below.</span></h3>
         </div>
 
         <article class="main">
