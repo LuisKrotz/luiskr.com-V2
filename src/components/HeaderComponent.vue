@@ -74,7 +74,6 @@
                                 </span>
                             </router-link>
 
-
                             <router-link class="header-modal-link" :style="sethover" :to="array.GDPR[0]">
                                 <span class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.GDPR[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.GDPR[1] }}</span>

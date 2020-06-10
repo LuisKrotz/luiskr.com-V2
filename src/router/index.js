@@ -130,6 +130,23 @@ const routes = [
     }
   },
   {
+    path: '/license',
+    name: 'License',
+    component: () => import(/* webpackChunkName: "MIT" */ '../views/Mit'),
+    meta: {
+      title: 'luiskr.com | License',
+      metaTags: [{
+          name: 'description',
+          content: 'Hy, I\'m Luis. MIT License.'
+        },
+        {
+          property: 'og:description',
+          content: 'Hy, I\'m Luis. MIT License.'
+        }
+      ]
+    }
+  },
+  {
     path: '/projects/melissa-next-br',
     name: 'Melissa | Next',
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
