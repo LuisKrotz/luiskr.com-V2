@@ -3,11 +3,12 @@
     <main class="max-area credits">
         <article>
           <div class="about main">
-            <h2 class="main-title" v-view @click="sendAnalyticsEvent('credits_link', 'click','home', 100)"><router-link to="/">luiskr.com</router-link></h2>
+            <h2 class="main-title" v-view @click="sendAnalyticsEvent('credits_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
             <h3 class="main-subtitle" v-view><span>Credits</span></h3>
             <p class="main-text" v-view><span>Special thanks for everyone that makes the web a better place by sharing resources. In this page, are listed all imagens, and main technologies used to build this website.</span></p>
             <h3 class="main-subtitle" v-view><span>Tech</span></h3>
             <p class="main-text" v-view><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'VueJS', 50)" href="https://vuejs.org/">VUEJS</a>, for Vue being the handiest and amazing framework to build quick, reliable and easy to maintain projects. Great shout out. </span></p>
+            <p class="main-text" v-view><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Threejs', 50)" href="https://threejs.org/">Threejs</a>, awsome JS lib for 3D rendering.</span></p>
             <p class="main-text" v-view><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Google Fonts', 50)" href="https://fonts.google.com/">Google Fonts</a>, for providing with amazing typography without cost to beautify the web.</span></p>
             <p class="main-text" v-view><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Sass', 50)" href="https://sass-lang.com/">Sass</a>, for making my life a lot easier.main-text</span></p>
             <p class="main-text" v-view><span><a target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', 'Modernizr', 50)" href="https://modernizr.com/download/?-webp-setclasses">Modernizr</a>, for feature detection.</span></p>

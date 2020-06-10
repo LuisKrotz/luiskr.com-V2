@@ -363,12 +363,12 @@ export default {
         light.position.set(0, 0, 0);
         scene.add(light);
 
-        let gridHelper = new THREE.GridHelper(800, 20, 0x0000ff, 0x0000ff);
+        let gridHelper = new THREE.GridHelper(800, 30, 0x0000ff, 0x0000ff);
         gridHelper.position.y = -150;
         gridHelper.position.x = 50;
         scene.add(gridHelper);
 
-        let gridHelper2 = new THREE.GridHelper(800, 20, 0x0000ff, 0x0000ff);
+        let gridHelper2 = new THREE.GridHelper(800, 30, 0x0000ff, 0x0000ff);
         gridHelper2.position.y = 150;
         gridHelper2.position.x = 50;
         scene.add(gridHelper2);
