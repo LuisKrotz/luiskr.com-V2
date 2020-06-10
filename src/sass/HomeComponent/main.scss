@@ -113,19 +113,11 @@
                 margin: 0 0 to-em(104);
             }
 
-            @include layout-768() {
-                margin: 0 0 to-em(104);
+            @include layout-1024() {
+                margin: 0 0 to-em(64);
             }
 
             @include layout-1280() {
-                margin: 0 0 to-em(104);
-            }
-
-            @include layout-1440() {
-                margin: 0 0 to-em(104);
-            }
-
-            @include layout-1680() {
                 margin: 0 0 to-em(104);
             }
 

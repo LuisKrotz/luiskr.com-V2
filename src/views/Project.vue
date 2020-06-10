@@ -2,35 +2,37 @@
   <div>
     <main class="main">
       <article class="project home-project max-area">
-        <img v-if="post === undefined" class="project-background" :src="placeholder" alt="">
+        <transition name="fade" mode="out-in">
 
-        <picture v-else-if="post.video === undefined" :key="'bg-' + post.id">
+        <picture v-if="post !== undefined && post.video === undefined" :key="'bg-' + post.id">
           <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
           <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
           <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
         </picture>
     
-        <picture v-else :key="'bg-' + post.id">
+        <picture v-if="post !== undefined && post.video !== undefined" :key="'bg-' + post.id">
           <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
           <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
           <img class="project-background" :src="storage + post.video.src + webp" :width="post.video.width" :height="post.video.height" :alt="post.video.alt">
         </picture>
+        </transition>
 
         <h2 class="project-title" v-view v-if="translations !== undefined" @click="sendAnalyticsEvent('project_link', 'click','home', 100)"><router-link to="/" :style="'background-color: #' + random_colors[random_color]">luiskr</router-link></h2>
         <h3 class="project-subtitle" v-view v-if="post !== undefined">{{ post.project }}</h3>
 
         <div class="project-info">
-          <img v-if="post === undefined" class="project-media" :src="placeholder" alt="">
-          <picture v-else-if="post.video === undefined" :key="'media-' + post.id">
+          <transition name="fade" mode="out-in">
+          <picture v-if="post !== undefined && post.video === undefined" :key="'media-' + post.id">
               <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
               <img v-view :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
           </picture>
-          <video v-else v-view :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
+          <video v-if="post !== undefined && post.video !== undefined" v-view :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
             <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
             <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
             <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
           </video>
+          </transition>
 
           <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
             <div class="project-info-description">

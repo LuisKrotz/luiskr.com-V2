@@ -80,6 +80,30 @@
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/time-coffee-break-6NlmBQLhWy2QM">https://giphy.com/gifs/time-coffee-break-6NlmBQLhWy2QM</a>
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/3jVT4U5bilspG">https://giphy.com/gifs/3jVT4U5bilspG</a>
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/nasa-nasareactions-Js7cqIkpxFy0bILFFA">https://giphy.com/gifs/nasa-nasareactions-Js7cqIkpxFy0bILFFA</a>
+          
+          
+          
+          
+          https://giphy.com/gifs/gustavo-art-computer-kidmograph-wT8eGTmeEAt3O
+          https://giphy.com/gifs/gustavo-glitch-art-TNqMlgTuv5jJ6
+          https://giphy.com/gifs/glitch-psychedelic-woman-DCKzbW6NzzzB6
+          https://giphy.com/gifs/weinventyou-animation-animated-gif-shark-BYAGQNSnDALII
+          https://giphy.com/gifs/gustavo-kidmograph-art-OYAdk7zDIeR68
+          https://giphy.com/gifs/glitch-art-vaporwave-XIo2a5RXdSKZ2
+          https://giphy.com/gifs/news-water-26xBE8Z6vM5GArA8o
+          https://giphy.com/gifs/gustavo-kidmograph-N3ntHzr0U2bK0
+          https://giphy.com/gifs/gustavo-art-sleep-human-yn0183ArK54NW
+          https://giphy.com/gifs/gustavo-glitch-space-kidmograph-bpq2z34qABxSg
+          https://giphy.com/gifs/gustavo-glitch-c4d-kidmograph-m0I3oxp0ukfEk
+          https://giphy.com/gifs/glitch-art-mograph-pixel-sorting-3o85xvmFjCdoFmjMti
+          https://giphy.com/gifs/art-motionart-solarw-w8fYZwYCgXJFlzOKH0
+          https://giphy.com/gifs/computer-installation-solarw-8cH2KZunJA2P4j80YE
+          https://giphy.com/gifs/collage-solarw-efremov-4YWtuRRKZxDfW9C7ed
+          https://giphy.com/gifs/art-woman-collage-lfep3p9CtrcrIEVM7V
+          https://giphy.com/gifs/art-glitch-internet-3D5ugwHDwIJbNRmOWL
+          https://giphy.com/gifs/mask-filtorial-faceeffect-fV1lYsnVmCgi57iRBC
+          https://giphy.com/gifs/glitch-statue-morphing-vy0bQ0ff8qXJxDPpM0
+          
           </div>
       </article>
     </main>
