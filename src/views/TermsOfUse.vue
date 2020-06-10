@@ -6,7 +6,7 @@
             <h2 class="main-title" v-view @click="sendAnalyticsEvent('terms_of_use_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
 
             <h3 class="main-subtitle" v-view>Terms of Use</h3>
-            <p class="main-text" v-view >The luiskr website located at <router-link to="/">luiskr.com</router-link> is copyrighted under <router-link to="/license">MIT LICENSE</router-link> originally created by Luis Krötz. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
+            <p class="main-text" v-view >The luiskr website located at <router-link to="/">luiskr.com</router-link> is under <router-link to="/license">MIT LICENSE</router-link>.<router-link to="/">Luiskr.com</router-link> is originally created by Luis Krötz, certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
             <h3 class="main-subtitle" v-view>Version 1.0</h3>
              <p class="main-text" v-view >
               <video v-view loading="lazy" :poster="storage + 'giphy' + webp2" playsinline autoplay muted loop width="480" height="264">
@@ -91,7 +91,9 @@
             </video>
             </p>
             <h3 class="main-subtitle" v-view>Contact Information</h3>
-            <router-link class="main-text" to="/license">MIT LICENSE</router-link>
+            <p class="main-text" v-view >
+              <router-link to="/license">MIT LICENSE</router-link>
+            </p>
             <p class="main-text" v-view >Email: <a @click="sendAnalyticsEvent('terms_of_use_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
         </div>
       </article>
