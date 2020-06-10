@@ -787,6 +787,7 @@
 
     .accept,
     .refuse {
+        transition: color cubic-bezier(0.4, 0, 1, 1) .25s, background-color cubic-bezier(0.4, 0, 1, 1) .3s;
         background: transparent;
         border: none;
         font: 300 to-em(12) "Work Sans", sans-serif;
@@ -824,14 +825,14 @@
         background: $color-white;
 
         &:hover {
-            color: $color-black;
-            background: $color-1;
+            color: $color-white;
+            background: $color-2;
         }
     }
 
     .refuse {
         color: $color-white;
-        background: #525252;
+        background: rgb(100, 0, 0);
 
         &:hover {
             background: $color-2;
