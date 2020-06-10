@@ -213,9 +213,11 @@
         transform: translate3D(0, to-em(-8), 0);
         background-color: $color-white;
         border: 1px solid rgba(0,0,0, .015);
-        margin-top: -1px;
+        border-radius: 100%;
 
         @include layout-1024() {
+            border-radius: 0;
+            margin-top: -1px;
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
         }

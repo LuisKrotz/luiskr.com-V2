@@ -107,7 +107,7 @@
 
         .home & {
             overflow: visible;
-            margin: 0 0 to-em(104);
+            margin: 0 0 to-em(64);
 
             @include layout-640() {
                 margin: 0 0 to-em(104);
