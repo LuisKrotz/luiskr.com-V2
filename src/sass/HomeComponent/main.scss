@@ -3,7 +3,7 @@
     background: $main-bg;
 
     .main-title {
-        transition: transform ease-out 1s;
+        transition: transform ease-out 1s, opacity ease-in-out .5s;
         text-align: justify;
         text-transform: uppercase;
         font-weight: 900;
@@ -12,7 +12,7 @@
         font-size: 5.63vh;
         line-height: 6.63vh;
         padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
-        z-index: 1;
+        opacity: 1;
 
         @include layout-375() {
             padding: 0 to-em(($un-375 - $grid-max-area-375) / 2) 0 0;
@@ -77,6 +77,10 @@
             transform: translateY(-104px);
         }
 
+        .header-open & {
+            opacity: 0;
+        }
+
         span, a {
             color: $color-white;
             font-weight:900;
@@ -84,7 +88,8 @@
     }
 
     .main {
-        padding-top: 150vh;
+        padding-top: 110vh;
+        overflow: hidden;
     }
 
 

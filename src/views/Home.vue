@@ -1,10 +1,14 @@
 <template>
   <div>
     <main class="home">
-      <article class="main ">
-            <div class="max-area">
-              <h3 class="main-title"><router-link to="/about">Hy, I'm Luis.</router-link><span>Check out the projects I worked on in the last years' bellow.</span></h3>
-            </div>
+        <div id="appendCanvas">
+          
+        </div>
+        <div class="max-area">
+          <h3 class="main-title"><router-link to="/about">Hy, I'm Luis.</router-link><span>Check out the projects I worked on in the last years' bellow.</span></h3>
+        </div>
+
+        <article class="main">
             <div class="home-projects">
               <div class="max-area">
               <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
@@ -14,8 +18,8 @@
               </router-link>
               </div>
             </div>
-        <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
-      </article>
+            <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
+        </article>
     </main>
   </div>
 </template>
@@ -23,6 +27,7 @@
 <script>
 import Vue from 'vue'
 import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+import * as THREE from '../js/three.module';
 
 Vue.use(checkView);
 
@@ -337,28 +342,63 @@ export default {
     }
   },
   mounted() {
-    const title = document.body.querySelector('.main-title');
+    let scene, renderer, camera, light, vnh, vth, self = this;
 
-    let last_known_scroll_position = 0,
-        ticking = false,
-        vh = window.innerHeight / 10;
+    init();
+    animate();
 
-      function animate(scroll_pos) {
-        title.style = `opacity: ${vh / scroll_pos}`;
-      }
+    function init() {
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
-      window.addEventListener('scroll', function(e) {
-        last_known_scroll_position = window.scrollY;
+        document.body.querySelector('#appendCanvas').appendChild(renderer.domElement);
 
-        if (!ticking) {
-          window.requestAnimationFrame(function() {
-            animate(last_known_scroll_position);
-            ticking = false;
-          });
+        camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 400;
 
-          ticking = true;
-        }
-      });
+        scene = new THREE.Scene();
+
+        light = new THREE.PointLight();
+        light.position.set(0, 0, 0);
+        scene.add(light);
+
+        let gridHelper = new THREE.GridHelper(800, 20, 0x0000ff, 0x0000ff);
+        gridHelper.position.y = -150;
+        gridHelper.position.x = 50;
+        scene.add(gridHelper);
+
+        let gridHelper2 = new THREE.GridHelper(800, 20, 0x0000ff, 0x0000ff);
+        gridHelper2.position.y = 150;
+        gridHelper2.position.x = 50;
+        scene.add(gridHelper2);
+      
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+        let time = - performance.now() * 0.0003;
+
+        camera.position.x = 400 * Math.cos(time);
+        camera.position.z = 400 * Math.sin(time);
+        camera.lookAt(scene.position);
+
+        light.position.x = Math.sin(time * 1.7) * 300;
+        light.position.y = Math.cos(time * 1.5) * 400;
+        light.position.z = Math.cos(time * 1.3) * 300;
+
+        if (vnh) vnh.update();
+        if (vth) vth.update();
+
+        renderer.render(scene, camera);
+    }
   },
   methods: {
     onMouseMove(e) {
@@ -388,3 +428,9 @@ export default {
 }
 </script>
 
+
+<style>
+  canvas {
+    position: fixed; top: 0; left: 0;
+  }
+</style>

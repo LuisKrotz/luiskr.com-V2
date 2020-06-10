@@ -200,7 +200,7 @@ export default {
                 document.body.classList.remove("header-open");
 
                 window.scrollTo(0, this.remember);
-                document.querySelector("main").style = '';
+                document.querySelector(".main").style = '';
 
                 this.open = false;
             },
@@ -214,7 +214,7 @@ export default {
                     window.scrollTo(0, 0);
                     this.clear();
 
-                    document.querySelector("main").style = `transform: translateY(-${this.remember}px`;
+                    document.querySelector(".main").style = `transform: translateY(-${this.remember}px`;
                     document.body.classList.add("header-open");
                     this.open = true;
                     this.sendAnalyticsEvent('modal', 'click', 'close', 50);
