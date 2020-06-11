@@ -282,7 +282,7 @@
                 grid-gap: to-em(104);
             }
 
-            @include layout-1440() {
+            @include layout-1560() {
                 grid-gap: to-em(64);
                 grid-template-columns: repeat(2, auto);
             }
@@ -331,10 +331,10 @@
                 padding: 0 to-em(16);
                 text-transform: uppercase;
                 display: inline-block;
-                font-weight: 300;
+                font-weight: 900;
                 font-size: to-em(24);
                 line-height: to-em(40);
-                letter-spacing: to-em(14);
+                letter-spacing: to-em(10);
                 text-decoration: none;
                 color: $color-white;
                 text-decoration-skip-ink: none;
@@ -346,25 +346,39 @@
                     letter-spacing: to-em(16);
                 }
 
+                @include layout-414() {
+                    font-size: to-em(32);
+                }
+
                 @include layout-640() {
-                    font-weight: 200;
                     font-size: to-em(40);
                     line-height: to-em(64);
-                    letter-spacing: to-em(32);
+                    letter-spacing: to-em(24);
                 }
 
                 @include layout-768() {
                     font-size: to-em(64);
                     line-height: to-em(104);
+                    letter-spacing: to-em(32);
+                }
+
+                @include layout-960() {
                     letter-spacing: to-em(40);
                 }
 
-                @include layout-1440() {
+                @include layout-1280() {
                     letter-spacing: to-em(24);
                 }
 
-                @include layout-1680() {
-                    letter-spacing: to-em(32);
+                @include layout-1440() {
+                    font-size: to-em(104);
+                    line-height: to-em(168);
+                }
+
+                @include layout-1560() {
+                    font-size: to-em(64);
+                    line-height: to-em(104);
+                    letter-spacing: to-em(24);
                 }
 
                 &:hover {
