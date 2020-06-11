@@ -1,9 +1,7 @@
 <template>
   <div>
     <main class="home">
-        <div id="appendCanvas">
-          
-        </div>
+        <div id="appendCanvas"></div>
         <div class="max-area">
           <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span>Check out the projects I've worked on in the past few years below.</span></h3>
         </div>

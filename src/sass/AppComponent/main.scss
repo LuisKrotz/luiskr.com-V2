@@ -325,11 +325,11 @@
             }
 
             &-title {
-                transition: border ease-in .3s;
+                transition: box-shadow ease-in-out .3s, color ease-in-out .3s;
                 box-sizing: border-box;
-                border: 1px solid rgba(255, 255, 255, 1);
-                padding: 0 16px;
-                text-transform: lowercase;
+                box-shadow: -1px -1px 2px 0 rgba(255,255,255, 0.025), 1px 1px 2px 0 rgba(255,255,255, 0.1);
+                padding: 0 to-em(16);
+                text-transform: uppercase;
                 display: inline-block;
                 font-weight: 300;
                 font-size: to-em(24);
@@ -368,7 +368,8 @@
                 }
 
                 &:hover {
-                    border: 1px solid rgba(255, 255, 255, .25);
+                    box-shadow: -1px -1px 2px 0 rgba(255,255,255, 0.015), 1px 1px 2px 0 rgba(255,255,255, 0.05);
+                    color: rgba(255, 255, 255, .8);
                 }
             }
         }
@@ -561,7 +562,7 @@
     background: none;
     top: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     visibility: hidden;
     opacity: 0;
     background-color: rgba(255, 255, 255, .25);
@@ -576,6 +577,7 @@
     object-position: center center;
 
     .home & {
+        position: absolute;
         background-color: rgba(0, 0, 0, .25);
         padding: to-em(8);
         object-fit: contain;
