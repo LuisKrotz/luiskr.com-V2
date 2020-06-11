@@ -1,7 +1,7 @@
 <template>
   <div>
     <main class="main">
-      <article class="project home-project max-area">
+      <article :class="'project home-project max-area ' + (loaded ? 'loaded' : '')">
         <transition name="fade" mode="out-in">
 
         <picture v-if="post !== undefined && post.video === undefined" :key="'bg-' + post.id">
@@ -25,9 +25,9 @@
           <picture v-if="post !== undefined && post.video === undefined" :key="'media-' + post.id">
               <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-              <img v-view :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
+              <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
           </picture>
-          <video v-if="post !== undefined && post.video !== undefined" v-view :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
+          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
             <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
             <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
             <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
@@ -135,10 +135,11 @@ export default {
       origin: this.$parent.origin,
       translations: this.$parent.projects,
       post: undefined,
-      random: Math.round(Math.random() * 4),
+      random: Math.round(Math.random() * 4) + 1,
       next: undefined,
       prev: undefined,
       total: Number,
+      loaded: false,
       random_color: Math.round(Math.random() * 18) - 1,
       random_colors: [
         '3f3fec', '2929e2', '1a1a48', '55daad', '38886d', '38886d',
@@ -169,6 +170,7 @@ export default {
       let self = this;
 
       document.body.classList.add("getting");
+      self.loaded = false;
 
       fetch(`${self.origin}/projects/${self.data_id}.json`)
         .then((response) => {
@@ -187,7 +189,7 @@ export default {
           document.title = title;
           window.history.replaceState({ page: path }, title, path);
 
-        fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
+          fetch(`${self.origin}/projects/${self.total === Number(self.data_id) ? 1 : Number(self.data_id) + 1}.json`)
             .then((response) => {
               return response.json();
             }).then((data) => {
@@ -199,6 +201,7 @@ export default {
               return response.json();
             }).then((data) => {
               self.prev = data;
+              self.loaded = true;
             });
 
           document.body.classList.remove("getting");

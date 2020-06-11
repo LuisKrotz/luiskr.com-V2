@@ -248,15 +248,23 @@
     }
 }
 
-
-
 .project-title,
 .project-subtitle,
-.project-media,
 .project-info-link,
 .project-info-role,
 .project-info-more,
 .project-info-credit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.loaded .project-title,
+.loaded .project-subtitle,
+.loaded .project-info-link,
+.loaded .project-info-role,
+.loaded .project-info-more,
+.loaded .project-info-credit {
     transition: opacity ease-in .3s, transform ease-in-out .3s;
     opacity: 0;
     transform: scale(.95);
