@@ -181,7 +181,8 @@
                 object-fit: cover;
                 object-position: center center;
 
-                &.view-in {
+                &.view-in,
+                &.view-out--above {
                     opacity: 1;
                 }
             }
@@ -231,7 +232,8 @@
                 opacity: 0;
                 transform: scale(0.95);
 
-                &:hover.view-in {
+                &:hover.view-in,
+                &:hover.view-out--above {
                     transform: scale(0.95);
                 }
 
@@ -239,7 +241,8 @@
                     width: to-em(168);
                 }
 
-                &.view-in {
+                &.view-in,
+                &.view-out--above {
                     opacity: 1;
                     transform: scale(1);
                 }
@@ -269,7 +272,8 @@
     opacity: 0;
     transform: scale(.95);
 
-    &.view-in {
+    &.view-in,
+    &.view-out--above {
         opacity: 1;
         transform: scale(1);
     }
