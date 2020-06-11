@@ -95,7 +95,7 @@
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
         <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
-          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
+          <span class="footer-link-icon" @click.prevent="nextprev(prev.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
