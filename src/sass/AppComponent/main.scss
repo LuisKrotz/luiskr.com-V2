@@ -301,44 +301,74 @@
             display: block;
             transform: translate3D(0, to-em(104), 0);
             transition: transform 1.5s ease-in-out;
+            margin: to-em(16) 0;
+
+            @include layout-375() {
+                margin: to-em(32) 0;
+            }
+
+            @include layout-640() {
+                margin: to-em(24) 0;
+            }
+
+            @include layout-960() {
+                margin: to-em(64) 0;
+            }
+
+            @include layout-1440() {
+                margin: to-em(40) 0;
+            }
+
 
             .header-open & {
                 transform: none;
             }
 
             &-title {
+                transition: border ease-in .3s;
+                box-sizing: border-box;
+                border: 1px solid rgba(255, 255, 255, 1);
+                padding: 0 16px;
                 text-transform: lowercase;
                 display: inline-block;
                 font-weight: 300;
-                font-size: to-em(32);
-                line-height: to-em(64);
-                letter-spacing: to-em(16);
-                text-decoration: underline;
-                text-decoration-color: rgba(255, 255, 255, .05);
+                font-size: to-em(24);
+                line-height: to-em(40);
+                letter-spacing: to-em(14);
+                text-decoration: none;
                 color: $color-white;
                 text-decoration-skip-ink: none;
                 overflow-y: scroll;
                 position: relative;
 
                 @include layout-375() {
-                    font-size: to-em(40);
+                    font-size: to-em(24);
                     letter-spacing: to-em(16);
-                }
-
-                @include layout-414() {
-                    letter-spacing: to-em(24);
-                    line-height: to-em(104);
                 }
 
                 @include layout-640() {
                     font-weight: 200;
+                    font-size: to-em(40);
+                    line-height: to-em(64);
+                    letter-spacing: to-em(32);
+                }
+
+                @include layout-768() {
                     font-size: to-em(64);
                     line-height: to-em(104);
                     letter-spacing: to-em(40);
                 }
 
+                @include layout-1440() {
+                    letter-spacing: to-em(24);
+                }
+
+                @include layout-1680() {
+                    letter-spacing: to-em(32);
+                }
+
                 &:hover {
-                    text-decoration: wavy;
+                    border: 1px solid rgba(255, 255, 255, .25);
                 }
             }
         }
@@ -539,13 +569,15 @@
     border-top-left-radius: 0;
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
-    padding: to-em(8);
+    
     width: to-em(80);
     height: to-em(80);
     object-fit: cover;
     object-position: center center;
 
     .home & {
+        background-color: rgba(0, 0, 0, .25);
+        padding: to-em(8);
         object-fit: contain;
         border-radius: 50%;
     }
