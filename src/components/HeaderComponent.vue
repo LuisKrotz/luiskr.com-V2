@@ -148,7 +148,7 @@ export default {
                         "Instagram"
                     ],
                     "linkedin": [
-                        "https://www.instagram.com/j_luiskrotz",
+                        "https://www.linkedin.com/in/luis-kr%C3%B6tz/",
                         "linkedin"
                     ],
                     "github": [
