@@ -24,9 +24,7 @@
             This site uses third-party cookies from Google Analytics and Facebook Pixel to track page visits and events.
             <router-link to="/?show-recors=true">Click here to reload this page</router-link> and open your browser's console to see the ANONYMOUS data sent to Google and Pixel Analytics.
             Get more info about data, cookies and terms of use at <router-link to="/GDPR">GDPR</router-link>, <router-link to="/terms-of-use">Terms of Use</router-link>, and <router-link to="/privacy-policy">Privacy policy</router-link> of this website.
-            This page don't send pageviews and events without consent and don't store any visitor's data.
-            All session data is stored locally on your own browser, by the use of the local storage API.
-            The consent can be revoked by cleaning your browser's locally stored data.
+            This page doesn't send pageviews and events without consent and doesn't store any visitor's data. All session data is stored locally on your own browser, by the use of the local storage API. The consent can be revoked by clearing your browser's locally stored data.
           </p>
           <div class="second-column">
             <div class="second-column-fixed">
