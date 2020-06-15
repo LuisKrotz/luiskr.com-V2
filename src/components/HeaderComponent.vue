@@ -15,7 +15,7 @@
 
             <transition name="menu-open">
                 <div class="header-modal" v-show="open">
-                    <nav class="max-area">
+                    <div class="max-area">
                         <div>
                             <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.home[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
                                 <router-link class="header-modal-link" :style="sethover" :to="array.home[0]">
@@ -96,7 +96,7 @@
                                 </router-link>
                             </h4>
                         </div>
-                    </nav>
+                    </div>
                 </div>
             </transition>
         </header>

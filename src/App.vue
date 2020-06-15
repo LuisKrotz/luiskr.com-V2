@@ -79,8 +79,25 @@ export default {
                 "handrawn man juggling an arrow "
             ],
             "contribuition":    "My Contribuition:",
-            "description":      "Description:",
-            "total":            73
+            "description":      "Description:"
+        },
+        awards: {
+          "next":             "next: ",
+          "prev":             "previous: ",
+          "checkit":          "Check out this award",
+          "title":            "Awards",
+          "animation_title":  "Animation by Giphy.com, credits on luiskr.com/credits",
+          "animation_alt": [
+              "GIPHY.com animation of ",
+              "representing the mouse cursor, more info at: luiskr.com/credits"
+          ],
+          "animation":[
+              "hands touching in pink background",
+              "hands touching in universe background",
+              "cat trying to get mouse pointer on computer",
+              "3d face o looking to poiner",
+              "handrawn man juggling an arrow "
+          ],
         }
       }
     },

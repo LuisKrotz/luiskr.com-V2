@@ -159,11 +159,11 @@ const routes = [
       total: total_aw,
       metaTags: [{
           name: 'description',
-          content: 'Hy, I\'m Luis. Check out my Kudos award at CSS Design Awards on June 2020'
+          content: 'CSSDA / SPECIAL KUDOS AWARD'
         },
         {
           property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my Kudos award at CSS Design Awards on June 2020 '
+          content: 'CSSDA / SPECIAL KUDOS AWARD'
         }
       ]
     }
@@ -178,30 +178,11 @@ const routes = [
       total: total_aw,
       metaTags: [{
           name: 'description',
-          content: 'Hy, I\'m Luis. Check out my Innovation Award at CSS Design Awards on June 2020'
+          content: 'CSSDA / INNOVATION DESIGN AWARD'
         },
         {
           property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my Innovation Award CSS Design Awards on June 2020 '
-        }
-      ]
-    }
-  },
-  {
-    path: '/awards/cssda-ui-06-2020',
-    name: 'cssda-ui-06-2020',
-    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
-    meta: {
-      title: 'luiskr.com | Awards',
-      id: 2,
-      total: total_aw,
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out my UI award at CSS Design Awards on June 2020'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my UI award at CSS Design Awards on June 2020 '
+          content: 'CSSDA / INNOVATION DESIGN AWARD'
         }
       ]
     }
@@ -212,15 +193,34 @@ const routes = [
     component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
     meta: {
       title: 'luiskr.com | Awards',
+      id: 2,
+      total: total_aw,
+      metaTags: [{
+          name: 'description',
+          content: 'CSSDA / UX DESIGN AWARD'
+        },
+        {
+          property: 'og:description',
+          content: 'CSSDA / UX DESIGN AWARD '
+        }
+      ]
+    }
+  },
+  {
+    path: '/awards/cssda-ui-06-2020',
+    name: 'cssda-ui-06-2020',
+    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
+    meta: {
+      title: 'luiskr.com | Awards',
       id: 1,
       total: total_aw,
       metaTags: [{
           name: 'description',
-          content: 'Hy, I\'m Luis. Check out my UX award at CSS Design Awards on June 2020'
+          content: 'CSSDA / UI DESIGN AWARD'
         },
         {
           property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my UX award at CSS Design Awards on June 2020 '
+          content: 'CSSDA / UI DESIGN AWARD '
         }
       ]
     }

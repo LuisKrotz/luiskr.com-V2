@@ -1,12 +1,13 @@
 {
     "id": "1",
     "path": "/awards/cssda-ui-06-2020",
-    "awards": "CSS Design Awards / UI Design Award",
+    "award": "CSSDA / UI DESIGN AWARD",
     "date": "June 14th 2020",
     "img": {
         "width": "1654",
         "height": "2339",
-        "alt": "CSS Design Awards / UI Design Award",
+        "alt": "CSSDA / UI DESIGN AWARD",
+        "longdesc": "Awarded to: Jacson Luis Krötz - UI (User Interface) DESIGN AWARD - on 2020. JUN 14 Luiskr - Proudly awarded by the CSS DESIGN AWARDS COMMUNITY - OFFICIAL CSSDA CERTIFICATE OF EXCELLENCE",
         "src": "awards/cssda-ui-Luiskr-1.svg"
     },
     "link": "https://www.cssdesignawards.com/sites/luiskr/37252"

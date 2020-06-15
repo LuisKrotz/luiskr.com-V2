@@ -1,18 +1,19 @@
 <template>
   <div>
+    <transition name="fade" mode="out-in">
+      <img v-if="post !== undefined" class="award-background" aria-hidden="true"
+        :src="storage + post.img.src" 
+        :width="post.img.width"
+        :height="post.img.height"
+        :alt="post.img.alt"
+        :longdesc="post.img.longdesc"
+        :key="'bg-' + post.id">
+    </transition>
+
     <main class="main">
       <article :class="'award max-area ' + (loaded ? 'loaded' : '')">
-        <transition name="fade" mode="out-in">
-          <img v-if="post !== undefined" class="award-background"
-            :src="storage + post.img.src" 
-            :width="post.img.width"
-            :height="post.img.height"
-            :alt="post.img.alt"
-            :key="'bg-' + post.id">
-        </transition>
-
         <h2 class="award-title" v-view v-if="translations !== undefined" @click="sendAnalyticsEvent('awards_link', 'click','home', 100)"><router-link to="/" style="background-color: rgba(0,0,0, .5)">luiskr</router-link></h2>
-        <h3 class="award-subtitle" v-view>Awards</h3>
+        <h3 class="award-subtitle" v-view>{{ translations.title }}</h3>
 
         <div class="award-info">
           <transition name="fade" mode="out-in">
@@ -21,15 +22,17 @@
                 :width="post.img.width"
                 :height="post.img.height"
                 :alt="post.img.alt"
+                :longdesc="post.img.longdesc"
                 :key="'media-' + post.id">
           </transition>
 
           <div class="award-info-content" v-if="translations !== undefined && post !== undefined">
             <div class="award-info-description">
               <a class="award-info-link" v-view :href="post.link">
-                <h4 class="award-info-link-title">{{ post.awards }}</h4>
+                <h4 class="award-info-link-title">{{ post.award }}</h4>
               </a>
-              <h5 class="award-info-role" v-view>{{ post.date }}</h5>
+              <p class="hdn">{{ post.img.longdesc }}</p>
+              <h4 class="award-info-role" v-view>{{ post.date }}</h4>
             </div>
 
             <a class="award-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('awards_link', 'click', translations.checkit, 25)">
@@ -87,7 +90,7 @@ export default {
       webp2: this.$parent.webp2,
       placeholder: this.$parent.placeholder,
       origin: this.$parent.origin,
-      translations: this.$parent.projects,
+      translations: this.$parent.awards,
       post: undefined,
       random: Math.round(Math.random() * 4) + 1,
       next: undefined,

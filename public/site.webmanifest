@@ -1,6 +1,7 @@
 {
     "name": "luiskr.com",
     "short_name": "luiskr.com",
+    "start_url": "/",
     "icons": [
         {
             "src": "./android-chrome-96x96.png",

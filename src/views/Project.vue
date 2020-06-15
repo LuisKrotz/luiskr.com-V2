@@ -1,22 +1,21 @@
 <template>
   <div>
+    <transition name="fade" mode="out-in">
+      <picture v-if="post !== undefined && post.video === undefined" :key="'bg-' + post.id">
+        <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+        <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+        <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
+      </picture>
+  
+      <picture v-if="post !== undefined && post.video !== undefined" :key="'bg-' + post.id">
+        <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
+        <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
+        <img class="project-background" :src="storage + post.video.src + webp" :width="post.video.width" :height="post.video.height" :alt="post.video.alt">
+      </picture>
+    </transition>
+
     <main class="main">
       <article :class="'project home-project max-area ' + (loaded ? 'loaded' : '')">
-        <transition name="fade" mode="out-in">
-
-        <picture v-if="post !== undefined && post.video === undefined" :key="'bg-' + post.id">
-          <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-          <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-          <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
-        </picture>
-    
-        <picture v-if="post !== undefined && post.video !== undefined" :key="'bg-' + post.id">
-          <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
-          <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
-          <img class="project-background" :src="storage + post.video.src + webp" :width="post.video.width" :height="post.video.height" :alt="post.video.alt">
-        </picture>
-        </transition>
-
         <h2 class="project-title" v-view v-if="translations !== undefined" @click="sendAnalyticsEvent('project_link', 'click','home', 100)"><router-link to="/" :style="'background-color: #' + random_colors[random_color]">luiskr</router-link></h2>
         <h3 class="project-subtitle" v-view v-if="post !== undefined">{{ post.project }}</h3>
 
