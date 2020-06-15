@@ -395,7 +395,7 @@
     align-items: center;
     position: fixed;
     width: 100vw;
-    bottom: 0;
+    bottom: -1px;
     height: to-em(82);
     background-color: $color-black;
 

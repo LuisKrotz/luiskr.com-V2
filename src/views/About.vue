@@ -55,9 +55,11 @@
               </video>
             </p>
 
-            <h3 class="main-subtitle" v-view>Awards</h3>
+            <h3 class="main-subtitle" v-view>Recognitions</h3>
             <p class="main-text" v-view>At the College, I was awarded the prize of being placed between the <a @click="sendAnalyticsEvent('about_link', 'click', '40 melhores', 100)" href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
-            <p class="main-text" v-view>Recently I submitted the version 1.0 of this website to AWWWARDS and got a nomination.</p>
+            <p class="main-text" v-view>On February 2020, I submitted the old alpha version of this website using Google's AMP, to <a href="https://www.awwwards.com/sites/luis-krotz-portofio" target="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v1', 50)">AWWWARDS</a> and got a nomination, with the experience and reviews, I started working on the real deal.</p>
+            <p class="main-text" v-view>So, I submited the current version, of this website to <a href="https://www.cssdesignawards.com/sites/luiskr/37252" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'css design awards', 100)">CSS Design Awards</a> and got the <router-link to="/awards/cssda-ui-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UI', 100)">UI</span></router-link>, <router-link to="/awards/cssda-ux-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UX', 100)">UX</span></router-link>, <router-link to="/awards/cssda-inn-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda INN', 100)">INN</span></router-link> and the <router-link to="/awards/cssda-kudos-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda Kudos', 100)">Special Kudos</span></router-link> Awards.</p>
+            <p class="main-text" v-view>Also, got nominations of the current version of this website at <a href="https://www.awwwards.com/sites/luiskr" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v2', 100)">AWWWARDS</a> and <a href="https://www.cssawardss.com/site/luiskr" @click="sendAnalyticsEvent('about_link', 'click', 'css awards showcase', 100)">CSS Awards Showcase</a>.</p>
 
             <h3 class="main-subtitle" v-view>Contact Information</h3>
             <p class="main-text" v-view>Email: <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>

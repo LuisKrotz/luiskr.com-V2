@@ -1,6 +1,7 @@
 
 
-.project {
+.project,
+.award {
     width: 100vw;
 
     @include layout-1024() {

@@ -29,6 +29,12 @@
                                 </router-link>
                             </h4>
 
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.awards[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
+                                <router-link class="header-modal-link" :style="sethover" :to="array.awards[0]">
+                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.awards[1] }}</span>
+                                </router-link>
+                            </h4>
+
                             <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.productions[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
                                 <router-link class="header-modal-link" :style="sethover" :to="array.productions[0]">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.productions[1] }}</span>
@@ -118,6 +124,10 @@ export default {
                     "about": [
                         "/about",
                         "About"
+                    ],
+                    "awards": [
+                        "/awards/cssda-kudos-06-2020",
+                        "awards"
                     ],
                     "productions": [
                         "/productions",

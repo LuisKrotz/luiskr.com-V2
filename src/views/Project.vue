@@ -94,8 +94,8 @@
     </main>
     <footer class="footer has-media" v-if="translations !== undefined">
       <div class="max-area">
-        <a class="footer-link left" :href="prev.path" v-if="prev !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + prev.project, 100)">
-          <span class="footer-link-icon" @click.prevent="nextprev(prev.id)">
+        <a class="footer-link left" :href="next.path" v-if="next !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.prev + ': ' + next.project, 100)">
+          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
@@ -103,8 +103,8 @@
           <p class="hdn">{{ translations.prev }}</p>
         </a>
 
-        <a class="footer-link right" :href="next.path" v-if="next !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + next.project, 100)">
-          <span class="footer-link-icon" @click.prevent="nextprev(next.id)">
+        <a class="footer-link right" :href="prev.path" v-if="prev !== undefined" @click.prevent="sendAnalyticsEvent('project_link', 'click', translations.next + ': ' + prev.project, 100)">
+          <span class="footer-link-icon" @click.prevent="nextprev(prev.id)">
             <span class="footer-link-arrow top"></span>
             <span class="footer-link-arrow middle"></span>
             <span class="footer-link-arrow bottom"></span>
@@ -126,8 +126,6 @@ export default {
   name: 'Project',
   data() {
     return {
-      ilink: '',
-      itoggle: false,
       storage: this.$parent.storage,
       webp: this.$parent.webp,
       webp2: this.$parent.webp2,
@@ -140,6 +138,7 @@ export default {
       prev: undefined,
       total: Number,
       loaded: false,
+      last: false,
       random_color: Math.round(Math.random() * 18) - 1,
       random_colors: [
         '3f3fec', '2929e2', '1a1a48', '55daad', '38886d', '38886d',
@@ -179,10 +178,6 @@ export default {
           let last, title, path;
 
           self.post = data;
-          self.ilink = self.post.link;
-
-          last = self.post.last;
-          self.last = Boolean(last !== undefined ? last : false);
 
           title = `luiskr.com | ${self.post.project}`;
           path = self.origin + self.post.path;
@@ -196,7 +191,7 @@ export default {
               self.next = data;
             });
 
-          fetch(`${self.origin}/projects/${self.data_id === 1 ? self.total : Number(self.data_id) -1 }.json`)
+          fetch(`${self.origin}/projects/${Number(self.data_id) === 1 ? self.total : Number(self.data_id) - 1 }.json`)
             .then((response) => {
               return response.json();
             }).then((data) => {

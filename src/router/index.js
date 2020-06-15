@@ -6,6 +6,8 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
 const total = 73;
+const total_aw = 4;
+
 const routes = [
   {
     path: '/',
@@ -142,6 +144,83 @@ const routes = [
         {
           property: 'og:description',
           content: 'Hy, I\'m Luis. MIT License.'
+        }
+      ]
+    }
+  },
+  {
+    path: '/awards/cssda-kudos-06-2020',
+    name: 'cssda-kudos-06-2020',
+    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
+    meta: {
+      title: 'luiskr.com | Awards',
+      last: true,
+      id: 4,
+      total: total_aw,
+      metaTags: [{
+          name: 'description',
+          content: 'Hy, I\'m Luis. Check out my Kudos award at CSS Design Awards on June 2020'
+        },
+        {
+          property: 'og:description',
+          content: 'Hy, I\'m Luis. Check out my Kudos award at CSS Design Awards on June 2020 '
+        }
+      ]
+    }
+  },
+  {
+    path: '/awards/cssda-inn-06-2020',
+    name: 'cssda-inn-06-2020',
+    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
+    meta: {
+      title: 'luiskr.com | Awards',
+      id: 3,
+      total: total_aw,
+      metaTags: [{
+          name: 'description',
+          content: 'Hy, I\'m Luis. Check out my Innovation Award at CSS Design Awards on June 2020'
+        },
+        {
+          property: 'og:description',
+          content: 'Hy, I\'m Luis. Check out my Innovation Award CSS Design Awards on June 2020 '
+        }
+      ]
+    }
+  },
+  {
+    path: '/awards/cssda-ui-06-2020',
+    name: 'cssda-ui-06-2020',
+    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
+    meta: {
+      title: 'luiskr.com | Awards',
+      id: 2,
+      total: total_aw,
+      metaTags: [{
+          name: 'description',
+          content: 'Hy, I\'m Luis. Check out my UI award at CSS Design Awards on June 2020'
+        },
+        {
+          property: 'og:description',
+          content: 'Hy, I\'m Luis. Check out my UI award at CSS Design Awards on June 2020 '
+        }
+      ]
+    }
+  },
+  {
+    path: '/awards/cssda-ux-06-2020',
+    name: 'cssda-ux-06-2020',
+    component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
+    meta: {
+      title: 'luiskr.com | Awards',
+      id: 1,
+      total: total_aw,
+      metaTags: [{
+          name: 'description',
+          content: 'Hy, I\'m Luis. Check out my UX award at CSS Design Awards on June 2020'
+        },
+        {
+          property: 'og:description',
+          content: 'Hy, I\'m Luis. Check out my UX award at CSS Design Awards on June 2020 '
         }
       ]
     }
