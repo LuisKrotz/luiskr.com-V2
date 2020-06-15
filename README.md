@@ -1,4 +1,4 @@
-# https://luis-kr.com
+# https://luiskr.com
 
 ## Project setup
 ```
