@@ -3,16 +3,17 @@
     background: $main-bg;
 
     .main-title {
-        transition: transform ease-out 1s, opacity ease-in-out .5s;
+        transition: font-size ease-in-out .5s, line-height ease-in-out .5s, ease-out 1s, opacity ease-in-out .5s;
         text-align: justify;
         text-transform: uppercase;
         font-weight: 900;
         position: fixed;
-        bottom: to-em(104);
         font-size: 5.63vh;
         line-height: 6.63vh;
         padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
         opacity: 1;
+        top: 50vh;
+        transform: translateY(-50%);
 
         @include layout-375() {
             padding: 0 to-em(($un-375 - $grid-max-area-375) / 2) 0 0;
@@ -22,10 +23,10 @@
             padding: 0 to-em(($un-414 - $grid-max-area-414) / 2) 0 0;
         }
 
-        @include layout-640() {
+        @include layout-540() {
             font-size: 7.04vh;
             line-height: 7.05vh;
-            padding: 0 to-em(($un-640 - $grid-max-area-640) / 2) 0 0;
+            padding: 0 to-em(($un-540 - $grid-max-area-540) / 2) 0 0;
         }
 
         @include layout-768() {
@@ -69,12 +70,12 @@
             bottom: to-em(168);
         }
 
-        @media screen and(max-width: #{$bk-640}) {
+        @media screen and(max-width: #{$bk-540}) {
             @include ignore-br();
         }
 
         .show-banner & {
-            transform: translateY(-104px);
+            transform: translateY(calc(-50% - 64px));
         }
 
         .header-open & {
@@ -89,6 +90,7 @@
 
     .main {
         padding-top: 110vh;
+        padding-bottom: 0;
         overflow: hidden;
     }
 
@@ -109,7 +111,7 @@
             overflow: visible;
             margin: 0 0 to-em(64);
 
-            @include layout-640() {
+            @include layout-540() {
                 margin: 0 0 to-em(104);
             }
 
@@ -156,6 +158,13 @@
                     line-height: to-em(40);
                     font-size: to-em(40);
                     word-spacing: to-em(40);
+                }
+
+                @include layout-540() {
+                    margin: 0;
+                    line-height: to-em(64);
+                    font-size: to-em(64);
+                    letter-spacing: to-em(8);
                 }
 
                 @include layout-1280() {

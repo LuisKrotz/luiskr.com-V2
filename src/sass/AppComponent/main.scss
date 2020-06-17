@@ -15,8 +15,8 @@
         padding: 0 to-em(($un-414 - $grid-max-area-414) / 2);
     }
 
-    @include layout-640() {
-        padding: 0 to-em(($un-640 - $grid-max-area-640) / 2);
+    @include layout-540() {
+        padding: 0 to-em(($un-540 - $grid-max-area-540) / 2);
     }
 
     @include layout-768() {
@@ -64,7 +64,7 @@
         font-size: to-em(64);
         color: $color-white;
 
-        @include layout-640() {
+        @include layout-540() {
             font-size: to-em(104);
         }
 
@@ -224,32 +224,45 @@
 
         &-line {
             display: block;
-            width: 60%;
-            margin: 8px auto;
+            width: 70%;
+            margin: 7px auto;
             box-sizing: border-box;
-            height: 1px;
+            height: 2px;
             background-color: $color-black;
 
             &.top {
-                transition: transform .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+                transition: all .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
                 .header-open & {
                     transform: translate3D(0, to-em(10), 1px) rotate(-135deg);
+
+                    @include layout-1280() {
+                        width: 90%;
+                    }
                 }
             }
 
             &.middle {
                 transition: visibility 0s linear 0s;
+
                 .header-open & {
                     visibility: hidden;
+
+                    @include layout-1280() {
+                        width: 90%;
+                    }
                 }
             }
 
             &.bottom {
-                transition: transform .3s ease-out .05s;
+                transition: all .3s ease-out .05s;
 
                 .header-open & {
                     transform: translate3D(0, to-em(-8), -1px) rotate(-45deg);
+
+                    @include layout-1280() {
+                        width: 90%;
+                    }
                 }
             }
         }
@@ -274,11 +287,11 @@
             padding-top: to-em(8);
             padding-bottom: to-em(104);
 
-            @include layout-640() {
+            @include layout-540() {
                 grid-gap: to-em(64);
             }
 
-            @include layout-640() {
+            @include layout-540() {
                 grid-gap: to-em(104);
             }
 
@@ -307,7 +320,7 @@
                 margin: to-em(32) 0;
             }
 
-            @include layout-640() {
+            @include layout-540() {
                 margin: to-em(24) 0;
             }
 
@@ -350,7 +363,7 @@
                     font-size: to-em(32);
                 }
 
-                @include layout-640() {
+                @include layout-540() {
                     font-size: to-em(40);
                     line-height: to-em(64);
                     letter-spacing: to-em(24);
@@ -618,7 +631,7 @@
     background: $color-black;
     color: $color-white;
 
-    @include layout-640() {
+    @include layout-540() {
         padding-right: to-em(16);
     }
 
@@ -720,7 +733,7 @@
 .cookie-banner .max-area {
     grid-template-columns: repeat(5, 1fr);
     display: grid;
-    grid-gap: to-em($gap-640);
+    grid-gap: to-em($gap-540);
     max-height: to-em(104);
     min-height: to-em(76);
     overflow: scroll;
@@ -795,8 +808,8 @@
                 padding-right: to-em(($un-414 - $grid-max-area-414) / 2);
             }
         
-            @include layout-640() {
-                padding-right: to-em(($un-640 - $grid-max-area-640) / 2);
+            @include layout-540() {
+                padding-right: to-em(($un-540 - $grid-max-area-540) / 2);
             }
         
             @include layout-768() {
@@ -854,7 +867,7 @@
             padding: to-em(8) to-em(16);
         }
 
-        @include layout-640() {
+        @include layout-540() {
             padding: to-em(8);
         }
 

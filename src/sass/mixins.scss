@@ -94,8 +94,8 @@
     }
 }
 
-@mixin layout-640 {
-    @media (min-width: #{$bk-640}) {
+@mixin layout-540 {
+    @media (min-width: #{$bk-540}) {
         @content;
     }
 }

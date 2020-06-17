@@ -1,10 +1,10 @@
 .about {
     padding-bottom: to-em(272);
 
-    @include layout-640() {
+    @include layout-540() {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-gap: to-em($gap-640);
+        grid-gap: to-em($gap-540);
 
         .main-title,
         .main-subtitle {
