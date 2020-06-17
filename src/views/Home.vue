@@ -344,6 +344,7 @@ export default {
 
     init();
     animate();
+    document.title = this.$route.meta.title;
 
     function init() {
         renderer = new THREE.WebGLRenderer();

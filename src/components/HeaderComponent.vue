@@ -131,7 +131,7 @@ export default {
                     ],
                     "productions": [
                         "/productions",
-                        "editorials"
+                        "productions"
                     ],
                     "mail": [
                         "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",

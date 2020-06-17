@@ -14,53 +14,20 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'luiskr.com | Home',
-      metaTags: [{
-          name: 'description',
-          content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'
-        },
-        {
-          property: 'og:description',
-          content: 'luiskr.com | Hy, I\'m Luis Krötz. This is my Portfolio.'
-        }
-      ]
+      title: 'luiskr.com'
     }
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "About" */ '../views/About'),
-    meta: {
-      title: 'luiskr.com | About',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Frond-End Developer currently working full time at transainc. Living in Porto Alegre \/ Brazil, and a part time Freelancer.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Frond-End Developer currently working full time at transainc. Living in Porto Alegre \/ Brazil, and a part time Freelancer.'
-        }
-      ]
-    }
+    component: () => import(/* webpackChunkName: "About" */ '../views/About')
   },
   {
     path: '/productions',
     name: 'Productions',
-    component: () => import(/* webpackChunkName: "Social" */ '../views/Productions'),
+    component: () => import(/* webpackChunkName: "Productions" */ '../views/Productions'),
     meta: {
-      title: 'luiskr.com | Projects',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out my the articles I wrote, and projects I participated.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out my the articles I wrote, and projects I participated.'
-        }
-      ]
+      title: 'luiskr.com | Productions'
     }
   },
   {
@@ -68,16 +35,7 @@ const routes = [
     name: 'Credits',
     component: () => import(/* webpackChunkName: "Credits" */ '../views/Credits'),
     meta: {
-      title: 'luiskr.com | Credits',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the stuff I used on my page here.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the stuff I used on my page here.'
-        }
-      ]
+      title: 'luiskr.com | Credits'
     }
   },
   {
@@ -85,16 +43,7 @@ const routes = [
     name: 'GDPR',
     component: () => import(/* webpackChunkName: "GDPR" */ '../views/GDPR'),
     meta: {
-      title: 'luiskr.com | GDPR',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out about GDPR compliance here.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out about GDPR compliance here.'
-        }
-      ]
+      title: 'luiskr.com | GDPR'
     }
   },
   {
@@ -102,16 +51,7 @@ const routes = [
     name: 'Privacy Policy',
     component: () => import(/* webpackChunkName: "PrivacyPolicy" */ '../views/PrivacyPolicy'),
     meta: {
-      title: 'luiskr.com | Privacy Policy',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out about cookies and privacy info here.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out about cookies and privacy info here.'
-        }
-      ]
+      title: 'luiskr.com | Privacy Policy'
     }
   },
   {
@@ -119,16 +59,7 @@ const routes = [
     name: 'Terms of Use',
     component: () => import(/* webpackChunkName: "TermsOfUse" */ '../views/TermsOfUse'),
     meta: {
-      title: 'luiskr.com | Terms of Use',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the legal stuff.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the legal stuff.'
-        }
-      ]
+      title: 'luiskr.com | Terms of Use'
     }
   },
   {
@@ -136,16 +67,7 @@ const routes = [
     name: 'License',
     component: () => import(/* webpackChunkName: "MIT" */ '../views/Mit'),
     meta: {
-      title: 'luiskr.com | License',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. MIT License.'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. MIT License.'
-        }
-      ]
+      title: 'luiskr.com | License'
     }
   },
   {
@@ -156,16 +78,7 @@ const routes = [
       title: 'luiskr.com | Awards',
       last: true,
       id: 4,
-      total: total_aw,
-      metaTags: [{
-          name: 'description',
-          content: 'CSSDA / SPECIAL KUDOS AWARD'
-        },
-        {
-          property: 'og:description',
-          content: 'CSSDA / SPECIAL KUDOS AWARD'
-        }
-      ]
+      total: total_aw
     }
   },
   {
@@ -175,16 +88,7 @@ const routes = [
     meta: {
       title: 'luiskr.com | Awards',
       id: 3,
-      total: total_aw,
-      metaTags: [{
-          name: 'description',
-          content: 'CSSDA / INNOVATION DESIGN AWARD'
-        },
-        {
-          property: 'og:description',
-          content: 'CSSDA / INNOVATION DESIGN AWARD'
-        }
-      ]
+      total: total_aw
     }
   },
   {
@@ -194,16 +98,7 @@ const routes = [
     meta: {
       title: 'luiskr.com | Awards',
       id: 2,
-      total: total_aw,
-      metaTags: [{
-          name: 'description',
-          content: 'CSSDA / UX DESIGN AWARD'
-        },
-        {
-          property: 'og:description',
-          content: 'CSSDA / UX DESIGN AWARD '
-        }
-      ]
+      total: total_aw
     }
   },
   {
@@ -213,16 +108,7 @@ const routes = [
     meta: {
       title: 'luiskr.com | Awards',
       id: 1,
-      total: total_aw,
-      metaTags: [{
-          name: 'description',
-          content: 'CSSDA / UI DESIGN AWARD'
-        },
-        {
-          property: 'og:description',
-          content: 'CSSDA / UI DESIGN AWARD '
-        }
-      ]
+      total: total_aw
     }
   },
   {
@@ -230,19 +116,10 @@ const routes = [
     name: 'Melissa | Next',
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
-      title: 'luiskr.com |  ',
+      title: 'luiskr.com | Melissa | Next',
       last: true,
       id: 73,
-      total: total,
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        }
-      ]
+      total: total
     }
   },
   {
@@ -252,16 +129,7 @@ const routes = [
     meta: {
       id: 72,
       total: total,
-      title: 'luiskr.com |  ',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | AW\'20'
     }
   },
   {
@@ -271,16 +139,7 @@ const routes = [
     meta: {
       id: 71,
       total: total,
-      title: 'luiskr.com |  ',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | SS\'20'
     }
   },
   {
@@ -290,16 +149,7 @@ const routes = [
     meta: {
       id: 70,
       total: total,
-      title: 'luiskr.com |  ',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project '
-        }
-      ]
+      title: 'luiskr.com |  Melissa Dreamers / Infinitos'
     }
   },
   {
@@ -309,16 +159,7 @@ const routes = [
     meta: {
       id: 69,
       total: total,
-      title: 'luiskr.com | METCHA | Newsletter',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Newsletter'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Newsletter'
-        }
-      ]
+      title: 'luiskr.com | METCHA | Newsletter'
     }
   },
   {
@@ -328,16 +169,7 @@ const routes = [
     meta: {
       id: 68,
       total: total,
-      title: 'luiskr.com | METCHA | Newsletter Generator',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Newsletter Generator'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Newsletter Generator'
-        }
-      ]
+      title: 'luiskr.com | METCHA | Newsletter Generator'
     }
   },
   {
@@ -347,16 +179,7 @@ const routes = [
     meta: {
       id: 67,
       total: total,
-      title: 'luiskr.com | METCHA | CMS',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | CMS'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | CMS'
-        }
-      ]
+      title: 'luiskr.com | METCHA | CMS'
     }
   },
   {
@@ -366,16 +189,7 @@ const routes = [
     meta: {
       id: 66,
       total: total,
-      title: 'luiskr.com | METCHA | Website',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Website'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: METCHA | Website'
-        }
-      ]
+      title: 'luiskr.com | METCHA | Website'
     }
   },
   {
@@ -385,16 +199,7 @@ const routes = [
     meta: {
       id: 65,
       total: total,
-      title: 'luiskr.com | Melissa | Sustainability',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Sustainability'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Sustainability'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Sustainability'
     }
   },
   {
@@ -404,16 +209,7 @@ const routes = [
     meta: {
       id: 64,
       total: total,
-      title: 'luiskr.com | Melissa | Color ME',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Color ME'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Color ME'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Color ME'
     }
   },
   {
@@ -423,16 +219,7 @@ const routes = [
     meta: {
       id: 63,
       total: total,
-      title: 'luiskr.com | Transainc | Muda',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Transainc | Muda'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Transainc | Muda'
-        }
-      ]
+      title: 'luiskr.com | Transainc | Muda'
     }
   },
   {
@@ -442,16 +229,7 @@ const routes = [
     meta: {
       id: 62,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2019',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2019'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2019'
-        }
-      ]
+      title: 'luiskr.com | CICB | Sustainability Forum 2019'
     }
   },
   {
@@ -461,16 +239,7 @@ const routes = [
     meta: {
       id: 61,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2018',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2018'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2018'
-        }
-      ]
+      title: 'luiskr.com | CICB | Sustainability Forum 2018'
     }
   },
   {
@@ -480,16 +249,7 @@ const routes = [
     meta: {
       id: 60,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2017',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2017'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2017'
-        }
-      ]
+      title: 'luiskr.com | CICB | Sustainability Forum 2017'
     }
   },
   {
@@ -499,16 +259,7 @@ const routes = [
     meta: {
       id: 59,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2016',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2016'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB | Sustainability Forum 2016'
-        }
-      ]
+      title: 'luiskr.com | CICB | Sustainability Forum 2016'
     }
   },
   {
@@ -518,16 +269,7 @@ const routes = [
     meta: {
       id: 58,
       total: total,
-      title: 'luiskr.com | Coza | Webpage',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Coza | Webpage'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Coza | Webpage'
-        }
-      ]
+      title: 'luiskr.com | Coza | Webpage'
     }
   },
   {
@@ -537,16 +279,7 @@ const routes = [
     meta: {
       id: 57,
       total: total,
-      title: 'luiskr.com | Coza | Where to Find',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Coza | Where to Find'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Coza | Where to Find'
-        }
-      ]
+      title: 'luiskr.com | Coza | Where to Find'
     }
   },
   {
@@ -556,16 +289,7 @@ const routes = [
     meta: {
       id: 56,
       total: total,
-      title: 'luiskr.com | Melissa | Family',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Family'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Family'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Family'
     }
   },
   {
@@ -575,16 +299,7 @@ const routes = [
     meta: {
       id: 55,
       total: total,
-      title: 'luiskr.com | Melissa | Mapping',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mapping'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mapping'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Mapping'
     }
   },
   {
@@ -594,16 +309,7 @@ const routes = [
     meta: {
       id: 54,
       total: total,
-      title: 'luiskr.com | Melissa | Mirror',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mirror'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mirror'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Mirror'
     }
   },
   {
@@ -613,16 +319,7 @@ const routes = [
     meta: {
       id: 53,
       total: total,
-      title: 'luiskr.com | Melissa | Open Vibes',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Open Vibes'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Open Vibes'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Open Vibes'
     }
   },
   {
@@ -632,16 +329,7 @@ const routes = [
     meta: {
       id: 52,
       total: total,
-      title: 'luiskr.com | Melissa | À Lá Garçonne',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | À Lá Garçonne'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | À Lá Garçonne'
-        }
-      ]
+      title: 'luiskr.com | Melissa | À Lá Garçonne'
     }
   },
   {
@@ -651,16 +339,7 @@ const routes = [
     meta: {
       id: 51,
       total: total,
-      title: 'luiskr.com | Melissa | AWAYTOMARS',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | AWAYTOMARS'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | AWAYTOMARS'
-        }
-      ]
+      title: 'luiskr.com | Melissa | AWAYTOMARS'
     }
   },
   {
@@ -670,16 +349,7 @@ const routes = [
     meta: {
       id: 50,
       total: total,
-      title: 'luiskr.com | Melissa | Baja East',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Baja East'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Baja East'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Baja East'
     }
   },
   {
@@ -689,16 +359,7 @@ const routes = [
     meta: {
       id: 49,
       total: total,
-      title: 'luiskr.com | Melissa | Melissa + CSC',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Melissa + CSC'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Melissa + CSC'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Melissa + CSC'
     }
   },
   {
@@ -708,16 +369,7 @@ const routes = [
     meta: {
       id: 48,
       total: total,
-      title: 'luiskr.com | Melissa | Fábula',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Fábula'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Fábula'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Fábula'
     }
   },
   {
@@ -727,16 +379,7 @@ const routes = [
     meta: {
       id: 47,
       total: total,
-      title: 'luiskr.com | Melissa | Melissa + Rider',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Melissa + Rider'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Melissa + Rider'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Melissa + Rider'
     }
   },
   {
@@ -746,16 +389,7 @@ const routes = [
     meta: {
       id: 46,
       total: total,
-      title: 'luiskr.com | Melissa | Galleries SP\/NYC\/LON',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Galleries SP\/NYC\/LON'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Galleries SP\/NYC\/LON'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Galleries SP\/NYC\/LON'
     }
   },
   {
@@ -765,16 +399,7 @@ const routes = [
     meta: {
       id: 45,
       total: total,
-      title: 'luiskr.com | Melissa | Bike',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Bike'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Bike'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Bike'
     }
   },
   {
@@ -784,16 +409,7 @@ const routes = [
     meta: {
       id: 44,
       total: total,
-      title: 'luiskr.com | Melissa | Creatives',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Creatives'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Creatives'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Creatives'
     }
   },
   {
@@ -803,16 +419,7 @@ const routes = [
     meta: {
       id: 43,
       total: total,
-      title: 'luiskr.com | Melissa | SK8',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | SK8'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | SK8'
-        }
-      ]
+      title: 'luiskr.com | Melissa | SK8'
     }
   },
   {
@@ -822,16 +429,7 @@ const routes = [
     meta: {
       id: 42,
       total: total,
-      title: 'luiskr.com | Melissa | Possession',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Possession'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Possession'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Possession'
     }
   },
   {
@@ -841,16 +439,7 @@ const routes = [
     meta: {
       id: 41,
       total: total,
-      title: 'luiskr.com | Minimelissa | Candy Framework',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Candy Framework'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Candy Framework'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | Candy Framework'
     }
   },
   {
@@ -860,16 +449,7 @@ const routes = [
     meta: {
       id: 40,
       total: total,
-      title: 'luiskr.com | Minimelissa | Website',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Website'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Website'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | Website'
     }
   },
   {
@@ -879,16 +459,7 @@ const routes = [
     meta: {
       id: 39,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'16',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'16'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'16'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | A/W\'16'
     }
   },
   {
@@ -898,16 +469,7 @@ const routes = [
     meta: {
       id: 38,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'17',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'17'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'17'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | A/W\'17'
     }
   },
   {
@@ -917,16 +479,7 @@ const routes = [
     meta: {
       id: 37,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'18',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'18'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'18'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | A/W\'18'
     }
   },
   {
@@ -936,16 +489,7 @@ const routes = [
     meta: {
       id: 36,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'19',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'19'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | A/W\'19'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | A/W\'19'
     }
   },
   {
@@ -955,16 +499,7 @@ const routes = [
     meta: {
       id: 35,
       total: total,
-      title: 'luiskr.com | Minimelissa | Where to Find',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Where to Find'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | Where to Find'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | Where to Find'
     }
   },
   {
@@ -974,16 +509,7 @@ const routes = [
     meta: {
       id: 34,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'16',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'16'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'16'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | S/S\'16'
     }
   },
   {
@@ -993,16 +519,7 @@ const routes = [
     meta: {
       id: 33,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'17',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'17'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'17'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | S/S\'17'
     }
   },
   {
@@ -1012,16 +529,7 @@ const routes = [
     meta: {
       id: 32,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'18',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'18'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'18'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | S/S\'18'
     }
   },
   {
@@ -1031,16 +539,7 @@ const routes = [
     meta: {
       id: 31,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'19',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'19'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Minimelissa | S/S\'19'
-        }
-      ]
+      title: 'luiskr.com | Minimelissa | S/S\'19'
     }
   },
   {
@@ -1050,16 +549,7 @@ const routes = [
     meta: {
       id: 30,
       total: total,
-      title: 'luiskr.com | Mor | Website',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Website'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Website'
-        }
-      ]
+      title: 'luiskr.com | Mor | Website'
     }
   },
   {
@@ -1069,16 +559,7 @@ const routes = [
     meta: {
       id: 29,
       total: total,
-      title: 'luiskr.com | Mor | Where to Find',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Where to Find'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Where to Find'
-        }
-      ]
+      title: 'luiskr.com | Mor | Where to Find'
     }
   },
   {
@@ -1088,16 +569,7 @@ const routes = [
     meta: {
       id: 28,
       total: total,
-      title: 'luiskr.com | CICB / CSCB/ Leather Law / Brazilian Leather | Portal',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
-        }
-      ]
+      title: 'luiskr.com | CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
     }
   },
   {
@@ -1107,16 +579,7 @@ const routes = [
     meta: {
       id: 27,
       total: total,
-      title: 'luiskr.com | Melissa | New Features',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | New Features'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | New Features'
-        }
-      ]
+      title: 'luiskr.com | Melissa | New Features'
     }
   },
   {
@@ -1126,16 +589,7 @@ const routes = [
     meta: {
       id: 26,
       total: total,
-      title: 'luiskr.com | Melissa | Flygrl',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Flygrl'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Flygrl'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Flygrl'
     }
   },
   {
@@ -1145,16 +599,7 @@ const routes = [
     meta: {
       id: 25,
       total: total,
-      title: 'luiskr.com | Melissa | Mashup',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mashup'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Mashup'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Mashup'
     }
   },
   {
@@ -1164,16 +609,7 @@ const routes = [
     meta: {
       id: 24,
       total: total,
-      title: 'luiskr.com | Melissa | Cine Melissa',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Cine Melissa'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Cine Melissa'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Cine Melissa'
     }
   },
   {
@@ -1183,16 +619,7 @@ const routes = [
     meta: {
       id: 23,
       total: total,
-      title: 'luiskr.com | Melissa | Dance Machine',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Dance Machine'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Dance Machine'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Dance Machine'
     }
   },
   {
@@ -1202,16 +629,7 @@ const routes = [
     meta: {
       id: 22,
       total: total,
-      title: 'luiskr.com | Melissa | Eat My Melissa',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Eat My Melissa'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Eat My Melissa'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Eat My Melissa'
     }
   },
   {
@@ -1221,16 +639,7 @@ const routes = [
     meta: {
       id: 21,
       total: total,
-      title: 'luiskr.com | Melissa | Nation',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Nation'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Nation'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Nation'
     }
   },
   {
@@ -1240,16 +649,7 @@ const routes = [
     meta: {
       id: 20,
       total: total,
-      title: 'luiskr.com | Melissa | Starwalker',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Starwalker'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Starwalker'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Starwalker'
     }
   },
   {
@@ -1259,16 +659,7 @@ const routes = [
     meta: {
       id: 19,
       total: total,
-      title: 'luiskr.com | Melissa | Wanna Be Carioca',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Wanna Be Carioca'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Wanna Be Carioca'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Wanna Be Carioca'
     }
   },
   {
@@ -1278,16 +669,7 @@ const routes = [
     meta: {
       id: 18,
       total: total,
-      title: 'luiskr.com | Melissa | We are Flowers',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | We are Flowers'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | We are Flowers'
-        }
-      ]
+      title: 'luiskr.com | Melissa | We are Flowers'
     }
   },
   {
@@ -1297,16 +679,7 @@ const routes = [
     meta: {
       id: 17,
       total: total,
-      title: 'luiskr.com | Melissa | Campana',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Campana'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Campana'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Campana'
     }
   },
   {
@@ -1316,16 +689,7 @@ const routes = [
     meta: {
       id: 16,
       total: total,
-      title: 'luiskr.com | Melissa | Gaetano Pesce',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Gaetano Pesce'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Gaetano Pesce'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Gaetano Pesce'
     }
   },
   {
@@ -1335,16 +699,7 @@ const routes = [
     meta: {
       id: 15,
       total: total,
-      title: 'luiskr.com | Melissa | Gareth Pugh',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Gareth Pugh'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Gareth Pugh'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Gareth Pugh'
     }
   },
   {
@@ -1354,16 +709,7 @@ const routes = [
     meta: {
       id: 14,
       total: total,
-      title: 'luiskr.com | Melissa | J Maskrey',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | J Maskrey'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | J Maskrey'
-        }
-      ]
+      title: 'luiskr.com | Melissa | J Maskrey'
     }
   },
   {
@@ -1373,16 +719,7 @@ const routes = [
     meta: {
       id: 13,
       total: total,
-      title: 'luiskr.com | Melissa | Jason Wu',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Jason Wu'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Jason Wu'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Jason Wu'
     }
   },
   {
@@ -1392,16 +729,7 @@ const routes = [
     meta: {
       id: 12,
       total: total,
-      title: 'luiskr.com | Melissa | Jeremy Scott',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Jeremy Scott'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Jeremy Scott'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Jeremy Scott'
     }
   },
   {
@@ -1411,16 +739,7 @@ const routes = [
     meta: {
       id: 11,
       total: total,
-      title: 'luiskr.com | Melissa | Karl Lagerfeld',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Karl Lagerfeld'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Karl Lagerfeld'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Karl Lagerfeld'
     }
   },
   {
@@ -1430,16 +749,7 @@ const routes = [
     meta: {
       id: 10,
       total: total,
-      title: 'luiskr.com | Melissa | Sebastian Errazuriz',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Sebastian Errazuriz'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Sebastian Errazuriz'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Sebastian Errazuriz'
     }
   },
   {
@@ -1449,16 +759,7 @@ const routes = [
     meta: {
       id: 9,
       total: total,
-      title: 'luiskr.com | Melissa | Vitorino Campos',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Vitorino Campos'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Vitorino Campos'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Vitorino Campos'
     }
   },
   {
@@ -1468,16 +769,7 @@ const routes = [
     meta: {
       id: 8,
       total: total,
-      title: 'luiskr.com | Melissa | Vivienne Westwood',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Vivienne Westwood'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Vivienne Westwood'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Vivienne Westwood'
     }
   },
   {
@@ -1487,16 +779,7 @@ const routes = [
     meta: {
       id: 7,
       total: total,
-      title: 'luiskr.com | Melissa | Zaha Hadid',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Zaha Hadid'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Zaha Hadid'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Zaha Hadid'
     }
   },
   {
@@ -1506,16 +789,7 @@ const routes = [
     meta: {
       id: 6,
       total: total,
-      title: 'luiskr.com | Melissa | Where to Find',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Where to Find'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Where to Find'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Where to Find'
     }
   },
   {
@@ -1525,16 +799,7 @@ const routes = [
     meta: {
       id: 5,
       total: total,
-      title: 'luiskr.com | Melissa | Roller Joy',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Roller Joy'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Roller Joy'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Roller Joy'
     }
   },
   {
@@ -1544,16 +809,7 @@ const routes = [
     meta: {
       id: 4,
       total: total,
-      title: 'luiskr.com | Melissa | Tropico Surreal',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Tropico Surreal'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Melissa | Tropico Surreal'
-        }
-      ]
+      title: 'luiskr.com | Melissa | Tropico Surreal'
     }
   },
   {
@@ -1563,16 +819,7 @@ const routes = [
     meta: {
       id: 3,
       total: total,
-      title: 'luiskr.com | Mor | Loja Mor',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Loja Mor'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Mor | Loja Mor'
-        }
-      ]
+      title: 'luiskr.com | Mor | Loja Mor'
     }
   },
   {
@@ -1582,16 +829,7 @@ const routes = [
     meta: {
       id: 2,
       total: total,
-      title: 'luiskr.com | Vibra | Website',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: Vibra | Website'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: Vibra | Website'
-        }
-      ]
+      title: 'luiskr.com | Vibra | Website'
     }
   },
   {
@@ -1601,16 +839,7 @@ const routes = [
     meta: {
       id: 1,
       total: total,
-      title: 'luiskr.com | GenesysInf | SageWeb',
-      metaTags: [{
-          name: 'description',
-          content: 'Hy, I\'m Luis. Check out the project: GenesysInf | SageWeb'
-        },
-        {
-          property: 'og:description',
-          content: 'Hy, I\'m Luis. Check out the project: GenesysInf | SageWeb'
-        }
-      ]
+      title: 'luiskr.com | GenesysInf | SageWeb'
     }
   },
   {
@@ -1618,16 +847,7 @@ const routes = [
     name: 'Error404',
     component: () => import(/* webpackChunkName: 'Error404'*/ '../views/NotFound'),
     meta: {
-      title: 'luiskr.com | 404',
-      metaTags: [{
-          name: 'description',
-          content: 'Ops! Page not found.'
-        },
-        {
-          property: 'og:description',
-          content: 'Ops! Page not found.'
-        }
-      ]
+      title: 'luiskr.com | 404'
     }
   }
 ]
@@ -1637,44 +857,6 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-// This callback runs before every route change, including on page load.
-router.beforeResolve((to, from, next) => {
-  // This goes through the matched routes from last to first, finding the closest route with a title.
-  // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
-  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-
-  // Find the nearest route element with meta tags.
-  const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
-  const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
-
-  // If a route with a title was found, set the document (page) title to that value.
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
-
-  // Remove any stale meta tags from the document using the key attribute we set below.
-  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
-
-  // Skip rendering meta tags if there are none.
-  if (!nearestWithMeta) return next();
-
-  // Turn the meta tag definitions into actual elements in the head.
-  nearestWithMeta.meta.metaTags.map(tagDef => {
-      const tag = document.createElement('meta');
-
-      Object.keys(tagDef).forEach(key => {
-        tag.setAttribute(key, tagDef[key]);
-      });
-
-      // We use this to track which meta tags we create, so we don't interfere with other ones.
-      tag.setAttribute('data-vue-router-controlled', '');
-
-      return tag;
-    })
-    // Add the meta tags to the document head.
-    .forEach(tag => document.head.appendChild(tag));
-
-  next();
 })
 
 function init() {

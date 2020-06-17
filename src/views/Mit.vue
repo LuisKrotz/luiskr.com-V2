@@ -44,7 +44,7 @@ import checkView from 'vue-check-view'                            // https://vti
 Vue.use(checkView);
 
 export default {
-  name: 'TermsOfUse',
+  name: 'MIT',
   data() {
     return {
       webp2: this.$parent.webp2,
@@ -55,7 +55,7 @@ export default {
   created() {
     document.body.scrollTop = 0;                // For Safari
     document.documentElement.scrollTop = 0;     // For Chrome, Firefox, IE and Opera
-
+    document.title = this.$route.meta.title;
 
     let d = new Date();
     this.year = d.getFullYear();
