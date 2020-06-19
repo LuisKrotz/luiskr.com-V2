@@ -20,7 +20,10 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "About" */ '../views/About')
+    component: () => import(/* webpackChunkName: "About" */ '../views/About'),
+    meta: {
+      title: 'luiskr.com | About'
+    }
   },
   {
     path: '/productions',
