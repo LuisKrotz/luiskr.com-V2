@@ -3,15 +3,6 @@
 
     .main-title {
         text-align: left;
-        color: $color-black;
-
-        a {
-            background: $color-white;
-        }
-
-        &+main-text {
-            padding-top: to-em(70);
-        }
     }
 
     @media (min-width: 700px) {
