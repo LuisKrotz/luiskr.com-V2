@@ -80,6 +80,7 @@
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/time-coffee-break-6NlmBQLhWy2QM">https://giphy.com/gifs/time-coffee-break-6NlmBQLhWy2QM</a>
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/3jVT4U5bilspG">https://giphy.com/gifs/3jVT4U5bilspG</a>
             <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/nasa-nasareactions-Js7cqIkpxFy0bILFFA">https://giphy.com/gifs/nasa-nasareactions-Js7cqIkpxFy0bILFFA</a>
+            <a class="main-text" v-view @click="sendAnalyticsEvent('credits_link', 'click', 'giphy', 25)" target="_blank" rel="noopener" href="https://giphy.com/gifs/vaporwave-aesthetic-noise-1ZDHQyJjDVfERNJT3x">https://giphy.com/gifs/vaporwave-aesthetic-noise-1ZDHQyJjDVfERNJT3x</a>
           </div>
       </article>
     </main>

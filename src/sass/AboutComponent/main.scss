@@ -25,6 +25,14 @@
             transform: scale(.95);
             grid-column-start: 2;
             grid-column-end: 6;
+
+            a {
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
 
         .main-subtitle {

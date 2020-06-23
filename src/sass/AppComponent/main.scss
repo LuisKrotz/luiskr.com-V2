@@ -212,8 +212,9 @@
         color: $color-white;
         transform: translate3D(0, to-em(-8), 0);
         background-color: $color-white;
+        border-radius: to-em(4);
         border: 1px solid rgba(0,0,0, .015);
-        border-radius: 100%;
+        box-shadow: -1px -1px 3px 0 rgba(255, 255, 255, .25), 1px 1px 3px 0 rgba(0, 0, 0, .5);
 
         @include layout-1024() {
             border-radius: 0;
@@ -242,7 +243,8 @@
             margin: 7px auto;
             box-sizing: border-box;
             height: 2px;
-            background-color: $color-black;
+            background: black;
+            box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
 
             &.top {
                 transition: all .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
