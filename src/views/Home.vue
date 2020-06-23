@@ -32,7 +32,7 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        web: '.gif',
+        webp: '.gif',
         sethover: '',
         hovers: 13,
         showhover: false,
