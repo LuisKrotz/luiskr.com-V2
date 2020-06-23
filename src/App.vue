@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="!show_cookie ? 'show-banner' : ''">
+  <div id="app">
     <h1 class="hdn">luiskr.com</h1>
     <HeaderComponent />
 
@@ -16,25 +16,6 @@
       <span class="loading-6">n</span>
       <span class="loading-7">g</span>
     </span>
-
-    <transition name="cookie">
-      <div v-if="!show_cookie && domLoaded" class="cookie-banner">
-        <div class="max-area">
-          <p>
-            This site uses third-party cookies from Google Analytics and Facebook Pixel to track page visits and events.
-            <router-link to="/?show-recors=true">Click here to reload this page</router-link> and open your browser's console to see the ANONYMOUS data sent to Google and Pixel Analytics.
-            Get more info about data, cookies and terms of use at <router-link to="/GDPR">GDPR</router-link>, <router-link to="/terms-of-use">Terms of Use</router-link>, and <router-link to="/privacy-policy">Privacy policy</router-link> of this website.
-            This page doesn't send pageviews and events without consent and doesn't store any visitor's data. All session data is stored locally on your own browser, by the use of the local storage API. The consent can be revoked by clearing your browser's locally stored data.
-          </p>
-          <div class="second-column">
-            <div class="second-column-fixed">
-              <button class="accept" @click="accept()"><span>I accept</span></button>
-              <button class="refuse" @click="close()"><span>Ignore me</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -48,7 +29,6 @@ export default {
   },
   data() {
       return {
-        show_cookie: Boolean(localStorage.getItem('cookie')),
         has_touch: false,
         webp: '.jpg',
         webp2: '.jpg',
@@ -138,46 +118,32 @@ export default {
         return urlparameter;
       },
       sendAnalyticsEvent(category, action, label, value) {
-        if (Boolean(localStorage.getItem('cookie:accepted')) === true) {
-          // General Method to send Analytics, to be inheriteed
-          this.$ga.event({
-            eventCategory: category,
-            eventAction: action,
-            eventLabel: label,
-            eventValue: value,
+        // General Method to send Analytics, to be inheriteed
+        this.$ga.event({
+          eventCategory: category,
+          eventAction: action,
+          eventLabel: label,
+          eventValue: value,
+        });
+
+        if (window.fbq !== undefined) {
+          window.fbq('track', 'Lead', {
+              content_name: label,
+              value: value,
+              currency: 'BRL'
           });
+        }
 
-          if (window.fbq !== undefined) {
-            window.fbq('track', 'Lead', {
-                content_name: label,
-                value: value,
-                currency: 'BRL'
-            });
-          }
+        // Show Analytics on consle, object to be recorded
+        function Record(category, action, label, value) {
+            this.category = category;
+            this.action = action,
+            this.label = label,
+            this.value = value;
+        }
 
-          // Show Analytics on consle, object to be recorded
-          function Record(category, action, label, value) {
-              this.category = category;
-              this.action = action,
-              this.label = label,
-              this.value = value;
-          }
-
-          // Show Analytics on console, display table with recordings
-          if (this.records) console.table(new Record(category, action, label, value));
-
-        } else if(this.records) console.log('Not tracking. Cookies not allowed');
-      },
-      accept() {
-        localStorage.setItem('cookie', true);
-        this.show_cookie = true;
-        document.body.classList.remove('show-banner');
-
-        document.dispatchEvent(new Event("accepted"));
-      },
-      close() {
-          this.show_cookie = true;
-          document.body.classList.remove('show-banner');
+        // Show Analytics on console, display table with recordings
+        if (this.records) console.table(new Record(category, action, label, value));
       }
     }
   };

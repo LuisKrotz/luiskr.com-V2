@@ -1,7 +1,16 @@
 .about {
     padding-bottom: to-em(272);
 
-    @include layout-540() {
+    .main-title {
+        text-align: left;
+        color: $color-black;
+
+        a {
+            background: yellow;
+        }
+    }
+
+    @media (min-width: 700px) {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: to-em($gap-540);
@@ -10,7 +19,6 @@
         .main-subtitle {
             margin: 0;
             padding: 0;
-            text-align: justify;
             opacity: 0;
             transition: transform ease-in-out 1s, opacity ease-in-out 1s;
 
@@ -25,19 +33,10 @@
             transform: scale(.95);
             grid-column-start: 2;
             grid-column-end: 6;
-
-            a {
-                text-decoration: underline;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
         }
 
         .main-subtitle {
-            font-family: Arial Black, sans-serif;
-            font-weight: 500;
+            text-align: justify;
             text-transform: uppercase;
             grid-column-start: 1;
             transform: scale(.975) translate3d(0, 100px, 0);
@@ -74,7 +73,7 @@
         }
 
         .main-subtitle {
-            font-family: Arial Black, sans-serif;
+            font-family: Arial Black, Roboto, sans-serif;
             font-weight: 500;
             text-transform: uppercase;
             grid-column-start: 2;
@@ -100,7 +99,7 @@
         }
 
         .main-subtitle {
-            font-family: Arial Black, sans-serif;
+            font-family: Arial Black, Roboto, sans-serif;
             font-weight: 500;
             text-transform: uppercase;
             grid-column-start: 2;

@@ -69,15 +69,12 @@
         }
 
         a {
-            display: block;
-            text-align: left;
             text-transform: uppercase;
-            text-decoration: none;
+            text-decoration: underline;
             text-decoration-style: solid;
 
             &:hover {
-                text-decoration: underline;
-                
+                text-decoration: none;
             }
         }
     }
@@ -87,25 +84,31 @@
         display: block;
         position: relative;
         margin: 0 auto;
-        font-size: to-em(40);
-        padding: to-em(40) 0 0;
+        font-size: to-em(24);
+        padding: to-em(40) 0 to-em(16);
+        text-transform: uppercase;
+        font-family: Arial Black, Roboto, sans-serif;
+        font-weight: 500;
+
+        &:first-of-type {
+            padding-top: to-em(72);
+        }
 
         &+.main-text {
-            padding: to-em(40) 0 0;
+            @include layout-960() {
+                padding: to-em(40) 0 to-em(16);
+            }
         }
 
         @include layout-960() {
+            font-size: to-em(40);
             text-transform: uppercase;
             font-weight: 200;
         }
     }
 
     &-text {
-        &:first-of-type {
-            padding-top: to-em(72);
-        }
-
-        padding: to-em(4) 0;
+        padding: to-em(4) 0 to-em(16);
         font-size: to-em(16);
         line-height: to-em(20);
         text-align: justify;
@@ -220,25 +223,6 @@
             margin-top: -1px;
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
-        }
-
-        .show-banner & {
-            bottom: initial;
-            right: to-em($gap-320);
-            top: to-em(0);
-
-            @include layout-540() {
-                right: to-em($gap-540);
-            }
-
-            @include layout-768() {
-                right: to-em($gap-768);
-            }
-
-            @include layout-1024() {
-                right: initial;
-                top: 0;
-            }
         }
 
         &-line {
@@ -358,7 +342,7 @@
             }
 
             &-title {
-                font-family: Arial Black, sans-serif;
+                font-family: Arial Black, Roboto, sans-serif;
                 transition: box-shadow ease-in-out .3s, color ease-in-out .3s;
                 box-sizing: border-box;
                 box-shadow: -1px -1px 2px 0 rgba(255,255,255, 0.025), 1px 1px 2px 0 rgba(255,255,255, 0.1);
@@ -368,6 +352,7 @@
                 font-weight: 900;
                 font-size: to-em(24);
                 line-height: to-em(40);
+                letter-spacing: to-em(10);
                 text-decoration: none;
                 color: $color-white;
                 text-decoration-skip-ink: none;
@@ -376,6 +361,7 @@
 
                 @include layout-375() {
                     font-size: to-em(24);
+                    letter-spacing: to-em(16);
                 }
 
                 @include layout-414() {
@@ -385,11 +371,21 @@
                 @include layout-540() {
                     font-size: to-em(40);
                     line-height: to-em(64);
+                    letter-spacing: to-em(24);
                 }
 
                 @include layout-768() {
                     font-size: to-em(64);
                     line-height: to-em(104);
+                    letter-spacing: to-em(32);
+                }
+
+                @include layout-960() {
+                    letter-spacing: to-em(40);
+                }
+
+                @include layout-1280() {
+                    letter-spacing: to-em(24);
                 }
 
                 @include layout-1440() {
@@ -400,6 +396,7 @@
                 @include layout-1560() {
                     font-size: to-em(64);
                     line-height: to-em(104);
+                    letter-spacing: to-em(24);
                 }
 
                 &:hover {
@@ -663,7 +660,6 @@
     &-5,
     &-6,
     &-7 {
-        font-family: Arial Black, sans-serif;
         font-weight: 500;
         margin: 0 to-em(8);
         transition: transform ease-in-out $jump-timing;
@@ -717,211 +713,4 @@
     75% {
         transform: translate3D(0, to-em(4), 0);
     }
-}
-
-
-// --------------
-// Cookies Banner
-
-.cookie-banner {
-    z-index: 101;
-    padding: to-em(16) 0 0;
-    margin: 0;
-    background: $color-black;
-    color: $color-white;
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
-    @include layout-1280() {
-        padding: to-em(16) 0 0;
-    }
-}
-
-.cookie-banner .max-area {
-    grid-template-columns: repeat(5, 1fr);
-    display: grid;
-    grid-gap: to-em($gap-540);
-    max-height: to-em(104);
-    min-height: to-em(76);
-    overflow: scroll;
-    
-    @include layout-768() {
-        grid-gap: to-em($gap-768);
-    }
-
-    @include layout-1024() {
-        grid-gap: to-em($gap-1024);
-    }
-
-    p, a {
-        grid-column-end: 4;
-        grid-column-start: 1;
-        color: $color-white;
-        font-size: to-em(12);
-        line-height: to-em(14);
-        text-align: justify;
-
-        @include layout-768() {
-            grid-column-end: 5;
-        }
-
-        @include layout-1280() {
-            padding-bottom: to-em(16);
-        }
-
-        @include layout-1680() {
-            text-align: left;
-            grid-column-end: 4;
-        }
-
-        @include layout-2560() {
-            grid-column-start: 3;
-            grid-column-end: 5;
-        }
-    }
-
-    a {
-        color: $color-white;
-        text-decoration: underline;
-        font-style: oblique;
-        text-transform: lowercase;
-        text-decoration-skip-ink: none;
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
-    .second-column {
-        position: relative;
-        grid-column-start: 5;
-
-        @include layout-1024() {
-            grid-row-start: initial;
-        }
-
-        &-fixed {
-            position: fixed;
-            right: 0;
-
-            padding-right: to-em(($un-320 - $grid-max-area-320) / 2);
-
-            @include layout-375() {
-                padding-right: to-em(($un-375 - $grid-max-area-375) / 2);
-            }
-        
-            @include layout-414() {
-                padding-right: to-em(($un-414 - $grid-max-area-414) / 2);
-            }
-        
-            @include layout-540() {
-                padding-right: to-em(($un-540 - $grid-max-area-540) / 2);
-            }
-        
-            @include layout-768() {
-                padding-right: to-em(($un-768 - $grid-max-area-768) / 2);
-            }
-        
-            @include layout-960() {
-                padding-right: to-em(($un-960 - $grid-max-area-960) / 2);
-            }
-
-            @include layout-1024() {
-                padding-right: to-em(($un-1024 - $grid-max-area-1024) / 2);
-            }
-        
-            @include layout-1280() {
-                padding-right: to-em(($un-1280 - $grid-max-area-1280) / 2);
-            }
-        
-            @include layout-1440() {
-                padding-right: to-em(($un-1440 - $grid-max-area-1440) / 2);
-            }
-        
-            @include layout-1680() {
-                padding-right: to-em(($un-1680 - $grid-max-area-1680) / 2);
-            }
-        
-            @include layout-1920() {
-                padding-right: to-em(($un-1920 - $grid-max-area-1920) / 2);
-            }
-        
-            @include layout-2560() {
-                padding-right: to-em(($un-2560 - $grid-max-area-2560) / 2);
-            }
-        }
-    }
-
-    .accept,
-    .refuse {
-        transition: color cubic-bezier(0.4, 0, 1, 1) .25s, background-color cubic-bezier(0.4, 0, 1, 1) .3s;
-        background: transparent;
-        border: none;
-        font: 300 to-em(12) "Work Sans", sans-serif;
-        text-transform: uppercase;
-        display: block;
-        margin: 0 0 to-em(16);
-        box-sizing: border-box;
-        cursor: pointer;
-        width: to-em(100);
-        border-radius: to-em(24);
-        padding: to-em(8);
-        width: 100%;
-
-        @include layout-375() {
-            padding: to-em(8) to-em(16);
-        }
-
-        @include layout-540() {
-            padding: to-em(8);
-        }
-
-        @include layout-960() {
-            word-spacing: to-em(16);
-            margin: 0 0 to-em(8);
-        }
-
-        @include layout-1024() {
-            padding: to-em(8) to-em(16);
-        }
-    }
-
-    .accept {
-        color: $color-white;
-        background: $color-2;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    .refuse {
-        color: $color-white;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-.cookie-enter-active,
-.cookie-leave-active {
-    transition: transform .5s ease-in-out;
-}
-.cookie-enter,
-.cookie-leave-to {
-    transform: translate3D(0, 100%, 0);
-}
-
-.menu-open-enter-active,
-.menu-open-leave-active {
-    transition: transform linear 1s;
-    transform: translate3d(0, 0, 0);
-}
-.menu-open-enter,
-.menu-open-leave-to {
-    transform: translate3D(0, 100%, 0);
 }
