@@ -11,6 +11,7 @@
     }
 
     .main-title {
+        font-family: Arial Black, sans-serif;
         transition: font-size ease-in-out .5s, line-height ease-in-out .5s, ease-out 1s, opacity ease-in-out .5s;
         text-align: justify;
         text-transform: uppercase;
@@ -91,6 +92,7 @@
         }
 
         span, a {
+            font-family: Arial Black, sans-serif;
             color: $color-white;
             font-weight: 900;
             text-shadow: to-em(4) 0 to-em(8) rgba(0,0,0, .5);
@@ -157,6 +159,7 @@
             text-align: justify;
 
             span {
+                font-family: Arial Black, sans-serif;
                 transition: transform ease-in 1s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .5s;
                 transform: skewX(0) translate3D(0, 25px, 0);
                 display: block;
@@ -166,7 +169,6 @@
                 font-weight: 900;
                 text-transform: uppercase;
                 word-break: break-word;
-                letter-spacing: to-em(2);
                 word-spacing: to-em(32);
                 min-width: 100%;
                 opacity: 0;
@@ -181,20 +183,17 @@
                     margin: 0;
                     line-height: to-em(64);
                     font-size: to-em(64);
-                    letter-spacing: to-em(8);
                 }
 
                 @include layout-1280() {
                     margin: 0;
                     line-height: to-em(104);
                     font-size: to-em(104);
-                    letter-spacing: to-em(24);
                 }
 
                 @include layout-2560() {
                     line-height: to-em(168);
                     font-size: to-em(168);
-                    letter-spacing: to-em(40);
                 }
 
                 &.view-in {

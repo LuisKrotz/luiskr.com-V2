@@ -358,6 +358,7 @@
             }
 
             &-title {
+                font-family: Arial Black, sans-serif;
                 transition: box-shadow ease-in-out .3s, color ease-in-out .3s;
                 box-sizing: border-box;
                 box-shadow: -1px -1px 2px 0 rgba(255,255,255, 0.025), 1px 1px 2px 0 rgba(255,255,255, 0.1);
@@ -367,7 +368,6 @@
                 font-weight: 900;
                 font-size: to-em(24);
                 line-height: to-em(40);
-                letter-spacing: to-em(10);
                 text-decoration: none;
                 color: $color-white;
                 text-decoration-skip-ink: none;
@@ -376,7 +376,6 @@
 
                 @include layout-375() {
                     font-size: to-em(24);
-                    letter-spacing: to-em(16);
                 }
 
                 @include layout-414() {
@@ -386,21 +385,11 @@
                 @include layout-540() {
                     font-size: to-em(40);
                     line-height: to-em(64);
-                    letter-spacing: to-em(24);
                 }
 
                 @include layout-768() {
                     font-size: to-em(64);
                     line-height: to-em(104);
-                    letter-spacing: to-em(32);
-                }
-
-                @include layout-960() {
-                    letter-spacing: to-em(40);
-                }
-
-                @include layout-1280() {
-                    letter-spacing: to-em(24);
                 }
 
                 @include layout-1440() {
@@ -411,7 +400,6 @@
                 @include layout-1560() {
                     font-size: to-em(64);
                     line-height: to-em(104);
-                    letter-spacing: to-em(24);
                 }
 
                 &:hover {
@@ -675,6 +663,7 @@
     &-5,
     &-6,
     &-7 {
+        font-family: Arial Black, sans-serif;
         font-weight: 500;
         margin: 0 to-em(8);
         transition: transform ease-in-out $jump-timing;
@@ -872,7 +861,6 @@
         background: transparent;
         border: none;
         font: 300 to-em(12) "Work Sans", sans-serif;
-        letter-spacing: to-em(4);
         text-transform: uppercase;
         display: block;
         margin: 0 0 to-em(16);

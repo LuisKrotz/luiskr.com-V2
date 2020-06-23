@@ -4,7 +4,6 @@
         <article class="about main">
             <h2 class="main-title" v-view @click="sendAnalyticsEvent('productions_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
 
-            <h3 class="main-subtitle" v-view>Articles and Productions</h3>
             <p class="main-text" v-view>These are the main projects, and main text production I participated.</p>
 
             <h3 class="main-subtitle" v-view>Published Articles</h3>
