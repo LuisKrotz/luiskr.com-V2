@@ -1,6 +1,6 @@
 <template>
     <main class="home">
-        <div class="home-bg" :style="'background: url('+ storage +'bg.gif)'"></div>
+        <div class="home-bg" :style="'background: url('+ storage +'bg'+ webp +')'"></div>
         <div class="max-area">
           <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span>Check out the projects I've worked on in the past few years below.</span></h3>
         </div>
@@ -33,6 +33,7 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
+        web: '.gif',
         sethover: '',
         hovers: 13,
         showhover: false,
@@ -338,7 +339,12 @@ export default {
     }
   },
   mounted() {
-    document.title = this.$route.meta.title;
+    let self = this;
+    document.title = self.$route.meta.title;
+
+      Modernizr.on('webp', function (result) {
+        self.webp = result ? '.webp' : self.webp;
+      });
   },
   methods: {
     onMouseMove(e) {
@@ -367,10 +373,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-  canvas {
-    position: fixed; top: 0; left: 0;
-  }
-</style>
