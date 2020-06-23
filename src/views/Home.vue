@@ -23,7 +23,6 @@
 <script>
 import Vue from 'vue'
 import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
-import * as THREE from '../js/three.module';
 
 Vue.use(checkView);
 
