@@ -87,7 +87,7 @@
         font-size: to-em(24);
         padding: to-em(40) 0 to-em(16);
         text-transform: uppercase;
-        font-family: Arial Black, Roboto, sans-serif;
+        font-family: 'Arial Black', Roboto, sans-serif;
         font-weight: 500;
 
         &:first-of-type {
@@ -342,7 +342,7 @@
             }
 
             &-title {
-                font-family: Arial Black, Roboto, sans-serif;
+                font-family: 'Arial Black', Roboto, sans-serif;
                 transition: box-shadow ease-in-out .3s, color ease-in-out .3s;
                 box-sizing: border-box;
                 box-shadow: -1px -1px 2px 0 rgba(255,255,255, 0.025), 1px 1px 2px 0 rgba(255,255,255, 0.1);
