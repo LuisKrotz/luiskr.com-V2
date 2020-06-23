@@ -32,7 +32,7 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        webp: '.gif',
+        webp: '.webp',
         sethover: '',
         hovers: 13,
         showhover: false,
@@ -337,13 +337,14 @@ export default {
         ]
     }
   },
+  created() {
+      Modernizr.on('webp', function (result) {
+        self.webp = result ?  self.webp : '.gif';
+      });
+  },
   mounted() {
     let self = this;
     document.title = self.$route.meta.title;
-
-      Modernizr.on('webp', function (result) {
-        self.webp = result ? '.webp' : self.webp;
-      });
   },
   methods: {
     onMouseMove(e) {
