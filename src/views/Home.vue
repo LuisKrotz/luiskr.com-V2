@@ -1,6 +1,6 @@
 <template>
     <main class="home">
-        <div class="home-bg" :style="'background: url('+ storage +'bg'+ webp +')'"></div>
+        <div id="appendCanvas"></div>
         <div class="max-area">
           <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span> Check out the projects I've worked on in the past few years below.</span></h3>
         </div>
@@ -23,6 +23,7 @@
 <script>
 import Vue from 'vue'
 import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
+import * as THREE from '../js/three.module';
 
 Vue.use(checkView);
 
@@ -345,7 +346,64 @@ export default {
     });
   },
   mounted() {
-    document.title = this.$route.meta.title;
+    let scene, renderer, camera, light, vnh, vth, self = this;
+
+    init();
+    animate();
+    document.title = self.$route.meta.title;
+
+    function init() {
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.querySelector('#appendCanvas').appendChild(renderer.domElement);
+
+        camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 400;
+
+        scene = new THREE.Scene();
+
+        light = new THREE.PointLight();
+        light.position.set(0, 0, 0);
+        scene.add(light);
+
+        let gridHelper = new THREE.GridHelper(800, 30, 0x0000ff, 0x0000ff);
+        gridHelper.position.y = -150;
+        gridHelper.position.x = 50;
+        scene.add(gridHelper);
+
+        let gridHelper2 = new THREE.GridHelper(800, 30, 0x0000ff, 0x0000ff);
+        gridHelper2.position.y = 150;
+        gridHelper2.position.x = 50;
+        scene.add(gridHelper2);
+      
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+        let time = - performance.now() * 0.0003;
+
+        camera.position.x = 400 * Math.cos(time);
+        camera.position.z = 400 * Math.sin(time);
+        camera.lookAt(scene.position);
+
+        light.position.x = Math.sin(time * 1.7) * 300;
+        light.position.y = Math.cos(time * 1.5) * 400;
+        light.position.z = Math.cos(time * 1.3) * 300;
+
+        if (vnh) vnh.update();
+        if (vth) vth.update();
+
+        renderer.render(scene, camera);
+    }
   },
   methods: {
     onMouseMove(e) {
