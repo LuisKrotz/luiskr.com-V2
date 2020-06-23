@@ -879,5 +879,13 @@ function init() {
   });
 }
 
-init();
+if (Boolean(localStorage.getItem('cookie')) === true) {
+  init();
+} else {
+  document.addEventListener('accepted', function() {
+    if (Boolean(localStorage.getItem('cookie')) === true) {
+      init();
+    }
+  });
+}
 export default router

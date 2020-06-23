@@ -2,7 +2,7 @@
     <main class="home">
         <div class="home-bg" :style="'background: url('+ storage +'bg'+ webp +')'"></div>
         <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span>Check out the projects I've worked on in the past few years below.</span></h3>
+          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span> Check out the projects I've worked on in the past few years below.</span></h3>
         </div>
 
         <article class="main">
@@ -32,7 +32,7 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        webp: '.webp',
+        webp: '.gif',
         sethover: '',
         hovers: 13,
         showhover: false,
@@ -338,13 +338,14 @@ export default {
     }
   },
   created() {
-      Modernizr.on('webp', function (result) {
-        self.webp = result ?  self.webp : '.gif';
-      });
+    let self = this;
+
+    Modernizr.on('webp', function (result) {
+      self.webp = result ?  self.webp : '.gif';
+    });
   },
   mounted() {
-    let self = this;
-    document.title = self.$route.meta.title;
+    document.title = this.$route.meta.title;
   },
   methods: {
     onMouseMove(e) {

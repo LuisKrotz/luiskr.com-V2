@@ -4,8 +4,6 @@
         <article class="about main">
             <h2 class="main-title" v-view @click="sendAnalyticsEvent('productions_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
 
-            <p class="main-text" v-view>These are the main projects, and main text production I participated.</p>
-
             <h3 class="main-subtitle" v-view>Published Articles</h3>
             <p class="main-text" v-view>VICENTE, D. ; ECKHARDT, D. D. ; OLIVEIRA, E. S. ; Krotz.Jacson ; Mateus Berlatto da Rosa ; Natiel Cazarotto Chiavegatti ; Ricardo Antunes Vieira ; PIVETTA, E. M. ; Cárla Callegaro Corrêa Kader . THE DEVELOPMENT OF INSTRUMENTAL ENGLISH ACTIVITIES VERSUS LEARNING STRATEGIES. Disciplinarum Scientia. Série Artes, Letras e Comunicação, v. 11, p. 137-147, 2010.</p>
             <p class="main-text" v-view>PIVETTA, E. M. ; ULBRICHT, V. R. ; Krotz.Jacson . Análise Para Desenvolver Um Tradutor Automatizado Da Língua Português Escrito Para A Libras. In: Ergodesign - Usihc, 2012. Lexus, 2012, 2012.</p>
