@@ -1,0 +1,19 @@
+{
+    "id": "72",
+    "path": "/projects/minimelissa-dreamers",
+    "project": "Minimelissa | AW'20",
+    "description": "Mini Melissa A/W '20 Dreamers. The collection that adventures and creativity discover new universes.",
+    "part": "Developed the front end of Minimelissa's AW '20 collection using the previously created framework Candy (created by myself).",
+    "link": "https://www.minimelissa.com.br/colecoes/dreamers",
+    "video": {
+        "width": "720",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Minimelissa | AW'20",
+        "img": "media/minimelissa-aw20",
+        "src": "media/minimelissa-aw20"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
+    "role": "Leading Frontend Developer"
+}
