@@ -222,6 +222,20 @@
             bottom: initial;
         }
 
+        .show-banner & {
+            bottom: initial;
+            right: to-em($gap-320);
+            top: to-em(16);
+
+            @include layout-540() {
+                right: to-em($gap-540);
+            }
+
+            @include layout-768() {
+                right: to-em($gap-768);
+            }
+        }
+
         &-line {
             display: block;
             width: 70%;
