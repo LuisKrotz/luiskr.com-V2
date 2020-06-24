@@ -14,7 +14,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'luiskr.com'
+      title: 'Luis Krötz'
     }
   },
   {
@@ -22,7 +22,7 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "About" */ '../views/About'),
     meta: {
-      title: 'luiskr.com | About'
+      title: 'Luis Krötz - About'
     }
   },
   {
@@ -30,7 +30,7 @@ const routes = [
     name: 'Productions',
     component: () => import(/* webpackChunkName: "Productions" */ '../views/Productions'),
     meta: {
-      title: 'luiskr.com | Productions'
+      title: 'Luis Krötz - Productions'
     }
   },
   {
@@ -38,7 +38,7 @@ const routes = [
     name: 'Credits',
     component: () => import(/* webpackChunkName: "Credits" */ '../views/Credits'),
     meta: {
-      title: 'luiskr.com | Credits'
+      title: 'Luis Krötz - Credits'
     }
   },
   {
@@ -46,7 +46,7 @@ const routes = [
     name: 'GDPR',
     component: () => import(/* webpackChunkName: "GDPR" */ '../views/GDPR'),
     meta: {
-      title: 'luiskr.com | GDPR'
+      title: 'Luis Krötz - GDPR'
     }
   },
   {
@@ -54,7 +54,7 @@ const routes = [
     name: 'Privacy Policy',
     component: () => import(/* webpackChunkName: "PrivacyPolicy" */ '../views/PrivacyPolicy'),
     meta: {
-      title: 'luiskr.com | Privacy Policy'
+      title: 'Luis Krötz - Privacy Policy'
     }
   },
   {
@@ -62,7 +62,7 @@ const routes = [
     name: 'Terms of Use',
     component: () => import(/* webpackChunkName: "TermsOfUse" */ '../views/TermsOfUse'),
     meta: {
-      title: 'luiskr.com | Terms of Use'
+      title: 'Luis Krötz - Terms of Use'
     }
   },
   {
@@ -70,7 +70,7 @@ const routes = [
     name: 'License',
     component: () => import(/* webpackChunkName: "MIT" */ '../views/Mit'),
     meta: {
-      title: 'luiskr.com | License'
+      title: 'Luis Krötz - License'
     }
   },
   {
@@ -78,7 +78,7 @@ const routes = [
     name: 'cssda-kudos-06-2020',
     component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
     meta: {
-      title: 'luiskr.com | Awards',
+      title: 'Luis Krötz - Awards',
       last: true,
       id: 4,
       total: total_aw
@@ -89,7 +89,7 @@ const routes = [
     name: 'cssda-inn-06-2020',
     component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
     meta: {
-      title: 'luiskr.com | Awards',
+      title: 'Luis Krötz - Awards',
       id: 3,
       total: total_aw
     }
@@ -99,7 +99,7 @@ const routes = [
     name: 'cssda-ux-06-2020',
     component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
     meta: {
-      title: 'luiskr.com | Awards',
+      title: 'Luis Krötz - Awards',
       id: 2,
       total: total_aw
     }
@@ -109,7 +109,7 @@ const routes = [
     name: 'cssda-ui-06-2020',
     component: ()  => import(/* webpackChunkName: "Awards" */ '../views/Awards'),
     meta: {
-      title: 'luiskr.com | Awards',
+      title: 'Luis Krötz - Awards',
       id: 1,
       total: total_aw
     }
@@ -119,7 +119,7 @@ const routes = [
     name: 'Melissa | Next',
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
-      title: 'luiskr.com | Melissa | Next',
+      title: 'Luis Krötz - Melissa | Next',
       last: true,
       id: 73,
       total: total
@@ -132,7 +132,7 @@ const routes = [
     meta: {
       id: 72,
       total: total,
-      title: 'luiskr.com | Minimelissa | AW\'20'
+      title: 'Luis Krötz - Minimelissa | AW\'20'
     }
   },
   {
@@ -142,7 +142,7 @@ const routes = [
     meta: {
       id: 71,
       total: total,
-      title: 'luiskr.com | Minimelissa | SS\'20'
+      title: 'Luis Krötz - Minimelissa | SS\'20'
     }
   },
   {
@@ -152,7 +152,7 @@ const routes = [
     meta: {
       id: 70,
       total: total,
-      title: 'luiskr.com |  Melissa Dreamers / Infinitos'
+      title: 'Luis Krötz -  Melissa Dreamers / Infinitos'
     }
   },
   {
@@ -162,7 +162,7 @@ const routes = [
     meta: {
       id: 69,
       total: total,
-      title: 'luiskr.com | METCHA | Newsletter'
+      title: 'Luis Krötz - METCHA | Newsletter'
     }
   },
   {
@@ -172,7 +172,7 @@ const routes = [
     meta: {
       id: 68,
       total: total,
-      title: 'luiskr.com | METCHA | Newsletter Generator'
+      title: 'Luis Krötz - METCHA | Newsletter Generator'
     }
   },
   {
@@ -182,7 +182,7 @@ const routes = [
     meta: {
       id: 67,
       total: total,
-      title: 'luiskr.com | METCHA | CMS'
+      title: 'Luis Krötz - METCHA | CMS'
     }
   },
   {
@@ -192,7 +192,7 @@ const routes = [
     meta: {
       id: 66,
       total: total,
-      title: 'luiskr.com | METCHA | Website'
+      title: 'Luis Krötz - METCHA | Website'
     }
   },
   {
@@ -202,7 +202,7 @@ const routes = [
     meta: {
       id: 65,
       total: total,
-      title: 'luiskr.com | Melissa | Sustainability'
+      title: 'Luis Krötz - Melissa | Sustainability'
     }
   },
   {
@@ -212,7 +212,7 @@ const routes = [
     meta: {
       id: 64,
       total: total,
-      title: 'luiskr.com | Melissa | Color ME'
+      title: 'Luis Krötz - Melissa | Color ME'
     }
   },
   {
@@ -222,7 +222,7 @@ const routes = [
     meta: {
       id: 63,
       total: total,
-      title: 'luiskr.com | Transainc | Muda'
+      title: 'Luis Krötz - Transainc | Muda'
     }
   },
   {
@@ -232,7 +232,7 @@ const routes = [
     meta: {
       id: 62,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2019'
+      title: 'Luis Krötz - CICB | Sustainability Forum 2019'
     }
   },
   {
@@ -242,7 +242,7 @@ const routes = [
     meta: {
       id: 61,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2018'
+      title: 'Luis Krötz - CICB | Sustainability Forum 2018'
     }
   },
   {
@@ -252,7 +252,7 @@ const routes = [
     meta: {
       id: 60,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2017'
+      title: 'Luis Krötz - CICB | Sustainability Forum 2017'
     }
   },
   {
@@ -262,7 +262,7 @@ const routes = [
     meta: {
       id: 59,
       total: total,
-      title: 'luiskr.com | CICB | Sustainability Forum 2016'
+      title: 'Luis Krötz - CICB | Sustainability Forum 2016'
     }
   },
   {
@@ -272,7 +272,7 @@ const routes = [
     meta: {
       id: 58,
       total: total,
-      title: 'luiskr.com | Coza | Webpage'
+      title: 'Luis Krötz - Coza | Webpage'
     }
   },
   {
@@ -282,7 +282,7 @@ const routes = [
     meta: {
       id: 57,
       total: total,
-      title: 'luiskr.com | Coza | Where to Find'
+      title: 'Luis Krötz - Coza | Where to Find'
     }
   },
   {
@@ -292,7 +292,7 @@ const routes = [
     meta: {
       id: 56,
       total: total,
-      title: 'luiskr.com | Melissa | Family'
+      title: 'Luis Krötz - Melissa | Family'
     }
   },
   {
@@ -302,7 +302,7 @@ const routes = [
     meta: {
       id: 55,
       total: total,
-      title: 'luiskr.com | Melissa | Mapping'
+      title: 'Luis Krötz - Melissa | Mapping'
     }
   },
   {
@@ -312,7 +312,7 @@ const routes = [
     meta: {
       id: 54,
       total: total,
-      title: 'luiskr.com | Melissa | Mirror'
+      title: 'Luis Krötz - Melissa | Mirror'
     }
   },
   {
@@ -322,7 +322,7 @@ const routes = [
     meta: {
       id: 53,
       total: total,
-      title: 'luiskr.com | Melissa | Open Vibes'
+      title: 'Luis Krötz - Melissa | Open Vibes'
     }
   },
   {
@@ -332,7 +332,7 @@ const routes = [
     meta: {
       id: 52,
       total: total,
-      title: 'luiskr.com | Melissa | À Lá Garçonne'
+      title: 'Luis Krötz - Melissa | À Lá Garçonne'
     }
   },
   {
@@ -342,7 +342,7 @@ const routes = [
     meta: {
       id: 51,
       total: total,
-      title: 'luiskr.com | Melissa | AWAYTOMARS'
+      title: 'Luis Krötz - Melissa | AWAYTOMARS'
     }
   },
   {
@@ -352,7 +352,7 @@ const routes = [
     meta: {
       id: 50,
       total: total,
-      title: 'luiskr.com | Melissa | Baja East'
+      title: 'Luis Krötz - Melissa | Baja East'
     }
   },
   {
@@ -362,7 +362,7 @@ const routes = [
     meta: {
       id: 49,
       total: total,
-      title: 'luiskr.com | Melissa | Melissa + CSC'
+      title: 'Luis Krötz - Melissa | Melissa + CSC'
     }
   },
   {
@@ -372,7 +372,7 @@ const routes = [
     meta: {
       id: 48,
       total: total,
-      title: 'luiskr.com | Melissa | Fábula'
+      title: 'Luis Krötz - Melissa | Fábula'
     }
   },
   {
@@ -382,7 +382,7 @@ const routes = [
     meta: {
       id: 47,
       total: total,
-      title: 'luiskr.com | Melissa | Melissa + Rider'
+      title: 'Luis Krötz - Melissa | Melissa + Rider'
     }
   },
   {
@@ -392,7 +392,7 @@ const routes = [
     meta: {
       id: 46,
       total: total,
-      title: 'luiskr.com | Melissa | Galleries SP\/NYC\/LON'
+      title: 'Luis Krötz - Melissa | Galleries SP\/NYC\/LON'
     }
   },
   {
@@ -402,7 +402,7 @@ const routes = [
     meta: {
       id: 45,
       total: total,
-      title: 'luiskr.com | Melissa | Bike'
+      title: 'Luis Krötz - Melissa | Bike'
     }
   },
   {
@@ -412,7 +412,7 @@ const routes = [
     meta: {
       id: 44,
       total: total,
-      title: 'luiskr.com | Melissa | Creatives'
+      title: 'Luis Krötz - Melissa | Creatives'
     }
   },
   {
@@ -422,7 +422,7 @@ const routes = [
     meta: {
       id: 43,
       total: total,
-      title: 'luiskr.com | Melissa | SK8'
+      title: 'Luis Krötz - Melissa | SK8'
     }
   },
   {
@@ -432,7 +432,7 @@ const routes = [
     meta: {
       id: 42,
       total: total,
-      title: 'luiskr.com | Melissa | Possession'
+      title: 'Luis Krötz - Melissa | Possession'
     }
   },
   {
@@ -442,7 +442,7 @@ const routes = [
     meta: {
       id: 41,
       total: total,
-      title: 'luiskr.com | Minimelissa | Candy Framework'
+      title: 'Luis Krötz - Minimelissa | Candy Framework'
     }
   },
   {
@@ -452,7 +452,7 @@ const routes = [
     meta: {
       id: 40,
       total: total,
-      title: 'luiskr.com | Minimelissa | Website'
+      title: 'Luis Krötz - Minimelissa | Website'
     }
   },
   {
@@ -462,7 +462,7 @@ const routes = [
     meta: {
       id: 39,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'16'
+      title: 'Luis Krötz - Minimelissa | A/W\'16'
     }
   },
   {
@@ -472,7 +472,7 @@ const routes = [
     meta: {
       id: 38,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'17'
+      title: 'Luis Krötz - Minimelissa | A/W\'17'
     }
   },
   {
@@ -482,7 +482,7 @@ const routes = [
     meta: {
       id: 37,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'18'
+      title: 'Luis Krötz - Minimelissa | A/W\'18'
     }
   },
   {
@@ -492,7 +492,7 @@ const routes = [
     meta: {
       id: 36,
       total: total,
-      title: 'luiskr.com | Minimelissa | A/W\'19'
+      title: 'Luis Krötz - Minimelissa | A/W\'19'
     }
   },
   {
@@ -502,7 +502,7 @@ const routes = [
     meta: {
       id: 35,
       total: total,
-      title: 'luiskr.com | Minimelissa | Where to Find'
+      title: 'Luis Krötz - Minimelissa | Where to Find'
     }
   },
   {
@@ -512,7 +512,7 @@ const routes = [
     meta: {
       id: 34,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'16'
+      title: 'Luis Krötz - Minimelissa | S/S\'16'
     }
   },
   {
@@ -522,7 +522,7 @@ const routes = [
     meta: {
       id: 33,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'17'
+      title: 'Luis Krötz - Minimelissa | S/S\'17'
     }
   },
   {
@@ -532,7 +532,7 @@ const routes = [
     meta: {
       id: 32,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'18'
+      title: 'Luis Krötz - Minimelissa | S/S\'18'
     }
   },
   {
@@ -542,7 +542,7 @@ const routes = [
     meta: {
       id: 31,
       total: total,
-      title: 'luiskr.com | Minimelissa | S/S\'19'
+      title: 'Luis Krötz - Minimelissa | S/S\'19'
     }
   },
   {
@@ -552,7 +552,7 @@ const routes = [
     meta: {
       id: 30,
       total: total,
-      title: 'luiskr.com | Mor | Website'
+      title: 'Luis Krötz - Mor | Website'
     }
   },
   {
@@ -562,7 +562,7 @@ const routes = [
     meta: {
       id: 29,
       total: total,
-      title: 'luiskr.com | Mor | Where to Find'
+      title: 'Luis Krötz - Mor | Where to Find'
     }
   },
   {
@@ -572,7 +572,7 @@ const routes = [
     meta: {
       id: 28,
       total: total,
-      title: 'luiskr.com | CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
+      title: 'Luis Krötz - CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
     }
   },
   {
@@ -582,7 +582,7 @@ const routes = [
     meta: {
       id: 27,
       total: total,
-      title: 'luiskr.com | Melissa | New Features'
+      title: 'Luis Krötz - Melissa | New Features'
     }
   },
   {
@@ -592,7 +592,7 @@ const routes = [
     meta: {
       id: 26,
       total: total,
-      title: 'luiskr.com | Melissa | Flygrl'
+      title: 'Luis Krötz - Melissa | Flygrl'
     }
   },
   {
@@ -602,7 +602,7 @@ const routes = [
     meta: {
       id: 25,
       total: total,
-      title: 'luiskr.com | Melissa | Mashup'
+      title: 'Luis Krötz - Melissa | Mashup'
     }
   },
   {
@@ -612,7 +612,7 @@ const routes = [
     meta: {
       id: 24,
       total: total,
-      title: 'luiskr.com | Melissa | Cine Melissa'
+      title: 'Luis Krötz - Melissa | Cine Melissa'
     }
   },
   {
@@ -622,7 +622,7 @@ const routes = [
     meta: {
       id: 23,
       total: total,
-      title: 'luiskr.com | Melissa | Dance Machine'
+      title: 'Luis Krötz - Melissa | Dance Machine'
     }
   },
   {
@@ -632,7 +632,7 @@ const routes = [
     meta: {
       id: 22,
       total: total,
-      title: 'luiskr.com | Melissa | Eat My Melissa'
+      title: 'Luis Krötz - Melissa | Eat My Melissa'
     }
   },
   {
@@ -642,7 +642,7 @@ const routes = [
     meta: {
       id: 21,
       total: total,
-      title: 'luiskr.com | Melissa | Nation'
+      title: 'Luis Krötz - Melissa | Nation'
     }
   },
   {
@@ -652,7 +652,7 @@ const routes = [
     meta: {
       id: 20,
       total: total,
-      title: 'luiskr.com | Melissa | Starwalker'
+      title: 'Luis Krötz - Melissa | Starwalker'
     }
   },
   {
@@ -662,7 +662,7 @@ const routes = [
     meta: {
       id: 19,
       total: total,
-      title: 'luiskr.com | Melissa | Wanna Be Carioca'
+      title: 'Luis Krötz - Melissa | Wanna Be Carioca'
     }
   },
   {
@@ -672,7 +672,7 @@ const routes = [
     meta: {
       id: 18,
       total: total,
-      title: 'luiskr.com | Melissa | We are Flowers'
+      title: 'Luis Krötz - Melissa | We are Flowers'
     }
   },
   {
@@ -682,7 +682,7 @@ const routes = [
     meta: {
       id: 17,
       total: total,
-      title: 'luiskr.com | Melissa | Campana'
+      title: 'Luis Krötz - Melissa | Campana'
     }
   },
   {
@@ -692,7 +692,7 @@ const routes = [
     meta: {
       id: 16,
       total: total,
-      title: 'luiskr.com | Melissa | Gaetano Pesce'
+      title: 'Luis Krötz - Melissa | Gaetano Pesce'
     }
   },
   {
@@ -702,7 +702,7 @@ const routes = [
     meta: {
       id: 15,
       total: total,
-      title: 'luiskr.com | Melissa | Gareth Pugh'
+      title: 'Luis Krötz - Melissa | Gareth Pugh'
     }
   },
   {
@@ -712,7 +712,7 @@ const routes = [
     meta: {
       id: 14,
       total: total,
-      title: 'luiskr.com | Melissa | J Maskrey'
+      title: 'Luis Krötz - Melissa | J Maskrey'
     }
   },
   {
@@ -722,7 +722,7 @@ const routes = [
     meta: {
       id: 13,
       total: total,
-      title: 'luiskr.com | Melissa | Jason Wu'
+      title: 'Luis Krötz - Melissa | Jason Wu'
     }
   },
   {
@@ -732,7 +732,7 @@ const routes = [
     meta: {
       id: 12,
       total: total,
-      title: 'luiskr.com | Melissa | Jeremy Scott'
+      title: 'Luis Krötz - Melissa | Jeremy Scott'
     }
   },
   {
@@ -742,7 +742,7 @@ const routes = [
     meta: {
       id: 11,
       total: total,
-      title: 'luiskr.com | Melissa | Karl Lagerfeld'
+      title: 'Luis Krötz - Melissa | Karl Lagerfeld'
     }
   },
   {
@@ -752,7 +752,7 @@ const routes = [
     meta: {
       id: 10,
       total: total,
-      title: 'luiskr.com | Melissa | Sebastian Errazuriz'
+      title: 'Luis Krötz - Melissa | Sebastian Errazuriz'
     }
   },
   {
@@ -762,7 +762,7 @@ const routes = [
     meta: {
       id: 9,
       total: total,
-      title: 'luiskr.com | Melissa | Vitorino Campos'
+      title: 'Luis Krötz - Melissa | Vitorino Campos'
     }
   },
   {
@@ -772,7 +772,7 @@ const routes = [
     meta: {
       id: 8,
       total: total,
-      title: 'luiskr.com | Melissa | Vivienne Westwood'
+      title: 'Luis Krötz - Melissa | Vivienne Westwood'
     }
   },
   {
@@ -782,7 +782,7 @@ const routes = [
     meta: {
       id: 7,
       total: total,
-      title: 'luiskr.com | Melissa | Zaha Hadid'
+      title: 'Luis Krötz - Melissa | Zaha Hadid'
     }
   },
   {
@@ -792,7 +792,7 @@ const routes = [
     meta: {
       id: 6,
       total: total,
-      title: 'luiskr.com | Melissa | Where to Find'
+      title: 'Luis Krötz - Melissa | Where to Find'
     }
   },
   {
@@ -802,7 +802,7 @@ const routes = [
     meta: {
       id: 5,
       total: total,
-      title: 'luiskr.com | Melissa | Roller Joy'
+      title: 'Luis Krötz - Melissa | Roller Joy'
     }
   },
   {
@@ -812,7 +812,7 @@ const routes = [
     meta: {
       id: 4,
       total: total,
-      title: 'luiskr.com | Melissa | Tropico Surreal'
+      title: 'Luis Krötz - Melissa | Tropico Surreal'
     }
   },
   {
@@ -822,7 +822,7 @@ const routes = [
     meta: {
       id: 3,
       total: total,
-      title: 'luiskr.com | Mor | Loja Mor'
+      title: 'Luis Krötz - Mor | Loja Mor'
     }
   },
   {
@@ -832,7 +832,7 @@ const routes = [
     meta: {
       id: 2,
       total: total,
-      title: 'luiskr.com | Vibra | Website'
+      title: 'Luis Krötz - Vibra | Website'
     }
   },
   {
@@ -842,7 +842,7 @@ const routes = [
     meta: {
       id: 1,
       total: total,
-      title: 'luiskr.com | GenesysInf | SageWeb'
+      title: 'Luis Krötz - GenesysInf | SageWeb'
     }
   },
   {
@@ -850,7 +850,7 @@ const routes = [
     name: 'Error404',
     component: () => import(/* webpackChunkName: 'Error404'*/ '../views/NotFound'),
     meta: {
-      title: 'luiskr.com | 404'
+      title: 'Luis Krötz - 404'
     }
   }
 ]
