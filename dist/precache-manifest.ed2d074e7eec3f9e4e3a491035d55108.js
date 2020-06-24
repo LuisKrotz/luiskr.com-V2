@@ -1,10 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0e760a1c1884852ecae5d1bb9ec1786c",
-    "url": "/android-chrome-96x96.png"
+    "revision": "3d5fb9bbc41548326c97696c6e3dec9a",
+    "url": "/android-chrome-144x144.png"
   },
   {
-    "revision": "d59a55d619491148dc7ea0188efaf02f",
+    "revision": "92dd91ea0acab960a83c0aed051a7976",
+    "url": "/android-chrome-192x192.png"
+  },
+  {
+    "revision": "f72c22e9aa8b9c8737ec71d8896f442b",
+    "url": "/android-chrome-256x256.png"
+  },
+  {
+    "revision": "1558bef342bb65fc2f299aa55b630686",
     "url": "/apple-touch-icon.png"
   },
   {
@@ -24,35 +32,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/awards/4.json"
   },
   {
-    "revision": "060491102c697e22a99e386b73c0ed6a",
+    "revision": "d2df81ad65b5328b978ef56fc53d5f09",
     "url": "/browserconfig.xml"
   },
   {
-    "revision": "17bd87a232a291cfc737",
-    "url": "/css/Awards.cfb2b225.css"
+    "revision": "7268c658e37d843e6b70",
+    "url": "/css/Awards.a99cb3cc.css"
   },
   {
     "revision": "c1f7f93a78a15ea34916",
     "url": "/css/Error404.4553f88c.css"
   },
   {
-    "revision": "a7babd91dc66a8a572d4",
-    "url": "/css/Project.cfb2b225.css"
+    "revision": "b03605cbb791ff5ee71d",
+    "url": "/css/Project.a99cb3cc.css"
   },
   {
-    "revision": "c860a44272ea0b3d1134",
-    "url": "/css/app.eab7bfe8.css"
+    "revision": "635e9ee7f55ed95f2e24",
+    "url": "/css/app.303ce3e4.css"
   },
   {
-    "revision": "2efa95d6c26a023deec35a5a7f3d1cd5",
+    "revision": "cf0618db0ee601dc8a04fec6252663d3",
     "url": "/favicon-16x16.png"
   },
   {
-    "revision": "b3d3ceae39a90bafddace4c28f62dcd9",
+    "revision": "05da880be966abaf1e8af78c5f86b4a7",
     "url": "/favicon-32x32.png"
   },
   {
-    "revision": "9b1cec9c611ddb10aa283575c1200024",
+    "revision": "e284d7cd226e5c2753126f3c4fe3f481",
     "url": "/index.html"
   },
   {
@@ -60,12 +68,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/About.f4306cf6.js"
   },
   {
-    "revision": "17bd87a232a291cfc737",
+    "revision": "7268c658e37d843e6b70",
     "url": "/js/Awards.54100ea6.js"
   },
   {
-    "revision": "d7054a64679df59f3413",
-    "url": "/js/Credits.ddf299be.js"
+    "revision": "ac45afa4dc3892156d30",
+    "url": "/js/Credits.85825b60.js"
   },
   {
     "revision": "c1f7f93a78a15ea34916",
@@ -84,11 +92,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/PrivacyPolicy.5bbc4036.js"
   },
   {
-    "revision": "12acabf99574205668a5",
-    "url": "/js/Productions.d1cd412e.js"
+    "revision": "a30de5d020fabe32a08f",
+    "url": "/js/Productions.05cc6f63.js"
   },
   {
-    "revision": "a7babd91dc66a8a572d4",
+    "revision": "b03605cbb791ff5ee71d",
     "url": "/js/Project.b905ce7e.js"
   },
   {
@@ -96,8 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/TermsOfUse.d83bae4f.js"
   },
   {
-    "revision": "c860a44272ea0b3d1134",
-    "url": "/js/app.32011f65.js"
+    "revision": "635e9ee7f55ed95f2e24",
+    "url": "/js/app.1aecf313.js"
   },
   {
     "revision": "2011a5f70b79163f5b81",
@@ -116,7 +124,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/media/bg.webp"
   },
   {
-    "revision": "dd560b1a69b2b4eb376ccc05c248f60a",
+    "revision": "3bdeaac6684d2a06ea24206810d48690",
     "url": "/mstile-150x150.png"
   },
   {
@@ -368,7 +376,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/projects/65.json"
   },
   {
-    "revision": "4fb0085021110acd8b049bf9c3dbe806",
+    "revision": "283ad179f9485fa83fdbae39ee8d304c",
     "url": "/projects/66.json"
   },
   {
@@ -416,7 +424,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/robots.txt"
   },
   {
-    "revision": "987e94cd5567bb3a25188620b5646f4a",
+    "revision": "d31c748fece42c7ce6685b58374bd4cb",
     "url": "/safari-pinned-tab.svg"
   },
   {
@@ -428,7 +436,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/share.png"
   },
   {
-    "revision": "87e061e66a5365805e56c89cd80dd85f",
+    "revision": "9fc03faf5d9f368f7425b7e10d593432",
     "url": "/site.webmanifest"
   },
   {
