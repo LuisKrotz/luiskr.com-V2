@@ -374,7 +374,6 @@
                 text-decoration: none;
                 color: $color-white;
                 text-decoration-skip-ink: none;
-                overflow-y: scroll;
                 position: relative;
 
                 @include layout-375() {
