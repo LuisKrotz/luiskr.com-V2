@@ -1,0 +1,52 @@
+/* Acessibility */
+.hdn {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.hdn.focusable:active,
+.hdn.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+body.black {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.wf-active a,
+.wf-active p,
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active h4,
+.wf-active h5,
+.wf-active h6,
+.wf-active code,
+.wf-active pre,
+.wf-active hr,
+.wf-active ul,
+.wf-active ol,
+.wf-active span,
+.wf-active header,
+.wf-active footer,
+.wf-active aside,
+.wf-active button,
+.wf-active img,
+.wf-active video {
+  opacity: 1;
+}

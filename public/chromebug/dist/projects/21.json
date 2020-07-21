@@ -1,0 +1,20 @@
+
+{
+    "id": "21",
+    "path": "/projects/melissa-nation",
+    "project": "Melissa | Nation / Improvements",
+    "description": "All three crews together result in a Melissa of everyone, about everyone, and for everyone.",
+    "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
+    "link": "https://www.melissa.com.br/us/collections/nation",
+    "video": {
+        "width": "720",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Melissa | Nation / Improvements",
+        "img": "media/melissa.com.br-colecoes-nation-31-01-19-maintenence",
+        "src": "media/melissa.com.br-colecoes-nation-31-01-19-maintenence"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
+    "role": "Frontend Developer"
+}

@@ -1,0 +1,20 @@
+
+{
+    "id": "30",
+    "path": "/projects/mor-website",
+    "project": "Mor | Website",
+    "description": "Mor Official Website",
+    "part": "Leading developer website from begining to end.",
+    "link": "https://mor.com.br",
+    "video": {
+        "width": "720",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Mor | Website",
+        "img": "media/mor.com.br-31-03-19",
+        "src": "media/mor.com.br-31-03-19"
+    },
+    "at_link": "https://www.instagram.com/transainc_",
+    "at_place": "@transainc",
+    "at_logo": "img/logo_transa.svg",
+    "role": "Frontend Developer"
+}
