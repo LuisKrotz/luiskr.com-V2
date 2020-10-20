@@ -2,7 +2,7 @@
     <main class="home">
         <div id="appendCanvas"></div>
         <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span> Check out the projects I've worked on in the past few years below.</span></h3>
+          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span> A Front-end developer and part time Freelancer. Check out the projects I've worked on in the past few years below.</span></h3>
         </div>
 
         <article class="main">
@@ -15,7 +15,7 @@
               </router-link>
               </div>
             </div>
-            <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
+            <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
         </article>
     </main>
 </template>
@@ -35,7 +35,7 @@ export default {
         origin: this.$parent.origin,
         webp: '.gif',
         sethover: '',
-        hovers: 30,
+        hovers: 13,
         showhover: false,
         random: 0,
         page: {
@@ -346,10 +346,64 @@ export default {
     });
   },
   mounted() {
-    let self = this;
+    let scene, renderer, camera, light, vnh, vth, self = this;
 
-
+    init();
+    animate();
     document.title = self.$route.meta.title;
+
+    function init() {
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.querySelector('#appendCanvas').appendChild(renderer.domElement);
+
+        camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.z = 400;
+
+        scene = new THREE.Scene();
+
+        light = new THREE.PointLight();
+        light.position.set(0, 0, 0);
+        scene.add(light);
+
+        let gridHelper = new THREE.GridHelper(800, 40, 0x0000ff, 0x0000ff);
+        gridHelper.position.y = -150;
+        gridHelper.position.x = 50;
+        scene.add(gridHelper);
+
+        let gridHelper2 = new THREE.GridHelper(800, 40, 0x0000ff, 0x0000ff);
+        gridHelper2.position.y = 150;
+        gridHelper2.position.x = 50;
+        scene.add(gridHelper2);
+      
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+        let time = - performance.now() * 0.0003;
+
+        camera.position.x = 400 * Math.cos(time);
+        camera.position.z = 400 * Math.sin(time);
+        camera.lookAt(scene.position);
+
+        light.position.x = Math.sin(time * 1.7) * 300;
+        light.position.y = Math.cos(time * 1.5) * 400;
+        light.position.z = Math.cos(time * 1.3) * 300;
+
+        if (vnh) vnh.update();
+        if (vth) vth.update();
+
+        renderer.render(scene, camera);
+    }
   },
   methods: {
     onMouseMove(e) {

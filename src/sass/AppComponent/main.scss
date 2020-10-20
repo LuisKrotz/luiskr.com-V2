@@ -614,6 +614,10 @@
 
     .home & {
         position: absolute;
+        background-color: rgba(0, 0, 0, .25);
+        padding: to-em(8);
+        object-fit: contain;
+        border-radius: 50%;
     }
 }
 

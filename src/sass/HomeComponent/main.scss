@@ -16,8 +16,8 @@
         text-transform: uppercase;
         font-weight: 900;
         position: fixed;
-        font-size: 5.63vh;
-        line-height: 6.63vh;
+        font-size: 6.63vh;
+        line-height: 7.63vh;
         padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
         opacity: 1;
         top: 50%;
@@ -96,8 +96,46 @@
             text-shadow: to-em(8) to-em(2) to-em(5) rgba(0,0,0, .1);
         }
 
+        span {
+            display: block;
+            font-size: smaller;
+
+            font-size: 3.63vh;
+            line-height: 4.63vh;
+            text-align-last: right;
+
+            @include layout-540() {
+                font-size: 5.04vh;
+                line-height: 5.05vh;
+            }
+
+            @include layout-768() {
+                text-align-last: justify;
+                font-size: 6.25vh;
+                line-height: 7.25vh;
+            }
+
+            @include layout-1280() {
+                font-size: 9.55vh;
+                line-height: 10.55vh;
+            }
+        
+            @include layout-1920() {
+                font-size: 8.63vh;
+                line-height: 9.63vh;
+            }
+
+            @include layout-2560() {
+                font-size: 9.66vh;
+                line-height: 10.66vh;
+            }
+        }
+
         a {
             text-decoration: underline;
+            text-align-last: justify;
+            width: 100%;
+            display: block;
 
             &:hover {
                 text-decoration: none;

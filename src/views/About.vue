@@ -5,9 +5,7 @@
           <div class="about main">
             <h2 class="main-title" v-view @click="sendAnalyticsEvent('about_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
             <h3 class="main-subtitle" v-view>About Me</h3>
-            <p class="main-text" v-view>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>. Living in Porto Alegre / Brazil, and a part-time Freelancer.<br>
-                                <router-link to="/">Feel free to explore</router-link> and contact me at any time, by <a @click="sendAnalyticsEvent('about_link', 'click','mailto', 200)" href="mailto:luis.krotz@gmail.com" rel="noopener">email</a>, <a @click="sendAnalyticsEvent('about_link', 'click','tel', 200)" href="tel:+55982274782" rel="noopener">imessage</a> or <a @click="sendAnalyticsEvent('about_link', 'click','whatsapp', 200)" href="https://api.whatsapp.com/send?phone=+5551982274782" rel="noopener">whatsapp</a>.
-            </p>
+            <p class="main-text" v-view>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and a part-time Freelancer.</p>
             <p class="main-text" v-view>I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
               <video v-view loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>
