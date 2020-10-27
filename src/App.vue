@@ -7,15 +7,7 @@
       <router-view />
     </transition>
 
-    <span class="loading">
-      <span class="loading-1">L</span>
-      <span class="loading-2">o</span>
-      <span class="loading-3">a</span>
-      <span class="loading-4">d</span>
-      <span class="loading-5">i</span>
-      <span class="loading-6">n</span>
-      <span class="loading-7">g</span>
-    </span>
+    <span class="loading">Loading</span>
 
     <transition name="cookie">
       <div v-if="!show_cookie && domLoaded" class="cookie-banner">

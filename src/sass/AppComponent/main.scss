@@ -160,11 +160,7 @@
 .header-modal {
     position: fixed;
     width: 100vw;
-    bottom: to-em(8);
-
-    @include layout-768() {
-        top: 0;
-    }
+    top: 0;
 
     .header-open & {
         position: relative;
@@ -210,41 +206,31 @@
         width: to-em(50);
         height: to-em(50);
         transform: translate3D(0, to-em(-8), 0);
+        background: $color-black;
+        border-radius: 100%;
+        border: 1px solid $color-white;
 
         @include layout-1024() {
+            border: none;
+            background: none;
             margin-top: -1px;
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
         }
 
-        .show-banner & {
-            border-radius: 0;
-            transform: translate3D(0, 0, 0);
-            bottom: initial;
-            right: to-em($gap-320);
-            top: 0;
-
-            @include layout-540() {
-                right: to-em($gap-540);
-            }
-
-            @include layout-768() {
-                right: to-em($gap-768);
-            }
-
-            @include layout-1024() {
-                transform: translate3D(-80%, 0, 0);
-                right: initial;
-            }
-        }
-
         &-line {
             display: block;
-            width: 70%;
-            margin: 7px auto;
+            width: 60%;
+            margin: 8px auto;
             box-sizing: border-box;
-            height: 2px;
+            height: 1px;
             background: $color-white;
+
+            @include layout-1024() {
+                margin: 7px auto;
+                width: 70%;
+                height: 2px;
+            }
 
             &.top {
                 transition: all .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -595,9 +581,6 @@
 }
 
 .loading {
-    justify-content: flex-end;
-    display: flex;
-    flex-direction: row;
     transition: transform ease-out .5s;
     height: to-em(82);
     line-height: to-em(82);
@@ -608,87 +591,13 @@
     position: fixed;
     text-transform: uppercase;
     text-align: center;
-    padding-right: to-em(8);
-    $jump-timing: 1s;
-    background: $color-black;
+    box-sizing: border-box;
     color: $color-white;
-
-    @include layout-540() {
-        padding-right: to-em(16);
-    }
-
-    @include layout-768() {
-        padding-right: to-em(32);
-    }
-
-    @include layout-1024() {
-        padding: 0;
-        justify-content: center;
-    }
+    background-color: $color-black;
+    z-index: 60;
 
     .getting & {
         transform: translate3D(0, -100%, 0);
-    }
-
-    &-1,
-    &-2,
-    &-3,
-    &-4,
-    &-5,
-    &-6,
-    &-7 {
-        font-weight: 900;
-        margin: 0 to-em(8);
-        transition: transform ease-in-out $jump-timing;
-        display: inline-block;
-        animation-play-state: paused;
-
-        .getting & {
-            animation-play-state: running;
-        }
-    }
-
-    &-1 {
-        animation: jump $jump-timing linear 0s infinite alternate;
-    }
-
-    &-2 {
-        animation: jump $jump-timing linear $jump-timing infinite alternate;
-    }
-
-    &-3 {
-        animation: jump $jump-timing linear $jump-timing * 2 infinite alternate;
-    }
-
-    &-4 {
-        animation: jump $jump-timing linear $jump-timing * 3 infinite alternate;
-    }
-
-    &-5 {
-        animation: jump $jump-timing linear $jump-timing * 4 infinite alternate;
-    }
-
-    &-6 {
-        animation: jump $jump-timing linear $jump-timing * 5 infinite alternate;
-    }
-
-    &-7 {
-        animation: jump $jump-timing linear $jump-timing * 6 infinite alternate;
-    }
-}
-
-@keyframes jump {
-    0% {
-        transform: translate3D(0, 0, 0);
-    }
-    25% {
-        transform: translate3D(0, to-em(-4), 0);
-    }
-    50% {
-        transform: translate3D(0, 0, 0);
-    }
-    75% {
-        transform: translate3D(0, to-em(4), 0);
     }
 }
 
