@@ -16,8 +16,7 @@
 
     <main class="main">
       <article :class="'project home-project max-area ' + (loaded ? 'loaded' : '')">
-        <h2 class="project-title" v-view v-if="translations !== undefined" @click="sendAnalyticsEvent('project_link', 'click','home', 100)"><router-link to="/" :style="'background-color: #' + random_colors[random_color]">luiskr</router-link></h2>
-        <h3 class="project-subtitle" v-view v-if="post !== undefined">{{ post.project }}</h3>
+        <h2 class="project-title" v-view v-if="post !== undefined">{{ post.project }}</h2>
 
         <div class="project-info">
           <transition name="fade" mode="out-in">
@@ -36,20 +35,20 @@
           <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
             <div class="project-info-description">
               <a class="project-info-link" v-view :href="post.at_link">
-                <h4 class="project-info-link-title">{{ translations.at }}</h4>
+                <h3 class="project-info-link-title">{{ translations.at }}</h3>
                 {{ post.at_place }}
                 </a>
 
-              <h5 class="project-info-role" v-view>
+              <h4 class="project-info-role" v-view>
                 <span class="project-info-role-title">{{ translations.role }}</span> <span>{{ post.role }}</span>
-              </h5>
+              </h4>
 
               <div class="project-info-more" v-view>
-                <h6 class="first">{{ translations.description}}</h6>
+                <h5 class="first">{{ translations.description}}</h5>
                 <p v-html="post.description"></p>
-                <h6>{{ translations.contribuition}}</h6>
+                <h5>{{ translations.contribuition}}</h5>
                 <p v-html="post.part"></p>
-                <h6 class="project-info-credit" v-view>{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h6>
+                <h5 class="project-info-credit" v-view>{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h5>
                 <p>
                   <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('project_link', 'click', post.at_place, 25)">
                     <img v-view v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
@@ -60,7 +59,7 @@
 
               <div  v-if="post.extra !== undefined">
                 <div v-for="extra in post.extra" :key="extra.id" v-view class="project-info-more">
-                  <h6 class="title" v-html="extra.alt"></h6>
+                  <h5 class="title" v-html="extra.alt"></h5>
 
                   <picture v-if="extra.type === 'img'">
                     <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
@@ -215,9 +214,6 @@ export default {
       };
 
       scrollToTop();
-    },
-    viewHandler(e) {
-      this.$parent.viewHandler(e);
     },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);

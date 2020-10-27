@@ -1,15 +1,16 @@
 <template>
     <main class="home">
-        <div id="appendCanvas"></div>
+        <div id="appendPicture"></div>
+        <div id="appendSVG"></div>
         <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">Hey, I'm Luis.</router-link><span> A Front-end developer and part time Freelancer. Check out the projects I've worked on in the past few years below.</span></h3>
+          <h3 class="main-title"><router-link to="/about">I'm Luis. </router-link><span>Front-end developer and part time Freelancer. Check out some of the projects I've worked on below.</span></h3>
         </div>
 
         <article class="main">
             <div class="home-projects">
               <div class="max-area">
-              <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index" :style="sethover">
-                    <h3 class="home-project-title"  @mouseleave="clear()" @mouseenter="hover($event)" @mousemove="onMouseMove($event)" @click="projectClick('portfolio_link', 'click', post.project, 100)">
+              <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index">
+                    <h3 class="home-project-title" @click="projectClick('portfolio_link', 'click', post.project, 100)">
                         <span v-view>{{ post.name }}</span>
                     </h3>
               </router-link>

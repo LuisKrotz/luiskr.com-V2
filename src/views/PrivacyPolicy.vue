@@ -2,9 +2,9 @@
   <div class="footer-open">
     <main class="max-area">
       <article class="about main">
-        <h2 class="main-title" v-view @click="sendAnalyticsEvent('privacy_policy_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+        <h2 class="main-title" v-view>Privacy Policy</h2>
 
-        <h3 class="main-subtitle" v-view>Privacy Policy</h3>
+        <h3 class="main-subtitle" v-view>The Usual Stuff</h3>
         <p class="main-text" v-view>At <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr</span></router-link>, accessible from <router-link to="/">https://luiskr.com</router-link>, one of my main priorities is the privacy of my visitors. This Privacy Policy document contains types of information that is collected and recorded by <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link> and how I use it.</p>
         <p class="main-text" v-view>If you have additional questions or require more information about my Privacy Policy, do not hesitate to contact me.</p>
         <p class="main-text" v-view>This Privacy Policy applies only to my online activities and is valid for visitors to my website with regards to the information that they shared and/or collect in <router-link to="/"><span  @click="sendAnalyticsEvent('privacy_policy_link', 'click', 'luiskr.com', 100)">luiskr.com</span></router-link>. This policy is not applicable to any information collected offline or via channels other than this website.</p>

@@ -18,81 +18,81 @@
                     <div class="header-modal-background"></div>
                     <div class="max-area">
                         <div>
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.home[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.home[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.home[1], 100)">
+                                <router-link class="header-modal-link" :to="array.home[0]">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.home[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.about[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.about[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.about[1], 100)">
+                                <router-link class="header-modal-link" :to="array.about[0]">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.about[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.awards[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.awards[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.awards[1], 100)">
+                                <router-link class="header-modal-link" :to="array.awards[0]">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.awards[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.productions[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.productions[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.productions[1], 100)">
+                                <router-link class="header-modal-link" :to="array.productions[0]">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.productions[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.mail[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <a class="header-modal-link" :style="sethover" :href="array.mail[0]" rel="noopener">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.mail[1], 200)">
+                                <a class="header-modal-link" :href="array.mail[0]" rel="noopener">
                                     <span class="header-modal-link-title" @click="headerClose()" >{{ array.mail[1] }}</span>
                                 </a>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.phone[1], 200)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <a class="header-modal-link" :style="sethover" :href="array.phone[0]" rel="noopener">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.phone[1], 200)">
+                                <a class="header-modal-link" :href="array.phone[0]" rel="noopener">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.phone[1] }}</span>
                                 </a>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.linkedin[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <a class="header-modal-link" :style="sethover" :href="array.linkedin[0]" rel="noopener">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.linkedin[1], 100)">
+                                <a class="header-modal-link" :href="array.linkedin[0]" rel="noopener">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.linkedin[1] }}</span>
                                 </a>
                             </h4>
                         </div>
                         <div>
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.github[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <a class="header-modal-link" :style="sethover" :href="array.github[0]" rel="noopener">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.github[1], 100)">
+                                <a class="header-modal-link" :href="array.github[0]" rel="noopener">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.github[1] }}</span>
                                 </a>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.instagram[1], 100)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <a class="header-modal-link" :style="sethover" :href="array.instagram[0]" rel="noopener">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.instagram[1], 100)">
+                                <a class="header-modal-link" :href="array.instagram[0]" rel="noopener">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.instagram[1] }}</span>
                                 </a>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.credits[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.credits[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.credits[1], 50)">
+                                <router-link class="header-modal-link" :to="array.credits[0]">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.credits[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.GDPR[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.GDPR[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.GDPR[1], 50)">
+                                <router-link class="header-modal-link" :to="array.GDPR[0]">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.GDPR[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.terms_of_use[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.terms_of_use[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.terms_of_use[1], 50)">
+                                <router-link class="header-modal-link" :to="array.terms_of_use[0]">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.terms_of_use[1] }}</span>
                                 </router-link>
                             </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.privacy_policy[1], 50)" @mouseleave="clear()" @mouseenter.self="hover($event)"  @mousemove="onMouseMove($event)">
-                                <router-link class="header-modal-link" :style="sethover" :to="array.privacy_policy[0]">
+                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.privacy_policy[1], 50)">
+                                <router-link class="header-modal-link" :to="array.privacy_policy[0]">
                                     <span class="header-modal-link-title" @click="headerClose()">{{ array.privacy_policy[1] }}</span>
                                 </router-link>
                             </h4>

@@ -12,8 +12,7 @@
 
     <main class="main">
       <article :class="'award max-area ' + (loaded ? 'loaded' : '')">
-        <h2 class="award-title" v-view v-if="translations !== undefined" @click="sendAnalyticsEvent('awards_link', 'click','home', 100)"><router-link to="/" style="background-color: rgba(0,0,0, .5)">luiskr</router-link></h2>
-        <h3 class="award-subtitle" v-view>{{ translations.title }}</h3>
+        <h2 class="award-title" v-view v-if="translations !== undefined">{{ translations.title }}</h2>
 
         <div class="award-info">
           <transition name="fade" mode="out-in">
@@ -29,10 +28,10 @@
           <div class="award-info-content" v-if="translations !== undefined && post !== undefined">
             <div class="award-info-description">
               <a class="award-info-link" v-view :href="post.link">
-                <h4 class="award-info-link-title">{{ post.award }}</h4>
+                <h3 class="award-info-link-title">{{ post.award }}</h3>
               </a>
               <p class="hdn">{{ post.img.longdesc }}</p>
-              <h4 class="award-info-role" v-view>{{ post.date }}</h4>
+              <h3 class="award-info-role" v-view>{{ post.date }}</h3>
             </div>
 
             <a class="award-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('awards_link', 'click', translations.checkit, 25)">
@@ -169,9 +168,6 @@ export default {
       };
 
       scrollToTop();
-    },
-    viewHandler(e) {
-      this.$parent.viewHandler(e);
     },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);

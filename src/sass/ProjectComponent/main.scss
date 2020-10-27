@@ -24,6 +24,7 @@
         display: block;
         position: relative;
         margin: 0 auto;
+        font-weight: 900;
         font-size: to-em(64);
         text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
 
@@ -31,26 +32,9 @@
             font-size: to-em(104);
         }
 
-        a {
-            box-shadow: -2px -2px 5px rgba(255,255,255, .05), 2px 2px 5px rgba(0,0,0, .15);
-            text-transform: uppercase;
-            text-decoration: underline;
-
-            &:hover {
-                text-decoration: none;
-                box-shadow: -1px -1px 5px rgba(255,255,255, .05), 1px 1px 5px rgba(0,0,0, .1);
-            }
+        @include layout-1024() {
+            max-width: 60rem;
         }
-    }
-
-    &-subtitle {
-        text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
-        text-align: center;
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        font-size: to-em(40);
-        padding: to-em(48) 0 0;
     }
 
     &-media {
@@ -126,7 +110,7 @@
             padding: to-em(16) 0;
             text-align: justify;
 
-            h6 {
+            h5 {
                 font-size: to-em(24);
                 font-weight: 900;
                 text-align: left;

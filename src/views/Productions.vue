@@ -2,7 +2,7 @@
   <div>
     <main class="max-area">
         <article class="about main">
-            <h2 class="main-title" v-view @click="sendAnalyticsEvent('productions_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+            <h2 class="main-title" v-view>Prod.</h2>
 
             <h3 class="main-subtitle" v-view>Published Articles</h3>
             <p class="main-text" v-view>VICENTE, D. ; ECKHARDT, D. D. ; OLIVEIRA, E. S. ; Krotz.Jacson ; Mateus Berlatto da Rosa ; Natiel Cazarotto Chiavegatti ; Ricardo Antunes Vieira ; PIVETTA, E. M. ; Cárla Callegaro Corrêa Kader . THE DEVELOPMENT OF INSTRUMENTAL ENGLISH ACTIVITIES VERSUS LEARNING STRATEGIES. Disciplinarum Scientia. Série Artes, Letras e Comunicação, v. 11, p. 137-147, 2010.</p>

@@ -3,9 +3,9 @@
     <main class="max-area">
         <article>
           <div class="about main">
-            <h2 class="main-title" v-view @click="sendAnalyticsEvent('about_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
-            <h3 class="main-subtitle" v-view>About Me</h3>
-            <p class="main-text" v-view>I'm a Frond-End Developer currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and a part-time Freelancer.</p>
+            <h2 class="main-title" v-view>About</h2>
+            <h3 class="main-subtitle" v-view>A Frond-End Developer</h3>
+            <p class="main-text" v-view>Currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and a part-time Freelancer.</p>
             <p class="main-text" v-view>I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
               <video v-view loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>

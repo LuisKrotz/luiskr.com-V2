@@ -2,9 +2,8 @@
   <div class="footer-open">
     <main class="max-area">
         <article class="about main">
-          <h2 class="main-title" v-view  @click="sendAnalyticsEvent('gdpr_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
-          <h3 class="main-subtitle" v-view>GDPR</h3>
-          <h3 class="main-text" v-view>Data Protection Rights</h3>
+          <h2 class="main-title" v-view>GDPR</h2>
+          <h3 class="main-subtitle" v-view>Data Protection Rights</h3>
 
           <p class="main-text" v-view>I would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
           <p class="main-text" v-view><strong>The right to access</strong> – You have the right to request copies of your personal data. I do not store any data, I'm happy to share any data from Google analytics collected if needed, no personal data is stored on this website.</p>

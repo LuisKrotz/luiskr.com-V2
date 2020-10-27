@@ -3,13 +3,12 @@
     <main class="max-area">
         <article>
           <div class="terms about main">
-            <h2 class="main-title" v-view @click="sendAnalyticsEvent('license_link', 'click','home', 100)"><router-link to="/">luiskr</router-link></h2>
+            <h2 class="main-title" v-view>MIT</h2>
 
-            <h3 class="main-subtitle" v-view>License</h3>
+            <h3 class="main-subtitle" v-view>Copyright (c) {{ year }} Luis Krotz</h3>
             <p class="main-text" v-view >The luiskr website located at <router-link to="/">luiskr.com</router-link> is copyrighted under <a href="https://opensource.org/licenses/MIT" rel="noopener" target="_blank">MIT LICENSE</a> originally created by Luis Krötz.</p>
-            <h3 class="main-subtitle" v-view>MIT License</h3>
+            <h3 class="main-subtitle" v-view>License</h3>
 
-            <p class="main-text" v-view >Copyright (c) {{ year }} Luis Krotz
             <p class="main-text" v-view >Permission is hereby granted, free of charge, to any person obtaining a copy
             of this software and associated documentation files (the "Software"), to deal
             in the Software without restriction, including without limitation the rights
