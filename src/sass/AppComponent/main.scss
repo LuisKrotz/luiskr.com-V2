@@ -197,6 +197,7 @@
     }
 
     &-more {
+        transition: background-color .5s linear;
         backface-visibility: hidden;
         bottom:to-em(9);
         position: fixed;
@@ -210,9 +211,21 @@
         border-radius: 100%;
         border: 1px solid $color-white;
 
+        .on-bottom & {
+            background: transparent;
+        }
+        
+        .on-bottom.header-open & {
+            background: $color-black;
+
+            @include layout-1024() {
+                background: transparent;
+            }
+        }
+
         @include layout-1024() {
             border: none;
-            background: none;
+            background: transparent;
             margin-top: -1px;
             transform: translate3D(-80%, 0, 0);
             bottom: initial;
@@ -402,15 +415,14 @@
 
 
 .footer {
-    align-items: center;
-    position: fixed;
-    width: 100vw;
+    position: sticky;
+    width: 100%;
     bottom: -1px;
     height: to-em(82);
-    background-color: $color-black;
+    background-color: transparent;
 
     @include layout-1024() {
-        background-color: transparent;
+        position: fixed;
     }
 
     .max-area {

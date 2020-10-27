@@ -136,14 +136,7 @@ export default {
       prev: undefined,
       total: Number,
       loaded: false,
-      last: false,
-      random_color: Math.round(Math.random() * 18) - 1,
-      random_colors: [
-        '3f3fec', '2929e2', '1a1a48', '55daad', '38886d', '38886d',
-        '25463b', '573279', '962626', '191970', '5f9ea0', '4bc18b',
-        '525252', 'A1D470', '580edc', '723c7b', '009688', 'c54a8d',
-        '29d',
-      ]
+      last: false
     }
   },
   created() {
@@ -160,7 +153,10 @@ export default {
     self.total = Number(meta.total);
   },
   mounted() {
+    document.body.classList.remove("on-bottom");
+
     this.getPost();
+    this.scrollPosition();
   },
   methods: {
     getPost() {
@@ -217,6 +213,16 @@ export default {
     },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
+    },
+    scrollPosition () {
+      window.onscroll = () => {
+        let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+
+        if (bottomOfWindow) 
+          document.body.classList.add("on-bottom");
+        else 
+          document.body.classList.remove("on-bottom");
+      }
     }
   }
 }
