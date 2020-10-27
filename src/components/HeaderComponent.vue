@@ -101,7 +101,6 @@
                 </div>
             </transition>
         </header>
-        <img v-if="open && this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'glitches/'+ random + '.gif'" class="hover" :style="'transform: translate(' + page.left + 'px, ' + page.top + 'px) '+ (showhover ? 'scale(1); visibility: visible; opacity: 1' : 'scale(0); visibility: hidden: opacity: 0')" aria-hidden="true">
     </div>
 </template>
 
@@ -171,16 +170,8 @@ export default {
                         "phone"
                     ]
                 },
-                hovers: 30,
-                sethover: '',
                 remember: 0,
-                open: false,
-                showhover: false,
-                random: 0,
-                page: {
-                    left : 0,
-                    top: 0
-                }
+                open: false
             }
         },
         created() {
@@ -215,35 +206,16 @@ export default {
             headerOpen() {
                 if (this.open) {
                     this.headerClose();
-                    this.clear();
                     this.sendAnalyticsEvent('modal', 'click', 'open', 100);
                 } else {
                     this.remember = window.scrollY;
                     window.scrollTo(0, 0);
-                    this.clear();
 
                     document.querySelector(".main").style = `transform: translateY(-${this.remember}px`;
                     document.body.classList.add("header-open");
                     this.open = true;
                     this.sendAnalyticsEvent('modal', 'click', 'close', 50);
                 }
-            },
-            onMouseMove(e) {
-                if(!this.$parent.has_touch) {
-                    this.page.left = e.pageX;
-                    this.page.top = e.pageY;
-                }
-            },
-            hover(e) {
-                if(!this.$parent.has_touch) {
-                    this.showhover = true;
-                    this.random = Math.round(Math.random() * this.hovers);
-
-                    this.onMouseMove(e);
-                }
-            },
-            clear() {
-                this.showhover = false;
             },
             sendAnalyticsEvent(category, action, label, value) {
                 this.$parent.sendAnalyticsEvent(category, action, label, value);

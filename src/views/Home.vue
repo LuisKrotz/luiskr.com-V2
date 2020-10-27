@@ -15,7 +15,6 @@
               </router-link>
               </div>
             </div>
-            <img v-if="this.$parent.domLoaded && !this.$parent.has_touch" :src="storage + 'click/'+ random + '.gif'" class="hover" :style="'transform: translate3D(' + page.left + 'px, ' + page.top + 'px, 0);'+ (showhover ? ' visibility: visible; opacity: 1' : ' visibility: hidden; opacity: 0')" alt="" aria-hidden="true">
         </article>
     </main>
 </template>
@@ -33,14 +32,6 @@ export default {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
         webp: '.gif',
-        sethover: '',
-        hovers: 13,
-        showhover: false,
-        random: 0,
-        page: {
-          left : 0,
-          top: 0
-        },
         posts: [
           {
             path: '/projects/melissa-next-br',
@@ -348,23 +339,6 @@ export default {
     document.title = this.$route.meta.title;
   },
   methods: {
-    onMouseMove(e) {
-      if(!this.$parent.has_touch) {
-        this.page.left = e.pageX - 50;
-        this.page.top = e.pageY - 25;
-      }
-    },
-    hover(e) {
-      if(!this.$parent.has_touch) {
-        this.showhover = true;
-        this.random = Math.round(Math.random() * this.hovers);
-
-        this.onMouseMove(e);
-      }
-    },
-    clear() {
-        this.showhover = false;
-    },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
     },

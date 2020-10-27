@@ -157,6 +157,7 @@
 
 
     &-projects {
+        contain: paint;
         padding: to-em(104) 0;
         position: relative;
         background-color: $color-black;
@@ -188,13 +189,6 @@
                 margin: 0 0 to-em(168);
             }
         }
-
-        &:hover {
-            .home & {
-                cursor: none;
-            }
-        }
-
 
         &-title {
             position: relative;
