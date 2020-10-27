@@ -326,22 +326,22 @@
             display: block;
             transform: translate3D(0, to-em(104), 0);
             transition: transform 1.5s ease-in-out;
-            margin: to-em(16) 0;
+            padding: to-em(16) 0;
 
             @include layout-375() {
-                margin: to-em(32) 0;
+                padding: to-em(32) 0;
             }
 
             @include layout-540() {
-                margin: to-em(24) 0;
+                padding: to-em(24) 0;
             }
 
             @include layout-960() {
-                margin: to-em(64) 0;
+                padding: to-em(64) 0;
             }
 
             @include layout-1440() {
-                margin: to-em(40) 0;
+                padding: to-em(40) 0;
             }
 
 
@@ -737,6 +737,16 @@
             @include layout-2560() {
                 padding-right: to-em(($un-2560 - $grid-max-area-2560) / 2);
             }
+
+
+        }
+
+        &-button {
+            border: none;
+            background: transparent;
+            padding: 0 0 to-em(16);
+            display: block;
+            width: 100%;
         }
     }
 
@@ -747,10 +757,8 @@
         font: 900 to-em(12) "Work Sans", sans-serif;
         text-transform: uppercase;
         display: block;
-        margin: 0 0 to-em(16);
         box-sizing: border-box;
         cursor: pointer;
-        width: to-em(100);
         padding: to-em(8);
         width: 100%;
         color: $color-white;

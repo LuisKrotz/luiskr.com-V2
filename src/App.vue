@@ -21,8 +21,8 @@
           </p>
           <div class="second-column">
             <div class="second-column-fixed">
-              <button class="accept" @click="accept()"><span>I accept</span></button>
-              <button class="refuse" @click="close()"><span>Ignore me</span></button>
+              <button class="second-column-button" @click="accept()"><span class="accept">I accept</span></button>
+              <button class="second-column-button" @click="close()"><span class="refuse">Ignore me</span></button>
             </div>
           </div>
         </div>
