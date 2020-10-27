@@ -87,8 +87,8 @@
         text-transform: uppercase;
         font-weight: 900;
         position: fixed;
-        font-size: 6.63vh;
-        line-height: 7.63vh;
+        font-size: 8.63vh;
+        line-height: 9.63vh;
         padding: 0 to-em(($un-320 - $grid-max-area-320) / 2) 0 0;
         opacity: 1;
         top: 50%;
@@ -241,22 +241,22 @@
 
         .home & {
             overflow: visible;
-            margin: 0 0 to-em(64);
+            padding: 0 0 to-em(64);
 
             @include layout-540() {
-                margin: 0 0 to-em(104);
+                padding: 0 0 to-em(104);
             }
 
             @include layout-1024() {
-                margin: 0 0 to-em(64);
+                padding: 0 0 to-em(64);
             }
 
             @include layout-1280() {
-                margin: 0 0 to-em(104);
+                padding: 0 0 to-em(104);
             }
 
             @include layout-2560() {
-                margin: 0 0 to-em(168);
+                padding: 0 0 to-em(168);
             }
         }
 
