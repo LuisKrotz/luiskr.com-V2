@@ -36,20 +36,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/browserconfig.xml"
   },
   {
-    "revision": "7268c658e37d843e6b70",
-    "url": "/css/Awards.a99cb3cc.css"
+    "revision": "4d8df6052a5b87d2be0f",
+    "url": "/css/Awards.35da35bc.css"
   },
   {
-    "revision": "c1f7f93a78a15ea34916",
+    "revision": "e68063618254601f3317",
     "url": "/css/Error404.4553f88c.css"
   },
   {
-    "revision": "b03605cbb791ff5ee71d",
-    "url": "/css/Project.a99cb3cc.css"
+    "revision": "928b155411631c48a9c0",
+    "url": "/css/Project.35da35bc.css"
   },
   {
-    "revision": "fb8e4d75792a7bfaba6e",
-    "url": "/css/app.50253d42.css"
+    "revision": "30baa5d9ed163d1c2e79",
+    "url": "/css/app.e6ce3b5c.css"
   },
   {
     "revision": "cf0618db0ee601dc8a04fec6252663d3",
@@ -60,52 +60,52 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/favicon-32x32.png"
   },
   {
-    "revision": "c330aeba127a327fe48fdd605d74af9b",
+    "revision": "d365bcd4171754209a4c58851c04a333",
     "url": "/index.html"
   },
   {
-    "revision": "3fce33e60cfbd21a203c",
-    "url": "/js/About.2f64bfdc.js"
+    "revision": "f98559ad3e09a47787f1",
+    "url": "/js/About.d573e2eb.js"
   },
   {
-    "revision": "7268c658e37d843e6b70",
-    "url": "/js/Awards.54100ea6.js"
+    "revision": "4d8df6052a5b87d2be0f",
+    "url": "/js/Awards.9fc17dd3.js"
   },
   {
-    "revision": "ac45afa4dc3892156d30",
-    "url": "/js/Credits.85825b60.js"
+    "revision": "39f814affe050f3eec5d",
+    "url": "/js/Credits.a6b3f928.js"
   },
   {
-    "revision": "c1f7f93a78a15ea34916",
-    "url": "/js/Error404.052958b2.js"
+    "revision": "e68063618254601f3317",
+    "url": "/js/Error404.4539a5b6.js"
   },
   {
-    "revision": "4be092badbb1c1b34396",
-    "url": "/js/GDPR.19381b8d.js"
+    "revision": "9b597580848ec0fef5e6",
+    "url": "/js/GDPR.7c52bf96.js"
   },
   {
-    "revision": "ac8ca9c205c78b0c735a",
-    "url": "/js/MIT.701cb0c1.js"
+    "revision": "89e9a3e41ae3557465df",
+    "url": "/js/MIT.14244e27.js"
   },
   {
-    "revision": "dc8744f0bf074f32f04d",
-    "url": "/js/PrivacyPolicy.5bbc4036.js"
+    "revision": "1f92b881658db08ce86a",
+    "url": "/js/PrivacyPolicy.da124164.js"
   },
   {
-    "revision": "a30de5d020fabe32a08f",
-    "url": "/js/Productions.05cc6f63.js"
+    "revision": "17dba97ec3d878fb3348",
+    "url": "/js/Productions.8b194226.js"
   },
   {
-    "revision": "b03605cbb791ff5ee71d",
-    "url": "/js/Project.b905ce7e.js"
+    "revision": "928b155411631c48a9c0",
+    "url": "/js/Project.1c88ed36.js"
   },
   {
-    "revision": "bac6ec1745a92380f025",
-    "url": "/js/TermsOfUse.d83bae4f.js"
+    "revision": "efb7bb1812769f22a770",
+    "url": "/js/TermsOfUse.dcbe474e.js"
   },
   {
-    "revision": "fb8e4d75792a7bfaba6e",
-    "url": "/js/app.5083a315.js"
+    "revision": "30baa5d9ed163d1c2e79",
+    "url": "/js/app.a700f3d7.js"
   },
   {
     "revision": "2011a5f70b79163f5b81",

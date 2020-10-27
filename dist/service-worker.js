@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.9afdc7f550f0819347cdc4558f9ca129.js"
+  "/precache-manifest.d223e6811054137ae6736295fdc7f430.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "luis-kr.com"});
