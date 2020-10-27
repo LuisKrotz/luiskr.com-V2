@@ -624,7 +624,7 @@
     grid-template-columns: repeat(5, 1fr);
     display: grid;
     grid-gap: to-em($gap-540);
-    max-height: to-em(104);
+    height: to-em(104);
     min-height: to-em(76);
     overflow: scroll;
     
@@ -774,7 +774,7 @@
 
         @include layout-960() {
             word-spacing: to-em(16);
-            margin: 0 0 to-em(8);
+            padding: 0 0 to-em(8);
         }
 
         @include layout-1024() {
