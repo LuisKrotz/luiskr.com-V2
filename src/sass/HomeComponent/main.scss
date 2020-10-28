@@ -3,7 +3,7 @@
     background: $main-bg;
 
     #appendSVG {
-        transition: opacity ease-in-out 2.5s;
+        transition: opacity ease-in-out 3s;
         position: fixed;
         top: 0;
         left: 0;
@@ -39,11 +39,11 @@
         width: 100vw;
         height: 100vh;
         background-size: cover;
-        filter: blur(5px) contrast(1.5) grayscale(1);
+        filter: blur(to-em(5)) contrast(1.5) grayscale(1);
         transform: translateY(-50%);
-        opacity: .25;
+        opacity: .3;
         background-position: center right;
-        box-shadow: 0 0 50px 0 rgba(0, 0, 0, .5) inset;
+        box-shadow: 0 0 to-em(40) 0 rgba(0, 0, 0, .5) inset;
 
         /* Minimum aspect ratio */
         @media (max-device-width: 960px) and (orientation: portrait) {
@@ -67,7 +67,6 @@
             width: 40vw;
             height: 75vw;
         }
-
 
         @media  (min-device-width: 1366px) and (orientation: landscape) {
             width: 30vw;
