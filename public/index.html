@@ -119,6 +119,7 @@
       document.documentElement.className += ' is_' + browser;
     </script>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRKMT2NQLM"></script>
     <script>
       /*! modernizr 3.6.0 (Custom Build) | MIT *
       * https://modernizr.com/download/?-webp-setclasses !*/
@@ -130,15 +131,24 @@
           fbq('init', '189592182181294');
           fbq('track', 'PageView');
       }
-  
+
+      function tagManager() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CRKMT2NQLM');
+      }
+
       if (Boolean(localStorage.getItem('cookie')) === true) {
         document.body.classList.remove('show-banner');
         pixel();
+        tagManager();
       } else {
         document.addEventListener('accepted', function() {
           if (Boolean(localStorage.getItem('cookie')) === true) {
             document.body.classList.remove('show-banner');
             pixel();
+            tagManager();
           }
         });
       }
