@@ -35,6 +35,18 @@ export default {
         webp: '.gif',
         posts: [
           {
+            path: '/projects/melissa-pop-2020',
+            name: 'Melissa | POP'
+          },
+          {
+            path: '/projects/brazilian-leather-webinar-series-2020',
+            name: 'Brazilian Leather Webinar Series | 2020'
+          },
+          {
+            path: '/projects/aboutmarco',
+            name: 'Marco Almeida'
+          },
+          {
             path: '/projects/melissa-next-br',
             name: 'Melissa | Next'
           },

@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const total = 73;
+const total = 76;
 const total_aw = 4;
 
 const routes = [
@@ -115,12 +115,45 @@ const routes = [
     }
   },
   {
+    path: '/projects/melissa-pop-2020',
+    name: 'Melissa | POP',
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
+    meta: {
+      title: 'Luis Krötz - Melissa | POP',
+      last: true,
+      id: 76,
+      total: total
+    }
+  },
+  {
+    path: '/projects/brazilian-leather-webinar-series-2020',
+    name: 'Brazilian Leather Webinar Series | 2020',
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
+    meta: {
+      title: 'Luis Krötz - Brazilian Leather Webinar Series',
+      last: false,
+      id: 75,
+      total: total
+    }
+  },
+  {
+    path: '/projects/aboutmarco',
+    name: 'Marco Almeida',
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
+    meta: {
+      title: 'Luis Krötz - Marco Almeida',
+      last: false,
+      id: 74,
+      total: total
+    }
+  },
+  {
     path: '/projects/melissa-next-br',
     name: 'Melissa | Next',
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
       title: 'Luis Krötz - Melissa | Next',
-      last: true,
+      last: false,
       id: 73,
       total: total
     }

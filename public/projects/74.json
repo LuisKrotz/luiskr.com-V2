@@ -1,0 +1,75 @@
+{
+    "id": "74",
+    "path": "/projects/aboutmarco",
+    "project": "Marco Almeida",
+    "description": "Portfolio of Marco Almeida, awarded at Awwwards (HM / ME - 2020), Mindsparkle Mag (SOTD - 2020), CSS Design Awards (HM - 2020), CSS Winner (HM - 2020), and Admire the Web (2020)",
+    "part": "Freelance Front-End Development and Server Setup",
+    "link": "https://aboutmarco.com",
+    "video": {
+        "width": "720",
+        "height": "480",
+        "alt": "Video thumbnail of the project: Marco Almeida",
+        "img": "media/about-marco",
+        "src": "media/about-marco"
+    },
+    "extra": [
+        {
+            "id": "e1",
+            "type": "img",
+            "width": "1440",
+            "height": "658",
+            "alt": "Awwwards HM / 2020",
+            "title": "<a href='https://www.awwwards.com/sites/marco-almeida' target='_blank' rel='noopener'>Awwwards HM / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-hm"
+        },
+        {
+            "id": "e2",
+            "type": "img",
+            "width": "1440",
+            "height": "652",
+            "alt": "Awwwards ME / 2020",
+            "title": "<a href='https://www.awwwards.com/sites/marco-almeida/mobile-excellence-report' target='_blank' rel='noopener'>Awwwards ME / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-me"
+        },
+        {
+            "id": "e3",
+            "type": "img",
+            "width": "1440",
+            "height": "730",
+            "alt": "CSS Design Awards HM / 2020",
+            "title": "<a href='https://mindsparklemag.com/website/marco-almeida' target='_blank' rel='noopener'>CSS Design Awards HM / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-mindspark"
+        },
+        {
+            "id": "e4",
+            "type": "img",
+            "width": "1440",
+            "height": "740",
+            "alt": "Mindsparkle Mag SOTD / 2020",
+            "title": "<a href='https://www.cssdesignawards.com/sites/marco-almeida/37316' target='_blank' rel='noopener'>Mindsparkle Mag SOTD / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-cssawards"
+        },
+        {
+            "id": "e5",
+            "type": "img",
+            "width": "1440",
+            "height": "652",
+            "alt": "CSS Winner HM / 2020",
+            "title": "<a href='https://www.csswinner.com/details/marco-almeida/14593' target='_blank' rel='noopener'>CSS Winner HM / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-csswinner"
+        },
+        {
+            "id": "e5",
+            "type": "img",
+            "width": "1440",
+            "height": "820",
+            "alt": "Admire the Web / 2020",
+            "title": "<a href='https://www.admiretheweb.com/inspiration/marco-almeida' target='_blank' rel='noopener'>Admire the Web / 2020</a>",
+            "src": "media/img/aboutmarco-awwards-admiretheweb"
+        }
+    ],
+    "at_link": "https://aboutmarco.com",
+    "at_place": "aboutmarco.com",
+    "at_logo": "aboutmarco.png",
+    "role": "Freelance Development"
+}

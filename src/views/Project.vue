@@ -59,14 +59,14 @@
 
               <div  v-if="post.extra !== undefined">
                 <div v-for="extra in post.extra" :key="extra.id" v-view class="project-info-more">
-                  <h5 class="title" v-html="extra.alt"></h5>
+                  <h5 class="title" v-html="extra.title"></h5>
 
                   <picture v-if="extra.type === 'img'">
                     <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
                     <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
-                    <img v-view :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.title">
+                    <img v-view :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt">
                   </picture>
-                  <video v-view v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.title" playsinline autoplay muted loop>
+                  <video v-view v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" playsinline autoplay muted loop>
                     <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
                     <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
                     <source type="video/webm" :src="storage +  extra.src + '.webm'"/>

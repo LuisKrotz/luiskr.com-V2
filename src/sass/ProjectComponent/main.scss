@@ -139,6 +139,15 @@
                         padding-left: to-em(64);
                     }
                 }
+
+                a {
+                    font-weight: 900;
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
             }
 
             .first {
