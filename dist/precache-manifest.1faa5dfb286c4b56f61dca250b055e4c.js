@@ -356,11 +356,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/projects/60.json"
   },
   {
-    "revision": "818c89c5e7b4798323390597a4a92345",
+    "revision": "d961c74b917121ae1bfdf866ddd734ab",
     "url": "/projects/61.json"
   },
   {
-    "revision": "6c88bf9132cb841078b9f21e17b83eb9",
+    "revision": "250db7c85d38ebb90b6e25ee88d554e4",
     "url": "/projects/62.json"
   },
   {
