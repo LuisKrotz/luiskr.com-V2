@@ -35,6 +35,10 @@ export default {
         webp: '.gif',
         posts: [
           {
+            path: '/projects/forum-cscb-2020',
+            name: 'CSCB Sustainability Forum 2020'
+          },
+          {
             path: '/projects/melissa-pop-2020',
             name: 'Melissa | POP'
           },

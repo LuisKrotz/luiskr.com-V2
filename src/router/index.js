@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const total = 76;
+const total = 77;
 const total_aw = 4;
 
 const routes = [
@@ -115,12 +115,23 @@ const routes = [
     }
   },
   {
+    path: '/projects/forum-cscb-2020',
+    name: 'CSCB Sustainability Forum 2020',
+    component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
+    meta: {
+      title: 'Luis Krötz - CSCB Sustainability Forum 2020',
+      last: true,
+      id: 77,
+      total: total
+    }
+  },
+  {
     path: '/projects/melissa-pop-2020',
     name: 'Melissa | POP',
     component: ()  => import(/* webpackChunkName: "Project" */ '../views/Project'),
     meta: {
       title: 'Luis Krötz - Melissa | POP',
-      last: true,
+      last: false,
       id: 76,
       total: total
     }
