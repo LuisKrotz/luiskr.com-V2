@@ -48,7 +48,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/Project.4b38556c.css"
   },
   {
-    "revision": "8f5063c39848fc573301",
+    "revision": "6fc51290bd5dc8845b38",
     "url": "/css/app.8087916f.css"
   },
   {
@@ -60,7 +60,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/favicon-32x32.png"
   },
   {
-    "revision": "34654e942e46c4e1f65017b831a6acbe",
+    "revision": "0095758bbd143fbe9fe5e98e3653908c",
     "url": "/index.html"
   },
   {
@@ -72,8 +72,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/Awards.9fc17dd3.js"
   },
   {
-    "revision": "39f814affe050f3eec5d",
-    "url": "/js/Credits.a6b3f928.js"
+    "revision": "67f6e1c78918043f65a3",
+    "url": "/js/Credits.6bc5d227.js"
   },
   {
     "revision": "e68063618254601f3317",
@@ -104,8 +104,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/TermsOfUse.dcbe474e.js"
   },
   {
-    "revision": "8f5063c39848fc573301",
-    "url": "/js/app.b26bc612.js"
+    "revision": "6fc51290bd5dc8845b38",
+    "url": "/js/app.e264bbaa.js"
   },
   {
     "revision": "2011a5f70b79163f5b81",
