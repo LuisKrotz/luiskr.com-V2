@@ -5,7 +5,7 @@
           <div class="about main">
             <h2 class="main-title" v-view>About</h2>
             <h3 class="main-subtitle" v-view>A Frond-End Developer</h3>
-            <p class="main-text" v-view>Currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and a part-time Freelancer.</p>
+            <p class="main-text" v-view>Currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and part-time Freelancer.</p>
             <p class="main-text" v-view>I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
               <video v-view loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>
@@ -14,7 +14,7 @@
               </video>
             </p>
             <h3 class="main-subtitle" v-view>Working at transainc</h3>
-            <p class="main-text" v-view>Started as a Jr. front-end developer on Apr. 2016 then, I learned a lot and became a front-end developer on Dez. 2016, the opportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
+            <p class="main-text" v-view>Started as a Jr. front-end developer on Apr. 2016, then I learned a lot and became a front-end developer on Dez. 2016, the opportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
 
             <h3 class="main-subtitle" v-view>Freelancing</h3>
             <p class="main-text" v-view>I started my "<em>one-man army</em>" company in 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
@@ -36,13 +36,13 @@
               </video>
             </p>
             <p class="main-text" v-view>Another passion of mine is video games, I love playing for hours and hours and hours.</p>
-            <p class="main-text" v-view>I also love reading, the narratives, the places one can go while reading is fantastic. There is no better way to meet the unknown than a book.</p>
-            <p class="main-text" v-view>I love to write, one of my favourite past time is to sit on my iPad and write a novel or an article by hand.</p>
+            <p class="main-text" v-view>I also love reading, the narratives, the places one can go while reading, is fantastic. There is no better way to meet the unknown than a book.</p>
+            <p class="main-text" v-view>I love to write, one of my favourite past time is to sit down, hold my iPad and write a novel or an article by hand.</p>
             <p class="main-text" v-view>I love photography, check out some <a @click="sendAnalyticsEvent('about_link', 'click', 'instagram', 100)" href="https://www.instagram.com/j_luiskrotz" rel="noopener">Instagram pictures</a> of mine.</p>
             
             <h3 class="main-subtitle" v-view>I love to learn</h3>
             <p class="main-text" v-view>Be it watching a ted talk, an video on youtube, coding for fun, developing a crazy system just by the sake of it, learning a new language, I just love learning.</p>
-            <p class="main-text" v-view>I learned English playing video games and listening to music, I learned to code by trial, error and bing watching tutorials. I can't get enough of experimenting, is so exciting.</p>
+            <p class="main-text" v-view>I learned English by playing video games and listening to music, I learned to code by trial, error and binge watching tutorials. I can't get enough of experimenting, is so exciting.</p>
 
             <h3 class="main-subtitle" v-view>Languages</h3>
             <p class="main-text" v-view>I love learning a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
