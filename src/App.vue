@@ -13,7 +13,7 @@
       <div v-if="!show_cookie && domLoaded" class="cookie-banner">
         <div class="max-area">
           <p>
-            This site uses third-party cookies from Google Analytics and Facebook Pixel to track page visits and events.
+            This site uses third-party cookies from Google Analytics to track page visits and events.
             Get more info about data, cookies and terms of use at GDPR, Terms of Use and Privacy policy of this website.
             This page doesn't send pageviews and events without consent and doesn't store any visitor's data.
             All session data is stored locally on your own browser, by the use of the local storage API.
@@ -21,8 +21,8 @@
           </p>
           <div class="second-column">
             <div class="second-column-fixed">
-              <button class="second-column-button" @click="accept()"><span class="accept">I accept</span></button>
-              <button class="second-column-button" @click="close()"><span class="refuse">Ignore me</span></button>
+              <button class="second-column-button" @click="accept()"><span class="accept">Accept</span></button>
+              <button class="second-column-button" @click="close()"><span class="refuse">Don't track</span></button>
             </div>
           </div>
         </div>
