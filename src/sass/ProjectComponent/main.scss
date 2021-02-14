@@ -173,6 +173,7 @@
             }
 
             &-it {
+                background-color: $color-white;
                 transition: transform ease-in-out .5s;
                 display: block;
                 position: relative;
@@ -195,6 +196,7 @@
                 letter-spacing: to-em(8);
                 box-sizing: border-box;
                 text-align: justify;
+                text-align-last: center;
                 text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
                 padding-top: to-em(8);
                 display: block;

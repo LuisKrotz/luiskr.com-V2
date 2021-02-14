@@ -6,6 +6,7 @@
     "description": "Melissa's London, New York and São Paulo official Webpages.",
     "part": "Leading developer. Development of the front end of London, São Paulo and  New York Pages, consultant on the maps section to the development team on the maps API.",
     "link": "https://www.melissa.com.br/uk/galerias/ny",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-galerias-31-03-19",
         "src": "media/melissa.com.br-galerias-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

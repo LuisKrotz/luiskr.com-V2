@@ -6,6 +6,7 @@
     "description": "Searching for references in the Garden, Melissa saw that the life born over there is their most obvious inspiration.",
     "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/us/collections/we-are-flowers",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-colecoes-we-are-flowers-31-03-19-",
         "src": "media/melissa.com.br-colecoes-we-are-flowers-31-03-19-"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

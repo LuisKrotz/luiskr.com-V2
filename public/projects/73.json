@@ -5,6 +5,7 @@
     "description": "The next Melissa's collab. Melissa / Next gives you the chance to create an exclusive product with Melissa.",
     "part": "Developed the page of Melissa's NEXT contest Brazil edition. Based o the Previously created Melissa NEXT UK Edition, also coded by myself.",
     "link": "https://www.melissa.com.br/next",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -12,7 +13,7 @@
         "img": "media/melissa-next-br",
         "src": "media/melissa-next-br"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Main Developer"

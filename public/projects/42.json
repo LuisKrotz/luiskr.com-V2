@@ -6,6 +6,7 @@
     "description": "Possession's official website on Melissa's website. Always the same, always different. A sought inspiration in the 1990s to reinvent our legitimate jelly shoes. A symbol of expression that now arrives for a reunion.",
     "part": "Front end developer. Development of the entire landing page front end.",
     "link": "https://www.melissa.com.br/specials/possession",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-specials-possession-31-03-19",
         "src": "media/melissa.com.br-specials-possession-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

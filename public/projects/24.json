@@ -6,6 +6,7 @@
     "description": "Make Melissa's your mood of the day: be it romance, action, or comedy.",
     "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/us/collections/cine-melissa",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence",
         "src": "media/melissa.com.br-colecoes-cine-melissa-31-03-19-maintenence"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

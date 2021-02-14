@@ -5,6 +5,7 @@
     "description": "Mini Melissa Color Me S/S'20 with new colors, new friends and new looks.",
     "part": "Developed the front end of Minimelissa's SS'20 collection using the previously created framework Candy (created by myself).",
     "link": "https://www.minimelissa.com.br/colecoes/color-me",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -12,7 +13,7 @@
         "img": "media/minimelissa-ss20",
         "src": "media/minimelissa-ss20"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Leading Frontend Developer"

@@ -6,6 +6,7 @@
     "description": "A collection to celebrate who we are and who we want to be.",
     "part": "Leading and Development of the entire Front End of Melissa's Color Me Official Webpage.",
     "link": "https://www.melissa.com.br/colecoes/color-me",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/www.melissa.com.br-colecoes-color-me",
         "src": "media/www.melissa.com.br-colecoes-color-me"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Leading Frontend Developer"

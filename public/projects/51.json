@@ -6,6 +6,7 @@
     "description": "The official page for Melissa / AWAYTOMARS. A collab made of people. 100% collaborative.",
     "part": "Sr. Front end developer of the entire front end of the collection landing page.",
     "link": "https://www.melissa.com.br/us/collabs/awaytomars",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-collabs-awaytomars-31-03-19",
         "src": "media/melissa.com.br-collabs-awaytomars-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

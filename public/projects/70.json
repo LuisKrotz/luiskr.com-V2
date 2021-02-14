@@ -5,6 +5,7 @@
     "description": "Dreaming is more than closing your eyes. It is the experience of diving into another reality. A / W '20 awakens the transformative power of the dream.",
     "part": "Developed the front end of Melissa Dreamers - Infinitos",
     "link": "https://www.melissa.com.br/colecoes/dreamers#infinitos",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -12,7 +13,7 @@
         "img": "media/melissa-dreamers-infinitos",
         "src": "media/melissa-dreamers-infinitos"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Main/Leading Frontend Developer"

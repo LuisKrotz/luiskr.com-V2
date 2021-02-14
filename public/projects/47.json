@@ -6,6 +6,7 @@
     "description": "The official page of collab Melissa / Rider. A collab coming in.",
     "part": "Front end developer. Development of the entire landing page front end.",
     "link": "https://www.melissa.com.br/collabs/rider",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-collabs-rider-31-03-19",
         "src": "media/melissa.com.br-collabs-rider-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

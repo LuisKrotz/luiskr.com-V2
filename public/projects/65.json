@@ -5,6 +5,7 @@
     "description": "Responsibility and attitude for creating an extraordinary future. Melissa shares initiatives and actions for sustainable development.",
     "part": "Leading and Development of the entire Front End of Melissa's Sustainability page.",
     "link": "https://www.melissa.com.br/us/about/sustainability",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -12,7 +13,7 @@
         "img": "media/https-www.melissa.com.br-sobre-sustentabilidade-17-10-19",
         "src": "media/https-www.melissa.com.br-sobre-sustentabilidade-17-10-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Leading Frontend Developer"

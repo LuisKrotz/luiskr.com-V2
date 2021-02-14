@@ -48,12 +48,14 @@
                 <p v-html="post.description"></p>
                 <h5>{{ translations.contribuition}}</h5>
                 <p v-html="post.part"></p>
-                <h5 class="project-info-credit" v-view>{{ translations.credits[0] }} {{ post.at_place.replace('@', '') }} {{translations.credits[1]}}</h5>
-                <p>
-                  <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('project_link', 'click', post.at_place, 25)">
-                    <img v-view v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
-                    <img v-view v-else class="project-info-credit-logo" :src="storage + 'media/' + post.at_logo" :alt="post.at_place">
-                  </a>
+                <p >{{ translations.credits[0] }} {{  }} {{translations.credits[1]}}</p>
+
+                <h5>Original URL</h5>
+                <a v-if="post.link_unavaliable === undefined && !post.link_unavaliable" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
+                  {{ post.link.replace(/(^\w+:|^)\/\//, '') }}
+                </a>
+                <p v-else>
+                  {{ post.link.replace(/(^\w+:|^)\/\//, '') }} is unavaliable due to changes on the original project
                 </p>
               </div>
 
@@ -75,15 +77,15 @@
               </div>
             </div>
 
-            <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
-              <img  v-view  v-if="translations.animation_alt === undefined" class="project-info-check-it" :src="placeholder" alt="">
-              <video  v-view  v-else class="project-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" playsinline autoplay muted loop>
-                <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
-                <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
-                <source type="video/webm" :src="storage + 'animations/' + random + '.webm'"/>
-              </video>
+            <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', translations.checkit, 25)">
+              <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('credits_link', 'click', post.at_place, 25)">
+                <img v-view v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
+                <img v-view v-else class="project-info-check-it" :src="storage + 'media/' + post.at_logo" :alt="post.at_place" width="480" height="480">
+              </a>
+
+
               <span class="project-info-check-txt">
-              {{ translations.checkit }}
+                {{ translations.checkit }} {{ post.at_place.replace('@', '') }}
               </span>
             </a>
           </div>

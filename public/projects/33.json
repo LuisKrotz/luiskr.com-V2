@@ -6,6 +6,7 @@
     "description": "Living on the child side. And to be a child is to be free.",
     "part": "Development of the framework of the webpage.",
     "link": "https://www.minimelissa.com.br/colecoes/mashup",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/minimelissa.com.br-ss17-31-03-19",
         "src": "media/minimelissa.com.br-ss17-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Frontend Developer"

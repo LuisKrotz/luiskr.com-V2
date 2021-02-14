@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import HeaderComponent from '@/components/HeaderComponent.vue'
 
 export default {
@@ -51,28 +50,16 @@ export default {
         domLoaded: false,
         projects: {
             "project":          "Project",
-            "at":               "Developed at:",
-            "role":             "Role:",
+            "at":               "Developed at: ",
+            "role":             "Role: ",
             "credits":          ["Check out for more info about ", " at:"],
-            "checkit":          "Visit this project",
+            "checkit":          "Tap to visit ",
             "next":             "next: ",
             "prev":             "previous: ",
             "home":             "home",
             "home_link":        "home",
-            "animation_title":  "Animation by Giphy.com, credits on luiskr.com/credits",
-            "animation_alt": [
-                "GIPHY.com animation of ",
-                "representing the mouse cursor, more info at: luiskr.com/credits"
-            ],
-            "animation":[
-                "hands touching in pink background",
-                "hands touching in universe background",
-                "cat trying to get mouse pointer on computer",
-                "3d face o looking to poiner",
-                "handrawn man juggling an arrow "
-            ],
-            "contribuition":    "My Contribuition:",
-            "description":      "Description:"
+            "contribuition":    "My Contribuition ",
+            "description":      "Description "
         },
         awards: {
           "next":             "next: ",

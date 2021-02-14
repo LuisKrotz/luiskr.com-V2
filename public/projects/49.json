@@ -6,6 +6,7 @@
     "description": "The official page for the Melissa + CSC collab. A collection that brings to plastic the iconic British satchels.",
     "part": "Jr. Front end developer. Member of the development team on the webpage styling and structure.",
     "link": "https://www.melissa.com.br/us/collabs/csc",
+    "link_unavaliable": true,
     "video": {
         "width": "720",
         "height": "480",
@@ -13,7 +14,7 @@
         "img": "media/melissa.com.br-collabs-csc-31-03-19",
         "src": "media/melissa.com.br-collabs-csc-31-03-19"
     },
-    "at_link": "https://www.instagram.com/transainc_",
+    "at_link": "http://www.transainc.com",
     "at_place": "@transainc",
     "at_logo": "img/logo_transa.svg",
     "role": "Jr. Frontend Developer"
