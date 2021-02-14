@@ -25,7 +25,7 @@
               <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
               <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
           </picture>
-          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="project-media" :height="post.video.height" :poster="storage + post.video.img + webp2" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
+          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="project-media" :height="post.video.height" :poster="renderPoster(post.video.width, post.video.height)" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
             <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
             <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
             <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
@@ -159,6 +159,9 @@ export default {
     this.scrollPosition();
   },
   methods: {
+    renderPoster(width, height) {
+      return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}"%3E%3C/svg%3E`;
+    },
     getPost() {
       let self = this;
 
