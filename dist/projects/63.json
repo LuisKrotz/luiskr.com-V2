@@ -5,10 +5,10 @@
     "project": "Transainc | Muda",
     "description": "Intense opportunities for those who are driven by purpose, seek to learn and co-create.",
     "part": "Development of Muda landing page front end.",
-    "link": "http://transainc.com",
+    "link": "http://transainc.com/muda",
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 768,
+        "height": 480,
         "alt": "Video thumbnail of the project: Transainc | Muda",
         "img": "media/transainc-muda",
         "src": "media/transainc-muda"

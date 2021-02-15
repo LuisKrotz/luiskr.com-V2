@@ -6,9 +6,10 @@
     "description": "The official website of the Melissa Starwalker Collection.",
     "part": "Front End Developer on the landing page's maintenence after a major re-styling on Melissa's Website. <br>Main developer on fixing mobile issues.",
     "link": "https://www.melissa.com.br/us/collections/starwalker",
+    "link_unavaliable": true,
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 853,
+        "height": 480,
         "alt": "Video thumbnail of the project: Melissa | Starwalker / Improvements",
         "img": "media/melissa.com.br-colecoes-starwalker-31-03-19-",
         "src": "media/melissa.com.br-colecoes-starwalker-31-03-19-"

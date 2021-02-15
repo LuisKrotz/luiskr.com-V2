@@ -6,9 +6,10 @@
     "description": "Melissa/À La Garçonne's official website. Reinvent what we were. Reimagine what we want to be, in a reunion with Alexandre Herchcovitch, the life of a collab that unites past and future.",
     "part": "Sr. Front end developer of the entire front end of the collection landing page.",
     "link": "https://www.melissa.com.br/collabs/a-la-garconne",
+    "link_unavaliable": true,
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 853,
+        "height": 480,
         "alt": "Video thumbnail of the project: Melissa | À Lá Garçonne",
         "img": "media/melissa.com.br-collabs-a-la-garconne-31-03-19",
         "src": "media/melissa.com.br-collabs-a-la-garconne-31-03-19"

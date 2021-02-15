@@ -44,9 +44,11 @@
             <div class="project-info-description">
               <div class="project-info-data" v-view>
                 <h3 class="first">{{ translations.at }}</h3>
-                <a class="project-info-link" v-view :href="post.at_link">
-                  {{ post.at_place }}
-                </a>
+                <p>
+                  <a class="project-info-link" v-view :href="post.at_link">
+                    {{ post.at_place }}
+                  </a>
+                </p>
 
                 <h4>{{ translations.role }}</h4>
                 <p>{{ post.role }}</p>
@@ -55,17 +57,18 @@
                 <p v-html="post.description"></p>
                 <h5>{{ translations.contribuition}}</h5>
                 <p v-html="post.part"></p>
-                <p >{{ translations.credits[0] }} {{  }} {{translations.credits[1]}}</p>
 
-                <h5>Original URL</h5>
-                <a :class="'project-info-url' + (post.link_unavaliable === undefined && !post.link_unavaliable ? '':  ' unavaliable')" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
-                  <template v-if="post.link.indexOf('?') > -1">
-                    {{ post.link.replace(/(^\w+:|^)\/\//, '').replace(/[^?]*$/g, '').replace('?', '') }}
-                  </template>
-                  <template v-else>
-                    {{ post.link.replace(/(^\w+:|^)\/\//, '') }}
-                  </template>
-                </a>
+                <h5 v-html="translations.originalURL"></h5>
+                <p>
+                  <a :class="'project-info-url' + (post.link_unavaliable === undefined && !post.link_unavaliable ? '':  ' unavaliable')" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
+                    <template v-if="post.link.indexOf('?') > -1">
+                      {{ post.link.replace(/(^\w+:|^)\/\//, '').replace(/[^?]*$/g, '').replace('?', '') }}
+                    </template>
+                    <template v-else>
+                      {{ post.link.replace(/(^\w+:|^)\/\//, '') }}
+                    </template>
+                  </a>
+                </p>
               </div>
 
               <div class="project-info-data" v-if="post.extra !== undefined">
@@ -75,9 +78,9 @@
                   <picture v-if="extra.type === 'img'">
                     <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
                     <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
-                    <img v-view :src="storage +  extra.src + webp" class="project-media" :width="extra.width" :height="extra.height" :alt="extra.alt">
+                    <img v-view :src="storage +  extra.src + webp" class="project-media extra" :width="extra.width" :height="extra.height" :alt="extra.alt">
                   </picture>
-                  <video v-view v-else :width="extra.width" class="project-media" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" playsinline autoplay muted loop>
+                  <video v-view v-else :width="extra.width" class="project-media extra" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" playsinline autoplay muted loop>
                     <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
                     <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
                     <source type="video/webm" :src="storage +  extra.src + '.webm'"/>

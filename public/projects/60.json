@@ -7,8 +7,8 @@
     "part": "Development of the entire Front End of the Landing Page.",
     "link": "http://forumcicb.cicb.org.br",
     "video": {
-        "width": "768",
-        "height": "480",
+        "width": 768,
+        "height": 480,
         "alt": "Video thumbnail of the project: CICB Sustainability Forum | 2017",
         "img": "media/forum-2017",
         "src": "media/forum-2017"

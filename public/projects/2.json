@@ -7,8 +7,8 @@
     "part": "Apprentice Front End on the Webpage development. Special thanks to <a class='projects-content-part-link' href='https://www.instagram.com/cristianobecker' rel='noopener'>Cristiano Eduardo Becker</a> for all the patience and knowledge shared on my first Project at Transa.",
     "link": "https://www.vibra.com.br/en",
     "video": {
-        "width": "768",
-        "height": "480",
+        "width": 768,
+        "height": 480,
         "alt": "Video thumbnail of the project: Vibra",
         "img": "media/https-www.vibra.com.br",
         "src": "media/https-www.vibra.com.br"

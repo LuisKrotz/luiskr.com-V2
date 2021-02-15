@@ -6,9 +6,10 @@
     "description": "Melissa's official website. Buy online and find stores. Discover the world of Melissa.",
     "part": "Leading/Main Front End developer on Melissa's relayout. General ongoing front end maintenence of Melissa's Website.",
     "link": "https://www.melissa.com.br/us",
+    "link_unavaliable": true,
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 853,
+        "height": 480,
         "alt": "Video thumbnail of the project: Melissa | New Features",
         "img": "media/www.melissa.com.br-31-03-19-feed",
         "src": "media/www.melissa.com.br-31-03-19-feed"

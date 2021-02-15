@@ -52,7 +52,7 @@ export default {
             "project":          "Project",
             "at":               "Developed at ",
             "role":             "Role ",
-            "credits":          ["Check out for more info about ", " at:"],
+            "originalURL":      "Original URL ",
             "checkit":          "Tap to visit ",
             "next":             "next: ",
             "prev":             "previous: ",

@@ -5,9 +5,10 @@
     "description": "No matter what vibes the day brings, creating moments of glamour and confidence are up to us. We are all both extra&ordinary",
     "part": "Developed all Front-End of Melissa POP",
     "link": "https://www.melissa.com.br/uk/pop",
+    "link_unavaliable": true,
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 768,
+        "height": 480,
         "alt": "Video thumbnail of the project: Brazilian Leather Webinar Series",
         "img": "media/melissa-pop-2020",
         "src": "media/melissa-pop-2020"

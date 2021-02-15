@@ -6,9 +6,10 @@
     "description": "Bringing the streets as inspiration and space of expression. To find out and to create.",
     "part": "Development of the framework of the webpage.",
     "link": "https://www.minimelissa.com.br/colecoes/mapping",
+    "link_unavaliable": true,
     "video": {
-        "width": "720",
-        "height": "480",
+        "width": 853,
+        "height": 480,
         "alt": "Video thumbnail of the project: Minimelissa | S/S'18",
         "img": "media/minimelissa.com.br-ss18-31-03-19",
         "src": "media/minimelissa.com.br-ss18-31-03-19"
