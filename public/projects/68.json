@@ -6,7 +6,7 @@
     "part": "Developed Front End using Laravel, and HTML 4, for compatibility with mail clients.",
     "link": "https://metcha.com/render-news?title1=%23YCYMI%20Fresh%20contents%20to%20keep%20your%20eyes%20exercised&title2=https://ln-site.nyc3.digitaloceanspaces.com/public/prod/2020/04/image/Cover_newsletter_apr20_apr26.1.jpeg&title3=&utm_source=metcha-newsletter&utm_medium=email&utm_campaign=2020-04-28&posts=788,%20780,%20786,%20785,%20783,%20790,%20791",
     "video": {
-        "width": "720",
+        "width": "768",
         "height": "480",
         "alt": "Video thumbnail of the project: Minimelissa | SS20",
         "img": "media/newsletter-generator",

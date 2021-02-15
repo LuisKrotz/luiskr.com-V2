@@ -6,7 +6,7 @@
     "part": "Front End improvements on styling and visual touch-ups for UX improvements on Metcha CMS, developed by <a href='https://www.linkedin.com/in/renanmachadoloureiro' rel='noopener' target='_blank'/><svg width='16' height='10' style='fill:white'><use xlink:href='#svg-linkedin'/></svg> Renan Machado</a> with the use of Laravel, Bootstrap, Jquery, Mysql using the Framework Laraflex.",
     "link": "http://cms.metcha.com",
     "video": {
-        "width": "720",
+        "width": "768",
         "height": "480",
         "alt": "Video thumbnail of the project: METCHA | CMS",
         "img": "media/http.cms.metcha.com",
