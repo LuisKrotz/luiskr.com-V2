@@ -27,6 +27,7 @@
         font-weight: 900;
         font-size: to-em(40);
         text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
+        text-transform: uppercase;
 
         @include layout-768() {
             font-size: to-em(64);
@@ -34,7 +35,16 @@
 
         @include layout-1024() {
             font-size: to-em(104);
-            max-width: 60rem;
+            line-height: to-em(74);
+        }
+
+        &-wrapper {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &-marquee {
+            animation: marquee-keyframe 30s linear infinite reverse;
         }
     }
 
@@ -82,40 +92,15 @@
             box-shadow: -2px -2px 5px rgba(255,255,255, .05), 2px 2px 5px rgba(0,0,0, .15);
         }
 
-        &-link {
-            font-size: to-em(24);
-
-            &-title {
-                font-weight: 900;
-                vertical-align: text-bottom;
-                display: inline-block;
-            }
-        }
-
-        &-role,
-        &-date {
-            padding-top: to-em(16);
-            display: block;
-            font-size: to-em(16);
-
-            @include layout-414() {
-                padding-top: to-em(2);
-            }
-
-            &-title {
-                font-weight: 900;
-            }
-        }
-
-        &-more {
+        &-data {
             padding: to-em(16) 0;
             text-align: justify;
 
-            h5 {
+            h3, h4, h5 {
                 font-size: to-em(24);
-                font-weight: 900;
-                text-align: left;
+                font-weight: 700;
                 padding: to-em(40) 0 to-em(8);
+                text-transform: uppercase;
 
                 &.project-info-credit {
                     padding-top: to-em(40);
@@ -151,7 +136,27 @@
             }
 
             .first {
-                padding: to-em(24) 0 to-em(8);
+                padding: to-em(0) 0 to-em(8);
+            }
+        }
+
+        &-url {
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+
+            &.unavaliable {
+                text-decoration: line-through;
+                cursor: not-allowed;
+
+                &:hover,
+                &:focus {
+                    text-decoration: line-through;
+                }
             }
         }
 
@@ -215,44 +220,6 @@
                 }
             }
         }
-
-        &-credit {
-            &-logo {
-                transition: transform ease-in .5s, opacity ease-in .3s;
-                width: 100%;
-                height: to-em(168);
-                background: $color-white;
-                position: relative;
-                margin: 0 auto;
-                display: block;
-                object-fit: contain;
-                object-position: center center;
-                padding: to-em(16);
-                box-sizing: border-box;
-                margin-bottom: to-em(-8);
-                border-top-right-radius: to-em(16);
-                border-bottom-left-radius: to-em(16);
-                border-bottom-right-radius: to-em(4);
-                opacity: 0;
-                transform: scale(0.95);
-                box-shadow: -2px -2px 5px rgba(255,255,255, .05), 2px 2px 5px rgba(0,0,0, .15);
-
-                &:hover.view-in,
-                &:hover.view-out--above {
-                    transform: scale(0.95);
-                }
-
-                @include layout-414() {
-                    width: to-em(168);
-                }
-
-                &.view-in,
-                &.view-out--above {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        }
     }
 }
 
@@ -281,5 +248,35 @@
     &.view-out--above {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes marquee-keyframe {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    33.3339% {
+        transform: translate(-200%, 0);
+    }
+
+    33.334% {
+        transform: translate(0, 0);
+    }
+
+    66.6669% {
+        transform: translate(-200%, 0);
+    }
+
+    66.667% {
+        transform: translate(0, 0);
+    }
+
+    99.9999% {
+        transform: translate(-200%, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
     }
 }

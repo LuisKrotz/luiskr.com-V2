@@ -50,8 +50,8 @@ export default {
         domLoaded: false,
         projects: {
             "project":          "Project",
-            "at":               "Developed at: ",
-            "role":             "Role: ",
+            "at":               "Developed at ",
+            "role":             "Role ",
             "credits":          ["Check out for more info about ", " at:"],
             "checkit":          "Tap to visit ",
             "next":             "next: ",

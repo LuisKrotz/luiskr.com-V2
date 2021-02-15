@@ -16,7 +16,15 @@
 
     <main class="main">
       <article :class="'project home-project max-area ' + (loaded ? 'loaded' : '')">
-        <h2 class="project-title" v-view v-if="post !== undefined">{{ post.project }}</h2>
+        <h2 class="project-title" v-view v-if="post !== undefined" ref="title_wrapper">
+            <div class="project-title-wrapper">
+              <div class="project-title-marquee">
+                <template v-for="n in 10">
+                  {{ post.project }}&nbsp;\&nbsp;
+                </template>
+              </div>
+            </div>
+        </h2>
 
         <div class="project-info">
           <transition name="fade" mode="out-in">
@@ -34,34 +42,35 @@
 
           <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
             <div class="project-info-description">
-              <a class="project-info-link" v-view :href="post.at_link">
-                <h3 class="project-info-link-title">{{ translations.at }}</h3>
-                {{ post.at_place }}
+              <div class="project-info-data" v-view>
+                <h3 class="first">{{ translations.at }}</h3>
+                <a class="project-info-link" v-view :href="post.at_link">
+                  {{ post.at_place }}
                 </a>
 
-              <h4 class="project-info-role" v-view>
-                <span class="project-info-role-title">{{ translations.role }}</span> <span>{{ post.role }}</span>
-              </h4>
+                <h4>{{ translations.role }}</h4>
+                <p>{{ post.role }}</p>
 
-              <div class="project-info-more" v-view>
-                <h5 class="first">{{ translations.description}}</h5>
+                <h5>{{ translations.description }}</h5>
                 <p v-html="post.description"></p>
                 <h5>{{ translations.contribuition}}</h5>
                 <p v-html="post.part"></p>
                 <p >{{ translations.credits[0] }} {{  }} {{translations.credits[1]}}</p>
 
                 <h5>Original URL</h5>
-                <a v-if="post.link_unavaliable === undefined && !post.link_unavaliable" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
-                  {{ post.link.replace(/(^\w+:|^)\/\//, '') }}
+                <a :class="'project-info-url' + (post.link_unavaliable === undefined && !post.link_unavaliable ? '':  ' unavaliable')" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
+                  <template v-if="post.link.indexOf('?') > -1">
+                    {{ post.link.replace(/(^\w+:|^)\/\//, '').replace(/[^?]*$/g, '').replace('?', '') }}
+                  </template>
+                  <template v-else>
+                    {{ post.link.replace(/(^\w+:|^)\/\//, '') }}
+                  </template>
                 </a>
-                <p v-else>
-                  {{ post.link.replace(/(^\w+:|^)\/\//, '') }} is unavaliable due to changes on the original project
-                </p>
               </div>
 
-              <div  v-if="post.extra !== undefined">
+              <div class="project-info-data" v-if="post.extra !== undefined">
                 <div v-for="extra in post.extra" :key="extra.id" v-view class="project-info-more">
-                  <h5 class="title" v-html="extra.title"></h5>
+                  <h5 v-html="extra.title"></h5>
 
                   <picture v-if="extra.type === 'img'">
                     <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
@@ -133,7 +142,6 @@ export default {
       origin: this.$parent.origin,
       translations: this.$parent.projects,
       post: undefined,
-      random: Math.round(Math.random() * 4) + 1,
       next: undefined,
       prev: undefined,
       total: Number,
@@ -155,10 +163,12 @@ export default {
     self.total = Number(meta.total);
   },
   mounted() {
+    let self = this;
+
     document.body.classList.remove("on-bottom");
 
-    this.getPost();
-    this.scrollPosition();
+    self.getPost();
+    self.scrollPosition();
   },
   methods: {
     renderPoster(width, height) {
@@ -204,7 +214,6 @@ export default {
     nextprev(id) {
       this.data_id = id;
       this.getPost();
-      this.random_color = Math.round(Math.random() * 18) - 1;
 
       const scrollToTop = () => {
         const c = document.documentElement.scrollTop || document.body.scrollTop;
