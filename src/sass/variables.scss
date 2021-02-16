@@ -5,10 +5,21 @@ $color-black75:             rgba(0, 0, 0, .75);
 $color-white:               rgba(255, 255, 255, 1);
 $color-white75:             rgba(255, 255, 255, .75);
 
-$main-bg:                   $color-black;
+$main-bg:                   $color-white;
 $color-1:                   rbg(100, 100, 100);
 $color-2:                  rgb(75, 75, 75);
 $color-3:                  rgb(50, 50, 50);
+
+:root {
+    --black: (0, 0, 0, 1);
+    --black75: (0, 0, 0, .75);
+    --black50: (0, 0, 0, .5);
+    --black25: (0, 0, 0, .25);
+    --white: (255, 255, 255, 1);
+    --white75: (255, 255, 255, .75);
+    --white50: (255, 255, 255, .5);
+    --white25: (255, 255, 255, .25);
+}
 
 // Viewports
 // @type pixels

@@ -1,23 +1,12 @@
 <template>
-    <main class="home">
-        <div id="appendPicture"></div>
-        <div id="appendSVG"></div>
-        <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">I'm Luis. </router-link><span>Front-end developer and part time Freelancer. Check out some of the projects I've worked on below.</span></h3>
-        </div>
-
-        <article class="main">
-            <div class="home-projects">
-              <div class="max-area">
-              <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index">
-                    <h3 class="home-project-title" @click="projectClick('portfolio_link', 'click', post.project, 100)">
-                        <span v-view>{{ post.name }}</span>
-                    </h3>
-              </router-link>
-              </div>
-            </div>
-        </article>
-    </main>
+    <article class="home-c2">
+      <router-link class="project-link" :to="post.path" v-for="(post, index) in posts" :key="index">
+        <h3 @click="projectClick('portfolio_link', 'click', post.project, 100)">
+          <img class="project-link-media" src="" width="32" height="32"/>
+          <span class="project-link-name">{{ post.name }}</span>
+        </h3>
+      </router-link>
+    </article>
 </template>
 
 <script>
@@ -342,7 +331,53 @@ export default {
             path: '/projects/genesysinf-sageweb',
             name: 'GenesysInf | SageWeb'
           }
-        ]
+        ],
+        links: {
+          "about": [
+              "/about",
+              "About"
+          ],
+          "productions": [
+              "/productions",
+              "productions"
+          ],
+          "mail": [
+              "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
+              "Mail"
+          ],
+          "privacy_policy": [
+              "/privacy-policy",
+              "Privacy Policy"
+          ],
+          "terms_of_use": [
+              "/terms-of-use",
+              "Terms of Use"
+          ],
+          "GDPR": [
+              "/GDPR",
+              "GDPR"
+          ],
+          "credits": [
+              "/credits",
+              "Credits"
+          ],
+          "instagram": [
+              "https://www.instagram.com/j_luiskrotz",
+              "Instagram"
+          ],
+          "linkedin": [
+              "https://www.linkedin.com/in/luis-kr%C3%B6tz/",
+              "linkedin"
+          ],
+          "github": [
+              "https://github.com/LuisKrotz",
+              "github"
+          ],
+          "phone": [
+              "tel:+5551982274782",
+              "phone"
+          ]
+      },
     }
   },
   created() {

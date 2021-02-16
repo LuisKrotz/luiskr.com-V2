@@ -1,107 +1,77 @@
 <template>
-    <div>
-        <header class="header">
-            <h3 class="hdn">{{ array.title }}</h3>
-            <div class="max-area">
-                <button class="header-link header-more" @click="headerOpen()">
-                    <span v-if="!open" class="hdn">{{ array.toggle[0] }}</span>
-                    <span v-else class="hdn">{{ array.toggle[1] }}</span>
-
-                    <span class="header-more-line top"></span>
-                    <span class="header-more-line middle"></span>
-                    <span class="header-more-line bottom"></span>
-                </button>
+    <header class="header max-area">
+        <div class="header-content" ref="header_content" :style="{height: `${afterScroll}`}">
+            <div>
+                <h3 class="header-title">Luis Krötz </h3>
+                <transition name="expand">
+                    <h4 class="header-subtitle" v-if="!hideSubtitle">Frond-End Developer </h4>
+                </transition>
+                <transition name="expand">
+                    <p class="header-description" v-if="!hideDescription">UX / Front End Dev at @Transa, freelancing on my spare time.<br>Graduated in Systems for Internet at Federal University of Santa Maria.</p>
+                </transition>
             </div>
 
-            <transition name="menu-open">
-                <div class="header-modal" v-show="open">
-                    <div class="header-modal-background"></div>
-                    <div class="max-area">
-                        <div>
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.home[1], 100)">
-                                <router-link class="header-modal-link" :to="array.home[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.home[1] }}</span>
-                                </router-link>
-                            </h4>
+            <div class="header-buttons">
+                <!-- Emit event to home to change project listing / go to home with the selected listing -->
+                <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.about[1], 100)">
+                    <router-link class="primary-button" :to="array.about[0]">
+                        <span class="primary-button-text">{{ array.about[1] }}</span>
+                    </router-link>
+                </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.about[1], 100)">
-                                <router-link class="header-modal-link" :to="array.about[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.about[1] }}</span>
-                                </router-link>
-                            </h4>
+                <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.home[1], 100)">
+                    <router-link class="primary-button active" :to="array.home[0]">
+                        <span class="primary-button-text">{{ array.home[1] }}</span>
+                    </router-link>
+                </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.awards[1], 100)">
-                                <router-link class="header-modal-link" :to="array.awards[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.awards[1] }}</span>
-                                </router-link>
-                            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.productions[1], 100)">
-                                <router-link class="header-modal-link" :to="array.productions[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.productions[1] }}</span>
-                                </router-link>
-                            </h4>
+                <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.awards[1], 100)">
+                    <router-link class="primary-button" :to="array.awards[0]">
+                        <span class="primary-button-text">{{ array.awards[1] }}</span>
+                    </router-link>
+                </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.mail[1], 200)">
-                                <a class="header-modal-link" :href="array.mail[0]" rel="noopener">
-                                    <span class="header-modal-link-title" @click="headerClose()" >{{ array.mail[1] }}</span>
-                                </a>
-                            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.phone[1], 200)">
-                                <a class="header-modal-link" :href="array.phone[0]" rel="noopener">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.phone[1] }}</span>
-                                </a>
-                            </h4>
+                <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.contact[1], 100)">
+                    <router-link class="primary-button" :to="array.contact[0]">
+                        <span class="primary-button-text">{{ array.contact[1] }}</span>
+                    </router-link>
+                </h4>
+            </div>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.linkedin[1], 100)">
-                                <a class="header-modal-link" :href="array.linkedin[0]" rel="noopener">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.linkedin[1] }}</span>
-                                </a>
-                            </h4>
-                        </div>
-                        <div>
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.github[1], 100)">
-                                <a class="header-modal-link" :href="array.github[0]" rel="noopener">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.github[1] }}</span>
-                                </a>
-                            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.instagram[1], 100)">
-                                <a class="header-modal-link" :href="array.instagram[0]" rel="noopener">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.instagram[1] }}</span>
-                                </a>
-                            </h4>
+            <!-- <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.mail[1], 200)">
+                <a class="header-modal-link" :href="array.mail[0]" rel="noopener">
+                    <span class="header-modal-link-title">{{ array.mail[1] }}</span>
+                </a>
+            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.credits[1], 50)">
-                                <router-link class="header-modal-link" :to="array.credits[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.credits[1] }}</span>
-                                </router-link>
-                            </h4>
+            <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.phone[1], 200)">
+                <a class="header-modal-link" :href="array.phone[0]" rel="noopener">
+                    <span class="header-modal-link-title" @click="headerClose()">{{ array.phone[1] }}</span>
+                </a>
+            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.GDPR[1], 50)">
-                                <router-link class="header-modal-link" :to="array.GDPR[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.GDPR[1] }}</span>
-                                </router-link>
-                            </h4>
+            <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.linkedin[1], 100)">
+                <a class="header-modal-link" :href="array.linkedin[0]" rel="noopener">
+                    <span class="header-modal-link-title" @click="headerClose()">{{ array.linkedin[1] }}</span>
+                </a>
+            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.terms_of_use[1], 50)">
-                                <router-link class="header-modal-link" :to="array.terms_of_use[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.terms_of_use[1] }}</span>
-                                </router-link>
-                            </h4>
+            <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.github[1], 100)">
+                <a class="header-modal-link" :href="array.github[0]" rel="noopener">
+                    <span class="header-modal-link-title" @click="headerClose()">{{ array.github[1] }}</span>
+                </a>
+            </h4>
 
-                            <h4 class="hover-span" @click="sendAnalyticsEvent('modal_link', 'click', array.privacy_policy[1], 50)">
-                                <router-link class="header-modal-link" :to="array.privacy_policy[0]">
-                                    <span class="header-modal-link-title" @click="headerClose()">{{ array.privacy_policy[1] }}</span>
-                                </router-link>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </transition>
-        </header>
-    </div>
+            <h4 @click="sendAnalyticsEvent('modal_link', 'click', array.instagram[1], 100)">
+                <a class="header-modal-link" :href="array.instagram[0]" rel="noopener">
+                    <span class="header-modal-link-title" @click="headerClose()">{{ array.instagram[1] }}</span>
+                </a>
+            </h4> -->
+        </div>
+    </header>
 </template>
 
 <script>
@@ -109,112 +79,47 @@ export default {
     name: 'HeaderComponent',
         data() {
             return {
-                origin: this.$parent.origin,
-                storage: this.$parent.storage,
-                array: {
-                    "title": "Menu",
-                    "toggle": [
-                        "Open Menu",
-                        "Close Menu"
-                    ],
-                    "home": [
-                        "/",
-                        "Home"
-                    ],
-                    "about": [
-                        "/about",
-                        "About"
-                    ],
-                    "awards": [
-                        "/awards/cssda-kudos-06-2020",
-                        "awards"
-                    ],
-                    "productions": [
-                        "/productions",
-                        "productions"
-                    ],
-                    "mail": [
-                        "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
-                        "Mail"
-                    ],
-                    "privacy_policy": [
-                        "/privacy-policy",
-                        "Privacy Policy"
-                    ],
-                    "terms_of_use": [
-                        "/terms-of-use",
-                        "Terms of Use"
-                    ],
-                    "GDPR": [
-                        "/GDPR",
-                        "GDPR"
-                    ],
-                    "credits": [
-                        "/credits",
-                        "Credits"
-                    ],
-                    "instagram": [
-                        "https://www.instagram.com/j_luiskrotz",
-                        "Instagram"
-                    ],
-                    "linkedin": [
-                        "https://www.linkedin.com/in/luis-kr%C3%B6tz/",
-                        "linkedin"
-                    ],
-                    "github": [
-                        "https://github.com/LuisKrotz",
-                        "github"
-                    ],
-                    "phone": [
-                        "tel:+5551982274782",
-                        "phone"
-                    ]
-                },
-                remember: 0,
-                open: false
+                array: this.$parent.headerFooterArray,
+                height: null,
+                hideSubtitle: false,
+                hideDescription: false,
+                afterScroll: null,
+                afterCounter: null,
+                oldScroll: null,
+                isSmall: false,
+                originalTitle: document.title
             }
         },
-        created() {
-            let self = this,
-                lastresize = 0;
+        mounted() {
+            this.height = this.$parent.$refs.c1_media_height.clientHeight;
+            this.afterScroll = `${this.height}px`;
 
-            function close() {
-                document.body.classList.remove("header-open");
-                self.open = false;
-            }
-
-            close();
-
-            window.addEventListener('resize', function () {
-                lastresize++;
-
-                if (lastresize > 10 && self.open) {
-                    close();
-                    lastresize = 0;
-                }
-            });
+            window.addEventListener('scroll', () => this.scroll(), false);
         },
         methods: {
-            headerClose() {
-                document.body.classList.remove("header-open");
+            scroll() {
+                let scrollTop = window.scrollY;
+                let docHeight = document.body.offsetHeight;
+                let winHeight = window.innerHeight;
+                let scrollPercent = scrollTop / (docHeight - winHeight);
+                let scrollPercentRounded = Math.round(scrollPercent * 100);
 
-                window.scrollTo(0, this.remember);
-                document.querySelector(".main").style = '';
+                document.title = scrollPercentRounded !== 0 ? `(${scrollPercentRounded}%) ${this.originalTitle}`: `${this.originalTitle}`;
 
-                this.open = false;
-            },
-            headerOpen() {
-                if (this.open) {
-                    this.headerClose();
-                    this.sendAnalyticsEvent('modal', 'click', 'open', 100);
+                if (scrollPercentRounded !== 0) {
+                        window.requestAnimationFrame(() => {
+
+                        this.afterCounter =  (this.height - (scrollPercentRounded/ 100) * this.height).toFixed(0);
+
+                        this.hideDescription = this.afterCounter <= (this.height / 1.75);
+                        this.hideSubtitle = this.afterCounter <= (this.height / 2);
+
+                        if (this.afterCounter >= (this.height / 2.75)) {
+                            this.afterScroll = `${(this.height - (scrollPercentRounded/ 100) * this.height).toFixed(0)}px`
+                        }
+                    });
                 } else {
-                    this.remember = window.scrollY;
-                    window.scrollTo(0, 0);
-
-                    document.querySelector(".main").style = `transform: translateY(-${this.remember}px`;
-                    document.body.classList.add("header-open");
-                    this.open = true;
-                    this.sendAnalyticsEvent('modal', 'click', 'close', 50);
+                    this.afterScroll = `${this.height}px`
                 }
             },
             sendAnalyticsEvent(category, action, label, value) {
