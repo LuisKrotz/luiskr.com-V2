@@ -1,25 +1,73 @@
 .project {
     &-link {
+        transition: border-color ease-out 150ms;
         box-sizing: border-box;
         line-height: to-em(64);
-        border-bottom: 1px solid;
         border-color: var(--black25);
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-column-gap: to-em(24);
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--black25);
 
-        &-media {
-            background: var(--accent2);
-            display: inline-block;
-            width: to-em(48);
-            height: to-em(48);
-            border-radius: 5px;
-            object-fit: cover;
-            object-position: center center;
-            vertical-align: middle;
+        &:hover,
+        &:focus {
+            border-color: var(--accent1);
         }
 
-        &-name {
-            line-height: inherit;
-            padding: 0 to-em(16);
+        &-info {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-column-gap: to-em(24);
+            align-items: center;
+            grid-auto-flow: dense;
+            justify-content: start;
+
+            &-media {
+                transition: box-shadow ease-in-out 150ms;
+                background: var(--accent2);
+                display: block;
+                width: to-em(48);
+                height: to-em(48);
+                border-radius: 2px;
+                object-fit: cover;
+                object-position: center center;
+                box-shadow: 1px 1px 2px 0 var(--black25), -1px -1px 2px 0 var(--black10);
+    
+                .project-link:hover &,
+                .project-link:focus & {
+                    box-shadow: 1px 1px 2px 0 transparent, -1px -1px 2px 0 transparent;
+                }
+            }
+    
+            &-name {
+                font-weight: 500;
+                text-transform: uppercase;
+                transition: color ease-out 150ms;
+                line-height: inherit;
+                overflow: hidden;
+                white-space: nowrap;
+                display: block;
+                text-overflow: ellipsis;
+                box-sizing: border-box;
+    
+                .project-link:hover &,
+                .project-link:focus & {
+                    color: var(--accent1);
+                }
+            }
+        }
+
+        &-more {
+            transition: color ease-out 150ms;
+            font-size: to-em(12);
+            color: var(--black75);
+
+            .project-link:hover &,
+            .project-link:focus & {
+                color: var(--accent2);
+            }
         }
     }
 }

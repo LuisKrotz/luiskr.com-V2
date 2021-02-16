@@ -1,21 +1,7 @@
 <template>
   <div>
-    <transition name="fade" mode="out-in">
-      <picture v-if="post !== undefined && post.video === undefined" :key="'bg-' + post.id">
-        <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-        <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-        <img class="project-background" :src="storage + post.img.src + webp" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
-      </picture>
-  
-      <picture v-if="post !== undefined && post.video !== undefined" :key="'bg-' + post.id">
-        <source type="image/jpeg" :srcset="storage + post.video.src + '.jpg'">
-        <source type="image/webp" :srcset="storage + post.video.src + '.jpg.webp'">
-        <img class="project-background" :src="storage + post.video.src + webp" :width="post.video.width" :height="post.video.height" :alt="post.video.alt">
-      </picture>
-    </transition>
-
     <main class="main">
-      <article :class="'project home-project max-area ' + (loaded ? 'loaded' : '')">
+      <article :class="'project' + (loaded ? ' loaded' : '')">
         <h2 class="project-title" v-view v-if="post !== undefined" ref="title_wrapper">
             <div class="project-title-wrapper">
               <div class="project-title-marquee">

@@ -1,26 +1,19 @@
 /// VARIABLES
 // @type Hexadecial Color
-$color-black:               #000;
-$color-black75:             rgba(0, 0, 0, .75);
-$color-white:               rgba(255, 255, 255, 1);
-$color-white75:             rgba(255, 255, 255, .75);
-
-$color-1:                   rbg(100, 100, 100);
-$color-2:                  rgb(75, 75, 75);
-$color-3:                  rgb(50, 50, 50);
-
-$c1-width: 272;  
+$c1-width: 272;
 
 :root {
     --black: rgba(0, 0, 0, 1);
     --black75: rgba(0, 0, 0, .75);
     --black50: rgba(0, 0, 0, .5);
     --black25: rgba(0, 0, 0, .25);
+    --black10: rgba(0, 0, 0, .1);
+
     --white: rgba(255, 255, 255, 1);
     --white75: rgba(255, 255, 255, .75);
     --white50: rgba(255, 255, 255, .5);
     --white25: rgba(255, 255, 255, .25);
-    
+    --white10: rgba(255, 255, 255, .1);
 
     --accent1: rgb(80, 0, 133);
     --accent2: rgb(0, 172, 114);
