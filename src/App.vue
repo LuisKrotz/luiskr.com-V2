@@ -5,7 +5,7 @@
 
     <main class="home max-area">
       <div class="home-c1" ref="c1_media_height">
-        <img class="home-c1-media" src="https://avatars.githubusercontent.com/u/18265646?s=460&u=d9c41daa5fab647d49841da03aa2bcffe2e4c3b7&v=4" width="180" height="180">
+        <img class="home-c1-media" src="https://avatars.githubusercontent.com/u/18265646?s=400&u=0a7915965f86e1726e88e4de1d74b43a7ce1b3bd&v=4" width="180" height="180">
       </div>
 
       <div :style="{'padding-top': generalPadding}">

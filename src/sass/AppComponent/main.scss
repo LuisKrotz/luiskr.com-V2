@@ -58,11 +58,11 @@
         transition: height 100ms ease;
         position: fixed;
         z-index: 50;
-        background-color: white;
-        color: black;
-        padding-left: 64px + 328px;
-        padding-top: 64px;
-        padding-bottom: 32px;
+        background-color: var(--white);
+        color: var(--black);
+        padding-left: to-em($gap-1440 + $c1-width);
+        padding-top: to-em($gap-1440);
+        padding-bottom: to-em($gap-1440 / 2);
         display: grid;
     }
 
@@ -90,30 +90,32 @@
 }
 
 .home {
-    background: $main-bg;
-    color: $color-black;
+    background: var(--white);
+    color: var(--black);
 
     &-c1 {
         z-index: 55;
         position: fixed;
-        width: 328px;
-        top: 64px;
+        width: to-em($c1-width);
+        top: to-em($gap-1440);
 
         &-media {
-            border-radius: 10px;
             display: block;
-            background-color: greenyellow;
+            background-color: var(--accent2);
             width: 100%;
             height: auto;
+
+            box-shadow: 1px 1px 3px rgba(0,0,0, .25), -1px -1px 3px rgba(0,0,0, .15);
+            border-radius: 16px;
         }
     }
 
     &-c2 {
-        padding-top: 32px;
+        padding-top: to-em($gap-1440 / 2);
         width: 100%;
         display: block;
         position: relative;
-        padding-left: 64px + 328px;
+        padding-left: to-em($gap-1440 + $c1-width);
         box-sizing: border-box;
     }
 }
@@ -130,13 +132,13 @@
     text-align: center;
     padding: 0 24px;
     border-radius: 5px;
-    border: 1px solid palevioletred;
-    background-color: $color-white;
-    color: palevioletred;
+    border: 1px solid var(--accent1);
+    background-color: var(--white);
+    color: var(--accent1);
 
     &.active {
-        background-color: palevioletred;
-        color: $color-white;
+        background-color: var(--accent1);
+        color: var(--white);
     }
 
     &:hover,
@@ -159,7 +161,7 @@
     width: 100%;
     z-index: 50;
     background-color: wheat;
-    color: black;
+    color: var(--black);
 }
 
 .expand-enter-active,

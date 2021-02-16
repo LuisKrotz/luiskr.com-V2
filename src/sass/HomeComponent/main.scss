@@ -7,7 +7,7 @@
         display: block;
 
         &-media {
-            background: chartreuse;
+            background: var(--accent2);
             display: inline-block;
             width: to-em(48);
             height: to-em(48);

@@ -111,8 +111,8 @@ export default {
 
                         this.afterCounter =  (this.height - (scrollPercentRounded/ 100) * this.height).toFixed(0);
 
-                        this.hideDescription = this.afterCounter <= (this.height / 1.75);
-                        this.hideSubtitle = this.afterCounter <= (this.height / 2);
+                        this.hideDescription = this.afterCounter <= (this.height / 1.5);
+                        this.hideSubtitle = this.afterCounter <= (this.height / 1.75);
 
                         if (this.afterCounter >= (this.height / 2.75)) {
                             this.afterScroll = `${(this.height - (scrollPercentRounded/ 100) * this.height).toFixed(0)}px`
