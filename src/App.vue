@@ -17,8 +17,6 @@
 
     <FooterComponent /> 
 
-    <aside class="loading">Loading</aside>
-
     <transition name="cookie">
       <aside v-if="!show_cookie && domLoaded" class="cookie-banner">
         <div class="max-area">

@@ -161,11 +161,48 @@
 
 .footer {
     position: relative;
-    right: 0;
     width: 100%;
     z-index: 50;
-    background-color: wheat;
-    color: var(--black);
+    background-color: var(--black);
+    box-shadow: 0 -1px 5px 0 var(--black50);
+
+    &-items {
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin: 32px -16px 0;
+    }
+
+    &-link {
+        transition: color .3s ease-out;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: to-em(12);
+        font-weight: 700;
+        text-align: center;
+        padding: 0 16px;
+        text-decoration: underline;
+        line-height: to-em(48);
+        color: var(--white75);
+
+        &.active {
+            color: var(--white);
+        }
+    
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+
+        &:visited {
+            text-decoration: line-through;
+        }
+        
+        &-title {
+            @extend .primary-button-text;
+        }
+    }
 }
 
 .expand-enter-active,
