@@ -1,17 +1,28 @@
 <template>
     <article class="home-c2">
-      <router-link :to="post.path" v-for="(post, index) in posts" :key="index">
-        <h3 class="project-link" @click="projectClick('portfolio_link', 'click', post.project, 100)">
+        <router-link class="project" :to="(postsArrayLoaded ? post.path : '')" v-for="(post, index) in posts" :key="index">
+          <h3 class="project-link" @click="projectClick('portfolio_link', 'click', (postsArrayLoaded ? post.project : '') , 100)">
+            <div class="project-link-info">
+              <img class="project-link-info-media" :src="(postsArrayLoaded ? `${storage}${post.img === undefined ? post.video.img : post.img.src}.jpg` : load)" width="32" height="32"/>
+              <span class="project-link-info-name">{{ (postsArrayLoaded ? post.project : '...') }}</span>
+            </div>
+            <span  class="project-link-more">
+              <span class="hdn"> more </span>
+              <span aria-hidden="true"> ► </span>
+            </span>
+          </h3>
+        </router-link>
+      <!-- <div v-else class="project" v-for="n in 77" :key="`ld-${n}`">
+        <h3 class="project-link">
           <div class="project-link-info">
-            <img class="project-link-info-media" :src="`${storage}${post.img === undefined ? post.video.img : post.img.src}.jpg`" width="32" height="32"/>
-            <span class="project-link-info-name">{{ post.project }}</span>
+            <img class="project-link-info-media" :src="load" width="32" height="32"/>
+            <span class="project-link-info-name">...</span>
           </div>
           <span  class="project-link-more">
-            <span class="hdn"> more </span>
-            <span aria-hidden="true"> ► </span>
+            <span aria-hidden="true"> &nbsp; </span>
           </span>
         </h3>
-      </router-link>
+      </div> -->
     </article>
 </template>
 
@@ -27,8 +38,11 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
+        load: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgd2lkdGg9IjI5MXB4IiBoZWlnaHQ9IjI5MXB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgwIDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTIuODU3MTQyODU3MTQyODU3cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4KICA8L3JlY3Q+CjwvZz48ZyB0cmFuc2Zvcm09InJvdGF0ZSg1MS40Mjg1NzE0Mjg1NzE0MyA1MCA1MCkiPgogIDxyZWN0IHg9IjQ3LjUiIHk9IjM1LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDUxYTIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgdmFsdWVzPSIxOzAiIGtleVRpbWVzPSIwOzEiIGR1cj0iMy4zMzMzMzMzMzMzMzMzMzM1cyIgYmVnaW49Ii0yLjM4MDk1MjM4MDk1MjM4MXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMTAyLjg1NzE0Mjg1NzE0Mjg2IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTEuOTA0NzYxOTA0NzYxOTA0N3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMTU0LjI4NTcxNDI4NTcxNDI4IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTEuNDI4NTcxNDI4NTcxNDI4NnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjA1LjcxNDI4NTcxNDI4NTcyIDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTAuOTUyMzgwOTUyMzgwOTUyM3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjU3LjE0Mjg1NzE0Mjg1NzE3IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTAuNDc2MTkwNDc2MTkwNDc2MTZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPgogIDwvcmVjdD4KPC9nPjxnIHRyYW5zZm9ybT0icm90YXRlKDMwOC41NzE0Mjg1NzE0Mjg1NiA1MCA1MCkiPgogIDxyZWN0IHg9IjQ3LjUiIHk9IjM1LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDUxYTIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgdmFsdWVzPSIxOzAiIGtleVRpbWVzPSIwOzEiIGR1cj0iMy4zMzMzMzMzMzMzMzMzMzM1cyIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPgogIDwvcmVjdD4KPC9nPgo8IS0tIFtsZGlvXSBnZW5lcmF0ZWQgYnkgaHR0cHM6Ly9sb2FkaW5nLmlvLyAtLT48L3N2Zz4=',
         webp: '.gif',
-        posts: [],
+        total: 77,
+        posts: new Array(77),
+        postsArrayLoaded: false,
         links: {
           "about": [
               "/about",
@@ -92,8 +106,8 @@ export default {
   methods: {
     getPosts() {
       let self = this;
-      let i = 77;
-      let urls = [];
+      let i = self.total,
+              urls = [];
 
       while(i > 0) {
         urls.push(`${self.origin}/projects/${i}.json`);
@@ -105,10 +119,10 @@ export default {
             const response = await fetch(url);
             const json = await response.json();
 
-            self.posts.push(json);
+            self.posts[idx] = json;
         }
 
-        console.log('Finished!');
+        self.postsArrayLoaded = true;
       }
 
       request();

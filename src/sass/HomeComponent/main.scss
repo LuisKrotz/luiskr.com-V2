@@ -1,6 +1,18 @@
 .project {
+    transition: border-color ease-out 250ms;
+    display: block;
+    border-bottom: 1px solid var(--black25);
+
+    &:last-of-type {
+        border: none;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: var(--accent);
+    }
+
     &-link {
-        transition: border-color ease-out 150ms;
         box-sizing: border-box;
         line-height: to-em(64);
         border-color: var(--black25);
@@ -9,12 +21,6 @@
         grid-column-gap: to-em(24);
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid var(--black25);
-
-        &:hover,
-        &:focus {
-            border-color: var(--accent1);
-        }
 
         &-info {
             display: grid;
@@ -26,7 +32,7 @@
 
             &-media {
                 transition: box-shadow ease-in-out 150ms;
-                background: var(--accent2);
+                background: var(--black10);
                 display: block;
                 width: to-em(48);
                 height: to-em(48);
@@ -54,7 +60,7 @@
     
                 .project-link:hover &,
                 .project-link:focus & {
-                    color: var(--accent1);
+                    color: var(--accent);
                 }
             }
         }
@@ -66,7 +72,7 @@
 
             .project-link:hover &,
             .project-link:focus & {
-                color: var(--accent2);
+                color: var(--accent);
             }
         }
     }
