@@ -1,10 +1,10 @@
 <template>
   <div>
     <main class="main">
-      <article :class="'project' + (loaded ? ' loaded' : '')">
-        <h2 class="project-title" v-view v-if="post !== undefined" ref="title_wrapper">
-            <div class="project-title-wrapper">
-              <div class="project-title-marquee">
+      <article :class="'internal' + (loaded ? ' loaded' : '')">
+        <h2 class="internal-title" v-if="post !== undefined" ref="title_wrapper">
+            <div class="internal-title-wrapper">
+              <div class="internal-title-marquee">
                 <template v-for="n in 10">
                   {{ post.project }}&nbsp;\&nbsp;
                 </template>
@@ -12,26 +12,26 @@
             </div>
         </h2>
 
-        <div class="project-info">
+        <div class="internal-info">
           <transition name="fade" mode="out-in">
           <picture v-if="post !== undefined && post.video === undefined" :key="'media-' + post.id">
               <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
               <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-              <img :src="storage + post.img.src + webp" class="project-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
+              <img :src="storage + post.img.src + webp" class="internal-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
           </picture>
-          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="project-media" :height="post.video.height" :poster="renderPoster(post.video.width, post.video.height)" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
+          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="internal-media" :height="post.video.height" :poster="renderPoster(post.video.width, post.video.height)" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
             <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
             <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
             <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
           </video>
           </transition>
 
-          <div class="project-info-content" v-if="translations !== undefined && post !== undefined">
-            <div class="project-info-description">
-              <div class="project-info-data" v-view>
+          <div class="internal-info-content" v-if="translations !== undefined && post !== undefined">
+            <div class="internal-info-description">
+              <div class="internal-info-data">
                 <h3 class="first">{{ translations.at }}</h3>
                 <p>
-                  <a class="project-info-link" v-view :href="post.at_link">
+                  <a class="internal-info-link" :href="post.at_link">
                     {{ post.at_place }}
                   </a>
                 </p>
@@ -46,7 +46,7 @@
 
                 <h5 v-html="translations.originalURL"></h5>
                 <p>
-                  <a :class="'project-info-url' + (post.link_unavaliable === undefined && !post.link_unavaliable ? '':  ' unavaliable')" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
+                  <a :class="'internal-info-url' + (post.link_unavaliable === undefined && !post.link_unavaliable ? '':  ' unavaliable')" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('project_link', 'click', translations.checkit, 25)">
                     <template v-if="post.link.indexOf('?') > -1">
                       {{ post.link.replace(/(^\w+:|^)\/\//, '').replace(/[^?]*$/g, '').replace('?', '') }}
                     </template>
@@ -57,16 +57,16 @@
                 </p>
               </div>
 
-              <div class="project-info-data" v-if="post.extra !== undefined">
-                <div v-for="extra in post.extra" :key="extra.id" v-view class="project-info-more">
+              <div class="internal-info-data" v-if="post.extra !== undefined">
+                <div v-for="extra in post.extra" :key="extra.id" class="internal-info-more">
                   <h5 v-html="extra.title"></h5>
 
                   <picture v-if="extra.type === 'img'">
                     <source type="image/jpeg" :srcset="storage +  extra.src + '.jpg'">
                     <source type="image/webp" :srcset="storage +  extra.src + '.webp'">
-                    <img v-view :src="storage +  extra.src + webp" class="project-media extra" :width="extra.width" :height="extra.height" :alt="extra.alt">
+                    <img :src="storage +  extra.src + webp" class="internal-media extra" :width="extra.width" :height="extra.height" :alt="extra.alt">
                   </picture>
-                  <video v-view v-else :width="extra.width" class="project-media extra" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" playsinline autoplay muted loop>
+                  <video v-else :width="extra.width" class="internal-media extra" :height="extra.height" :poster="storage +  extra.img" :alt="extra.alt" playsinline autoplay muted loop>
                     <source type="application/vnd.apple.mpegurl" :src="storage +  extra.src + '.m3u8'"/>
                     <source type="video/mp4" :src="storage +  extra.src + '.mp4'"/>
                     <source type="video/webm" :src="storage +  extra.src + '.webm'"/>
@@ -75,14 +75,14 @@
               </div>
             </div>
 
-            <a class="project-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', translations.checkit, 25)">
+            <a class="internal-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('credits_link', 'click', translations.checkit, 25)">
               <a :href="post.at_link" rel="noopener" target="_blank" @click="sendAnalyticsEvent('credits_link', 'click', post.at_place, 25)">
-                <img v-view v-if="post.at_logo === undefined" class="project-info-credit-logo" :src="placeholder" alt="">
-                <img v-view v-else class="project-info-check-it" :src="storage + 'media/' + post.at_logo" :alt="post.at_place" width="480" height="480">
+                <img v-if="post.at_logo === undefined" class="internal-info-credit-logo" :src="placeholder" alt="">
+                <img v-else class="internal-info-check-it" :src="storage + 'media/' + post.at_logo" :alt="post.at_place" width="480" height="480">
               </a>
 
 
-              <span class="project-info-check-txt">
+              <span class="internal-info-check-txt">
                 {{ translations.checkit }} {{ post.at_place.replace('@', '') }}
               </span>
             </a>
@@ -116,9 +116,6 @@
 
 <script>
 import Vue from 'vue'
-import checkView from 'vue-check-view'                            // https://vtimofeev.github.io/vue-check-view/index.html
-
-Vue.use(checkView);
 
 export default {
   name: 'Project',

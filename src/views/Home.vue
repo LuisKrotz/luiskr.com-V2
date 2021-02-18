@@ -12,17 +12,6 @@
             </span>
           </h3>
         </router-link>
-      <!-- <div v-else class="project" v-for="n in 77" :key="`ld-${n}`">
-        <h3 class="project-link">
-          <div class="project-link-info">
-            <img class="project-link-info-media" :src="load" width="32" height="32"/>
-            <span class="project-link-info-name">...</span>
-          </div>
-          <span  class="project-link-more">
-            <span aria-hidden="true"> &nbsp; </span>
-          </span>
-        </h3>
-      </div> -->
     </article>
 </template>
 

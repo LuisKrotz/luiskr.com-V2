@@ -180,6 +180,9 @@ export default {
       this.generalPadding = `${this.$refs.c1_media_height.clientHeight + this.$refs.c1_media_height.offsetTop}px`;
     },
     methods: {
+      emitInternal(data) {
+        console.log(data)
+      },
       updateStatus(status) {
         this.smallHeader = status;
       },

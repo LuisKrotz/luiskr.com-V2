@@ -1,5 +1,4 @@
-.project,
-.award {
+.internal {
     box-sizing: border-box;
     width: 100%;
     max-width: to-em(768 + $c1-width);
@@ -167,17 +166,6 @@
                 padding: to-em(8);
                 object-fit: scale-down;
                 object-position: center center;
-
-                &.view-in,
-                &.view-out--above {
-                    opacity: 1;
-                }
-
-                .award & {
-                    object-fit: cover;
-                    background-color: transparent;
-                    padding: 0;
-                }
             }
 
             &-txt {
@@ -214,32 +202,6 @@
                 font-size: to-em(16);
             }
         }
-    }
-}
-
-.project-title,
-.project-subtitle,
-.project-info-link,
-.project-info-more,
-.project-info-credit {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-.loaded .project-title,
-.loaded .project-subtitle,
-.loaded .project-info-link,
-.loaded .project-info-more,
-.loaded .project-info-credit {
-    transition: opacity ease-in .3s, transform ease-in-out .3s;
-    opacity: 0;
-    transform: scale(.95);
-
-    &.view-in,
-    &.view-out--above {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
