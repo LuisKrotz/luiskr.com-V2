@@ -81,6 +81,7 @@
 
     &-buttons {
         display: grid;
+        padding-top: to-em(22);
         grid-column-gap: to-em(16);
         grid-template-columns: repeat(4, auto);
         grid-auto-flow: dense;
