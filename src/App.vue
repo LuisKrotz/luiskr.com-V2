@@ -5,12 +5,12 @@
 
     <main class="home max-area">
       <div class="home-c1" ref="c1_media_height">
-        <img class="home-c1-media" src="https://avatars.githubusercontent.com/u/18265646?s=400&u=0a7915965f86e1726e88e4de1d74b43a7ce1b3bd&v=4" width="180" height="180">
+        <img class="home-c1-media" :src="$store.state.sideImage" width="180" height="180">
       </div>
 
       <div :style="{'padding-top': generalPadding}">
         <transition name="fade" mode="out-in">
-          <router-view @updateStatus="updateStatus"/>
+          <router-view />
         </transition>
       </div>
     </main>
@@ -180,9 +180,6 @@ export default {
       this.generalPadding = `${this.$refs.c1_media_height.clientHeight + this.$refs.c1_media_height.offsetTop}px`;
     },
     methods: {
-      emitInternal(data) {
-        console.log(data)
-      },
       updateStatus(status) {
         this.smallHeader = status;
       },

@@ -14,16 +14,16 @@
 
         <div class="internal-info">
           <transition name="fade" mode="out-in">
-          <picture v-if="post !== undefined && post.video === undefined" :key="'media-' + post.id">
-              <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
-              <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
-              <img :src="storage + post.img.src + webp" class="internal-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
-          </picture>
-          <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="internal-media" :height="post.video.height" :poster="renderPoster(post.video.width, post.video.height)" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
-            <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
-            <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
-            <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
-          </video>
+            <picture v-if="post !== undefined && post.video === undefined" :key="'media-' + post.id">
+                <source type="image/jpeg" :srcset="storage + post.img.src + '.jpg'">
+                <source type="image/webp" :srcset="storage + post.img.src + '.jpg.webp'">
+                <img :src="storage + post.img.src + webp" class="internal-media" :width="post.img.width" :height="post.img.height" :alt="post.img.alt">
+            </picture>
+            <video v-if="post !== undefined && post.video !== undefined" :width="post.video.width" class="internal-media" :height="post.video.height" :poster="renderPoster(post.video.width, post.video.height)" :alt="post.video.alt" playsinline autoplay muted loop :key="'media-' + post.id">
+              <source type="application/vnd.apple.mpegurl" :src="storage + post.video.src + '.m3u8'"/>
+              <source type="video/mp4" :src="storage + post.video.src + '.mp4'"/>
+              <source type="video/webm" :src="storage + post.video.src + '.webm'"/>
+            </video>
           </transition>
 
           <div class="internal-info-content" v-if="translations !== undefined && post !== undefined">
@@ -153,6 +153,8 @@ export default {
 
     document.body.classList.remove("on-bottom");
 
+    self.$store.commit('stopHeaderScroll', true);
+
     self.getPost();
     self.scrollPosition();
   },
@@ -170,7 +172,7 @@ export default {
         .then((response) => {
           return response.json();
         }).then((data) => {
-          let last, title, path;
+          let title, path;
 
           self.post = data;
 
@@ -193,6 +195,8 @@ export default {
               self.prev = data;
               self.loaded = true;
             });
+
+          self.$store.commit('loadedProjectData', `${self.storage}media/${self.post.at_logo}`);
 
           document.body.classList.remove("getting");
         });
