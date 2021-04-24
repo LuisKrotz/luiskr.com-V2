@@ -1,7 +1,14 @@
 <template>
     <article class="home-c2">
-        <router-link class="project" :to="($store.state.postsArrayLoaded ? post.path : '')" v-for="(post, index) in $store.state.posts" :key="index">
-          <h3 class="project-link" @click="projectClick('portfolio_link', 'click', ($store.state.postsArrayLoaded ? post.project : '') , 100)">
+        <router-link class="project"
+          :to="($store.state.postsArrayLoaded ? post.path : '')"
+          v-for="(post, index) in $store.state.posts"
+          :key="index">
+
+          <h3 class="project-link"
+            @click="projectClick('portfolio_link', 'click', ($store.state.postsArrayLoaded ? post.project : '') , 100)"
+            @mouseenter="projectHover($store.state.postsArrayLoaded ? `${storage}${post.img === undefined ? post.video.img : post.img.src}.jpg` : load)">
+
             <div class="project-link-info">
               <img class="project-link-info-media" :src="($store.state.postsArrayLoaded ? `${storage}${post.img === undefined ? post.video.img : post.img.src}.jpg` : load)" width="32" height="32"/>
               <span class="project-link-info-name">{{ ($store.state.postsArrayLoaded ? post.project : '...') }}</span>
@@ -127,6 +134,10 @@ export default {
     },
     projectClick(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
+    },
+    projectHover(source) {
+      console.log('hover', source);
+      this.$store.commit('loadedProjectData', `${source}`);
     }
   }
 }

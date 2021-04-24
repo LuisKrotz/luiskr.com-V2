@@ -11,7 +11,7 @@ export default new Vuex.Store({
         //     username: 'matt',
         //     fullName: 'Matt Maribojoc'
         // }
-        sideImage: 'https://avatars.githubusercontent.com/u/18265646?s=400&u=0a7915965f86e1726e88e4de1d74b43a7ce1b3bd&v=4',
+        sideImage: ['https://avatars.githubusercontent.com/u/18265646?s=400&u=0a7915965f86e1726e88e4de1d74b43a7ce1b3bd&v=4', null],
         header: {
             stopHeaderScroll: false,
             height: 0,
@@ -70,7 +70,10 @@ export default new Vuex.Store({
             state.header.hideDescription = payload;
         },
         loadedProjectData(state, payload) {
-            state.sideImage = payload;
+            state.sideImage[1] = payload;
+        },
+        offloadProjectData(state) {
+            state.sideImage[1] = state.sideImage[0];
         }
     },
     actions: {

@@ -5,7 +5,7 @@
 
     <main class="home max-area">
       <div class="home-c1" ref="c1_media_height">
-        <img class="home-c1-media" :src="$store.state.sideImage" width="180" height="180">
+        <img class="home-c1-media" :src="$store.state.sideImage[1]" width="180" height="180">
       </div>
 
       <div :style="{'padding-top': generalPadding}">
@@ -178,6 +178,7 @@ export default {
     },
     mounted() {
       this.generalPadding = `${this.$refs.c1_media_height.clientHeight + this.$refs.c1_media_height.offsetTop}px`;
+       this.$store.commit('offloadProjectData');
     },
     methods: {
       updateStatus(status) {

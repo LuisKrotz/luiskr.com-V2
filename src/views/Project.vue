@@ -228,6 +228,9 @@ export default {
           document.body.classList.remove("on-bottom");
       }
     }
+  },
+  destroyed() {
+    this.$store.commit('offloadProjectData');
   }
 }
 </script>
