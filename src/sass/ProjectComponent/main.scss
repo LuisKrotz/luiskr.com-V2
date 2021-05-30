@@ -25,18 +25,10 @@
         position: relative;
         margin: 0 auto;
         font-weight: 900;
-        font-size: to-em(40);
+        font-size: to-em(64);
+        line-height: to-em(74);
         text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
         text-transform: uppercase;
-
-        @include layout-768() {
-            font-size: to-em(64);
-        }
-
-        @include layout-1024() {
-            font-size: to-em(104);
-            line-height: to-em(74);
-        }
 
         &-wrapper {
             white-space: nowrap;
