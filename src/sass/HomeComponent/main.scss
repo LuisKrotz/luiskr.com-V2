@@ -1,6 +1,6 @@
 
 .home {
-    //background: $main-bg;
+    background: $main-bg;
 
     #appendSVG {
         transition: opacity ease-in-out 3s;
@@ -37,7 +37,7 @@
         background-repeat: no-repeat;
         transform: none;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         background-size: cover;
         filter: blur(to-em(5)) contrast(1.5) grayscale(1);
         transform: translateY(-50%);
@@ -82,7 +82,8 @@
 
     .main-title {
         transition: font-size ease-in-out .5s, line-height ease-in-out .5s, ease-out 1s, opacity ease-in-out .5s;
-        text-align: left;
+        display: inline;
+        text-align: center;
         text-transform: uppercase;
         font-weight: 900;
         position: fixed;
@@ -115,6 +116,7 @@
         }
 
         @include layout-1024() {
+            text-align: right;
             padding: 0 to-em(($un-1024 - $grid-max-area-1024) / 2) 0 0;
         }
 
@@ -155,10 +157,10 @@
 
         span {
             display: block;
-            font-weight: 400;
-
+            text-align: justify;
             font-size: 6.25vw;
             line-height: 7.5vw;
+            font-weight: 700;
 
             @include layout-540() {
                 font-size: 3.52vh;
@@ -166,8 +168,16 @@
             }
 
             @include layout-1024() {
+                float: right;
+                text-align: right;
+                font-weight: 400;
                 font-size: 4.6875vh;
                 line-height: 6.78vh;
+                width: 90%;
+            }
+
+            @include layout-1280() {
+                width: 80%;
             }
 
             a {
@@ -177,7 +187,6 @@
 
         a {
             text-decoration: underline;
-            text-align-last: left;
             width: 100%;
             display: block;
 
@@ -200,11 +209,18 @@
 
     &-projects {
         transition: box-shadow .25s ease-in-out;
-        contain: paint;
-        padding: to-em(104) 0;
+        padding: 0;
         position: relative;
         background-color: $color-black;
         z-index: 1;
+
+        @include layout-540() {
+            padding: to-em(32) 0;
+        }
+
+        @include layout-960() {
+            padding: to-em(64) 0;
+        }
     }
 
     &-project {
@@ -214,22 +230,14 @@
 
         .home & {
             overflow: visible;
-            padding: 0 0 to-em(64);
+            padding: 0 0 to-em(48);
 
-            @include layout-540() {
-                padding: 0 0 to-em(104);
-            }
-
-            @include layout-1024() {
+            @include layout-1280() {
                 padding: 0 0 to-em(64);
             }
 
-            @include layout-1280() {
-                padding: 0 0 to-em(104);
-            }
-
             @include layout-2560() {
-                padding: 0 0 to-em(168);
+                padding: 0 0 to-em(104);
             }
         }
 
@@ -259,35 +267,26 @@
 
                 @include layout-540() {
                     margin: 0;
+                }
+
+                @include layout-1280() {
                     line-height: to-em(64);
                     font-size: to-em(64);
                 }
 
-                @include layout-1280() {
-                    margin: 0;
+                @include layout-2560() {
                     line-height: to-em(104);
                     font-size: to-em(104);
                 }
 
-                @include layout-2560() {
-                    line-height: to-em(168);
-                    font-size: to-em(168);
-                }
-
                 &.view-in {
                     transition: transform ease-in .3s, opacity cubic-bezier(1, 0.07, 0.58, 0.78) .2s;
-                    transform: skewX(-5deg) translate3D(0, 0, 0);
                     opacity: 1;
-
-                    @include layout-768() {
-                        transform: skewX(-10deg) translate3D(0, 0, 0);
-                    }
                 }
             }
 
             &:hover {
                 span {
-                    transform: skewX(0) translate3D(0, 0, 0);
                     text-decoration: underline;
                 }
             }

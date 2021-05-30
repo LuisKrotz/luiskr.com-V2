@@ -310,19 +310,21 @@
             color: rgba(255, 255, 255, .8);
             height: 100%;
             padding-top: to-em(8);
-            padding-bottom: to-em(104);
+            padding-bottom: to-em(8);
+            align-items: self-end;
+            min-height: 100vh;
 
-            @include layout-540() {
+            @include layout-768() {
+                grid-template-columns: repeat(2, auto);
                 grid-gap: to-em(64);
             }
 
-            @include layout-540() {
+            @include layout-1024() {
                 grid-gap: to-em(104);
             }
 
             @include layout-1560() {
                 grid-gap: to-em(64);
-                grid-template-columns: repeat(2, auto);
             }
 
             @include layout-1680() {
@@ -340,23 +342,6 @@
             transform: translate3D(0, to-em(104), 0);
             transition: transform 1.5s ease-in-out;
             padding: to-em(16) 0;
-
-            @include layout-375() {
-                padding: to-em(32) 0;
-            }
-
-            @include layout-540() {
-                padding: to-em(24) 0;
-            }
-
-            @include layout-960() {
-                padding: to-em(64) 0;
-            }
-
-            @include layout-1440() {
-                padding: to-em(40) 0;
-            }
-
 
             .header-open & {
                 transform: none;
@@ -391,17 +376,8 @@
                 }
 
                 @include layout-768() {
-                    font-size: to-em(64);
-                    line-height: to-em(104);
-                }
-                @include layout-1440() {
-                    font-size: to-em(104);
-                    line-height: to-em(168);
-                }
-
-                @include layout-1560() {
-                    font-size: to-em(64);
-                    line-height: to-em(104);
+                    font-size: to-em(32);
+                    line-height: to-em(64);
                 }
 
                 &:hover {
