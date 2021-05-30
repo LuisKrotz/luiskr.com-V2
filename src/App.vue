@@ -1,13 +1,13 @@
 <template>
   <div id="app" :class="!show_cookie ? 'show-banner' : ''">
     <h1 class="hdn">luiskr.com</h1>
-    <HeaderComponent />
+    <HeaderComponent data-no-snippet />
 
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
 
-    <span class="loading">Loading</span>
+    <span class="loading" data-no-snippet>Loading</span>
   </div>
 </template>
 

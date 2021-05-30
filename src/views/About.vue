@@ -5,8 +5,8 @@
           <div class="about main">
             <h2 class="main-title" v-view>About</h2>
             <h3 class="main-subtitle" v-view>A Front-End Developer</h3>
-            <p class="main-text" v-view>Currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://www.instagram.com/transainc_" rel="noopener">transainc</a>, and part-time Freelancer.</p>
-            <p class="main-text" v-view>I went to college at UFSM / Federal University of Santa Maria, on the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
+            <p class="main-text" v-view>Currently working full time at <a @click="sendAnalyticsEvent('about_link', 'click','transainc', 100)" href="https://transainc.com?utm-src=luiskr.com" rel="noopener">TRANSA</a>, and part-time Freelancer.</p>
+            <p class="main-text" v-view>I went to college at UFSM / Federal University of Santa Maria, in the City of Frederico Westphalen - Brazil, and graduated in August of 2014 in Technology in Systems for the Internet.
               <video v-view loading="lazy" :poster="storage + 'college' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'college.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'college.mp4'"/>
@@ -14,7 +14,7 @@
               </video>
             </p>
             <h3 class="main-subtitle" v-view>Working at transainc</h3>
-            <p class="main-text" v-view>Started as a Jr. front-end developer on Apr. 2016, then I learned a lot and became a front-end developer on Dez. 2016, the opportunities kept appearing and I started leading the front-end at Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
+            <p class="main-text" v-view>Started as a Jr. front-end developer on Apr. 2016, then I learned a lot and became a front-end developer on Dez. 2016, the opportunities kept appearing and I started leading the front-end in Jan of 2018, and now I'm managing the front-end team while working as the leading front end developer until this date.</p>
 
             <h3 class="main-subtitle" v-view>Freelancing</h3>
             <p class="main-text" v-view>I started my "<em>one-man army</em>" company in 2016 to test my skills and since then been working on side jobs non stop as a Freelancer.
@@ -41,11 +41,11 @@
             <p class="main-text" v-view>I love photography, check out some <a @click="sendAnalyticsEvent('about_link', 'click', 'instagram', 100)" href="https://www.instagram.com/j_luiskrotz" rel="noopener">Instagram pictures</a> of mine.</p>
             
             <h3 class="main-subtitle" v-view>I love to learn</h3>
-            <p class="main-text" v-view>Be it watching a ted talk, an video on youtube, coding for fun, developing a crazy system just by the sake of it, learning a new language, I just love learning.</p>
-            <p class="main-text" v-view>I learned English by playing video games and listening to music, I learned to code by trial, error and binge watching tutorials. I can't get enough of experimenting, is so exciting.</p>
+            <p class="main-text" v-view>Be it watching a ted talk, an video on youtube, coding for fun, developing a crazy system just for the sake of it, learning a new language, I just love learning.</p>
+            <p class="main-text" v-view>I learned English by playing video games and listening to music, I learned to code by trial, error and binge-watching tutorials. I can't get enough of experimenting, is so exciting.</p>
 
             <h3 class="main-subtitle" v-view>Languages</h3>
-            <p class="main-text" v-view>I love learning a new language and to practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
+            <p class="main-text" v-view>I love learning a new language and practise those I already know, like English, German, Spanish, Portuguese, and love to scratch a few words in Italian, French and Latin.
               <video v-view loading="lazy" :poster="storage + 'bean' + webp2" playsinline autoplay muted loop width="480" height="270">
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'bean.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'bean.mp4'"/>
@@ -54,13 +54,13 @@
             </p>
 
             <h3 class="main-subtitle" v-view>Recognitions</h3>
-            <p class="main-text" v-view>At the College, I was awarded the prize of being placed between the <a @click="sendAnalyticsEvent('about_link', 'click', '40 melhores', 100)" href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
-            <p class="main-text" v-view>On February 2020, I submitted the old alpha version of this website using Google's AMP, to <a href="https://www.awwwards.com/sites/luis-krotz-portofio" target="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v1', 50)">AWWWARDS</a> and got a nomination, with the experience and reviews, I started working on the real deal.</p>
-            <p class="main-text" v-view>So, I submited the current version, of this website to <a href="https://www.cssdesignawards.com/sites/luiskr/37252" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'css design awards', 100)">CSS Design Awards</a> and got the <router-link to="/awards/cssda-ui-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UI', 100)">UI</span></router-link>, <router-link to="/awards/cssda-ux-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UX', 100)">UX</span></router-link>, <router-link to="/awards/cssda-inn-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda INN', 100)">INN</span></router-link> and the <router-link to="/awards/cssda-kudos-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda Kudos', 100)">Special Kudos</span></router-link> Awards.</p>
-            <p class="main-text" v-view>Also, got nominations of the current version of this website at <a href="https://www.awwwards.com/sites/luiskr" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v2', 100)">AWWWARDS</a> and <a href="https://www.cssawardss.com/site/luiskr" @click="sendAnalyticsEvent('about_link', 'click', 'css awards showcase', 100)">CSS Awards Showcase</a>.</p>
+            <p class="main-text" v-view>At the College, I was awarded the prize of being placed among the <a @click="sendAnalyticsEvent('about_link', 'click', '40 melhores', 100)" href="http://www2.fw.iffarroupilha.edu.br/site/index.php/649-trabalho-de-aluno-do-cafw-entre-os-40-melhores-da-jai">40 best works of the 28th JAI</a></p>
+            <p class="main-text" v-view>In February 2020, I submitted the old alpha version of this website using Google's AMP, to <a href="https://www.awwwards.com/sites/luis-krotz-portofio" target="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v1', 50)">AWWWARDS</a> and got a nomination, with the experience and reviews, I started working on the real deal.</p>
+            <p class="main-text" v-view>So, I submitted the current version, of this website to <a href="https://www.cssdesignawards.com/sites/luiskr/37252" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'css design awards', 100)">CSS Design Awards</a> and got the <router-link to="/awards/cssda-ui-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UI', 100)">UI</span></router-link>, <router-link to="/awards/cssda-ux-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda UX', 100)">UX</span></router-link>, <router-link to="/awards/cssda-inn-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda INN', 100)">INN</span></router-link> and the <router-link to="/awards/cssda-kudos-06-2020"><span @click="sendAnalyticsEvent('about_link', 'click', 'cssda Kudos', 100)">Special Kudos</span></router-link> Awards.</p>
+            <p class="main-text" v-view>Also, got nominations for the current version of this website at <a href="https://www.awwwards.com/sites/luiskr" taget="_blank" @click="sendAnalyticsEvent('about_link', 'click', 'awwwards-v2', 100)">AWWWARDS</a> and <a href="https://www.cssawardss.com/site/luiskr" @click="sendAnalyticsEvent('about_link', 'click', 'css awards showcase', 100)">CSS Awards Showcase</a>.</p>
 
             <h3 class="main-subtitle" v-view>Contact Information</h3>
-            <p class="main-text" v-view>Email: <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Address: Avenida João Pessoa, 925 / APTO. 14 / Farroupilha - Porto Alegre (RS) / BR</p>
+            <p class="main-text" v-view>Email: <a @click="sendAnalyticsEvent('about_link', 'click', 'mailto', 100)" href="mailto:luis.krotz@gmail.com">luis.krotz@gmail.com</a><br>Working 100% remotely.</p>
           </div>
         </article>
     </main>
