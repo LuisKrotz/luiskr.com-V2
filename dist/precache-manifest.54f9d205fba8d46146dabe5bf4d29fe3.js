@@ -36,20 +36,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/browserconfig.xml"
   },
   {
-    "revision": "2c55c9bcb311a596fa4a",
-    "url": "/css/Awards.0934792d.css"
+    "revision": "a9ef85da739fc40405f1",
+    "url": "/css/Awards.699dc3ff.css"
   },
   {
     "revision": "a3fbf0a02d9bff6369de",
     "url": "/css/Error404.7547c7fc.css"
   },
   {
-    "revision": "b894780646b6879e1bd1",
-    "url": "/css/Project.0934792d.css"
+    "revision": "a3cec407fd86c0846d53",
+    "url": "/css/Project.699dc3ff.css"
   },
   {
-    "revision": "181d093c5b8d99136927",
-    "url": "/css/app.6d4eb693.css"
+    "revision": "30c171acd3a0d6365efc",
+    "url": "/css/app.fd0b292c.css"
   },
   {
     "revision": "cf0618db0ee601dc8a04fec6252663d3",
@@ -60,28 +60,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/favicon-32x32.png"
   },
   {
-    "revision": "a5498802a1081105d849083c1d6a6319",
+    "revision": "6212fc8d7e178647683e884f32600760",
     "url": "/index.html"
   },
   {
-    "revision": "e9a85ba59e87c9e46a28",
-    "url": "/js/About.24531e22.js"
+    "revision": "1810cd35719b4278659a",
+    "url": "/js/About.3d7e4186.js"
   },
   {
-    "revision": "2c55c9bcb311a596fa4a",
+    "revision": "a9ef85da739fc40405f1",
     "url": "/js/Awards.96cb02b8.js"
   },
   {
-    "revision": "8aec63a6c53b35b8808c",
-    "url": "/js/Credits.09b98387.js"
+    "revision": "84e5cfec8d6927325335",
+    "url": "/js/Credits.e256ea4a.js"
   },
   {
     "revision": "a3fbf0a02d9bff6369de",
     "url": "/js/Error404.ef87ab48.js"
   },
   {
-    "revision": "357728b0bcb05169281d",
-    "url": "/js/GDPR.e8f8116c.js"
+    "revision": "7daeeed772e66f5254eb",
+    "url": "/js/GDPR.74aa6817.js"
   },
   {
     "revision": "cd07ab1747ea820d787e",
@@ -96,16 +96,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/Productions.047a299b.js"
   },
   {
-    "revision": "b894780646b6879e1bd1",
+    "revision": "a3cec407fd86c0846d53",
     "url": "/js/Project.b4d661ec.js"
   },
   {
-    "revision": "6e832fc63aa23ae52b82",
-    "url": "/js/TermsOfUse.fa6c1d11.js"
+    "revision": "e19f0a213d0e7f95c3b8",
+    "url": "/js/TermsOfUse.9e899d82.js"
   },
   {
-    "revision": "181d093c5b8d99136927",
-    "url": "/js/app.cdba870b.js"
+    "revision": "30c171acd3a0d6365efc",
+    "url": "/js/app.2eceecd6.js"
   },
   {
     "revision": "295264d311f21d710e63",
