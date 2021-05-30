@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="fade" mode="out-in">
-      <img v-if="post !== undefined" class="internal-background" aria-hidden="true"
+      <img v-if="post !== undefined" class="award-background" aria-hidden="true"
         :src="storage + post.img.src" 
         :width="post.img.width"
         :height="post.img.height"
@@ -11,10 +11,10 @@
     </transition>
 
     <main class="main">
-      <article :class="'internal max-area ' + (loaded ? 'loaded' : '')">
-        <h2 class="internal-title" v-view v-if="translations !== undefined" ref="title_wrapper">
-            <div class="internal-title-wrapper">
-              <div class="internal-title-marquee">
+      <article :class="'award max-area ' + (loaded ? 'loaded' : '')">
+        <h2 class="award-title" v-view v-if="translations !== undefined" ref="title_wrapper">
+            <div class="award-title-wrapper">
+              <div class="award-title-marquee">
                 <template v-for="n in 30">
                   {{ translations.title }}&nbsp;\&nbsp;
                 </template>
@@ -23,9 +23,9 @@
         </h2>
 
 
-        <div class="internal-info">
+        <div class="award-info">
           <transition name="fade" mode="out-in">
-              <img v-if="post !== undefined" class="internal-media"
+              <img v-if="post !== undefined" class="award-media"
                 :src="storage + post.img.src" 
                 :width="post.img.width"
                 :height="post.img.height"
@@ -34,25 +34,25 @@
                 :key="'media-' + post.id">
           </transition>
 
-          <div class="internal-info-content" v-if="translations !== undefined && post !== undefined">
-            <div class="internal-info-description">
-              <div class="internal-info-data">
-                <a class="internal-info-link" v-view :href="post.link">
-                  <h3 class="internal-info-link-title first">{{ post.award }}</h3>
+          <div class="award-info-content" v-if="translations !== undefined && post !== undefined">
+            <div class="award-info-description">
+              <div class="award-info-data">
+                <a class="award-info-link" v-view :href="post.link">
+                  <h3 class="award-info-link-title first">{{ post.award }}</h3>
                 </a>
                 <p class="hdn">{{ post.img.longdesc }}</p>
                 <p v-view>{{ post.date }}</p>
               </div>
             </div>
 
-            <a class="internal-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('awards_link', 'click', translations.checkit, 25)">
-              <img  v-view  v-if="translations.animation_alt === undefined" class="internal-info-check-it" :src="placeholder" alt="">
-              <video  v-view  v-else class="internal-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" playsinline autoplay muted loop>
+            <a class="award-info-check" :href="post.link" target="_blank" rel="noopener" @click="sendAnalyticsEvent('awards_link', 'click', translations.checkit, 25)">
+              <img  v-view  v-if="translations.animation_alt === undefined" class="award-info-check-it" :src="placeholder" alt="">
+              <video  v-view  v-else class="award-info-check-it" width="480" height="480" :poster="storage + 'animations/'+ random + webp" :title="translations.animation_title" :alt="translations.animation_alt[0] +  translations.animation[random] + translations.animation_alt[1]" playsinline autoplay muted loop>
                 <source type="application/vnd.apple.mpegurl" :src="storage + 'animations/' + random + '.m3u8'"/>
                 <source type="video/mp4" :src="storage + 'animations/' + random + '.mp4'"/>
                 <source type="video/webm" :src="storage + 'animations/' + random + '.webm'"/>
               </video>
-              <span class="internal-info-check-txt">
+              <span class="award-info-check-txt">
               {{ translations.checkit }}
               </span>
             </a>

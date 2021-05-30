@@ -3,22 +3,14 @@
     <h1 class="hdn">luiskr.com</h1>
     <HeaderComponent />
 
-    <main class="home max-area">
-      <div class="home-c1" ref="c1_media_height">
-        <img class="home-c1-media" :src="$store.state.sideImage" width="180" height="180">
-      </div>
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
 
-      <div :style="{'padding-top': generalPadding}">
-        <transition name="fade" mode="out-in">
-          <router-view />
-        </transition>
-      </div>
-    </main>
-
-    <FooterComponent /> 
+    <span class="loading">Loading</span>
 
     <transition name="cookie">
-      <aside v-if="!show_cookie && domLoaded" class="cookie-banner">
+      <div v-if="!show_cookie && domLoaded" class="cookie-banner">
         <div class="max-area">
           <p>
             This site uses third-party cookies from Google Analytics to track page visits and events.
@@ -34,33 +26,28 @@
             </div>
           </div>
         </div>
-      </aside>
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   components: {
-     HeaderComponent,
-     FooterComponent
+     HeaderComponent
   },
   data() {
       return {
         show_cookie: Boolean(localStorage.getItem('cookie')),
         has_touch: false,
-        smallHeader: false,
         webp: '.jpg',
         webp2: '.jpg',
         placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
         storage: 'https://storage.googleapis.com/luiskr.com/public/',
         origin: window.location.origin,
         domLoaded: false,
-        generalPadding: null,
-        smallHeader: false,
         projects: {
             "project":          "Project",
             "at":               "Developed at ",
@@ -91,69 +78,6 @@ export default {
               "3d face o looking to poiner",
               "handrawn man juggling an arrow "
           ],
-        },
-        headerFooterArray: {
-            "title": "Menu",
-            "toggle": [
-                "Open Menu",
-                "Close Menu"
-            ],
-            "home": [
-                "/",
-                " Projects "
-            ],
-            "about": [
-                "/about",
-                " About "
-            ],
-            "contact": [
-                "/contact",
-                " Contact "
-            ],
-            "awards": [
-                "/awards",
-                " Awards "
-            ],
-            "productions": [
-                "/productions",
-                "productions"
-            ],
-            "mail": [
-                "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
-                "Mail"
-            ],
-            "privacy_policy": [
-                "/privacy-policy",
-                "Privacy Policy"
-            ],
-            "terms_of_use": [
-                "/terms-of-use",
-                "Terms of Use"
-            ],
-            "GDPR": [
-                "/GDPR",
-                "GDPR"
-            ],
-            "credits": [
-                "/credits",
-                "Credits"
-            ],
-            "instagram": [
-                "https://www.instagram.com/j_luiskrotz",
-                "Instagram"
-            ],
-            "linkedin": [
-                "https://www.linkedin.com/in/luis-kr%C3%B6tz/",
-                "linkedin"
-            ],
-            "github": [
-                "https://github.com/LuisKrotz",
-                "github"
-            ],
-            "phone": [
-                "tel:+5551982274782",
-                "phone"
-            ]
         }
       }
     },
@@ -176,13 +100,7 @@ export default {
         self.domLoaded = true;
       });
     },
-    mounted() {
-      this.generalPadding = `${this.$refs.c1_media_height.clientHeight + this.$refs.c1_media_height.offsetTop}px`;
-    },
     methods: {
-      updateStatus(status) {
-        this.smallHeader = status;
-      },
       getUrlParam(parameter, defaultvalue){
         function getUrlVars() {
             var vars = {};

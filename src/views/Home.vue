@@ -1,18 +1,23 @@
 <template>
-    <article class="home-c2">
-        <router-link class="project" :to="($store.state.postsArrayLoaded ? post.path : '')" v-for="(post, index) in $store.state.posts" :key="index">
-          <h3 class="project-link" @click="projectClick('portfolio_link', 'click', ($store.state.postsArrayLoaded ? post.project : '') , 100)">
-            <div class="project-link-info">
-              <img class="project-link-info-media" :src="($store.state.postsArrayLoaded ? `${storage}${post.img === undefined ? post.video.img : post.img.src}.jpg` : load)" width="32" height="32"/>
-              <span class="project-link-info-name">{{ ($store.state.postsArrayLoaded ? post.project : '...') }}</span>
+    <main class="home">
+        <div id="appendPicture"></div>
+        <div id="appendSVG"></div>
+        <div class="max-area">
+          <h3 class="main-title"><router-link to="/about">I'm Luis. </router-link><span>Front-end developer and part time Freelancer. Check out some of the projects I've worked on below.</span></h3>
+        </div>
+
+        <article class="main">
+            <div class="home-projects">
+              <div class="max-area">
+              <router-link class="home-project" :to="post.path" v-for="(post, index) in posts" :key="index">
+                    <h3 class="home-project-title" @click="projectClick('portfolio_link', 'click', post.project, 100)">
+                        <span v-view>{{ post.name }}</span>
+                    </h3>
+              </router-link>
+              </div>
             </div>
-            <span  class="project-link-more">
-              <span class="hdn"> more </span>
-              <span aria-hidden="true"> ► </span>
-            </span>
-          </h3>
-        </router-link>
-    </article>
+        </article>
+    </main>
 </template>
 
 <script>
@@ -27,55 +32,317 @@ export default {
     return {
         storage: this.$parent.storage,
         origin: this.$parent.origin,
-        load: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiBub25lOyBkaXNwbGF5OiBibG9jazsgc2hhcGUtcmVuZGVyaW5nOiBhdXRvOyIgd2lkdGg9IjI5MXB4IiBoZWlnaHQ9IjI5MXB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgwIDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTIuODU3MTQyODU3MTQyODU3cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4KICA8L3JlY3Q+CjwvZz48ZyB0cmFuc2Zvcm09InJvdGF0ZSg1MS40Mjg1NzE0Mjg1NzE0MyA1MCA1MCkiPgogIDxyZWN0IHg9IjQ3LjUiIHk9IjM1LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDUxYTIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgdmFsdWVzPSIxOzAiIGtleVRpbWVzPSIwOzEiIGR1cj0iMy4zMzMzMzMzMzMzMzMzMzM1cyIgYmVnaW49Ii0yLjM4MDk1MjM4MDk1MjM4MXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMTAyLjg1NzE0Mjg1NzE0Mjg2IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTEuOTA0NzYxOTA0NzYxOTA0N3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMTU0LjI4NTcxNDI4NTcxNDI4IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTEuNDI4NTcxNDI4NTcxNDI4NnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjA1LjcxNDI4NTcxNDI4NTcyIDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTAuOTUyMzgwOTUyMzgwOTUyM3MiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+CiAgPC9yZWN0Pgo8L2c+PGcgdHJhbnNmb3JtPSJyb3RhdGUoMjU3LjE0Mjg1NzE0Mjg1NzE3IDUwIDUwKSI+CiAgPHJlY3QgeD0iNDcuNSIgeT0iMzUuNSIgcng9IjIuNSIgcnk9IjIuNSIgd2lkdGg9IjUiIGhlaWdodD0iNSIgZmlsbD0iIzAwNTFhMiI+CiAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiB2YWx1ZXM9IjE7MCIga2V5VGltZXM9IjA7MSIgZHVyPSIzLjMzMzMzMzMzMzMzMzMzMzVzIiBiZWdpbj0iLTAuNDc2MTkwNDc2MTkwNDc2MTZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPgogIDwvcmVjdD4KPC9nPjxnIHRyYW5zZm9ybT0icm90YXRlKDMwOC41NzE0Mjg1NzE0Mjg1NiA1MCA1MCkiPgogIDxyZWN0IHg9IjQ3LjUiIHk9IjM1LjUiIHJ4PSIyLjUiIHJ5PSIyLjUiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IiMwMDUxYTIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgdmFsdWVzPSIxOzAiIGtleVRpbWVzPSIwOzEiIGR1cj0iMy4zMzMzMzMzMzMzMzMzMzM1cyIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPgogIDwvcmVjdD4KPC9nPgo8IS0tIFtsZGlvXSBnZW5lcmF0ZWQgYnkgaHR0cHM6Ly9sb2FkaW5nLmlvLyAtLT48L3N2Zz4=',
         webp: '.gif',
-        total: 77,
-        links: {
-          "about": [
-              "/about",
-              "About"
-          ],
-          "productions": [
-              "/productions",
-              "productions"
-          ],
-          "mail": [
-              "mailto:luis.krotz@gmail.com?subject=Contact%20from%20luiskr.com&body",
-              "Mail"
-          ],
-          "privacy_policy": [
-              "/privacy-policy",
-              "Privacy Policy"
-          ],
-          "terms_of_use": [
-              "/terms-of-use",
-              "Terms of Use"
-          ],
-          "GDPR": [
-              "/GDPR",
-              "GDPR"
-          ],
-          "credits": [
-              "/credits",
-              "Credits"
-          ],
-          "instagram": [
-              "https://www.instagram.com/j_luiskrotz",
-              "Instagram"
-          ],
-          "linkedin": [
-              "https://www.linkedin.com/in/luis-kr%C3%B6tz/",
-              "linkedin"
-          ],
-          "github": [
-              "https://github.com/LuisKrotz",
-              "github"
-          ],
-          "phone": [
-              "tel:+5551982274782",
-              "phone"
-          ]
-      },
+        posts: [
+          {
+            path: '/projects/forum-cscb-2020',
+            name: 'CSCB Sustainability Forum 2020'
+          },
+          {
+            path: '/projects/melissa-pop-2020',
+            name: 'Melissa | POP'
+          },
+          {
+            path: '/projects/brazilian-leather-webinar-series-2020',
+            name: 'Brazilian Leather Webinar Series | 2020'
+          },
+          {
+            path: '/projects/aboutmarco',
+            name: 'Marco Almeida'
+          },
+          {
+            path: '/projects/melissa-next-br',
+            name: 'Melissa | Next'
+          },
+          {
+            path: '/projects/minimelissa-dreamers',
+            name: 'Minimelissa | AW\'20'
+          },
+          {
+            path: '/projects/minimelissa-color-me',
+            name: 'Minimelissa | SS\'20'
+          },
+          {
+            path: '/projects/melissa-dreamers-infinitos',
+            name: 'Melissa | Dreamers / Infinitos'
+          },
+          {
+            path: '/projects/metcha-newsletter',
+            name: 'METCHA | Newsletter'
+          },
+          {
+            path: '/projects/metcha-newsletter-generator',
+            name: 'METCHA | Newsletter Generator'
+          },
+          {
+            path: '/projects/metcha-cms',
+            name: 'METCHA | CMS'
+          },
+          {
+            path: '/projects/metcha-website',
+            name: 'METCHA | Website'
+          },
+          {
+            path: '/projects/melissa-sustainability',
+            name: 'Melissa | Sustainability'
+          },
+          {
+            path: '/projects/melissa-color-me',
+            name: 'Melissa | Color ME'
+          },
+          {
+            path: '/projects/transainc-muda',
+            name: 'Transainc | Muda'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2019',
+            name: 'CICB | Sustainability Forum 2019'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2018',
+            name: 'CICB | Sustainability Forum 2018'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2017',
+            name: 'CICB | Sustainability Forum 2017'
+          },
+          {
+            path: '/projects/cicb-sustainability-forum-2016',
+            name: 'CICB | Sustainability Forum 2016'
+          },
+          {
+            path: '/projects/coza-webpage',
+            name: 'Coza | Webpage'
+          },
+          {
+            path: '/projects/coza-where-to-find',
+            name: 'Coza | Where to Find'
+          },
+          {
+            path: '/projects/melissa-family',
+            name: 'Melissa | Family'
+          },
+          {
+            path: '/projects/melissa-mapping',
+            name: 'Melissa | Mapping'
+          },
+          {
+            path: '/projects/melissa-mirror',
+            name: 'Melissa | Mirror'
+          },
+          {
+            path: '/projects/melissa-open-vibes',
+            name: 'Melissa | Open Vibes'
+          },
+          {
+            path: '/projects/melissa-a-la-garconne',
+            name: 'Melissa | À Lá Garçonne'
+          },
+          {
+            path: '/projects/melissa-awaytomars',
+            name: 'Melissa | AWAYTOMARS'
+          },
+          {
+            path: '/projects/melissa-baja-east',
+            name: 'Melissa | Baja East'
+          },
+          {
+            path: '/projects/melissa-melissa+csc',
+            name: 'Melissa | Melissa + CSC'
+          },
+          {
+            path: '/projects/melissa-fabula',
+            name: 'Melissa | Fábula'
+          },
+          {
+            path: '/projects/melissa-melissa+rider',
+            name: 'Melissa | Melissa + Rider'
+          },
+          {
+            path: '/projects/melissa-galleries-sp-nyc-lon',
+            name: 'Melissa | Galleries SP\/NYC\/LON'
+          },
+          {
+            path: '/projects/melissa-bike',
+            name: 'Melissa | Bike'
+          },
+          {
+            path: '/projects/melissa-creatives',
+            name: 'Melissa | Creatives'
+          },
+          {
+            path: '/projects/melissa-sk8',
+            name: 'Melissa | SK8'
+          },
+          {
+            path: '/projects/melissa-possession',
+            name: 'Melissa | Possession'
+          },
+          {
+            path: '/projects/minimelissa-candy-framework',
+            name: 'Minimelissa | Candy Framework'
+          },
+          {
+            path: '/projects/minimelissa-website',
+            name: 'Minimelissa | Website'
+          },
+          {
+            path: '/projects/minimelissa-a-w16',
+            name: 'Minimelissa | A/W\'16'
+          },
+          {
+            path: '/projects/minimelissa-a-w17',
+            name: 'Minimelissa | A/W\'17'
+          },
+          {
+            path: '/projects/minimelissa-a-w18',
+            name: 'Minimelissa | A/W\'18'
+          },
+          {
+            path: '/projects/minimelissa-a-w19',
+            name: 'Minimelissa | A/W\'19'
+          },
+          {
+            path: '/projects/minimelissa-where-to-find',
+            name: 'Minimelissa | Where to Find'
+          },
+          {
+            path: '/projects/minimelissa-s-s16',
+            name: 'Minimelissa | S/S\'16'
+          },
+          {
+            path: '/projects/minimelissa-s-s17',
+            name: 'Minimelissa | S/S\'17'
+          },
+          {
+            path: '/projects/minimelissa-s-s18',
+            name: 'Minimelissa | S/S\'18'
+          },
+          {
+            path: '/projects/minimelissa-s-s19',
+            name: 'Minimelissa | S/S\'19'
+          },
+          {
+            path: '/projects/mor-website',
+            name: 'Mor | Website'
+          },
+          {
+            path: '/projects/mor-where-to-find',
+            name: 'Mor | Where to Find'
+          },
+          {
+            path: '/projects/cicb-cscb-leather-law-brazilian-portal',
+            name: 'CICB / CSCB/ Leather Law / Brazilian Leather | Portal'
+          },
+          {
+            path: '/projects/melissa-new-features',
+            name: 'Melissa | New Features'
+          },
+          {
+            path: '/projects/melissa-flygrl',
+            name: 'Melissa | Flygrl'
+          },
+          {
+            path: '/projects/melissa-mashup',
+            name: 'Melissa | Mashup'
+          },
+          {
+            path: '/projects/melissa-cine-melissa',
+            name: 'Melissa | Cine Melissa'
+          },
+          {
+            path: '/projects/melissa-dance-machine',
+            name: 'Melissa | Dance Machine'
+          },
+          {
+            path: '/projects/melissa-eat-my-melissa',
+            name: 'Melissa | Eat My Melissa'
+          },
+          {
+            path: '/projects/melissa-nation',
+            name: 'Melissa | Nation'
+          },
+          {
+            path: '/projects/melissa-starwalker',
+            name: 'Melissa | Starwalker'
+          },
+          {
+            path: '/projects/melissa-wanna-be-carioca',
+            name: 'Melissa | Wanna Be Carioca'
+          },
+          {
+            path: '/projects/melissa-we-are-flowers',
+            name: 'Melissa | We are Flowers'
+          },
+          {
+            path: '/projects/melissa-campana',
+            name: 'Melissa | Campana'
+          },
+          {
+            path: '/projects/melissa-gaetano-pesce',
+            name: 'Melissa | Gaetano Pesce'
+          },
+          {
+            path: '/projects/melissa-gareth-pugh',
+            name: 'Melissa | Gareth Pugh'
+          },
+          {
+            path: '/projects/melissa-j-maskrey',
+            name: 'Melissa | J Maskrey'
+          },
+          {
+            path: '/projects/melissa-jason-wu',
+            name: 'Melissa | Jason Wu'
+          },
+          {
+            path: '/projects/melissa-jeremy-scott',
+            name: 'Melissa | Jeremy Scott'
+          },
+          {
+            path: '/projects/melissa-karl-lagerfeld',
+            name: 'Melissa | Karl Lagerfeld'
+          },
+          {
+            path: '/projects/melissa-sebastian-errazuriz',
+            name: 'Melissa | Sebastian Errazuriz'
+          },
+          {
+            path: '/projects/melissa-vitorino-campos',
+            name: 'Melissa | Vitorino Campos'
+          },
+          {
+            path: '/projects/melissa-vivienne-westwood',
+            name: 'Melissa | Vivienne Westwood'
+          },
+          {
+            path: '/projects/melissa-zaha-hadid',
+            name: 'Melissa | Zaha Hadid'
+          },
+          {
+            path: '/projects/melissa-where-to-find',
+            name: 'Melissa | Where to Find'
+          },
+          {
+            path: '/projects/melissa-roller-joy',
+            name: 'Melissa | Roller Joy'
+          },
+          {
+            path: '/projects/melissa-tropico-surreal',
+            name: 'Melissa | Tropico Surreal'
+          },
+          {
+            path: '/projects/mor-loja-mor',
+            name: 'Mor | Loja Mor'
+          },
+          {
+            path: '/projects/vibra-website',
+            name: 'Vibra | Website'
+          },
+          {
+            path: '/projects/genesysinf-sageweb',
+            name: 'GenesysInf | SageWeb'
+          }
+        ]
     }
   },
   created() {
@@ -87,41 +354,8 @@ export default {
   },
   mounted() {
     document.title = this.$route.meta.title;
-
-    this.$store.commit('stopHeaderScroll', false);
-
-    this.getPosts();
   },
   methods: {
-    getPosts() {
-      let self = this;
-
-      if (self.$store.state.postsArrayLoaded === false) {
-        let i = self.total,
-        urls = [];
-
-        while(i > 0) {
-          urls.push(`${self.origin}/projects/${i}.json`);
-          i--;
-        }
-
-        async function request() {
-          for (const [idx, url] of urls.entries()) {
-              const response = await fetch(url);
-              const json = await response.json();
-
-              self.$store.commit('savePostData', {
-                id: idx,
-                data: json
-              });
-          }
-
-          self.$store.commit('postsArrayLoaded', true);
-        }
-
-        request();
-      }
-    },
     sendAnalyticsEvent(category, action, label, value) {
       this.$parent.sendAnalyticsEvent(category, action, label, value);
     },
