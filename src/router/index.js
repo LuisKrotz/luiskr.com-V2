@@ -899,37 +899,25 @@ const routes = [
   }
 ]
 
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
 
-function init() {
-  Vue.use(VueAnalytics, {
-    id: 'UA-142757641-1',
-    router,
-    autoTracking: {
-      skipSamePath: true,
-      pageviewTemplate (route) {
-        return {
-          page: route.path,
-          title: document.title,
-          location: window.location.href
-        }
+Vue.use(VueAnalytics, {
+  id: 'UA-142757641-1',
+  router,
+  autoTracking: {
+    skipSamePath: true,
+    pageviewTemplate (route) {
+      return {
+        page: route.path,
+        title: document.title,
+        location: window.location.hrefcoo
       }
     }
-  });
-}
+  }
+});
 
-if (Boolean(localStorage.getItem('cookie')) === true) {
-  init();
-} else {
-  document.addEventListener('accepted', function() {
-    if (Boolean(localStorage.getItem('cookie')) === true) {
-      init();
-    }
-  });
-}
 export default router

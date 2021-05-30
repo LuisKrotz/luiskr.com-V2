@@ -8,26 +8,6 @@
     </transition>
 
     <span class="loading">Loading</span>
-
-    <transition name="cookie">
-      <div v-if="!show_cookie && domLoaded" class="cookie-banner">
-        <div class="max-area">
-          <p>
-            This site uses third-party cookies from Google Analytics to track page visits and events.
-            Get more info about data, cookies and terms of use at GDPR, Terms of Use and Privacy policy of this website.
-            This page doesn't send pageviews and events without consent and doesn't store any visitor's data.
-            All session data is stored locally on your own browser, by the use of the local storage API.
-            The consent can be revoked by clearing your browser's locally stored data.
-          </p>
-          <div class="second-column">
-            <div class="second-column-fixed">
-              <button class="second-column-button" @click="accept()"><span class="accept">Accept</span></button>
-              <button class="second-column-button" @click="close()"><span class="refuse">Don't track</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -101,24 +81,7 @@ export default {
       });
     },
     methods: {
-      getUrlParam(parameter, defaultvalue){
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-                vars[key] = value;
-            });
-
-            return vars;
-        }
-
-        var urlparameter = defaultvalue;
-          if (window.location.href.indexOf(parameter) > -1)
-              urlparameter = getUrlVars()[parameter];
-
-        return urlparameter;
-      },
       sendAnalyticsEvent(category, action, label, value) {
-        if (Boolean(localStorage.getItem('cookie:accepted')) === true) {
           // General Method to send Analytics, to be inheriteed
           this.$ga.event({
             eventCategory: category,
@@ -126,38 +89,6 @@ export default {
             eventLabel: label,
             eventValue: value,
           });
-
-          if (window.fbq !== undefined) {
-            window.fbq('track', 'Lead', {
-                content_name: label,
-                value: value,
-                currency: 'BRL'
-            });
-          }
-
-          // Show Analytics on consle, object to be recorded
-          function Record(category, action, label, value) {
-              this.category = category;
-              this.action = action,
-              this.label = label,
-              this.value = value;
-          }
-
-          // Show Analytics on console, display table with recordings
-          if (this.records) console.table(new Record(category, action, label, value));
-
-        } else if(this.records) console.log('Not tracking. Cookies not allowed');
-      },
-      accept() {
-        localStorage.setItem('cookie', true);
-        this.show_cookie = true;
-        document.body.classList.remove('show-banner');
-
-        document.dispatchEvent(new Event("accepted"));
-      },
-      close() {
-          this.show_cookie = true;
-          document.body.classList.remove('show-banner');
       }
     }
   };
