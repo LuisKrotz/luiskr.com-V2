@@ -296,11 +296,11 @@
 
         z-index: 2;
         background: $color-black;
-        background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.95) 2%, rgba(0,0,0,1) 100%);
         min-height: 100vh;
         bottom: 0;
 
         @include layout-1280() {
+            background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.95) 2%, rgba(0,0,0,1) 100%);
             top: 0;
         }
 

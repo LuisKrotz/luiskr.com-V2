@@ -219,11 +219,8 @@
         transition: box-shadow .25s ease-in-out;
         padding: 0;
         position: relative;
-        background-color: $color-black;
-        z-index: 1;
-
         background: $color-black;
-        background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.9) 15%, rgba(0,0,0,1) 100%);
+        z-index: 1;
 
         @include layout-540() {
             padding: to-em(32) 0;
@@ -231,6 +228,10 @@
 
         @include layout-960() {
             padding: to-em(64) 0;
+        }
+
+        @include layout-1280() {
+            background: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.9) 15%, rgba(0,0,0,1) 100%);
         }
     }
 
