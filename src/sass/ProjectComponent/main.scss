@@ -24,7 +24,7 @@
         display: block;
         position: relative;
         margin: 0 auto;
-        font-weight: 900;
+        font-weight: 800;
         font-size: to-em(64);
         line-height: to-em(74);
         text-shadow: 1px 0px 1px rgba(0, 0, 0, .1);
@@ -112,7 +112,7 @@
                 text-transform: uppercase;
 
                 a {
-                    font-weight: 400;
+                    font-weight: 300;
                     text-decoration: none;
 
                     &:hover {
@@ -198,7 +198,7 @@
                 display: block;
                 font-size: to-em(16);
                 text-transform: uppercase;
-                font-weight: 400;
+                font-weight: 300;
                 position: relative;
                 border-radius: 0;
                 overflow: visible;
@@ -216,7 +216,7 @@
 
         &-more {
             a, h5 {
-                font-weight: 400;
+                font-weight: 300;
                 font-size: to-em(16);
             }
         }

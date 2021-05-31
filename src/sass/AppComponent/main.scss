@@ -87,7 +87,7 @@
         font-size: to-em(24);
         padding: to-em(40) 0 to-em(16);
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 800;
 
         &:first-of-type {
             padding-top: to-em(72);
@@ -102,7 +102,7 @@
         @include layout-960() {
             font-size: to-em(40);
             text-transform: uppercase;
-            font-weight: 400;
+            font-weight: 300;
         }
     }
 
@@ -169,7 +169,7 @@
     &-link {
         &-title {
             text-decoration: underline;
-            font-weight: 400;
+            font-weight: 300;
             text-transform: uppercase;
             font-size: to-em(64);
 
@@ -295,7 +295,8 @@
         }
 
         z-index: 2;
-        background-color: $color-black;
+        background: $color-black;
+        background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.95) 2%, rgba(0,0,0,1) 100%);
         min-height: 100vh;
         bottom: 0;
 
@@ -354,7 +355,7 @@
                 padding: 0 to-em(16);
                 text-transform: uppercase;
                 display: inline-block;
-                font-weight: 900;
+                font-weight: 800;
                 font-size: to-em(24);
                 line-height: to-em(40);
                 text-decoration: none;
