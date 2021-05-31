@@ -3,7 +3,18 @@
         <div id="appendPicture"></div>
         <div id="appendSVG"></div>
         <div class="max-area">
-          <h3 class="main-title"><router-link to="/about">I'm Luis. </router-link><span>Front-end developer with passion for UI/UX, JS, CSS and performance. Focused on creating beautiful experiences.<wbr> Working at <a @click="sendAnalyticsEvent('home_link', 'click','transa', 50)" href="https://transainc.com?utm-src=luiskr.com" rel="noopener">TRANSA</a> and freelancing in my spare time.<wbr> Check out some of the projects i participated in the last few years below.</span></h3>
+          <h3 class="main-title">
+            <router-link to="/about">
+              A <span class="hdn">Front-end</span>
+              dev.
+            </router-link>
+            <span>
+              with passion for UI/UX, JS, CSS and performance.
+              Focused on creating beautiful experiences.<wbr>
+              Working at <a @click="sendAnalyticsEvent('home_link', 'click','transa', 50)" href="https://transainc.com?utm-src=luiskr.com" rel="noopener">TRANSA</a>
+              and freelancing in my spare time.<wbr> Check out some of the projects i participated in the last few years below.
+            </span>
+          </h3>
         </div>
 
         <article class="main">

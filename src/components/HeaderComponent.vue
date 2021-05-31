@@ -3,6 +3,9 @@
         <header class="header">
             <h3 class="hdn">{{ array.title }}</h3>
             <div class="max-area">
+                <router-link class="header-home" :to="array.home[0]">
+                    <span class="header-home-link" @click="headerClose()" >Luis Krötz</span>
+                </router-link>
                 <button class="header-link header-more" @click="headerOpen()">
                     <span v-if="!open" class="hdn">{{ array.toggle[0] }}</span>
                     <span v-else class="hdn">{{ array.toggle[1] }}</span>

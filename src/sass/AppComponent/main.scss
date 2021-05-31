@@ -186,6 +186,12 @@
 .header {
     height: 0;
     z-index: $z-header;
+    mix-blend-mode: difference;
+
+    .header-open & {
+        mix-blend-mode: luminosity;
+    }
+
 
     .max-area {
         text-align: left;
@@ -196,8 +202,29 @@
         }
     }
 
+    &-home {
+        float: left;
+        position: absolute;
+
+        @include layout-1024() {
+            position: relative;
+
+            .header-open & {
+                display: none;
+            }
+        }
+
+        &-link {
+            line-height: to-em(50);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: $z-header;
+        }
+    }
+
     &-more {
-        transition: background-color .5s linear;
+        transition: background-color .5s linear, transform .3s ease;
         backface-visibility: hidden;
         bottom:to-em(9);
         position: fixed;
@@ -206,20 +233,21 @@
         cursor: pointer;
         width: to-em(50);
         height: to-em(50);
-        transform: translate3D(0, to-em(-8), 0);
-        background: $color-black;
-        border-radius: 100%;
-        border: 1px solid $color-white;
+        transform: translate3D(to-em(-6), to-em(-8), 0);
 
         .on-bottom & {
             background: transparent;
         }
-        
-        .on-bottom.header-open & {
+
+        .header-open & {
             background: $color-black;
+            transform: translate3D(0, to-em(-8), 0);
+            box-shadow: -1px -1px 3px 0 rgba(255, 255, 255, .15), 1px 1px 3px 0 rgba(255, 255, 255, .25);
 
             @include layout-1024() {
+                box-shadow: none;
                 background: transparent;
+                transform: translate3D(-80%, to-em(14), 0);
             }
         }
 
@@ -232,51 +260,56 @@
         }
 
         &-line {
-            display: block;
-            width: 60%;
-            margin: 8px auto;
+            display: inline-block;
+            margin: 0 5px;
+            margin-left: auto;
             box-sizing: border-box;
-            height: 1px;
             background: $color-white;
 
-            @include layout-1024() {
-                margin: 7px auto;
-                width: 70%;
-                height: 2px;
-            }
+            width: 5px;
+            height: 5px;
+            border-radius: 100%;
 
             &.top {
-                transition: all .25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+                transition: transform .5s linear;
 
                 .header-open & {
-                    transform: translate3D(0, to-em(10), 1px) rotate(-135deg);
+                    transform: translate3D(12px, 12px, 1px) rotate(45deg);
+                    border-radius: 0;
 
-                    @include layout-1280() {
-                        width: 90%;
+                    @include layout-1024() {
+                        transform: translate3D(10px, 12px, 1px) rotate(45deg);
                     }
                 }
             }
 
             &.middle {
-                transition: visibility 0s linear 0s;
+                transition: transform .5s linear;
 
                 .header-open & {
-                    visibility: hidden;
+                    transform: translate3D(2px, -1px, 1px) rotate(45deg);
+                    border-radius: 0;
 
-                    @include layout-1280() {
-                        width: 90%;
+                    @include layout-1024() {
+                        transform: translate3D(0px, -1px, 1px) rotate(45deg);
                     }
                 }
             }
 
             &.bottom {
-                transition: all .3s ease-out .05s;
+                transition: transform .5s linear;
+
+                @include layout-1024() {
+                    margin-right: 0;
+                }
 
                 .header-open & {
-                    transform: translate3D(0, to-em(-8), -1px) rotate(-45deg);
+                    transform: translate3D(-8px, -14px, 1px) rotate(45deg);
+                    border-radius: 0;
 
-                    @include layout-1280() {
-                        width: 90%;
+                    @include layout-1024() {
+                        transform: translate3D(-10px, -14px, 1px) rotate(45deg);
+                        border-radius: 0;
                     }
                 }
             }
@@ -298,6 +331,11 @@
         background: $color-black;
         min-height: 100vh;
         bottom: 0;
+        padding-bottom: to-em(70);
+
+        @include layout-1024() {
+            padding-bottom: 0;
+        }
 
         @include layout-1280() {
             background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.95) 2%, rgba(0,0,0,1) 100%);
