@@ -1,6 +1,5 @@
 <template>
   <div id="app" :class="!show_cookie ? 'show-banner' : ''">
-    <h1 class="hdn">luiskr.com</h1>
     <HeaderComponent data-no-snippet />
 
     <transition name="fade" mode="out-in">
